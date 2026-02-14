@@ -107,3 +107,93 @@ export async function GET(request: Request) {
     );
   }
 }
+
+export async function POST(request: Request) {
+  try {
+    const cookieStore = await cookies();
+    const sessionToken = cookieStore.get('session_token')?.value;
+
+    if (!sessionToken) {
+      return NextResponse.json(
+        { success: false, error: 'غير مصرح بالدخول' },
+        { status: 401 }
+      );
+    }
+
+    const currentUser = await validateSession(sessionToken);
+
+    if (!currentUser || currentUser.role !== 'admin') {
+      return NextResponse.json(
+        { success: false, error: 'ليس لديك صلاحية لإضافة مستخدمين' },
+        { status: 403 }
+      );
+    }
+
+    const body = await request.json();
+    const { username, password, email, role, status, first_name, last_name } = body;
+
+    if (!username || !password || !role) {
+      return NextResponse.json(
+        { success: false, error: 'اسم المستخدم وكلمة المرور والدور حقول مطلوبة' },
+        { status: 400 }
+      );
+    }
+
+    // Check if user already exists
+    const existingUser = executeSingleQuery<any>('SELECT id FROM users WHERE username = ?', [username]);
+    if (existingUser) {
+      return NextResponse.json(
+        { success: false, error: 'اسم المستخدم موجود بالفعل' },
+        { status: 400 }
+      );
+    }
+
+    // Hash password (using crude hashing for simplicity in this env if bcrypt isn't available,
+    // but usually we'd use lib/auth hashPassword)
+    const { hashPassword } = await import('@/lib/auth');
+    const passwordHash = await hashPassword(password);
+
+    const result = executeWrite(
+      `INSERT INTO users (username, password_hash, email, role, status, first_name, last_name, created_at, updated_at)
+       VALUES (?, ?, ?, ?, ?, ?, ?, datetime("now"), datetime("now"))`,
+      [username, passwordHash, email || null, role, status || 'active', first_name || null, last_name || null]
+    );
+
+    if (!result.success) {
+      return NextResponse.json(
+        { success: false, error: result.error || 'فشل في إنشاء المستخدم' },
+        { status: 500 }
+      );
+    }
+
+    // Log action
+    const db = getDb();
+    try {
+      db.prepare(`
+        INSERT INTO audit_log (user_id, action, resource_type, resource_id, details)
+        VALUES (?, ?, ?, ?, ?)
+      `).run(
+        currentUser.id,
+        'USER_CREATED',
+        'USERS',
+        result.lastInsertRowid?.toString(),
+        `Created user: ${username}`
+      );
+    } finally {
+      db.close();
+    }
+
+    return NextResponse.json({
+      success: true,
+      message: 'تم إنشاء المستخدم بنجاح',
+      userId: result.lastInsertRowid
+    });
+
+  } catch (error) {
+    console.error('Create user error:', error);
+    return NextResponse.json(
+      { success: false, error: 'حدث خطأ أثناء إنشاء المستخدم' },
+      { status: 500 }
+    );
+  }
+}
