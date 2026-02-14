@@ -23,9 +23,16 @@ export function getAllTemplates(): WhatsAppTemplate[] {
   }));
 }
 
-export function getTemplateByName(name: string): WhatsAppTemplate | undefined {
+export function getTemplateByName(name: string, language?: string): WhatsAppTemplate | undefined {
   const db = getDb();
-  const row = db.prepare('SELECT * FROM templates WHERE name = ?').get(name) as any;
+  let row: any;
+
+  if (language) {
+    row = db.prepare('SELECT * FROM templates WHERE name = ? AND language = ?').get(name, language);
+  } else {
+    // Default to 'ar' then any available
+    row = db.prepare('SELECT * FROM templates WHERE name = ? ORDER BY CASE WHEN language = "ar" THEN 0 ELSE 1 END LIMIT 1').get(name);
+  }
 
   if (!row) return undefined;
 

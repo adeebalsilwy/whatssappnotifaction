@@ -215,9 +215,9 @@ class InMemoryDB {
   close() { /* noop */ }
 }
 
-// Keep a singleton in-memory DB for the test process so multiple getDb() calls
-// operate on the same in-memory state (mirrors file-backed DB behavior).
+// Keep a singleton instance for the process
 let inMemoryInstance: InMemoryDB | null = null;
+let sqliteInstance: any = null;
 
 // Create standardized database connection
 export function getDb(): any {
@@ -227,14 +227,16 @@ export function getDb(): any {
     return inMemoryInstance;
   }
 
+  if (sqliteInstance) return sqliteInstance;
+
   const dbPath = getDatabasePath();
   try {
-    const db = new BetterSqlite3(dbPath);
+    sqliteInstance = new BetterSqlite3(dbPath);
     // Enable foreign key constraints
-    db.exec('PRAGMA foreign_keys = ON;');
+    sqliteInstance.exec('PRAGMA foreign_keys = ON;');
     // Enable WAL mode for better concurrency
-    db.exec('PRAGMA journal_mode = WAL;');
-    return db;
+    sqliteInstance.exec('PRAGMA journal_mode = WAL;');
+    return sqliteInstance;
   } catch (err) {
     console.warn('better-sqlite3 failed to initialize, falling back to in-memory DB for this process:', err instanceof Error ? err.message : String(err));
     if (!inMemoryInstance) inMemoryInstance = new InMemoryDB();
@@ -247,7 +249,6 @@ export async function checkDatabaseConnection(): Promise<{ connected: boolean; p
   try {
     const db = getDb();
     const result = db.prepare('SELECT 1 as test').get();
-    db.close();
     
     return {
       connected: true,
@@ -270,7 +271,7 @@ export function initializeDatabase(): void {
     // Ensure all required tables exist
     const requiredTables = [
       'settings', 'providers', 'messages', 'message_events', 
-      'api_logs', 'provider_priority', 'message_templates',
+      'api_logs', 'provider_priority', 'templates',
       'users', 'user_sessions', 'user_permissions', 'audit_log'
     ];
     
@@ -286,8 +287,6 @@ export function initializeDatabase(): void {
     
   } catch (error) {
     console.error('❌ Database initialization error:', error);
-  } finally {
-    db.close();
   }
 }
 
@@ -311,46 +310,38 @@ export interface QueryResult<T = any> {
 export function executeQuery<T>(query: string, params: any[] = []): QueryResult<T> {
   const db = getDb();
   
-  try {
-    const stmt = db.prepare(query);
-    const data = stmt.all(...params) as T[];
+  const stmt = db.prepare(query);
+  const data = stmt.all(...params) as T[];
+
+  // Get total count if this is a paginated query
+  let total = data.length;
+  if (query.toLowerCase().includes('limit') && query.toLowerCase().includes('offset')) {
+    const countQuery = query.replace(/LIMIT\s+\d+(\s*,\s*\d+)?/gi, '')
+                            .replace(/OFFSET\s+\d+/gi, '')
+                            .replace(/SELECT\s+(.+?)\s+FROM/i, 'SELECT COUNT(*) as count FROM');
     
-    // Get total count if this is a paginated query
-    let total = data.length;
-    if (query.toLowerCase().includes('limit') && query.toLowerCase().includes('offset')) {
-      const countQuery = query.replace(/LIMIT\s+\d+(\s*,\s*\d+)?/gi, '')
-                              .replace(/OFFSET\s+\d+/gi, '')
-                              .replace(/SELECT\s+(.+?)\s+FROM/i, 'SELECT COUNT(*) as count FROM');
-      
-      try {
-        const countResult = db.prepare(countQuery).get(...params) as any;
-        total = countResult?.count || data.length;
-      } catch {
-        // If count query fails, use data length
-      }
+    try {
+      const countResult = db.prepare(countQuery).get(...params) as any;
+      total = countResult?.count || data.length;
+    } catch {
+      // If count query fails, use data length
     }
-    
-    return {
-      data,
-      count: data.length,
-      total
-    };
-  } finally {
-    db.close();
   }
+
+  return {
+    data,
+    count: data.length,
+    total
+  };
 }
 
 // Utility function for single row queries
 export function executeSingleQuery<T>(query: string, params: any[] = []): T | null {
   const db = getDb();
   
-  try {
-    const stmt = db.prepare(query);
-    const result = stmt.get(...params);
-    return result ? result as T : null;
-  } finally {
-    db.close();
-  }
+  const stmt = db.prepare(query);
+  const result = stmt.get(...params);
+  return result ? result as T : null;
 }
 
 // Utility function for write operations
@@ -371,8 +362,6 @@ export function executeWrite(query: string, params: any[] = []): { success: bool
       success: false,
       error: error.message
     };
-  } finally {
-    db.close();
   }
 }
 

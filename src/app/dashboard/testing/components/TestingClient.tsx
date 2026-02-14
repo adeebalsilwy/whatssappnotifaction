@@ -14,7 +14,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { CodeBlock } from './CodeBlock';
 import { TestHistory } from './TestHistory';
-import { Send, MessageSquare, FileText, Sparkles, RefreshCcw, CheckCircle2 } from 'lucide-react';
+import { Send, MessageSquare, FileText, Sparkles, RefreshCcw, CheckCircle2, Lock, Plus, Trash2, Users } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
@@ -23,11 +23,9 @@ const TestMessageSchema = z.object({
   provider: z.enum(providers, {
     required_error: 'الرجاء اختيار مزود خدمة.',
   }),
-  to: z.string().min(1, 'رقم المستلم مطلوب.'),
+  to: z.string().min(1, 'رقم المستلم مطلوب. يمكنك إدخال أرقام متعددة مفصولة بفاصلة.'),
   body: z.string().optional(),
   messageType: z.enum(['TEXT', 'TEMPLATE']),
-  templateId: z.string().optional(),
-  variables: z.record(z.string()).optional(),
 });
 
 type TestMessageForm = z.infer<typeof TestMessageSchema>;
@@ -42,14 +40,21 @@ export type TestRun = {
   timestamp: string;
 };
 
+type SelectedTemplate = {
+    id: string;
+    name: string;
+    variables: Record<string, string>;
+    language: string;
+};
+
 export function TestingClient() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [request, setRequest] = useState<string | null>(null);
   const [response, setResponse] = useState<string | null>(null);
   const [history, setHistory] = useState<TestRun[]>([]);
-  const [templates, setTemplates] = useState<any[]>([]);
-  const [selectedTemplate, setSelectedTemplate] = useState<any | null>(null);
+  const [availableTemplates, setAvailableTemplates] = useState<any[]>([]);
+  const [selectedTemplates, setSelectedTemplates] = useState<SelectedTemplate[]>([]);
   const [messageType, setMessageType] = useState<'TEXT' | 'TEMPLATE'>('TEXT');
 
   const form = useForm<TestMessageForm>({
@@ -59,7 +64,6 @@ export function TestingClient() {
       to: '967774577134',
       body: 'رسالة اختبار من بنك عدن الأول',
       messageType: 'TEXT',
-      variables: {},
     },
   });
 
@@ -67,7 +71,7 @@ export function TestingClient() {
     try {
       const res = await fetch('/api/templates');
       const data = await res.json();
-      setTemplates(data);
+      setAvailableTemplates(data);
     } catch (err) {
       console.error('Failed to load templates', err);
     }
@@ -77,47 +81,67 @@ export function TestingClient() {
     loadTemplates();
   }, [loadTemplates]);
 
-  const handleTemplateChange = (templateId: string) => {
-    const template = templates.find(t => t.name === templateId);
-    setSelectedTemplate(template);
+  const addTemplateToBatch = (templateName: string) => {
+    const template = availableTemplates.find(t => t.name === templateName);
+    if (!template) return;
 
-    // Initialize variables
     const vars: Record<string, string> = {};
-    if (template) {
-        const components = typeof template.components === 'string' ? JSON.parse(template.components) : template.components;
-        components.forEach((c: any) => {
-            if (c.text) {
-                const matches = c.text.match(/{{(\w+)}}/g);
-                if (matches) {
-                    matches.forEach((m: string) => {
-                        const vName = m.replace(/{{|}}/g, '');
-                        vars[vName] = '';
-                    });
-                }
+    const components = typeof template.components === 'string' ? JSON.parse(template.components) : template.components;
+    components.forEach((c: any) => {
+        if (c.text) {
+            const matches = c.text.match(/{{(\w+)}}/g);
+            if (matches) {
+                matches.forEach((m: string) => {
+                    const vName = m.replace(/{{|}}/g, '');
+                    vars[vName] = '';
+                });
             }
-        });
-
-        // Also add variables from variables array if defined
-        if (template.variables) {
-            template.variables.forEach((v: string) => {
-                vars[v] = vars[v] || '';
-            });
         }
+    });
+
+    if (template.variables) {
+        template.variables.forEach((v: string) => {
+            vars[v] = vars[v] || '';
+        });
     }
-    form.setValue('variables', vars);
+
+    const newSelected: SelectedTemplate = {
+        id: crypto.randomUUID(),
+        name: template.name,
+        variables: vars,
+        language: template.language
+    };
+
+    setSelectedTemplates([...selectedTemplates, newSelected]);
   };
 
-  const prefillExample = () => {
-    if (!selectedTemplate) return;
+  const removeTemplateFromBatch = (id: string) => {
+    setSelectedTemplates(selectedTemplates.filter(t => t.id !== id));
+  };
 
-    const components = typeof selectedTemplate.components === 'string' ? JSON.parse(selectedTemplate.components) : selectedTemplate.components;
+  const updateVariable = (templateId: string, varName: string, value: string) => {
+    setSelectedTemplates(selectedTemplates.map(t => {
+        if (t.id === templateId) {
+            return { ...t, variables: { ...t.variables, [varName]: value } };
+        }
+        return t;
+    }));
+  };
+
+  const prefillTemplateExample = (templateId: string) => {
+    const selected = selectedTemplates.find(t => t.id === templateId);
+    if (!selected) return;
+
+    const template = availableTemplates.find(t => t.name === selected.name);
+    if (!template) return;
+
+    const components = typeof template.components === 'string' ? JSON.parse(template.components) : template.components;
     const bodyComponent = components.find((c: any) => c.type.toUpperCase() === 'BODY');
 
     if (bodyComponent && bodyComponent.example && bodyComponent.example.body_text && bodyComponent.example.body_text[0]) {
       const examples = bodyComponent.example.body_text[0];
-      const vars = { ...form.getValues('variables') };
+      const vars = { ...selected.variables };
 
-      // Map examples to placeholders {{1}}, {{2}}... or named placeholders
       const text = bodyComponent.text || '';
       const placeholders = text.match(/{{(\w+)}}/g) || [];
 
@@ -128,82 +152,117 @@ export function TestingClient() {
         }
       });
 
-      // Also handle positional parameters if they are not in the text but in metadata
       if (placeholders.length === 0 && Array.isArray(examples)) {
           examples.forEach((ex, i) => {
               vars[(i + 1).toString()] = ex;
           });
       }
 
-      form.setValue('variables', vars);
-      toast({ title: 'تم الملء التلقائي', description: 'تم تعبئة المتغيرات ببيانات مثال من القالب.' });
+      setSelectedTemplates(selectedTemplates.map(t => t.id === templateId ? { ...t, variables: vars } : t));
+      toast({ title: 'تم الملء التلقائي', description: `تم تعبئة متغيرات ${selected.name} ببيانات مثال.` });
     } else {
         toast({ title: 'عذراً', description: 'لا يوجد مثال متاح لهذا القالب.', variant: 'outline' });
     }
   };
 
-  const generateCurl = (data: TestMessageForm) => {
-    const payload: any = {
-      provider: data.provider,
-      messageType: data.messageType,
-      to: data.to,
-      meta: {
-        sourceSystem: 'DashboardTester',
-        companyId: 'FAB',
-        txnId: `TEST-${Date.now()}`,
-        accountNo: 'ADMIN-TEST',
-        eventType: 'OTHER',
-        timestamp: new Date().toISOString(),
-      },
-    };
-
-    if (data.messageType === 'TEXT') {
-      payload.body = data.body;
-    } else {
-      payload.templateId = data.templateId;
-      payload.variables = data.variables;
-    }
-
-    const curl = `curl -X POST ${typeof window !== 'undefined' ? window.location.origin : ''}/api/whatsapp/send \\
--H "Content-Type: application/json" \\
--d '${JSON.stringify(payload, null, 2)}'`;
-    return { curl, payload };
-  };
-
   const onSubmit = async (data: TestMessageForm) => {
     setIsSubmitting(true);
-    const { curl, payload } = generateCurl(data);
-    setRequest(curl);
+    setRequest(null);
     setResponse(null);
 
+    const recipients = data.to.split(/[,\s]+/).filter(r => r.trim().length > 0);
+    const results: any[] = [];
+    let lastRequest: any = null;
+
     try {
-      const res = await fetch('/api/whatsapp/send', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
+      if (data.messageType === 'TEXT') {
+        for (const recipient of recipients) {
+          const payload = {
+            provider: data.provider,
+            messageType: 'TEXT',
+            to: recipient,
+            body: data.body,
+            meta: {
+              sourceSystem: 'DashboardTester',
+              companyId: 'FAB',
+              txnId: `TEST-${Date.now()}-${recipient}`,
+              accountNo: 'ADMIN-TEST',
+              eventType: 'OTHER' as const,
+              timestamp: new Date().toISOString(),
+            },
+          };
+          lastRequest = payload;
+          const res = await fetch('/api/whatsapp/send', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+          const result = await res.json();
+          results.push({ recipient, result, payload });
+        }
+      } else {
+        if (selectedTemplates.length === 0) {
+            toast({ title: 'خطأ', description: 'الرجاء اختيار قالب واحد على الأقل للاختبار.', variant: 'destructive' });
+            setIsSubmitting(false);
+            return;
+        }
 
-      const result = await res.json();
-      setResponse(JSON.stringify(result, null, 2));
+        for (const recipient of recipients) {
+            for (const st of selectedTemplates) {
+                const payload = {
+                    provider: data.provider,
+                    messageType: 'TEMPLATE',
+                    to: recipient,
+                    templateId: st.name,
+                    variables: st.variables,
+                    meta: {
+                        sourceSystem: 'DashboardTester',
+                        companyId: 'FAB',
+                        txnId: `TEST-${Date.now()}-${recipient}-${st.name}`,
+                        accountNo: 'ADMIN-TEST',
+                        eventType: 'OTHER' as const,
+                        timestamp: new Date().toISOString(),
+                    },
+                };
+                lastRequest = payload;
+                const res = await fetch('/api/whatsapp/send', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload),
+                });
+                const result = await res.json();
+                results.push({ recipient, template: st.name, result, payload });
+            }
+        }
+      }
 
-      const newTestRun: TestRun = {
-        id: payload.meta.txnId,
+      setResponse(JSON.stringify(results, null, 2));
+
+      const curl = `curl -X POST ${typeof window !== 'undefined' ? window.location.origin : ''}/api/whatsapp/send \\
+-H "Content-Type: application/json" \\
+-d '${JSON.stringify(lastRequest, null, 2)}'`;
+      setRequest(curl);
+
+      // Add last few runs to history
+      const newHistoryEntries = results.map(r => ({
+        id: r.payload.meta.txnId,
         provider: data.provider,
-        to: data.to,
-        request: payload,
-        response: result,
-        status: result.success ? 'success' : 'failed',
+        to: r.recipient,
+        request: r.payload,
+        response: r.result,
+        status: r.result.success ? 'success' as const : 'failed' as const,
         timestamp: new Date().toISOString(),
-      };
-      setHistory([newTestRun, ...history.slice(0, 4)]);
+      }));
+      setHistory([...newHistoryEntries, ...history].slice(0, 10));
 
+      const successCount = results.filter(r => r.result.success).length;
       toast({
-        title: result.success ? 'تم الإرسال بنجاح' : 'فشل الإرسال',
-        description: result.success ? 'تم إرسال رسالة الاختبار بنجاح.' : result.errorMessage || 'حدث خطأ في مزود الخدمة.',
-        variant: result.success ? 'default' : 'destructive',
+        title: successCount === results.length ? 'تم الإرسال بنجاح' : 'تم الإرسال جزئياً',
+        description: `تم إرسال ${successCount} من أصل ${results.length} رسالة اختبار بنجاح.`,
+        variant: successCount === results.length ? 'default' : 'destructive',
       });
     } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : 'Could not send test message.';
+      const errorMessage = error instanceof Error ? error.message : 'Could not send test messages.';
       setResponse(JSON.stringify({ error: errorMessage }, null, 2));
       toast({
         variant: 'destructive',
@@ -222,10 +281,10 @@ export function TestingClient() {
           <CardHeader className="bg-primary/5 border-b pb-4">
             <CardTitle className="flex items-center gap-2 text-2xl">
               <Sparkles className="text-primary h-6 w-6" />
-              منصة الاختبار الاحترافية
+              منصة الاختبار المتقدمة
             </CardTitle>
             <CardDescription>
-              قم بتجربة إرسال الرسائل عبر قوالب ميتا أو رسائل نصية مباشرة بكل سهولة.
+              أرسل رسائل اختبار إلى وجهات متعددة باستخدام قوالب متنوعة في عملية واحدة.
             </CardDescription>
           </CardHeader>
           <FormProvider {...form}>
@@ -242,12 +301,12 @@ export function TestingClient() {
                     </TabsTrigger>
                     <TabsTrigger value="TEMPLATE" className="text-lg">
                       <FileText className="w-5 h-5 ml-2" />
-                      قالب (MTM)
+                      قوالب (MTM)
                     </TabsTrigger>
                   </TabsList>
 
                   <div className="mt-6 space-y-5">
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <FormField
                         control={form.control}
                         name="provider"
@@ -278,9 +337,12 @@ export function TestingClient() {
                         name="to"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="font-bold">رقم المستلم</FormLabel>
+                            <FormLabel className="font-bold flex items-center gap-2">
+                                <Users className="w-4 h-4" />
+                                أرقام المستلمين (مفصولة بفاصلة)
+                            </FormLabel>
                             <FormControl>
-                              <Input dir="ltr" className="h-11" placeholder="967774577134" {...field} />
+                              <Input dir="ltr" className="h-11" placeholder="967774577134, 967771234567" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -310,95 +372,81 @@ export function TestingClient() {
 
                     <TabsContent value="TEMPLATE" className="mt-0 space-y-5 animate-in fade-in duration-300">
                       <div className="flex flex-col gap-4">
-                        <FormField
-                          control={form.control}
-                          name="templateId"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel className="font-bold flex items-center justify-between">
-                                القالب المعتمد
-                                <Button
-                                  variant="ghost"
-                                  size="sm"
-                                  type="button"
-                                  onClick={loadTemplates}
-                                  className="h-6 text-xs text-primary"
-                                >
-                                  <RefreshCcw className="w-3 h-3 ml-1" />
-                                  تحديث
-                                </Button>
-                              </FormLabel>
-                              <Select onValueChange={(val) => {
-                                  field.onChange(val);
-                                  handleTemplateChange(val);
-                              }} defaultValue={field.value}>
-                                <FormControl>
-                                  <SelectTrigger className="h-11 border-primary/30 focus:ring-primary">
-                                    <SelectValue placeholder="اختر من القوالب المسجلة" />
-                                  </SelectTrigger>
-                                </FormControl>
+                        <div className="flex gap-2">
+                            <Select onValueChange={addTemplateToBatch}>
+                                <SelectTrigger className="h-11 flex-1">
+                                    <SelectValue placeholder="اختر قالباً لإضافته للمجموعة" />
+                                </SelectTrigger>
                                 <SelectContent>
-                                {templates.map((t, idx) => (
-                                  <SelectItem key={`template-${t.id || t.name || idx}`} value={t.name}>
-                                      <div className="flex items-center justify-between w-full gap-8">
-                                        <span>{t.name}</span>
-                                        <Badge variant="outline" className="text-[10px] uppercase">{t.language}</Badge>
-                                      </div>
-                                    </SelectItem>
-                                  ))}
+                                    {availableTemplates.map((t, idx) => (
+                                        <SelectItem key={`avail-${t.id || t.name || idx}`} value={t.name}>
+                                            <div className="flex items-center justify-between w-full gap-8">
+                                                <span>{t.name}</span>
+                                                <Badge variant="outline" className="text-[10px] uppercase">{t.language}</Badge>
+                                            </div>
+                                        </SelectItem>
+                                    ))}
                                 </SelectContent>
-                              </Select>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
+                            </Select>
+                            <Button type="button" variant="outline" size="icon" className="h-11 w-11" onClick={loadTemplates}>
+                                <RefreshCcw className="w-4 h-4" />
+                            </Button>
+                        </div>
 
-                        {selectedTemplate && (
-                          <div className="space-y-4 p-5 border rounded-xl bg-primary/5 border-primary/20 shadow-inner">
-                            <div className="flex items-center justify-between border-b border-primary/10 pb-2 mb-3">
-                                <h4 className="text-sm font-bold flex items-center gap-2">
-                                    <CheckCircle2 className="w-4 h-4 text-primary" />
-                                    تعبئة متغيرات القالب
-                                </h4>
-                                <Button
-                                    type="button"
-                                    variant="secondary"
-                                    size="sm"
-                                    onClick={prefillExample}
-                                    className="h-8 text-xs font-bold"
-                                >
-                                    <Sparkles className="w-3 h-3 ml-1" />
-                                    تعبئة بمثال
-                                </Button>
-                            </div>
-
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                {Object.keys(form.getValues('variables') || {}).map((varName) => (
-                                    <div key={varName} className="space-y-1.5">
-                                        <label className="text-xs font-semibold text-muted-foreground mr-1">
-                                            {varName}
-                                        </label>
-                                        <Input
-                                            placeholder={`أدخل قيمة...`}
-                                            className="h-9 bg-background focus:border-primary"
-                                            value={(form.getValues('variables') as any)?.[varName] || ''}
-                                            onChange={(e) => {
-                                                const vars = { ...form.getValues('variables') };
-                                                vars[varName] = e.target.value;
-                                                form.setValue('variables', vars);
-                                            }}
-                                        />
-                                    </div>
-                                ))}
-                            </div>
-
-                            {Object.keys(form.getValues('variables') || {}).length === 0 && (
-                                <p className="text-xs text-muted-foreground text-center italic py-2">
-                                    هذا القالب لا يحتوي على متغيرات.
-                                </p>
+                        <div className="space-y-4">
+                            {selectedTemplates.map((st) => (
+                                <Card key={st.id} className="border-primary/20 bg-primary/5">
+                                    <CardHeader className="py-3 px-4 flex flex-row items-center justify-between border-b border-primary/10">
+                                        <div className="flex items-center gap-2">
+                                            <Badge className="bg-primary">{st.name}</Badge>
+                                            <Badge variant="outline" className="uppercase text-[10px]">{st.language}</Badge>
+                                        </div>
+                                        <div className="flex items-center gap-1">
+                                            <Button
+                                                type="button"
+                                                variant="ghost"
+                                                size="sm"
+                                                className="h-7 text-[10px]"
+                                                onClick={() => prefillTemplateExample(st.id)}
+                                            >
+                                                <Sparkles className="w-3 h-3 ml-1" />
+                                                تعبئة مثال
+                                            </Button>
+                                            <Button
+                                                type="button"
+                                                variant="ghost"
+                                                size="sm"
+                                                className="h-7 text-destructive"
+                                                onClick={() => removeTemplateFromBatch(st.id)}
+                                            >
+                                                <Trash2 className="w-3 h-3" />
+                                            </Button>
+                                        </div>
+                                    </CardHeader>
+                                    <CardContent className="p-4">
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                            {Object.keys(st.variables).map(v => (
+                                                <div key={v} className="space-y-1">
+                                                    <label className="text-[10px] font-bold text-muted-foreground">{v}</label>
+                                                    <Input
+                                                        className="h-8 text-sm"
+                                                        value={st.variables[v]}
+                                                        onChange={(e) => updateVariable(st.id, v, e.target.value)}
+                                                        placeholder="أدخل قيمة..."
+                                                    />
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            ))}
+                            {selectedTemplates.length === 0 && (
+                                <div className="text-center py-8 border-2 border-dashed rounded-xl opacity-40">
+                                    <Plus className="mx-auto h-8 w-8 mb-2" />
+                                    <p className="text-sm">لم يتم اختيار أي قوالب بعد.</p>
+                                </div>
                             )}
-                          </div>
-                        )}
+                        </div>
                       </div>
                     </TabsContent>
                   </div>
@@ -407,7 +455,7 @@ export function TestingClient() {
               <CardFooter className="bg-muted/30 border-t p-6">
                 <Button type="submit" disabled={isSubmitting} className="w-full h-12 text-lg font-bold shadow-md hover:shadow-lg transition-all">
                   <Send className={cn("ml-2 w-5 h-5", isSubmitting && "animate-pulse")} />
-                  {isSubmitting ? 'جاري معالجة الإرسال...' : 'إرسال الاختبار الآن'}
+                  {isSubmitting ? 'جاري معالجة الإرسال الجماعي...' : 'إرسال مجموعة الاختبار'}
                 </Button>
               </CardFooter>
             </form>
@@ -418,14 +466,14 @@ export function TestingClient() {
 
       <div className="space-y-6">
         <CodeBlock
-            title="طلب الـ API (cURL)"
+            title="هيكل الطلب الأخير"
             code={request}
-            placeholder="سيظهر هيكل طلب الـ API هنا بصيغة cURL بعد الإرسال."
+            placeholder="سيظهر هيكل الطلب هنا بعد الإرسال."
         />
         <CodeBlock
-            title="استجابة المزود (JSON)"
+            title="نتائج الإرسال الجماعي"
             code={response}
-            placeholder="ستظهر استجابة مزود الخدمة هنا لتحليل أي أخطاء."
+            placeholder="ستظهر نتائج الإرسال لكافة الوجهات هنا."
             isLoading={isSubmitting}
         />
 
@@ -437,8 +485,8 @@ export function TestingClient() {
                 </CardTitle>
             </CardHeader>
             <CardContent>
-                <p className="text-xs text-yellow-700 dark:text-yellow-500 leading-relaxed">
-                    يتم تحويل الرسائل النصية تلقائياً إلى قوالب إشعارات عند استخدام مزود Meta لضمان الوصول للمستلمين خارج نافذة الـ 24 ساعة. يمكنك رؤية هذا التحويل في قسم "الطلب" أعلاه.
+                <p className="text-xs text-yellow-700 dark:text-yellow-500 leading-relaxed font-medium">
+                    عند إرسال رسائل اختبار متعددة، سيقوم النظام بإنشاء طلب منفصل لكل رقم ولكل قالب. يمكنك تتبع حالة كل رسالة في شاشة السجلات الرئيسية.
                 </p>
             </CardContent>
         </Card>

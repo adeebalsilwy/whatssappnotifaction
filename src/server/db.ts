@@ -81,14 +81,15 @@ function initializeSQLiteTables(db: Database.Database) {
     db.exec(`
         CREATE TABLE IF NOT EXISTS templates (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT NOT NULL UNIQUE,
-            category TEXT NOT NULL,
+            name TEXT NOT NULL,
             language TEXT NOT NULL,
+            category TEXT NOT NULL,
             components TEXT NOT NULL, -- JSON string of components
             variables TEXT, -- JSON string of variable names
             description TEXT,
             createdAt TEXT DEFAULT CURRENT_TIMESTAMP,
-            updatedAt TEXT DEFAULT CURRENT_TIMESTAMP
+            updatedAt TEXT DEFAULT CURRENT_TIMESTAMP,
+            UNIQUE(name, language)
         );
     `);
 }

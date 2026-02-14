@@ -78,7 +78,8 @@ export class WhatsAppNotificationService {
     // --- Template Rendering if needed ---
     if (payload.messageType === 'TEMPLATE' && payload.templateId && !(payload as any).template) {
       try {
-        const rendered = this.templateService.renderTemplate(payload.templateId, payload.variables || {});
+        const lang = payload.language || 'ar';
+        const rendered = this.templateService.renderTemplate(payload.templateId, payload.variables || {}, lang);
         (payload as any).template = rendered.template;
         // Also update body with a preview if it's empty
         if (!payload.body || payload.body === 'N/A') {
@@ -125,13 +126,46 @@ export class WhatsAppNotificationService {
 
     try {
       // Pass the current config to the provider
-      const result = await provider.sendTextMessage(payload, appConfig);
+      let result = await provider.sendTextMessage(payload, appConfig);
 
-      // --- Enhanced Fallback Logic ---
+      // --- Enhanced Fallback & Recovery Logic ---
       if (!result.success) {
-        const fallbackResult = await this.executeFallbackChain(payload, appConfig, providerName, result);
-        if (fallbackResult) {
-          return fallbackResult;
+        // Handle Meta Error #132001: Template translation missing
+        if (providerName === 'meta' && result.errorCode === '132001' && payload.templateId) {
+          console.warn(`[WhatsAppService] Meta Template "${payload.templateId}" translation missing. Attempting recovery...`);
+
+          // Try to find ANY translation for this template in our DB
+          const allTmpls = this.templateService.getAllTemplates();
+          const alternatives = allTmpls.filter(t => t.name === payload.templateId);
+
+          if (alternatives.length > 0) {
+            // Fallback to the first available language (often en or the only one we have)
+            const fallbackTmpl = alternatives[0];
+            console.log(`[WhatsAppService] Retrying with fallback language: ${fallbackTmpl.language}`);
+
+            const retryPayload = { ...payload };
+            const rendered = this.templateService.renderTemplate(payload.templateId, payload.variables || {}, fallbackTmpl.language);
+            (retryPayload as any).template = rendered.template;
+
+            result = await provider.sendTextMessage(retryPayload, appConfig);
+          } else {
+            // If no alternative found, convert to TEXT to ensure delivery
+            console.log(`[WhatsAppService] No alternative translation found. Converting to TEXT for emergency delivery.`);
+            const retryPayload = { ...payload };
+            retryPayload.messageType = 'TEXT';
+            // Use the body if available, otherwise construct from variables
+            if (!retryPayload.body || retryPayload.body === `Template: ${payload.templateId}`) {
+              retryPayload.body = `إشعار هام: يرجى العلم بخصوص ${payload.templateId}. تفاصيل: ${JSON.stringify(payload.variables)}`;
+            }
+            result = await provider.sendTextMessage(retryPayload, appConfig);
+          }
+        }
+
+        if (!result.success) {
+          const fallbackResult = await this.executeFallbackChain(payload, appConfig, providerName, result);
+          if (fallbackResult) {
+            return fallbackResult;
+          }
         }
       }
       // --------------------------------

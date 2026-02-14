@@ -194,6 +194,7 @@ async function migrate() {
     }
 
     console.log(`✅ Migration complete! Total templates in database: ${totalMigrated}`);
+    db.close();
 }
 
 migrate().catch(console.error);

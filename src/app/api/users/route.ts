@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { validateSession, getUserById } from '@/lib/auth';
-import { getDb, executeQuery, executeSingleQuery } from '@/lib/db';
+import { getDb, executeQuery, executeSingleQuery, executeWrite } from '@/lib/db';
 import { cookies } from 'next/headers';
 
 interface UserListItem {
@@ -148,8 +148,7 @@ export async function POST(request: Request) {
       );
     }
 
-    // Hash password (using crude hashing for simplicity in this env if bcrypt isn't available,
-    // but usually we'd use lib/auth hashPassword)
+    // Hash password
     const { hashPassword } = await import('@/lib/auth');
     const passwordHash = await hashPassword(password);
 
@@ -167,20 +166,20 @@ export async function POST(request: Request) {
     }
 
     // Log action
-    const db = getDb();
     try {
-      db.prepare(`
-        INSERT INTO audit_log (user_id, action, resource_type, resource_id, details)
-        VALUES (?, ?, ?, ?, ?)
-      `).run(
-        currentUser.id,
-        'USER_CREATED',
-        'USERS',
-        result.lastInsertRowid?.toString(),
-        `Created user: ${username}`
-      );
-    } finally {
-      db.close();
+        const db = getDb();
+        db.prepare(`
+            INSERT INTO audit_log (user_id, action, resource_type, resource_id, details)
+            VALUES (?, ?, ?, ?, ?)
+        `).run(
+            currentUser.id,
+            'USER_CREATED',
+            'USERS',
+            result.lastInsertRowid?.toString(),
+            `Created user: ${username}`
+        );
+    } catch (e) {
+        console.error('Failed to log audit:', e);
     }
 
     return NextResponse.json({

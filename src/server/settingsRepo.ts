@@ -17,7 +17,6 @@ function ensureTablesExist(): void {
       );
     `);
   } finally {
-    db.close();
   }
 }
 
@@ -68,7 +67,6 @@ export function getSettings(): AppConfig {
       providers: providersOut
     };
   } finally {
-    db.close();
   }
 }
 
@@ -104,6 +102,5 @@ export function upsertSettings(input: AppConfig): void {
         .run(name, enabled ? 1 : 0, JSON.stringify(restConfig));
     }
   } finally {
-    db.close();
   }
 }

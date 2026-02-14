@@ -37,15 +37,20 @@ export class TemplateService {
   /**
    * Get a specific template by name from database
    */
-  getTemplateByName(name: string): WhatsAppTemplate | undefined {
-    return templateRepo.getTemplateByName(name) as unknown as WhatsAppTemplate;
+  getTemplateByName(name: string, language?: string): WhatsAppTemplate | undefined {
+    const template = templateRepo.getTemplateByName(name, language) as unknown as WhatsAppTemplate;
+
+    // Auto-sync logic if template is missing but we're in a critical path
+    // This is handled by the sync script mostly, but we could add on-demand fetch here if needed.
+
+    return template;
   }
 
   /**
    * Render a template with provided variables
    */
-  renderTemplate(templateName: string, variables: Record<string, string | number>): any {
-    const template = this.getTemplateByName(templateName);
+  renderTemplate(templateName: string, variables: Record<string, string | number>, language?: string): any {
+    const template = this.getTemplateByName(templateName, language);
     
     if (!template) {
       throw new Error(`Template '${templateName}' not found`);

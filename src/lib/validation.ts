@@ -21,6 +21,7 @@ export const OutgoingMessagePayloadSchema = z.preprocess(preprocessor, z.object(
     messageType: z.enum(['TEXT','TEMPLATE']).optional().default('TEXT'),
     to: z.string().min(1, 'Recipient phone number (to) is required.'),
     from: z.string().optional(),
+    language: z.string().optional(),
     templateId: z.string().optional(),
     variables: z.record(z.string()).optional(),
     body: z.string().optional(),

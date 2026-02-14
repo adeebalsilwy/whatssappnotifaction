@@ -29,5 +29,8 @@ npm run build
 echo "💾 Running database migrations/initialization..."
 node scripts/migrate-templates.js
 
+echo "🔄 Synchronizing templates from Meta API..."
+node scripts/sync-meta-templates.js
+
 echo "🚀 Launching application..."
 npm start

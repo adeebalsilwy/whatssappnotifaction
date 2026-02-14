@@ -30,7 +30,7 @@ export class MetaWhatsAppProvider implements IWhatsAppProvider {
       const templateObj = (payload as any).template || (payload as any).meta?.template || {
         name: payload.templateId,
         language: {
-          code: payload.templateId?.startsWith('arabic_') || payload.templateId?.includes('-ar') ? 'ar' : 'en_US'
+          code: payload.language || (payload.templateId?.startsWith('arabic_') || payload.templateId?.includes('-ar') ? 'ar' : 'en_US')
         },
         components: []
       };
