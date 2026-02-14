@@ -1,156 +1,29 @@
 {
   "whatsapp_templates": [
     {
-      "name": "account_opening_notification",
+      "name": "withdrawal_notification",
       "category": "UTILITY",
       "language": "ar",
       "components": [
         {
-          "type": "BODY",
-          "parameters": [
-            {
-              "type": "text",
-              "text": "عميلنا العزيز {customer_id} نود اعلامكم بانه تم فتح حسابكم {account_type} Product : {product_id} شكرا لاختياركم لنا,"
-            }
-          ]
-        }
-      ],
-      "variables": [
-        "customer_id",
-        "account_type",
-        "product_id"
-      ],
-      "description": "تنبيه فتح حساب للعملاء"
-    },
-    {
-      "name": "savings_account_opening",
-      "category": "UTILITY",
-      "language": "ar",
-      "components": [
+          "type": "HEADER",
+          "format": "TEXT",
+          "text": "Withdrawal Confirmation"
+        },
         {
           "type": "BODY",
-          "parameters": [
-            {
-              "type": "text",
-              "text": "عميلنا العزيز {customer_id} نود اعلامكم بانه تم فتح حسابكم {account_type} حسابات توفير/ أفراد Product : {product_id} شكرا لاختياركم لنا,"
-            }
-          ]
-        }
-      ],
-      "variables": [
-        "customer_id",
-        "account_type",
-        "product_id"
-      ],
-      "description": "تنبيه فتح حساب توفير للعملاء"
-    },
-    {
-      "name": "demand_account_opening",
-      "category": "UTILITY",
-      "language": "ar",
-      "components": [
+          "text": "إشعار من البنك: Deduction of {{1}} from your account ending with {{2}} . يرجى العلم أن هذا إشعار تلقائي لضمان أمان حساباتكم وخدمتكم بشكل أفضل، نشكركم على اختياركم لنا وثقتكم الدائمة في خدماتنا المصرفية المتكاملة.",
+          "example": {
+            "body_text": [["100.00 USD", "1234"]]
+          }
+        },
         {
-          "type": "BODY",
-          "parameters": [
-            {
-              "type": "text",
-              "text": "عميلنا العزيز {customer_id} نود اعلامكم بانه تم فتح حسابكم Current Accounts - Demand$ حسابات جارية / أفراد Product : {product_id} شكرا لاختياركم لنا,"
-            }
-          ]
+          "type": "FOOTER",
+          "text": "Banking Services"
         }
       ],
-      "variables": [
-        "customer_id",
-        "product_id"
-      ],
-      "description": "تنبيه فتح حساب جاري للعملاء"
-    },
-    {
-      "name": "mudaraba_deposit_opening",
-      "category": "UTILITY",
-      "language": "ar",
-      "components": [
-        {
-          "type": "BODY",
-          "parameters": [
-            {
-              "type": "text",
-              "text": "عميلنا العزيز {customer_id} نود اعلامكم بانه تم فتح حسابكم {account_type} ودائع استثمارية لأجل /سنوية Product : {product_id} شكرا لاختياركم لنا,"
-            }
-          ]
-        }
-      ],
-      "variables": [
-        "customer_id",
-        "account_type",
-        "product_id"
-      ],
-      "description": "تنبيه فتح حساب وديعة استثمارية"
-    },
-    {
-      "name": "minor_savings_account_opening",
-      "category": "UTILITY",
-      "language": "ar",
-      "components": [
-        {
-          "type": "BODY",
-          "parameters": [
-            {
-              "type": "text",
-              "text": "عميلنا العزيز {customer_id} نود اعلامكم بانه تم فتح حسابكم {account_type} حسابات الإدخار قصر Product : {product_id} شكرا لاختياركم لنا,"
-            }
-          ]
-        }
-      ],
-      "variables": [
-        "customer_id",
-        "account_type",
-        "product_id"
-      ],
-      "description": "تنبيه فتح حساب توفير لقصر"
-    },
-    {
-      "name": "corporate_account_opening",
-      "category": "UTILITY",
-      "language": "ar",
-      "components": [
-        {
-          "type": "BODY",
-          "parameters": [
-            {
-              "type": "text",
-              "text": "عميلنا العزيز {customer_id} نود اعلامكم بانه تم فتح حسابكم {account_type} حسابات جارية / شركات Product : {product_id} شكرا لاختياركم لنا,"
-            }
-          ]
-        }
-      ],
-      "variables": [
-        "customer_id",
-        "account_type",
-        "product_id"
-      ],
-      "description": "تنبيه فتح حساب جاري للشركات"
-    },
-    {
-      "name": "staff_account_opening",
-      "category": "UTILITY",
-      "language": "ar",
-      "components": [
-        {
-          "type": "BODY",
-          "parameters": [
-            {
-              "type": "text",
-              "text": "عميلنا العزيز {customer_id} نود اعلامكم بانه تم فتح حسابكم CURRENT ACCOUNT STAFF حساب جاري موظفين Product : {product_id} شكرا لاختياركم لنا,"
-            }
-          ]
-        }
-      ],
-      "variables": [
-        "customer_id",
-        "product_id"
-      ],
-      "description": "تنبيه فتح حساب جاري للموظفين"
+      "variables": ["amount", "last_digits"],
+      "description": "إشعار سحب نقدي معتمد"
     },
     {
       "name": "deposit_notification",
@@ -158,47 +31,65 @@
       "language": "ar",
       "components": [
         {
+          "type": "HEADER",
+          "format": "TEXT",
+          "text": "Deposit Confirmation"
+        },
+        {
           "type": "BODY",
-          "parameters": [
-            {
-              "type": "text",
-              "text": "تم ايداع {amount} الى حسابك الذي ينتهي ب {last_digits} بتاريخ {date} رصيد الحساب {currency} {balance}"
-            }
-          ]
+          "text": "إشعار من البنك: Deposit of {{1}} to your account ending with {{2}} . يرجى العلم أن هذا إشعار تلقائي لضمان أمان حساباتكم وخدمتكم بشكل أفضل، نشكركم على اختياركم لنا وثقتكم الدائمة في خدماتنا المصرفية المتكاملة.",
+          "example": {
+            "body_text": [["500.00 USD", "5678"]]
+          }
+        },
+        {
+          "type": "FOOTER",
+          "text": "Banking Services"
         }
       ],
-      "variables": [
-        "amount",
-        "last_digits",
-        "date",
-        "currency",
-        "balance"
-      ],
-      "description": "تنبيه إيداع الأموال"
+      "variables": ["amount", "last_digits"],
+      "description": "إشعار إيداع نقدي معتمد"
     },
     {
-      "name": "withdrawal_notification",
+      "name": "account_opening_notification",
       "category": "UTILITY",
       "language": "ar",
       "components": [
         {
+          "type": "HEADER",
+          "format": "TEXT",
+          "text": "Account Opening"
+        },
+        {
           "type": "BODY",
-          "parameters": [
-            {
-              "type": "text",
-              "text": "تم خصم {amount}DR من حسابك المنتهي ب {last_digits} بتاريخ {date} رصيد الحساب {currency} {balance}"
-            }
-          ]
+          "text": "إشعار من البنك: عميلنا العزيز {{1}}، نود إخطاركم بأنه تم فتح حسابكم بنجاح. نحن فخورون باختياركم لبنك عدن الأول كشريك مصرفي لكم. يرجى العلم أن هذا إشعار تلقائي لضمان جودة الخدمة وأمان بياناتكم.",
+          "example": {
+            "body_text": [["أحمد محمد"]]
+          }
+        },
+        {
+          "type": "FOOTER",
+          "text": "Thank you for choosing us!"
         }
       ],
-      "variables": [
-        "amount",
-        "last_digits",
-        "date",
-        "currency",
-        "balance"
+      "variables": ["customer_name"],
+      "description": "إشعار فتح حساب"
+    },
+    {
+      "name": "arabic_general_notification",
+      "category": "MARKETING",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "عميلنا العزيز، نود إخطاركم بما يلي: {{1}} . نشكركم على ثقتكم في بنك عدن الأول. نحن دائماً هنا لخدمتكم.",
+          "example": {
+            "body_text": [["هذا إشعار تجريبي لمتابعة حالة طلبكم"]]
+          }
+        }
       ],
-      "description": "تنبيه خصم الأموال"
+      "variables": ["message"],
+      "description": "إشعار عام معتمد"
     },
     {
       "name": "generic_payment_notification",
@@ -207,22 +98,94 @@
       "components": [
         {
           "type": "BODY",
-          "parameters": [
-            {
-              "type": "text",
-              "text": "تم خصم {amount}DR من حسابك المنتهي ب {last_digits} بتاريخ {date} رصيد الحساب {currency} {balance}"
-            }
-          ]
+          "text": "إشعار من البنك: تم خصم {{1}} من حسابك المنتهي بـ {{2}} بتاريخ {{3}} رصيد الحساب {{4}} {{5}} . نشكركم على ثقتكم بنا واستخدامكم لخدماتنا الإلكترونية.",
+          "example": {
+            "body_text": [["150.00", "4321", "2024-05-20", "USD", "5000.00"]]
+          }
         }
       ],
-      "variables": [
-        "amount",
-        "last_digits",
-        "date",
-        "currency",
-        "balance"
+      "variables": ["amount", "last_digits", "date", "balance", "currency"],
+      "description": "إشعار دفع عام معتمد"
+    },
+    {
+      "name": "staff_account_opening",
+      "category": "UTILITY",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "إشعار من البنك: عميلنا العزيز {{1}}، نود إعلامكم بأنه تم فتح حسابكم (حساب جاري موظفين) بنجاح. نوع المنتج: {{2}}. نشكركم على تفانيكم واختياركم لبنكنا. يرجى العلم أن هذا إشعار تلقائي لضمان جودة الخدمة.",
+          "example": {
+            "body_text": [["أحمد", "جاري موظفين"]]
+          }
+        }
       ],
-      "description": "تنبيه عام لخصم الأموال"
+      "variables": ["customer_name", "product_id"],
+      "description": "إشعار فتح حساب موظفين (معدل)"
+    },
+    {
+      "name": "corporate_account_opening",
+      "category": "UTILITY",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "إشعار من البنك: عميلنا العزيز {{1}}، نود إعلامكم بأنه تم فتح حسابكم (حسابات جارية / شركات) بنجاح. اسم المنتج: {{2}}. شكراً لثقتكم ببنك عدن الأول. يرجى العلم أن هذا إشعار تلقائي لضمان جودة وأمان العمليات المصرفية.",
+          "example": {
+            "body_text": [["شركة الأمل", "جاري شركات"]]
+          }
+        }
+      ],
+      "variables": ["customer_name", "account_type", "product_id"],
+      "description": "إشعار فتح حساب شركات (معدل)"
+    },
+    {
+      "name": "savings_account_opening",
+      "category": "UTILITY",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "إشعار من البنك: عميلنا العزيز {{1}}، نود إعلامكم بأنه تم فتح حسابكم (حساب توفير أفراد) بنجاح. المنتج المصرفي: {{2}}. نتمنى لكم تجربة مصرفية مثمرة. يرجى العلم أن هذا إشعار تلقائي لضمان جودة الخدمة.",
+          "example": {
+            "body_text": [["محمد علي", "توفير أفراد"]]
+          }
+        }
+      ],
+      "variables": ["customer_name", "account_type", "product_id"],
+      "description": "إشعار فتح حساب توفير (معدل)"
+    },
+    {
+      "name": "arabic_investment_update",
+      "category": "UTILITY",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "إشعار من البنك: تحديث الاستثمار الخاص بكم. رصيد حساب الاستثمار رقم {{1}} هو حالياً {{2}} {{3}}. العائد التقديري حتى الآن: {{4}}%. نشكركم على استثماركم معنا وثقتكم الدائمة.",
+          "example": {
+            "body_text": [["INV-987", "10500.00", "USD", "5.4"]]
+          }
+        }
+      ],
+      "variables": ["account_id", "balance", "currency", "return_rate"],
+      "description": "تحديث استثمار (معدل)"
+    },
+    {
+      "name": "arabic_card_blocked",
+      "category": "UTILITY",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "إشعار أمني من البنك: لقد تم حظر بطاقتكم المصرفية نوع {{1}} المنتهية بالرقم {{2}} وذلك بسبب {{3}}. حرصاً منا على أمان حساباتكم، يرجى التواصل مع خدمة العملاء فوراً للمساعدة.",
+          "example": {
+            "body_text": [["فيزا بلاتينيوم", "9876", "ثلاث محاولات خاطئة"]]
+          }
+        }
+      ],
+      "variables": ["card_type", "last_digits", "reason"],
+      "description": "تنبيه حظر بطاقة (معدل)"
     }
   ]
 }
