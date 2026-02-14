@@ -23,7 +23,7 @@ export const OutgoingMessagePayloadSchema = z.preprocess(preprocessor, z.object(
     from: z.string().optional(),
     templateId: z.string().optional(),
     variables: z.record(z.string()).optional(),
-    body: z.string().min(1, 'Message content is required (use "message" or "body").'),
+    body: z.string().optional(),
     // message field is handled by preprocess, so we don't strictly need it here, 
     // but if we want to allow it to pass through (though unused), we can add .strip() or just ignore.
     // We made meta optional for easier integration

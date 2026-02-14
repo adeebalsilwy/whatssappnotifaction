@@ -16,7 +16,6 @@ import { TemplateService } from './TemplateService';
  * 3. Delegating the message sending task to the selected provider.
  * This decouples the API route from the provider-specific implementations.
  */
-import whatsapp_templates from '../config/whatsapp-arabic-templates.json';
 
 export class WhatsAppNotificationService {
   private providers: Partial<Record<Provider, IWhatsAppProvider>>;
@@ -64,6 +63,21 @@ export class WhatsAppNotificationService {
    */
   public async send(payload: OutgoingMessagePayload): Promise<ProviderResult> {
     const appConfig = getConfig();
+
+    // --- Template Rendering if needed ---
+    if (payload.messageType === 'TEMPLATE' && payload.templateId && !(payload as any).template) {
+      try {
+        const rendered = this.templateService.renderTemplate(payload.templateId, payload.variables || {});
+        (payload as any).template = rendered.template;
+        // Also update body with a preview if it's empty
+        if (!payload.body || payload.body === 'N/A') {
+          payload.body = `Template: ${payload.templateId}`;
+        }
+      } catch (e) {
+        console.warn(`Could not render template ${payload.templateId}:`, (e as Error).message);
+        // We continue anyway, the provider might handle it if it only needs the ID
+      }
+    }
 
     // --- Phone Number Normalization ---
     // Rule: If the country key (code) is not present, default to Yemen (+967).
@@ -303,11 +317,12 @@ export class WhatsAppNotificationService {
         messageType: 'TEMPLATE',
         templateId: templateName,
         // Keep a preview/body for logging and fallback; real template content is sent via meta.template
-        body: renderedTemplate.template.components[0]?.parameters[0]?.text || '',
+        body: `Template: ${templateName}`,
         meta: {
           sourceSystem: 'TemplateService',
           txnId: `tmpl-${Date.now()}`,
-          eventType: 'OTHER'
+          eventType: 'OTHER',
+          template: renderedTemplate.template // Put it in meta.template too for compatibility
         } as any,
         variables: Object.fromEntries(
           Object.entries(variables).map(([key, value]) => [key, String(value)])

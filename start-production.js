@@ -56,9 +56,24 @@ console.log('');
 
 console.log('✅ Environment is properly configured for production!');
 console.log('');
-console.log('🚀 To start the application, run:');
-console.log('   npm run dev');
-console.log('');
-console.log('🔧 For production deployment:');
-console.log('   npm run build && npm run start');
-console.log('');
+
+// Check if we should actually start the app
+if (process.argv.includes('--start')) {
+  const { execSync } = require('child_process');
+  console.log('🏗️ Building the project...');
+  try {
+    execSync('npm run build', { stdio: 'inherit' });
+    console.log('🚀 Starting the application...');
+    execSync('npm start', { stdio: 'inherit' });
+  } catch (error) {
+    console.error('❌ Failed to start the application:', error);
+    process.exit(1);
+  }
+} else {
+  console.log('🚀 To start the application, run:');
+  console.log('   node start-production.js --start');
+  console.log('');
+  console.log('🔧 Manual production deployment:');
+  console.log('   npm run build && npm run start');
+  console.log('');
+}

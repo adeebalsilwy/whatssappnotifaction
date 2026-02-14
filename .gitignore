@@ -43,3 +43,9 @@ next-env.d.ts
 # firebase
 firebase-debug.log
 firestore-debug.log
+
+# database
+data/*.db
+data/*.db-shm
+data/*.db-wal
+gateway.db
