@@ -64,6 +64,17 @@ export class WhatsAppNotificationService {
   public async send(payload: OutgoingMessagePayload): Promise<ProviderResult> {
     const appConfig = getConfig();
 
+    // --- Auto-Template Conversion for Meta Reliability ---
+    // If provider is Meta and message type is TEXT, convert to a General Template
+    // to bypass the 24-hour window restriction for new customers.
+    const effectiveProvider = payload.provider || appConfig.defaultProvider;
+    if (effectiveProvider === 'meta' && payload.messageType === 'TEXT') {
+      console.log(`[WhatsAppService] Converting TEXT message to Template for Meta reliability...`);
+      payload.messageType = 'TEMPLATE';
+      payload.templateId = 'arabic_general_notification';
+      payload.variables = { '1': payload.body };
+    }
+
     // --- Template Rendering if needed ---
     if (payload.messageType === 'TEMPLATE' && payload.templateId && !(payload as any).template) {
       try {

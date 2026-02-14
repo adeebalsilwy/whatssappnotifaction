@@ -119,6 +119,11 @@ async function migrate() {
                 const components = t.components.map(comp => {
                     let newComp = { ...comp, type: comp.type.toUpperCase() };
 
+                    // Fix for Meta requirement: HEADER must have format
+                    if (newComp.type === 'HEADER' && !newComp.format) {
+                        newComp.format = 'TEXT';
+                    }
+
                     // If it has parameters instead of text (older format), convert to text
                     if (comp.parameters && comp.parameters[0] && comp.parameters[0].text && !comp.text) {
                         newComp.text = comp.parameters[0].text;

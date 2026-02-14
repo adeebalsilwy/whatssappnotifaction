@@ -1,17 +1,24 @@
 import Database from 'better-sqlite3';
 import path from 'path';
 
+import fs from 'fs';
+
 // SQLite database instance
 let sqliteDb: Database.Database | null = null;
 
 /**
  * Get the SQLite database instance
  */
-  const dataPath = path.join(process.cwd(), 'data', 'gateway.db');
-
 export function getDb() {
     if (!sqliteDb) {
-        const dbPath = process.env.SQLITE_DB_PATH || path.join(process.cwd(), 'gateway.db');
+        const dbPath = process.env.SQLITE_DB_PATH || path.join(process.cwd(), 'data', 'gateway.db');
+
+        // Ensure directory exists
+        const dir = path.dirname(dbPath);
+        if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir, { recursive: true });
+        }
+
         sqliteDb = new Database(dbPath);
         
         // Ensure tables exist for SQLite
