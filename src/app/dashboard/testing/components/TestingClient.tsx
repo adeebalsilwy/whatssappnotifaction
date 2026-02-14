@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -14,14 +14,18 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { CodeBlock } from './CodeBlock';
 import { TestHistory } from './TestHistory';
-import { Send } from 'lucide-react';
+import { Send, MessageSquare, FileText } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const TestMessageSchema = z.object({
   provider: z.enum(providers, {
     required_error: 'الرجاء اختيار مزود خدمة.',
   }),
   to: z.string().min(1, 'رقم المستلم مطلوب.'),
-  body: z.string().min(1, 'محتوى الرسالة مطلوب.'),
+  body: z.string().optional(),
+  messageType: z.enum(['TEXT', 'TEMPLATE']),
+  templateId: z.string().optional(),
+  variables: z.record(z.string()).optional(),
 });
 
 type TestMessageForm = z.infer<typeof TestMessageSchema>;
@@ -42,23 +46,62 @@ export function TestingClient() {
   const [request, setRequest] = useState<string | null>(null);
   const [response, setResponse] = useState<string | null>(null);
   const [history, setHistory] = useState<TestRun[]>([]);
+  const [templates, setTemplates] = useState<any[]>([]);
+  const [selectedTemplate, setSelectedTemplate] = useState<any | null>(null);
+  const [messageType, setMessageType] = useState<'TEXT' | 'TEMPLATE'>('TEXT');
 
   const form = useForm<TestMessageForm>({
     resolver: zodResolver(TestMessageSchema),
     defaultValues: {
-      provider: 'vonage',
+      provider: 'meta',
       to: '967774577134',
       body: 'اختباريه من بنك عدن الاول',
+      messageType: 'TEXT',
+      variables: {},
     },
   });
 
+  useEffect(() => {
+    fetch('/api/templates')
+      .then(res => res.json())
+      .then(data => setTemplates(data))
+      .catch(err => console.error('Failed to load templates', err));
+  }, []);
+
+  const handleTemplateChange = (templateId: string) => {
+    const template = templates.find(t => t.name === templateId);
+    setSelectedTemplate(template);
+
+    // Initialize variables
+    if (template && template.variables) {
+      const vars: Record<string, string> = {};
+      template.variables.forEach((v: string) => {
+        vars[v] = '';
+      });
+      form.setValue('variables', vars);
+    } else if (template) {
+        // Try to find variables from components if not defined
+        const components = JSON.parse(typeof template.components === 'string' ? template.components : JSON.stringify(template.components));
+        const vars: Record<string, string> = {};
+        components.forEach((c: any) => {
+            if (c.text) {
+                const matches = c.text.match(/{{(\w+)}}/g);
+                if (matches) {
+                    matches.forEach((m: string) => {
+                        vars[m.replace(/{{|}}/g, '')] = '';
+                    });
+                }
+            }
+        });
+        form.setValue('variables', vars);
+    }
+  };
+
   const generateCurl = (data: TestMessageForm) => {
-    // A simplified payload for the curl command example
-    const payload = {
+    const payload: any = {
       provider: data.provider,
-      messageType: 'TEXT',
+      messageType: data.messageType,
       to: data.to,
-      body: data.body,
       meta: {
         sourceSystem: 'GatewayTester',
         companyId: 'KSA',
@@ -69,8 +112,16 @@ export function TestingClient() {
       },
     };
 
+    if (data.messageType === 'TEXT') {
+      payload.body = data.body;
+    } else {
+      payload.templateId = data.templateId;
+      payload.variables = data.variables;
+    }
+
     const curl = `curl -X POST ${window.location.origin}/api/whatsapp/send \\
 -H "Content-Type: application/json" \\
+-H "Authorization: Bearer YOUR_TOKEN" \\
 -d '${JSON.stringify(payload, null, 2)}'`;
     return { curl, payload };
   };
@@ -100,7 +151,7 @@ export function TestingClient() {
         status: result.success ? 'success' : 'failed',
         timestamp: new Date().toISOString(),
       };
-      setHistory([newTestRun, ...history.slice(0, 4)]); // Keep last 5 tests
+      setHistory([newTestRun, ...history.slice(0, 4)]);
 
       toast({
         title: result.success ? 'تم الإرسال بنجاح' : 'فشل الإرسال',
@@ -125,66 +176,140 @@ export function TestingClient() {
       <div className="space-y-6">
         <Card>
           <CardHeader>
-            <CardTitle>نموذج الاختبار</CardTitle>
-            <CardDescription>أرسل رسالة اختبار عبر أحد مزودي الخدمة المتاحين.</CardDescription>
+            <CardTitle>نموذج الاختبار المتقدم</CardTitle>
+            <CardDescription>أرسل رسالة نصية أو باستخدام قالب عبر أحد مزودي الخدمة.</CardDescription>
           </CardHeader>
           <FormProvider {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)}>
               <CardContent className="space-y-4">
-                <FormField
-                  control={form.control}
-                  name="provider"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>مزود الخدمة</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <FormControl>
-                          <SelectTrigger>
-                            <SelectValue placeholder="اختر مزودًا" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          {providers.map((p) => (
-                            <SelectItem key={p} value={p} className="capitalize">
-                              {p}
-                            </SelectItem>
+                <Tabs defaultValue="TEXT" onValueChange={(v) => {
+                    setMessageType(v as 'TEXT' | 'TEMPLATE');
+                    form.setValue('messageType', v as 'TEXT' | 'TEMPLATE');
+                }}>
+                  <TabsList className="grid w-full grid-cols-2">
+                    <TabsTrigger value="TEXT">
+                      <MessageSquare className="w-4 h-4 ml-2" />
+                      رسالة نصية
+                    </TabsTrigger>
+                    <TabsTrigger value="TEMPLATE">
+                      <FileText className="w-4 h-4 ml-2" />
+                      قالب (Template)
+                    </TabsTrigger>
+                  </TabsList>
+
+                  <div className="mt-4 space-y-4">
+                    <FormField
+                      control={form.control}
+                      name="provider"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>مزود الخدمة</FormLabel>
+                          <Select onValueChange={field.onChange} defaultValue={field.value}>
+                            <FormControl>
+                              <SelectTrigger>
+                                <SelectValue placeholder="اختر مزودًا" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              {providers.map((p) => (
+                                <SelectItem key={p} value={p} className="capitalize">
+                                  {p}
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="to"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>إلى (رقم المستلم)</FormLabel>
+                          <FormControl>
+                            <Input dir="ltr" placeholder="967774577134" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <TabsContent value="TEXT" className="mt-0 space-y-4">
+                      <FormField
+                        control={form.control}
+                        name="body"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>محتوى الرسالة</FormLabel>
+                            <FormControl>
+                              <Textarea placeholder="اكتب رسالتك هنا..." {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </TabsContent>
+
+                    <TabsContent value="TEMPLATE" className="mt-0 space-y-4">
+                      <FormField
+                        control={form.control}
+                        name="templateId"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>القالب</FormLabel>
+                            <Select onValueChange={(val) => {
+                                field.onChange(val);
+                                handleTemplateChange(val);
+                            }} defaultValue={field.value}>
+                              <FormControl>
+                                <SelectTrigger>
+                                  <SelectValue placeholder="اختر قالبًا" />
+                                </SelectTrigger>
+                              </FormControl>
+                              <SelectContent>
+                                {templates.map((t) => (
+                                  <SelectItem key={t.id} value={t.name}>
+                                    {t.name} ({t.language})
+                                  </SelectItem>
+                                ))}
+                              </SelectContent>
+                            </Select>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+
+                      {selectedTemplate && (
+                        <div className="space-y-3 p-3 border rounded-md bg-muted/30">
+                          <p className="text-sm font-medium mb-2">متغيرات القالب:</p>
+                          {Object.keys(form.getValues('variables') || {}).map((varName) => (
+                            <div key={varName} className="flex flex-col space-y-1">
+                              <label className="text-xs text-muted-foreground">{varName}</label>
+                              <Input
+                                placeholder={`قيمة لـ ${varName}`}
+                                onChange={(e) => {
+                                  const vars = form.getValues('variables') || {};
+                                  vars[varName] = e.target.value;
+                                  form.setValue('variables', vars);
+                                }}
+                              />
+                            </div>
                           ))}
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="to"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>إلى (رقم المستلم)</FormLabel>
-                      <FormControl>
-                        <Input dir="ltr" placeholder="9665XXXXXXXX" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="body"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>محتوى الرسالة</FormLabel>
-                      <FormControl>
-                        <Textarea placeholder="اكتب رسالتك هنا..." {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                          {Object.keys(form.getValues('variables') || {}).length === 0 && (
+                            <p className="text-xs text-muted-foreground italic">لا يوجد متغيرات في هذا القالب.</p>
+                          )}
+                        </div>
+                      )}
+                    </TabsContent>
+                  </div>
+                </Tabs>
               </CardContent>
               <CardFooter>
                 <Button type="submit" disabled={isSubmitting} className="w-full">
-                  <Send className="ml-2" />
+                  <Send className="ml-2 w-4 h-4" />
                   {isSubmitting ? 'جاري الإرسال...' : 'إرسال رسالة اختبار'}
                 </Button>
               </CardFooter>

@@ -11,11 +11,12 @@ const titles: Record<string, string> = {
     '/dashboard/reports': 'التقارير والتحليلات',
     '/dashboard/messages': 'إدارة الرسائل',
     '/dashboard/templates': 'قوالب الرسائل',
+    '/dashboard/audit': 'سجلات التدقيق',
 }
 
 export function DashboardHeader() {
     const pathname = usePathname();
     const title = titles[pathname] || 'لوحة التحكم';
 
-    return <h1 className="text-2xl font-bold">{title}</h1>;
+    return <h1 className="text-xl font-bold md:text-2xl">{title}</h1>;
 }
