@@ -29,7 +29,7 @@ async function registerTemplates() {
             console.log(`🔄 Registering: ${template.name}...`);
             const components = JSON.parse(template.components);
 
-            await axios.post(
+            const response = await axios.post(
                 `https://graph.facebook.com/${version}/${wabaId}/message_templates`,
                 {
                     name: template.name,
@@ -44,13 +44,20 @@ async function registerTemplates() {
                     },
                 }
             );
-            console.log(`✅ Success: ${template.name}`);
+            console.log(`✅ Success: ${template.name} (Status: ${response.data.status})`);
         } catch (error) {
             const data = error.response?.data?.error;
             if (data?.message?.includes('already exists')) {
                 console.log(`ℹ️ Already exists: ${template.name}`);
             } else {
-                console.error(`❌ Failed: ${template.name} - ${data?.message || error.message}`);
+                console.error(`❌ Failed: ${template.name}`);
+                console.error(`   Error: ${data?.message || error.message}`);
+                if (data?.error_user_title) {
+                    console.error(`   Details: ${data.error_user_title} - ${data.error_user_msg}`);
+                }
+                if (data?.error_data) {
+                    console.error(`   Context:`, JSON.stringify(data.error_data, null, 2));
+                }
             }
         }
     }

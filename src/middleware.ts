@@ -19,6 +19,7 @@ const ROLE_HIERARCHY: Record<string, number> = {
 
 export async function middleware(request: NextRequest) {
   const sessionToken = request.cookies.get('session_token')?.value;
+  const origin = request.nextUrl.origin;
   
   // Paths that don't require authentication
   const publicPaths = ['/login', '/api/auth/login', '/api/auth/logout', '/_next', '/favicon.ico'];
@@ -47,7 +48,7 @@ export async function middleware(request: NextRequest) {
     
     // For user management APIs, check specific permissions
     if (request.nextUrl.pathname.startsWith('/api/users')) {
-      const response = await checkUserPermissions(sessionToken, ['manage_users']);
+      const response = await checkUserPermissions(sessionToken, ['manage_users'], origin);
       if (!response.valid) {
         return new NextResponse(
           JSON.stringify({ success: false, error: response.error || 'Insufficient permissions' }),
@@ -64,7 +65,7 @@ export async function middleware(request: NextRequest) {
   
   if (routePath && sessionToken) {
     const requiredPermissions = ROUTE_PERMISSIONS[routePath];
-    const response = await checkUserPermissions(sessionToken, requiredPermissions);
+    const response = await checkUserPermissions(sessionToken, requiredPermissions, origin);
     
     if (!response.valid) {
       // Redirect to unauthorized page or dashboard home
@@ -77,9 +78,16 @@ export async function middleware(request: NextRequest) {
 }
 
 // Helper function to check user permissions
-async function checkUserPermissions(sessionToken: string, requiredPermissions: string[]): Promise<{ valid: boolean; error?: string }> {
+async function checkUserPermissions(sessionToken: string, requiredPermissions: string[], origin?: string): Promise<{ valid: boolean; error?: string }> {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || process.env.APINOTIFICATION_URL || 'http://localhost:9003'}/api/auth/validate`, {
+    // Get base URL and ensure no trailing slash for clean concatenation
+    // Prefer origin from request to ensure we call ourselves on the same port/host
+    let baseUrl = origin || process.env.NEXT_PUBLIC_BASE_URL || process.env.APINOTIFICATION_URL || 'http://localhost:9003';
+    if (baseUrl.endsWith('/')) {
+      baseUrl = baseUrl.slice(0, -1);
+    }
+
+    const response = await fetch(`${baseUrl}/api/auth/validate`, {
       headers: {
         'Cookie': `session_token=${sessionToken}`
       }

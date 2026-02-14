@@ -102,7 +102,7 @@ export async function executeQuery(query: string, params?: any[]) {
     
     if (query.toUpperCase().includes('INSERT') && query.toUpperCase().includes('RETURNING')) {
         // Handle INSERT with RETURNING for SQLite
-        const stmt = db.prepare(query.replace(/\$([0-9]+)/g, '?').replace(/RETURNING.*$/, ''));
+        const stmt = db.prepare(query.replace(/\$([0-9]+)/g, '?').replace(/RETURNING.*$/i, ''));
         const result = stmt.run(params || []);
         
         // Return in format compatible with PostgreSQL

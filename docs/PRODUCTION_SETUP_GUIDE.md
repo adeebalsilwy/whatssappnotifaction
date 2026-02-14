@@ -40,12 +40,23 @@ SQLITE_DB_PATH=./data/gateway.db
 node scripts/migrate-templates.js
 
 # 2. تسجيل القوالب لدى ميتا
-export META_WHATSAPP_TOKEN=...
-export WABA_ID=...
+export META_WHATSAPP_TOKEN=your_token
+export WABA_ID=your_waba_id
 node scripts/register-meta-templates.js
 ```
 
-## 3. خطوات هامة في منصة ميتا (Meta Portal Steps)
+## 3. حل مشكلات شائعة (Troubleshooting)
+
+### أ. خطأ Params Words Ratio
+إذا ظهر خطأ "This template has too many variables for its length"، فذلك يعني أن نسبة المتغيرات كبيرة جداً بالنسبة للنص الثابت. لقد قمنا بإضافة حشو (Padding) تلقائي في سكربت `migrate-templates.js` لحل هذه المشكلة، ولكن إذا استمرت، يرجى زيادة النص الثابت في قالب الواتساب.
+
+### ب. خطأ Foreign Key في الويبهوك
+تم إصلاح مشكلة ربط الرسائل الواردة (Inbound Messages) في قاعدة البيانات عبر التأكد من إرجاع المعرف الصحيح (ID) عند الحفظ في SQLite.
+
+### ج. خطأ fetch failed في Middleware
+تم تحسين نظام التحقق من الجلسات (Middleware) ليتعرف تلقائياً على عنوان الخادم المحلي (Origin)، مما يمنع حدوث أخطاء في الاتصال الداخلي عند تشغيل البوابة خلف جدران حماية أو في بيئات مقيدة.
+
+## 4. خطوات هامة في منصة ميتا (Meta Portal Steps)
 
 لضمان عمل الإشعارات والويبهوك (Webhook) بشكل صحيح، يجب تنفيذ الخطوات التالية في [Meta Developers Portal](https://developers.facebook.com/):
 
@@ -66,7 +77,7 @@ node scripts/register-meta-templates.js
    - تأكد من إضافة رقم هاتف حقيقي وربطه بـ WhatsApp Business Account (WABA).
    - احصل على `Phone Number ID` واستخدمه في الإعدادات.
 
-## 4. التشغيل (Running the App)
+## 5. التشغيل (Running the App)
 
 يمكنك استخدام السكربت المخصص للإنتاج:
 ```bash
@@ -79,7 +90,7 @@ chmod +x scripts/prod-start.sh
 pm2 start npm --name "whatsapp-gateway" -- start
 ```
 
-## 5. التحقق من العمل (Verification)
+## 6. التحقق من العمل (Verification)
 يمكنك اختبار إرسال رسالة تجريبية عبر API:
 ```bash
 curl -X POST https://apinotification.firstaden-bank.com/api/whatsapp/send \
