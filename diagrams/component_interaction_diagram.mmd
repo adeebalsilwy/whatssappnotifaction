@@ -1,0 +1,18 @@
+sequenceDiagram
+    participant Client
+    participant Gateway
+    participant NotificationService
+    participant Provider
+    participant ExternalAPI
+    
+    Client->>Gateway: POST /api/notify
+    Gateway->>NotificationService: validate and normalize
+    NotificationService->>Gateway: transactionId
+    Gateway->>Gateway: persist to DB
+    Gateway->>NotificationService: dispatch message
+    NotificationService->>Provider: select provider
+    Provider->>ExternalAPI: send message
+    ExternalAPI-->>Provider: response
+    Provider-->>NotificationService: result
+    NotificationService-->>Gateway: status update
+    Gateway-->>Client: queued response

@@ -1,0 +1,64 @@
+graph TB
+    subgraph "Client Layer"
+        A[Web/Mobile Clients]
+    end
+    
+    subgraph "Presentation Layer"
+        B[Next.js Frontend]
+        C[Dashboard UI]
+    end
+    
+    subgraph "API Gateway Layer"
+        D[Express.js Gateway Service]
+        E[Notification Controller]
+        F[Admin Controller]
+        G[Webhook Controller]
+    end
+    
+    subgraph "Business Logic Layer"
+        H[WhatsApp Notification Service]
+        I[Dispatch Service]
+        J[Validation Service]
+        K[Template Service]
+    end
+    
+    subgraph "Provider Layer"
+        L[Meta WhatsApp Provider]
+        M[Vonage Provider]
+        N[Twilio Provider]
+        O[FAD SMS Provider]
+        P[Generic Provider]
+    end
+    
+    subgraph "Data Layer"
+        Q[SQLite Database]
+        R[File Storage Logs]
+    end
+    
+    subgraph "External Services"
+        S[Meta WhatsApp API]
+        T[Vonage API]
+        U[Twilio API]
+        V[Yemeni Telecom API]
+    end
+    
+    A --> B
+    B --> D
+    D --> E
+    D --> F
+    D --> G
+    E --> H
+    H --> I
+    H --> J
+    H --> K
+    I --> L
+    I --> M
+    I --> N
+    I --> O
+    I --> P
+    L --> S
+    M --> T
+    N --> U
+    O --> V
+    H --> Q
+    H --> R

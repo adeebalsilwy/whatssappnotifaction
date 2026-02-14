@@ -1,0 +1,32 @@
+graph LR
+    subgraph "Inbound Flow"
+        A[Client API Request]
+        A --> B[Normalize Phone Number]
+        B --> C[Validate Message Content]
+        C --> D[Generate Transaction ID]
+        D --> E[Save to Messages Table]
+        E --> F[Set Status: RECEIVED]
+    end
+    
+    subgraph "Processing Flow"
+        F --> G[Select Provider Based on Priority]
+        G --> H[Check Provider Config]
+        H --> I{Provider Available?}
+        I -->|Yes| J[Send Message via Provider]
+        I -->|No| K[Mark as Failed]
+        J --> L[Wait for Response]
+        L --> M{Success?}
+        M -->|Yes| N[Update Status: SENT]
+        M -->|No| O[Trigger Fallback Logic]
+        O --> P[Try Next Provider]
+        P --> Q{Success?}
+        Q -->|Yes| N
+        Q -->|No| K
+    end
+    
+    subgraph "Outbound Flow"
+        N --> R[Log Successful Delivery]
+        K --> S[Log Failure with Error Details]
+        N --> T[Return Success Response]
+        K --> U[Return Error Response]
+    end

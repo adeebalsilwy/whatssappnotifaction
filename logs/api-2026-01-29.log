@@ -1,0 +1,12 @@
+[2026-01-29T09:15:14.667Z] {"requestId":"59d712df-95b2-478e-9626-f1ba8535c1f8","action":"REQUEST_RECEIVED","error":"DB_URL (or DATABASE_URL) is not set in environment"}
+[2026-01-29T09:15:14.671Z] {"requestId":"59d712df-95b2-478e-9626-f1ba8535c1f8","action":"RESPONSE_400","body":{"success":false,"errorCode":"INVALID_JSON","errors":["Request body is not valid JSON."]}}
+[2026-01-29T09:15:52.604Z] {"requestId":"5a7109eb-e9ab-423a-b1ba-843edd3fd978","action":"REQUEST_RECEIVED","error":"DB_URL (or DATABASE_URL) is not set in environment"}
+[2026-01-29T09:15:52.607Z] {"requestId":"5a7109eb-e9ab-423a-b1ba-843edd3fd978","action":"RESPONSE_400","body":{"success":false,"errorCode":"INVALID_JSON","errors":["Request body is not valid JSON."]}}
+[2026-01-29T09:16:42.616Z] {"requestId":"0c069f35-1ab2-44ee-8fca-cf1379146da7","action":"REQUEST_RECEIVED","error":"DB_URL (or DATABASE_URL) is not set in environment"}
+[2026-01-29T09:16:42.618Z] {"requestId":"0c069f35-1ab2-44ee-8fca-cf1379146da7","action":"UPDATE_BODY","error":"DB_URL (or DATABASE_URL) is not set in environment"}
+[2026-01-29T09:16:43.951Z] {"requestId":"0c069f35-1ab2-44ee-8fca-cf1379146da7","action":"RESPONSE_FINAL","status":200,"latency":1334}
+[2026-01-29T09:19:20.534Z] {"requestId":"06c1ddf4-dedd-4b11-8e16-895e5c02793d","action":"REQUEST_RECEIVED","error":"DB_URL (or DATABASE_URL) is not set in environment"}
+[2026-01-29T09:19:20.539Z] {"requestId":"06c1ddf4-dedd-4b11-8e16-895e5c02793d","action":"RESPONSE_400","body":{"success":false,"errorCode":"INVALID_JSON","errors":["Request body is not valid JSON."]}}
+[2026-01-29T09:21:32.224Z] {"requestId":"d6a2be1a-d4e2-4295-83fb-55261df80381","action":"REQUEST_RECEIVED","error":"DB_URL (or DATABASE_URL) is not set in environment"}
+[2026-01-29T09:21:32.227Z] {"requestId":"d6a2be1a-d4e2-4295-83fb-55261df80381","action":"UPDATE_BODY","error":"DB_URL (or DATABASE_URL) is not set in environment"}
+[2026-01-29T09:21:33.839Z] {"requestId":"d6a2be1a-d4e2-4295-83fb-55261df80381","action":"RESPONSE_FINAL","status":200,"latency":1615}

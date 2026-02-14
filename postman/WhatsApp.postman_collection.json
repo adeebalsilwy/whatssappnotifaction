@@ -1,0 +1,38 @@
+{
+  "info": {
+    "name": "WhatsApp Messaging API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Send Message",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "url": { "raw": "{{baseUrl}}/v1/whatsapp/messages", "host": ["{{baseUrl}}"], "path": ["v1","whatsapp","messages"] },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"to\": \"+967774577134\",\n  \"message\": \"نص الرسالة\",\n  \"sender\": \"BANK\",\n  \"referenceId\": \"FT202412345\",\n  \"priority\": \"HIGH\",\n  \"metadata\": {\n    \"customerId\": \"12345\",\n    \"channel\": \"T24\",\n    \"requestSource\": \"OFS/IRIS/PORTAL\"\n  }\n}"
+        }
+      }
+    },
+    {
+      "name": "Webhook (POST)",
+      "request": {
+        "method": "POST",
+        "header": [ { "key": "Content-Type", "value": "application/json" } ],
+        "url": { "raw": "{{baseUrl}}/v1/whatsapp/webhook", "host": ["{{baseUrl}}"], "path": ["v1","whatsapp","webhook"] },
+        "body": { "mode": "raw", "raw": "{\n  \"entry\": []\n}" }
+      }
+    }
+  ],
+  "variable": [
+    { "key": "baseUrl", "value": "https://apinotification.firstaden-bank.com" },
+    { "key": "token", "value": "key1" },
+    { "key": "providerToken", "value": "{{META_ACCESS_TOKEN}}" }
+  ]
+}
+

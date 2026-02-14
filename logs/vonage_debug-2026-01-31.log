@@ -1,0 +1,4 @@
+[2026-01-31T13:22:58.933Z] {"action":"SEND_ATTEMPT_TEXT","to":"967774327583","from":"12019404006","appId":"f1657174-aeb0-40bf-95c1-4feed0af22e4"}
+[2026-01-31T13:23:00.814Z] {"action":"SEND_SUCCESS_TEXT","response":{"messageUUID":"45bb16ec-2571-448f-b598-2b7045d47398"}}
+[2026-01-31T13:24:55.725Z] {"action":"SEND_ATTEMPT_TEXT","to":"967774327583","from":"12019404006","appId":"f1657174-aeb0-40bf-95c1-4feed0af22e4"}
+[2026-01-31T13:24:56.988Z] {"action":"SEND_SUCCESS_TEXT","response":{"messageUUID":"14f42400-fa7f-4ee5-bf9a-eb77d2766a8f"}}

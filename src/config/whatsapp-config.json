@@ -1,0 +1,32 @@
+{
+  "defaultProvider": "meta",
+  "apiNotificationUrl": "https://apinotification.firstaden-bank.com/",
+  "providers": {
+    "meta": {
+      "url": "https://graph.facebook.com/v24.0",
+      "token": "your-permanent-access-token",
+      "numberId": "your-phone-number-id",
+      "webhookVerifyToken": "your-verification-token"
+    },
+    "vonage": {
+      "url": "https://messages-sandbox.nexmo.com/v1/messages",
+      "apiKey": "your-vonage-api-key",
+      "apiSecret": "your-vonage-api-secret",
+      "from": "14157386102"
+    },
+    "generic": {
+      "url": "https://apinotification.firstaden-bank.com/api/mock/generic",
+      "token": "your-generic-provider-token"
+    },
+    "direct": {
+      "url": "https://apinotification.firstaden-bank.com/api/whatsapp/send",
+      "token": "test-token",
+      "from": "+967774577134"
+    },
+    "fad": {
+      "url": "http://10.220.172.100:7070/API/Service/Interface/v3/SendSMS",
+      "username": "Bank",
+      "password": "1234567890"
+    }
+  }
+}

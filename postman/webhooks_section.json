@@ -1,0 +1,239 @@
+{
+  "name": "Webhooks",
+  "item": [
+    {
+      "name": "Webhook Verification",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{APINOTIFICATION_URL}}/api/webhooks/meta?hub.mode=subscribe&hub.verify_token={{META_WEBHOOK_VERIFY_TOKEN}}&hub.challenge=challenge_accepted",
+          "protocol": "https",
+          "host": [
+            "{{APINOTIFICATION_URL}}"
+          ],
+          "path": [
+            "api",
+            "webhooks",
+            "meta"
+          ],
+          "query": [
+            {
+              "key": "hub.mode",
+              "value": "subscribe"
+            },
+            {
+              "key": "hub.verify_token",
+              "value": "{{META_WEBHOOK_VERIFY_TOKEN}}"
+            },
+            {
+              "key": "hub.challenge",
+              "value": "challenge_accepted"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Webhook Inbound Message",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "X-Hub-Signature-256",
+            "value": "sha256={{webhook_signature}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"object\": \"whatsapp_business_account\",\n  \"entry\": [\n    {\n      \"id\": \"{{waba_id}}\",\n      \"changes\": [\n        {\n          \"value\": {\n            \"messaging_product\": \"whatsapp\",\n            \"metadata\": {\n              \"display_phone_number\": \"{{display_phone_number}}\",\n              \"phone_number_id\": \"{{phone_number_id}}\"\n            },\n            \"contacts\": [\n              {\n                \"profile\": {\n                  \"name\": \"John Doe\"\n                },\n                \"wa_id\": \"16315551234\"\n              }\n            ],\n            \"messages\": [\n              {\n                \"id\": \"{{message_id}}\",\n                \"from\": \"16315551234\",\n                \"timestamp\": \"1624496825\",\n                \"text\": {\n                  \"body\": \"Hello there!\"\n                },\n                \"type\": \"text\"\n              }\n            ]\n          },\n          \"field\": \"messages\"\n        }\n      ]\n    }\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{APINOTIFICATION_URL}}/api/webhooks/meta",
+          "protocol": "https",
+          "host": [
+            "{{APINOTIFICATION_URL}}"
+          ],
+          "path": [
+            "api",
+            "webhooks",
+            "meta"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Webhook Message Status",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "X-Hub-Signature-256",
+            "value": "sha256={{webhook_signature}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"object\": \"whatsapp_business_account\",\n  \"entry\": [\n    {\n      \"id\": \"{{waba_id}}\",\n      \"changes\": [\n        {\n          \"value\": {\n            \"messaging_product\": \"whatsapp\",\n            \"metadata\": {\n              \"display_phone_number\": \"{{display_phone_number}}\",\n              \"phone_number_id\": \"{{phone_number_id}}\"\n            },\n            \"statuses\": [\n              {\n                \"id\": \"{{provider_message_id}}\",\n                \"status\": \"{{status}}\",\n                \"timestamp\": \"{{timestamp}}\",\n                \"recipient_id\": \"16315551234\"\n              }\n            ]\n          },\n          \"field\": \"messages\"\n        }\n      ]\n    }\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{APINOTIFICATION_URL}}/api/webhooks/meta",
+          "protocol": "https",
+          "host": [
+            "{{APINOTIFICATION_URL}}"
+          ],
+          "path": [
+            "api",
+            "webhooks",
+            "meta"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Webhook Message Status - Delivered",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "X-Hub-Signature-256",
+            "value": "sha256={{webhook_signature}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"object\": \"whatsapp_business_account\",\n  \"entry\": [\n    {\n      \"id\": \"{{waba_id}}\",\n      \"changes\": [\n        {\n          \"value\": {\n            \"messaging_product\": \"whatsapp\",\n            \"metadata\": {\n              \"display_phone_number\": \"{{display_phone_number}}\",\n              \"phone_number_id\": \"{{phone_number_id}}\"\n            },\n            \"statuses\": [\n              {\n                \"id\": \"{{provider_message_id}}\",\n                \"status\": \"delivered\",\n                \"timestamp\": \"{{timestamp}}\",\n                \"recipient_id\": \"16315551234\"\n              }\n            ]\n          },\n          \"field\": \"messages\"\n        }\n      ]\n    }\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{APINOTIFICATION_URL}}/api/webhooks/meta",
+          "protocol": "https",
+          "host": [
+            "{{APINOTIFICATION_URL}}"
+          ],
+          "path": [
+            "api",
+            "webhooks",
+            "meta"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Webhook Message Status - Read",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "X-Hub-Signature-256",
+            "value": "sha256={{webhook_signature}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"object\": \"whatsapp_business_account\",\n  \"entry\": [\n    {\n      \"id\": \"{{waba_id}}\",\n      \"changes\": [\n        {\n          \"value\": {\n            \"messaging_product\": \"whatsapp\",\n            \"metadata\": {\n              \"display_phone_number\": \"{{display_phone_number}}\",\n              \"phone_number_id\": \"{{phone_number_id}}\"\n            },\n            \"statuses\": [\n              {\n                \"id\": \"{{provider_message_id}}\",\n                \"status\": \"read\",\n                \"timestamp\": \"{{timestamp}}\",\n                \"recipient_id\": \"16315551234\"\n              }\n            ]\n          },\n          \"field\": \"messages\"\n        }\n      ]\n    }\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{APINOTIFICATION_URL}}/api/webhooks/meta",
+          "protocol": "https",
+          "host": [
+            "{{APINOTIFICATION_URL}}"
+          ],
+          "path": [
+            "api",
+            "webhooks",
+            "meta"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Webhook Message Status - Failed",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "X-Hub-Signature-256",
+            "value": "sha256={{webhook_signature}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"object\": \"whatsapp_business_account\",\n  \"entry\": [\n    {\n      \"id\": \"{{waba_id}}\",\n      \"changes\": [\n        {\n          \"value\": {\n            \"messaging_product\": \"whatsapp\",\n            \"metadata\": {\n              \"display_phone_number\": \"{{display_phone_number}}\",\n              \"phone_number_id\": \"{{phone_number_id}}\"\n            },\n            \"statuses\": [\n              {\n                \"id\": \"{{provider_message_id}}\",\n                \"status\": \"failed\",\n                \"timestamp\": \"{{timestamp}}\",\n                \"recipient_id\": \"16315551234\",\n                \"errors\": [\n                  {\n                    \"code\": 131000,\n                    \"title\": \"ReEngagement\",\n                    \"message\": \"Message failed to deliver due to re-engagement policy\",\n                    \"error_data\": {\n                      \"details\": \"Customer hasn't replied to Business initiated conversation in 24 hours.\"\n                    },\n                    \"href\": \"https://developers.facebook.com/docs/whatsapp/cloud-api/support/error-reference\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"field\": \"messages\"\n        }\n      ]\n    }\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{APINOTIFICATION_URL}}/api/webhooks/meta",
+          "protocol": "https",
+          "host": [
+            "{{APINOTIFICATION_URL}}"
+          ],
+          "path": [
+            "api",
+            "webhooks",
+            "meta"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

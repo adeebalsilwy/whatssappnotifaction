@@ -1,0 +1,152 @@
+{
+  "whatsapp_templates": [
+    {
+      "name": "account_opening_notification",
+      "category": "ACCOUNT_UPDATE",
+      "language": "ar",
+      "components": [
+        {
+          "type": "HEADER",
+          "parameters": [
+            {
+              "type": "text",
+              "text": "Account Opening"
+            }
+          ]
+        },
+        {
+          "type": "BODY",
+          "parameters": [
+            {
+              "type": "text",
+              "text": "Dear Customer {customer_id}, We inform you that your account has been opened successfully."
+            },
+            {
+              "type": "text",
+              "text": "Account Type: {account_type}"
+            },
+            {
+              "type": "text",
+              "text": "Product ID: {product_id}"
+            }
+          ]
+        },
+        {
+          "type": "FOOTER",
+          "parameters": [
+            {
+              "type": "text",
+              "text": "Thank you for choosing us!"
+            }
+          ]
+        }
+      ],
+      "variables": [
+        "customer_id",
+        "account_type",
+        "product_id"
+      ],
+      "description": "Template for notifying customers about account opening"
+    },
+    {
+      "name": "deposit_notification",
+      "category": "PAYMENT_UPDATE",
+      "language": "ar",
+      "components": [
+        {
+          "type": "HEADER",
+          "parameters": [
+            {
+              "type": "text",
+              "text": "Deposit Confirmation"
+            }
+          ]
+        },
+        {
+          "type": "BODY",
+          "parameters": [
+            {
+              "type": "text",
+              "text": "Deposit of {amount} to your account ending with {last_digits}"
+            },
+            {
+              "type": "text",
+              "text": "Date: {date}"
+            },
+            {
+              "type": "text",
+              "text": "Balance: {currency} {balance}"
+            }
+          ]
+        },
+        {
+          "type": "FOOTER",
+          "parameters": [
+            {
+              "type": "text",
+              "text": "Banking Services"
+            }
+          ]
+        }
+      ],
+      "variables": [
+        "amount",
+        "last_digits",
+        "date",
+        "currency",
+        "balance"
+      ],
+      "description": "Template for notifying customers about deposits"
+    },
+    {
+      "name": "withdrawal_notification",
+      "category": "PAYMENT_UPDATE",
+      "language": "ar",
+      "components": [
+        {
+          "type": "HEADER",
+          "parameters": [
+            {
+              "type": "text",
+              "text": "Withdrawal Confirmation"
+            }
+          ]
+        },
+        {
+          "type": "BODY",
+          "parameters": [
+            {
+              "type": "text",
+              "text": "Deduction of {amount} from your account ending with {last_digits}"
+            },
+            {
+              "type": "text",
+              "text": "Date: {date}"
+            },
+            {
+              "type": "text",
+              "text": "Balance: {currency} {balance}"
+            }
+          ]
+        },
+        {
+          "type": "FOOTER",
+          "parameters": [
+            {
+              "type": "text",
+              "text": "Banking Services"
+            }
+          ]
+        }
+      ],
+      "variables": [
+        "amount",
+        "last_digits",
+        "date",
+        "currency",
+        "balance"
+      ],
+      "description": "Template for notifying customers about withdrawals"
+    }
+  ]
+}

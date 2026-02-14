@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": [
+    "src/server/**/*.ts",
+    "src/app/api/**/*.ts",
+    "src/providers/**/*.ts",
+    "src/lib/**/*.ts",
+    "src/openapi/**/*.json"
+  ],
+  "exclude": ["node_modules"]
+}

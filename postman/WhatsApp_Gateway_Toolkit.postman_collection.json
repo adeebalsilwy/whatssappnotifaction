@@ -1,0 +1,168 @@
+{
+    "info": {
+        "_postman_id": "b3e8c9b0-1234-5678-9abc-def123456789",
+        "name": "WhatsApp Gateway Toolkit",
+        "description": "مجموعة أدوات شاملة لاختبار بوابة واتساب (WhatsApp Gateway). تشمل إرسال الرسائل (Outbound) ومحاكاة الاستقبال (Inbound).",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "https://apinotification.firstaden-bank.com",
+            "type": "string",
+            "description": "رابط السيرفر الأساسي"
+        }
+    ],
+    "item": [
+        {
+            "name": "1. Outbound Messaging (الإرسال)",
+            "item": [
+                {
+                    "name": "Send Simple Message (Basic)",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"to\": \"971501234567\",\n    \"message\": \"Hello! This is a test message from Postman.\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/whatsapp/send",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "whatsapp",
+                                "send"
+                            ]
+                        },
+                        "description": "إرسال رسالة نصية بسيطة باستخدام الحد الأدنى من الحقول (to, message)."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Send Full Payload (Advanced)",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"to\": \"971501234567\",\n    \"message\": \"Transaction alert: Your account was debited.\",\n    \"meta\": {\n        \"txnId\": \"DOC-998877\",\n        \"sourceSystem\": \"CoreBanking\",\n        \"eventType\": \"DEBIT\",\n        \"accountNo\": \"123-456-789\"\n    }\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/whatsapp/send",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "whatsapp",
+                                "send"
+                            ]
+                        },
+                        "description": "إرسال رسالة مع بيانات وصفية (Meta Data) للتتبع."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Test Validation Error (Invalid)",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"message\": \"This request is missing the 'to' field\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/whatsapp/send",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "whatsapp",
+                                "send"
+                            ]
+                        },
+                        "description": "تجربة إرسال طلب خاطئ للتأكد من نظام التحقق (Validation)."
+                    },
+                    "response": []
+                }
+            ],
+            "description": "طلبات خاصة بإرسال الرسائل من النظام إلى العملاء."
+        },
+        {
+            "name": "2. Inbound Simulation (الاستقبال)",
+            "item": [
+                {
+                    "name": "Check Inbound Health (GET)",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/api/webhooks/vonage/inbound",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "webhooks",
+                                "vonage",
+                                "inbound"
+                            ]
+                        },
+                        "description": "فحص حالة الـ Webhook للتأكد من أنه يعمل."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Simulate Incoming Message (Webhook)",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"to\": \"14157386102\",\n  \"from\": \"971501234567\",\n  \"channel\": \"whatsapp\",\n  \"message_uuid\": \"simulated-uuid-1\",\n  \"timestamp\": \"2024-01-01T12:00:00Z\",\n  \"content\": {\n    \"type\": \"text\",\n    \"text\": \"Hello System, this is a reply.\"\n  },\n  \"text\": \"Hello System, this is a reply.\",\n  \"message_type\": \"text\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/webhooks/vonage/inbound",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "webhooks",
+                                "vonage",
+                                "inbound"
+                            ]
+                        },
+                        "description": "محاكاة استقبال رسالة من Vonage (قد تتطلب توقيعاً إذا كان التحقق مفعل، لكنها تفيد في اختبار المسار)."
+                    },
+                    "response": []
+                }
+            ],
+            "description": "أدوات لمحاكاة رسائل واردة أو فحص الويب هوك."
+        }
+    ]
+}

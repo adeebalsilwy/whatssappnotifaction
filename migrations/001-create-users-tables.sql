@@ -1,0 +1,154 @@
+-- Migration 001: Create User Management Tables
+-- This migration adds authentication and user management tables to the database
+
+-- Create users table
+CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT UNIQUE NOT NULL,
+    password_hash TEXT NOT NULL,
+    email TEXT UNIQUE,
+    role TEXT NOT NULL DEFAULT 'user' CHECK(role IN ('admin', 'manager', 'user')),
+    status TEXT NOT NULL DEFAULT 'active' CHECK(status IN ('active', 'inactive', 'locked')),
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    last_login DATETIME,
+    failed_login_attempts INTEGER DEFAULT 0,
+    locked_until DATETIME,
+    first_name TEXT,
+    last_name TEXT,
+    phone TEXT,
+    department TEXT,
+    position TEXT
+);
+
+-- Create user_sessions table for session management
+CREATE TABLE IF NOT EXISTS user_sessions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL,
+    session_token TEXT UNIQUE NOT NULL,
+    expires_at DATETIME NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    last_activity DATETIME DEFAULT CURRENT_TIMESTAMP,
+    ip_address TEXT,
+    user_agent TEXT,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+-- Create user_permissions table for granular permission control
+CREATE TABLE IF NOT EXISTS user_permissions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL,
+    permission_key TEXT NOT NULL,
+    granted BOOLEAN NOT NULL DEFAULT 1,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    granted_by INTEGER,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (granted_by) REFERENCES users(id),
+    UNIQUE(user_id, permission_key)
+);
+
+-- Create audit_log table for tracking user activities
+CREATE TABLE IF NOT EXISTS audit_log (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER,
+    action TEXT NOT NULL,
+    resource_type TEXT,
+    resource_id TEXT,
+    details TEXT,
+    ip_address TEXT,
+    user_agent TEXT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+-- Create indexes for better performance
+CREATE INDEX IF NOT EXISTS idx_users_username ON users(username);
+CREATE INDEX IF NOT EXISTS idx_users_email ON users(email);
+CREATE INDEX IF NOT EXISTS idx_users_role ON users(role);
+CREATE INDEX IF NOT EXISTS idx_users_status ON users(status);
+CREATE INDEX IF NOT EXISTS idx_sessions_token ON user_sessions(session_token);
+CREATE INDEX IF NOT EXISTS idx_sessions_user_id ON user_sessions(user_id);
+CREATE INDEX IF NOT EXISTS idx_sessions_expires ON user_sessions(expires_at);
+CREATE INDEX IF NOT EXISTS idx_permissions_user_id ON user_permissions(user_id);
+CREATE INDEX IF NOT EXISTS idx_audit_user_id ON audit_log(user_id);
+CREATE INDEX IF NOT EXISTS idx_audit_created_at ON audit_log(created_at);
+
+-- Insert default admin user (password: admin123)
+INSERT OR IGNORE INTO users (username, password_hash, email, role, status, first_name, last_name) 
+VALUES (
+    'admin',
+    '$2b$10$abcdefghijklmnopqrstuvABCDEFGHIJKLMNO', -- bcrypt hash of 'admin123'
+    'admin@example.com',
+    'admin',
+    'active',
+    'مدير',
+    'النظام'
+);
+
+-- Insert default permissions for admin role
+INSERT OR IGNORE INTO user_permissions (user_id, permission_key, granted) 
+SELECT id, 'manage_users', 1 FROM users WHERE username = 'admin';
+
+INSERT OR IGNORE INTO user_permissions (user_id, permission_key, granted) 
+SELECT id, 'manage_settings', 1 FROM users WHERE username = 'admin';
+
+INSERT OR IGNORE INTO user_permissions (user_id, permission_key, granted) 
+SELECT id, 'view_reports', 1 FROM users WHERE username = 'admin';
+
+INSERT OR IGNORE INTO user_permissions (user_id, permission_key, granted) 
+SELECT id, 'send_messages', 1 FROM users WHERE username = 'admin';
+
+-- Insert default manager user (password: manager123)
+INSERT OR IGNORE INTO users (username, password_hash, email, role, status, first_name, last_name) 
+VALUES (
+    'manager',
+    '$2b$10$qrstuvwxyzabcdefABCDEFMNOPQRSTUVWX', -- bcrypt hash of 'manager123'
+    'manager@example.com',
+    'manager',
+    'active',
+    'مدير',
+    'القسم'
+);
+
+-- Insert default permissions for manager role
+INSERT OR IGNORE INTO user_permissions (user_id, permission_key, granted) 
+SELECT u.id, p.permission, 1 
+FROM users u, 
+     (SELECT 'view_reports' as permission UNION 
+      SELECT 'send_messages' as permission UNION
+      SELECT 'manage_templates' as permission) p
+WHERE u.username = 'manager';
+
+-- Insert default regular user (password: user123)
+INSERT OR IGNORE INTO users (username, password_hash, email, role, status, first_name, last_name) 
+VALUES (
+    'user',
+    '$2b$10$ghijklmnopwxGHIJKLMNOPQRSTUVWXYZABCD', -- bcrypt hash of 'user123'
+    'user@example.com',
+    'user',
+    'active',
+    'مستخدم',
+    'عادي'
+);
+
+-- Insert default permissions for user role
+INSERT OR IGNORE INTO user_permissions (user_id, permission_key, granted) 
+SELECT u.id, p.permission, 1 
+FROM users u, 
+     (SELECT 'view_reports' as permission UNION 
+      SELECT 'send_messages' as permission) p
+WHERE u.username = 'user';
+
+-- Create triggers to update updated_at timestamp
+CREATE TRIGGER IF NOT EXISTS update_users_updated_at 
+    AFTER UPDATE ON users
+    FOR EACH ROW
+    BEGIN
+        UPDATE users SET updated_at = CURRENT_TIMESTAMP WHERE id = OLD.id;
+    END;
+
+-- Add audit log entries for initial setup
+INSERT INTO audit_log (user_id, action, resource_type, details) 
+SELECT id, 'SYSTEM_INIT', 'USERS', 'Created default admin user' 
+FROM users WHERE username = 'admin' LIMIT 1;

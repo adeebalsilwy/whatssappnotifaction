@@ -1,0 +1,86 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "WhatsApp Messaging API",
+    "version": "1.0.0"
+  },
+  "servers": [
+    { "url": "https://apinotification.firstaden-bank.com" }
+  ],
+  "paths": {
+    "/v1/whatsapp/messages": {
+      "post": {
+        "summary": "Send WhatsApp messages",
+        "security": [{ "bearerAuth": [] }],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/MessageRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/SendResponse" }
+              }
+            }
+          },
+          "4XX": { "description": "Client error" },
+          "5XX": { "description": "Server error" }
+        }
+      }
+    },
+    "/v1/whatsapp/webhook": {
+      "post": {
+        "summary": "Provider webhook for delivery statuses",
+        "responses": { "200": { "description": "OK" } }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "MessageRequest": {
+        "type": "object",
+        "properties": {
+          "to": { "oneOf": [ { "type": "string" }, { "type": "array", "items": { "type": "string" } } ] },
+          "recipients": { "type": "array", "items": { "type": "string" } },
+          "message": { "type": "string" },
+          "sender": { "type": "string" },
+          "referenceId": { "type": "string" },
+          "priority": { "type": "string", "enum": ["LOW","NORMAL","HIGH"] },
+          "metadata": { "type": "object" }
+        },
+        "required": ["message","sender","referenceId"]
+      },
+      "SendResponse": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string" },
+          "requestId": { "type": "string" },
+          "results": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "to": { "type": "string" },
+                "messageId": { "type": "string" },
+                "deliveryStatus": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

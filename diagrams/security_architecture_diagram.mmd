@@ -1,0 +1,31 @@
+graph TD
+    subgraph "Security Layer"
+        A[Authentication Middleware]
+        B[Authorization Checks]
+        C[Input Sanitization]
+        D[Rate Limiting]
+        E[Request Validation]
+        F[Secure Logging]
+    end
+    
+    subgraph "Access Control"
+        G[RBAC System]
+        H[Permission Checks]
+        I[Role Validation]
+    end
+    
+    subgraph "Data Protection"
+        J[Encrypted Config Storage]
+        K[Secure Token Management]
+        L[Database Security]
+    end
+    
+    A --> C
+    B --> H
+    C --> E
+    D --> A
+    E --> F
+    G --> I
+    H --> J
+    I --> K
+    F --> L

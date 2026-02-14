@@ -1,0 +1,317 @@
+{
+  "name": "Messages",
+  "item": [
+    {
+      "name": "Send Text Message",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{META_WHATSAPP_TOKEN}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"messaging_product\": \"whatsapp\",\n  \"to\": \"{{recipient_phone_number}}\",\n  \"type\": \"text\",\n  \"text\": {\n    \"body\": \"Hello, this is a test message!\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{META_WHATSAPP_API_URL}}/{{META_WHATSAPP_NUMBER_ID}}/messages",
+          "protocol": "https",
+          "host": [
+            "{{META_WHATSAPP_API_URL}}"
+          ],
+          "path": [
+            "{{META_WHATSAPP_NUMBER_ID}}",
+            "messages"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Send Text Message Template",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{META_WHATSAPP_TOKEN}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"messaging_product\": \"whatsapp\",\n  \"to\": \"{{recipient_phone_number}}\",\n  \"type\": \"template\",\n  \"template\": {\n    \"name\": \"hello_world\",\n    \"language\": {\n      \"code\": \"en_US\"\n    }\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{META_WHATSAPP_API_URL}}/{{META_WHATSAPP_NUMBER_ID}}/messages",
+          "protocol": "https",
+          "host": [
+            "{{META_WHATSAPP_API_URL}}"
+          ],
+          "path": [
+            "{{META_WHATSAPP_NUMBER_ID}}",
+            "messages"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Send Text Message with Variables",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{META_WHATSAPP_TOKEN}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"messaging_product\": \"whatsapp\",\n  \"to\": \"{{recipient_phone_number}}\",\n  \"type\": \"template\",\n  \"template\": {\n    \"name\": \"{{template_name}}\",\n    \"language\": {\n      \"code\": \"{{language_code}}\"\n    },\n    \"components\": [\n      {\n        \"type\": \"body\",\n        \"parameters\": [\n          {\n            \"type\": \"text\",\n            \"text\": \"{{variable_1}}\"\n          },\n          {\n            \"type\": \"text\",\n            \"text\": \"{{variable_2}}\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{META_WHATSAPP_API_URL}}/{{META_WHATSAPP_NUMBER_ID}}/messages",
+          "protocol": "https",
+          "host": [
+            "{{META_WHATSAPP_API_URL}}"
+          ],
+          "path": [
+            "{{META_WHATSAPP_NUMBER_ID}}",
+            "messages"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Send Payment Request Template",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{META_WHATSAPP_TOKEN}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"messaging_product\": \"whatsapp\",\n  \"to\": \"{{recipient_phone_number}}\",\n  \"type\": \"template\",\n  \"template\": {\n    \"name\": \"payment_request\",\n    \"language\": {\n      \"code\": \"en_US\"\n    },\n    \"components\": [\n      {\n        \"type\": \"body\",\n        \"parameters\": [\n          {\n            \"type\": \"text\",\n            \"text\": \"{{customer_name}}\"\n          },\n          {\n            \"type\": \"text\",\n            \"text\": \"{{amount}}\"\n          },\n          {\n            \"type\": \"text\",\n            \"text\": \"{{due_date}}\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{META_WHATSAPP_API_URL}}/{{META_WHATSAPP_NUMBER_ID}}/messages",
+          "protocol": "https",
+          "host": [
+            "{{META_WHATSAPP_API_URL}}"
+          ],
+          "path": [
+            "{{META_WHATSAPP_NUMBER_ID}}",
+            "messages"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Send Bank Transaction Alert",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{META_WHATSAPP_TOKEN}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"messaging_product\": \"whatsapp\",\n  \"to\": \"{{recipient_phone_number}}\",\n  \"type\": \"template\",\n  \"template\": {\n    \"name\": \"transaction_alert\",\n    \"language\": {\n      \"code\": \"ar_AR\"\n    },\n    \"components\": [\n      {\n        \"type\": \"body\",\n        \"parameters\": [\n          {\n            \"type\": \"text\",\n            \"text\": \"{{account_number}}\"\n          },\n          {\n            \"type\": \"text\",\n            \"text\": \"{{transaction_amount}}\"\n          },\n          {\n            \"type\": \"text\",\n            \"text\": \"{{balance}}\"\n          },\n          {\n            \"type\": \"text\",\n            \"text\": \"{{timestamp}}\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{META_WHATSAPP_API_URL}}/{{META_WHATSAPP_NUMBER_ID}}/messages",
+          "protocol": "https",
+          "host": [
+            "{{META_WHATSAPP_API_URL}}"
+          ],
+          "path": [
+            "{{META_WHATSAPP_NUMBER_ID}}",
+            "messages"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Send OTP Code Template",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{META_WHATSAPP_TOKEN}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"messaging_product\": \"whatsapp\",\n  \"to\": \"{{recipient_phone_number}}\",\n  \"type\": \"template\",\n  \"template\": {\n    \"name\": \"otp_code\",\n    \"language\": {\n      \"code\": \"en_US\"\n    },\n    \"components\": [\n      {\n        \"type\": \"body\",\n        \"parameters\": [\n          {\n            \"type\": \"text\",\n            \"text\": \"{{otp_code}}\"\n          },\n          {\n            \"type\": \"text\",\n            \"text\": \"{{expiry_time}}\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{META_WHATSAPP_API_URL}}/{{META_WHATSAPP_NUMBER_ID}}/messages",
+          "protocol": "https",
+          "host": [
+            "{{META_WHATSAPP_API_URL}}"
+          ],
+          "path": [
+            "{{META_WHATSAPP_NUMBER_ID}}",
+            "messages"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Send Marketing Promotion Template",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{META_WHATSAPP_TOKEN}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"messaging_product\": \"whatsapp\",\n  \"to\": \"{{recipient_phone_number}}\",\n  \"type\": \"template\",\n  \"template\": {\n    \"name\": \"marketing_promotion\",\n    \"language\": {\n      \"code\": \"en_US\"\n    },\n    \"components\": [\n      {\n        \"type\": \"body\",\n        \"parameters\": [\n          {\n            \"type\": \"text\",\n            \"text\": \"{{product_name}}\"\n          },\n          {\n            \"type\": \"text\",\n            \"text\": \"{{discount_percentage}}\"\n          },\n          {\n            \"type\": \"text\",\n            \"text\": \"{{offer_end_date}}\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{META_WHATSAPP_API_URL}}/{{META_WHATSAPP_NUMBER_ID}}/messages",
+          "protocol": "https",
+          "host": [
+            "{{META_WHATSAPP_API_URL}}"
+          ],
+          "path": [
+            "{{META_WHATSAPP_NUMBER_ID}}",
+            "messages"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Send Document Template",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{META_WHATSAPP_TOKEN}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"messaging_product\": \"whatsapp\",\n  \"to\": \"{{recipient_phone_number}}\",\n  \"type\": \"template\",\n  \"template\": {\n    \"name\": \"document_notification\",\n    \"language\": {\n      \"code\": \"en_US\"\n    },\n    \"components\": [\n      {\n        \"type\": \"body\",\n        \"parameters\": [\n          {\n            \"type\": \"text\",\n            \"text\": \"{{document_title}}\"\n          },\n          {\n            \"type\": \"text\",\n            \"text\": \"{{document_description}}\"\n          }\n        ]\n      },\n      {\n        \"type\": \"button\",\n        \"sub_type\": \"url\",\n        \"index\": \"0\",\n        \"parameters\": [\n          {\n            \"type\": \"text\",\n            \"text\": \"{{document_url_param}}\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{META_WHATSAPP_API_URL}}/{{META_WHATSAPP_NUMBER_ID}}/messages",
+          "protocol": "https",
+          "host": [
+            "{{META_WHATSAPP_API_URL}}"
+          ],
+          "path": [
+            "{{META_WHATSAPP_NUMBER_ID}}",
+            "messages"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

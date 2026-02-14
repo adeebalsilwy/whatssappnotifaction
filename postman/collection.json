@@ -1,0 +1,112 @@
+{
+    "info": {
+        "name": "Notification Gateway",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Notify (Auto ID)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"message\": \"Hello from Gateway\",\n    \"mobileNo\": \"774577134\"\n}"
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/api/notify",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "notify"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Notify (With TransID)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"message\": \"Detailed Alert\",\n    \"mobileNo\": \"00967774577134\",\n    \"transID\": \"mytxn-12345\",\n    \"priority\": \"HIGH\"\n}"
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/api/notify",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "notify"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Admin - Get Providers",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{baseUrl}}/api/admin/providers",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "admin",
+                        "providers"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Admin - Enable Vonage",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"enabled\": true,\n    \"config\": {\n        \"apiKey\": \"YOUR_KEY\",\n        \"apiSecret\": \"YOUR_SECRET\",\n        \"fromNumber\": \"14155550100\"\n    }\n}"
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/api/admin/providers/vonage",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "admin",
+                        "providers",
+                        "vonage"
+                    ]
+                }
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "https://apinotification.firstaden-bank.com"
+        }
+    ]
+}

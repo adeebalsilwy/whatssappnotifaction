@@ -1,0 +1,378 @@
+{
+  "whatsapp_templates": [
+    {
+      "name": "arabic_account_opening",
+      "category": "ACCOUNT_UPDATE",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "عميلنا العزيز {{1}} نود اعلامكم بانه تم فتح حسابكم {{2}} Product : {{3}} شكرا لاختياركم لنا",
+          "example": {
+            "body_text": [
+              ["Ahmad Ali", "Current Account", "CA001"]
+            ]
+          }
+        }
+      ],
+      "description": "تنبيه فتح حساب للعملاء"
+    },
+    {
+      "name": "arabic_savings_account_opening",
+      "category": "ACCOUNT_UPDATE",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "عميلنا العزيز {{1}} نود اعلامكم بانه تم فتح حسابكم {{2}} حسابات توفير/ أفراد Product : {{3}} شكرا لاختياركم لنا",
+          "example": {
+            "body_text": [
+              ["Fatima Ahmed", "Savings Account", "SA001"]
+            ]
+          }
+        }
+      ],
+      "description": "تنبيه فتح حساب توفير للعملاء"
+    },
+    {
+      "name": "arabic_corporate_account_opening",
+      "category": "ACCOUNT_UPDATE",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "عميلنا العزيز {{1}} نود اعلامكم بانه تم فتح حسابكم {{2}} حسابات جارية / شركات Product : {{3}} شكرا لاختياركم لنا",
+          "example": {
+            "body_text": [
+              ["Company Manager", "Corporate Current Account", "CC001"]
+            ]
+          }
+        }
+      ],
+      "description": "تنبيه فتح حساب جاري للشركات"
+    },
+    {
+      "name": "arabic_demand_account_opening",
+      "category": "ACCOUNT_UPDATE",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "عميلنا العزيز {{1}} نود اعلامكم بانه تم فتح حسابكم Current Accounts - Demand$ حسابات جارية / أفراد Product : {{2}} شكرا لاختياركم لنا",
+          "example": {
+            "body_text": [
+              ["Ahmad Ali", "DA001"]
+            ]
+          }
+        }
+      ],
+      "description": "تنبيه فتح حساب جاري للعملاء"
+    },
+    {
+      "name": "arabic_mudaraba_deposit_opening",
+      "category": "ACCOUNT_UPDATE",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "عميلنا العزيز {{1}} نود اعلامكم بانه تم فتح حسابكم {{2}} ودائع استثمارية لأجل /سنوية Product : {{3}} شكرا لاختياركم لنا",
+          "example": {
+            "body_text": [
+              ["Ahmad Ali", "Investment Deposit", "MD001"]
+            ]
+          }
+        }
+      ],
+      "description": "تنبيه فتح حساب وديعة استثمارية"
+    },
+    {
+      "name": "arabic_minor_savings_account_opening",
+      "category": "ACCOUNT_UPDATE",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "عميلنا العزيز {{1}} نود اعلامكم بانه تم فتح حسابكم {{2}} حسابات الإدخار قصر Product : {{3}} شكرا لاختياركم لنا",
+          "example": {
+            "body_text": [
+              ["Minor Account Holder", "Minor Savings Account", "MS001"]
+            ]
+          }
+        }
+      ],
+      "description": "تنبيه فتح حساب توفير لقصر"
+    },
+    {
+      "name": "arabic_staff_account_opening",
+      "category": "ACCOUNT_UPDATE",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "عميلنا العزيز {{1}} نود اعلامكم بانه تم فتح حسابكم CURRENT ACCOUNT STAFF حساب جاري موظفين Product : {{2}} شكرا لاختياركم لنا",
+          "example": {
+            "body_text": [
+              ["Staff Member", "SA001"]
+            ]
+          }
+        }
+      ],
+      "description": "تنبيه فتح حساب جاري للموظفين"
+    },
+    {
+      "name": "arabic_deposit_notification",
+      "category": "PAYMENT_UPDATE",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "تم ايداع {{1}} إلى حسابك الذي ينتهي بـ {{2}} بتاريخ {{3}} رصيد الحساب {{4}} {{5}}",
+          "example": {
+            "body_text": [
+              ["1000 SAR", "1234", "14/02/2026", "SAR", "5000"]
+            ]
+          }
+        }
+      ],
+      "description": "تنبيه إيداع الأموال"
+    },
+    {
+      "name": "arabic_withdrawal_notification",
+      "category": "PAYMENT_UPDATE",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "تم خصم {{1}}DR من حسابك المنتهي بـ {{2}} بتاريخ {{3}} رصيد الحساب {{4}} {{5}}",
+          "example": {
+            "body_text": [
+              ["500 SAR", "1234", "14/02/2026", "SAR", "4500"]
+            ]
+          }
+        }
+      ],
+      "description": "تنبيه خصم الأموال"
+    },
+    {
+      "name": "arabic_generic_payment_notification",
+      "category": "PAYMENT_UPDATE",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "تم خصم {{1}}DR من حسابك المنتهي بـ {{2}} بتاريخ {{3}} رصيد الحساب {{4}} {{5}}",
+          "example": {
+            "body_text": [
+              ["200 SAR", "5678", "14/02/2026", "SAR", "3800"]
+            ]
+          }
+        }
+      ],
+      "description": "تنبيه عام لخصم الأموال"
+    },
+    {
+      "name": "arabic_balance_inquiry",
+      "category": "ACCOUNT_UPDATE",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "رصيد حسابك {{1}} المنتهي بـ {{2}} هو {{3}} {{4}} بتاريخ {{5}}",
+          "example": {
+            "body_text": [
+              ["Current Account", "1234", "SAR", "7500", "14/02/2026"]
+            ]
+          }
+        }
+      ],
+      "description": "استعلام عن الرصيد"
+    },
+    {
+      "name": "arabic_transaction_alert",
+      "category": "ACCOUNT_UPDATE",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "لقد تمت عملية بقيمة {{1}} على حسابك المنتهي بـ {{2}}. الرصيد الجديد: {{3}} {{4}}. الوقت: {{5}}",
+          "example": {
+            "body_text": [
+              ["1200 SAR", "5678", "SAR", "3800", "14/02/2026 10:30 AM"]
+            ]
+          }
+        }
+      ],
+      "description": "تنبيه بالمعاملة"
+    },
+    {
+      "name": "arabic_low_balance_warning",
+      "category": "ACCOUNT_UPDATE",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "يُرجى العلم أن رصيد حسابك {{1}} المنتهي بـ {{2}} أقل من الحد المطلوب. الرصيد الحالي: {{3}} {{4}}",
+          "example": {
+            "body_text": [
+              ["Current Account", "1234", "SAR", "200"]
+            ]
+          }
+        }
+      ],
+      "description": "تحذير من رصيد منخفض"
+    },
+    {
+      "name": "arabic_card_activation",
+      "category": "ACCOUNT_UPDATE",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "تم تفعيل بطاقتك {{1}} رقم {{2}} بنجاح. يمكنك الآن استخدام بطاقتك للتسوق والدفع الإلكتروني",
+          "example": {
+            "body_text": [
+              ["Credit Card", "****5678"]
+            ]
+          }
+        }
+      ],
+      "description": "تنبيه بتفعيل البطاقة"
+    },
+    {
+      "name": "arabic_card_blocked",
+      "category": "ACCOUNT_UPDATE",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "لقد تم حظر بطاقتك {{1}} رقم {{2}} بسبب {{3}}. يُرجى الاتصال بخدمة العملاء لمزيد من المعلومات",
+          "example": {
+            "body_text": [
+              ["Debit Card", "****1234", "PIN Attempts Exceeded"]
+            ]
+          }
+        }
+      ],
+      "description": "تنبيه بحظر البطاقة"
+    },
+    {
+      "name": "arabic_cheque_deposited",
+      "category": "PAYMENT_UPDATE",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "تم إيداع الشيك رقم {{1}} بقيمة {{2}} إلى حسابك رقم {{3}}. الحالة: {{4}}",
+          "example": {
+            "body_text": [
+              ["CK-2026-001", "2500 SAR", "SA001234567", "Processing"]
+            ]
+          }
+        }
+      ],
+      "description": "تنبيه بإيداع الشيك"
+    },
+    {
+      "name": "arabic_loan_disbursement",
+      "category": "PAYMENT_UPDATE",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "تم صرف تمويلك {{1}} بقيمة {{2}} إلى حسابك رقم {{3}}. تاريخ الصرف: {{4}}",
+          "example": {
+            "body_text": [
+              ["Personal Loan", "50000 SAR", "SA001234567", "14/02/2026"]
+            ]
+          }
+        }
+      ],
+      "description": "تنبيه بصرف التمويل"
+    },
+    {
+      "name": "arabic_loan_repayment_reminder",
+      "category": "ACCOUNT_UPDATE",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "تذكير بسيط: موعد سداد دفعة التمويل {{1}} القادمة هو {{2}} بقيمة {{3}}. رصيد الحساب {{4}} {{5}}",
+          "example": {
+            "body_text": [
+              ["Home Loan", "15/03/2026", "2000 SAR", "SAR", "15000"]
+            ]
+          }
+        }
+      ],
+      "description": "تذكير بسداد التمويل"
+    },
+    {
+      "name": "arabic_insurance_claim",
+      "category": "ACCOUNT_UPDATE",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "تم استلام طلب تعويض التأمين {{1}} بقيمة {{2}}. رقم الطلب {{3}}. سيتم معالجته خلال {{4}} أيام عمل",
+          "example": {
+            "body_text": [
+              ["Car Insurance", "15000 SAR", "IC-2026-001", "3"]
+            ]
+          }
+        }
+      ],
+      "description": "تنبيه بطلب تعويض التأمين"
+    },
+    {
+      "name": "arabic_investment_update",
+      "category": "ACCOUNT_UPDATE",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "تحديث الاستثمار: رصيد حساب الاستثمار {{1}} هو {{2}} {{3}}. العائد حتى الآن: {{4}}%",
+          "example": {
+            "body_text": [
+              ["Stock Portfolio", "SAR", "125000", "8.5"]
+            ]
+          }
+        }
+      ],
+      "description": "تحديث الاستثمار"
+    },
+    {
+      "name": "arabic_welcome_message",
+      "category": "MARKETING",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "مرحباً بك في {{1}}! نحن سعداء لانضمامك إلينا. استمتع بخدماتنا المصرفية المتكاملة وعروضنا الحصرية",
+          "example": {
+            "body_text": [
+              ["First Yemen Bank"]
+            ]
+          }
+        }
+      ],
+      "description": "رسالة ترحيب"
+    },
+    {
+      "name": "arabic_promotional_offer",
+      "category": "MARKETING",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "عرض خاص لك! {{1}} فقط لفترة محدودة. لا تفوت هذه الفرصة! الاستفادة حتى {{2}}.",
+          "example": {
+            "body_text": [
+              ["Free Credit Card with 0% Interest for 6 months", "31/03/2026"]
+            ]
+          }
+        }
+      ],
+      "description": "عرض ترويجي"
+    }
+  ]
+}

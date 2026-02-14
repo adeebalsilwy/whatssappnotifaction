@@ -1,0 +1,14 @@
+{
+    "provider": "vonage",
+    "messageType": "TEXT",
+    "to": "967774577134",
+    "body": "🎉 Test message from Vonage Sandbox - مرحباً",
+    "meta": {
+        "sourceSystem": "GatewayTester",
+        "companyId": "KSA",
+        "txnId": "TEST-VONAGE-001",
+        "accountNo": "123456789",
+        "eventType": "OTHER",
+        "timestamp": "2025-12-24T17:18:00.000Z"
+    }
+}

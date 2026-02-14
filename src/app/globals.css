@@ -1,0 +1,413 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* RTL (Right-to-Left) Support for Arabic Localization */
+
+/* Base RTL styles */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] * {
+  direction: inherit;
+}
+
+/* Typography adjustments for Arabic */
+[dir="rtl"] {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Arial', 'Helvetica';
+}
+
+/* Form elements RTL adjustments */
+[dir="rtl"] input,
+[dir="rtl"] textarea,
+[dir="rtl"] select {
+  text-align: right;
+}
+
+[dir="rtl"] .form-label,
+[dir="rtl"] label {
+  text-align: right;
+}
+
+/* Button icon positioning */
+[dir="rtl"] .btn-with-icon-left {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .btn-with-icon-right {
+  flex-direction: row;
+}
+
+/* Navigation and sidebar adjustments */
+[dir="rtl"] .sidebar-nav {
+  text-align: right;
+}
+
+[dir="rtl"] .nav-item {
+  text-align: right;
+}
+
+/* Table adjustments */
+[dir="rtl"] table th,
+[dir="rtl"] table td {
+  text-align: right;
+}
+
+[dir="rtl"] .table-header-actions {
+  text-align: left;
+}
+
+/* Card and layout adjustments */
+[dir="rtl"] .card-header {
+  text-align: right;
+}
+
+[dir="rtl"] .card-title {
+  text-align: right;
+}
+
+[dir="rtl"] .card-description {
+  text-align: right;
+}
+
+/* Badge positioning */
+[dir="rtl"] .badge-with-icon {
+  flex-direction: row-reverse;
+}
+
+/* Modal and dialog adjustments */
+[dir="rtl"] .modal-header,
+[dir="rtl"] .dialog-header {
+  text-align: right;
+}
+
+[dir="rtl"] .modal-footer,
+[dir="rtl"] .dialog-footer {
+  text-align: left;
+}
+
+/* Pagination RTL */
+[dir="rtl"] .pagination {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .pagination-item:first-child {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+
+[dir="rtl"] .pagination-item:last-child {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+/* Form control positioning */
+[dir="rtl"] .input-with-icon-left {
+  padding-right: 2.5rem;
+  padding-left: 1rem;
+}
+
+[dir="rtl"] .input-with-icon-left .icon {
+  right: auto;
+  left: 0.75rem;
+}
+
+[dir="rtl"] .input-with-icon-right {
+  padding-left: 2.5rem;
+  padding-right: 1rem;
+}
+
+[dir="rtl"] .input-with-icon-right .icon {
+  left: auto;
+  right: 0.75rem;
+}
+
+/* Alert and notification positioning */
+[dir="rtl"] .alert {
+  text-align: right;
+}
+
+[dir="rtl"] .alert-icon {
+  margin-right: 0;
+  margin-left: 0.75rem;
+}
+
+/* Dropdown and select adjustments */
+[dir="rtl"] .select-trigger {
+  text-align: right;
+}
+
+[dir="rtl"] .select-content {
+  text-align: right;
+}
+
+/* Tooltip positioning */
+[dir="rtl"] .tooltip {
+  text-align: right;
+}
+
+/* Menu and context menu */
+[dir="rtl"] .menu-item {
+  text-align: right;
+}
+
+[dir="rtl"] .submenu {
+  left: auto;
+  right: 100%;
+}
+
+/* Grid and flexbox adjustments */
+[dir="rtl"] .grid-cols-2 > *:nth-child(odd) {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+[dir="rtl"] .flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+/* Specific component adjustments */
+
+/* Dashboard cards */
+[dir="rtl"] .dashboard-card .card-header {
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+[dir="rtl"] .dashboard-card .card-title {
+  font-weight: 600;
+}
+
+/* Stat cards */
+[dir="rtl"] .stat-card .stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+[dir="rtl"] .stat-card .stat-label {
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Chart containers */
+[dir="rtl"] .chart-container {
+  direction: ltr; /* Charts typically work better in LTR */
+}
+
+[dir="rtl"] .chart-container .recharts-wrapper {
+  direction: ltr;
+}
+
+/* Data table specific adjustments */
+[dir="rtl"] .data-table th {
+  border-bottom: 2px solid hsl(var(--border));
+  padding: 0.75rem 1rem;
+  text-align: right;
+}
+
+[dir="rtl"] .data-table td {
+  padding: 0.75rem 1rem;
+  text-align: right;
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+/* Form group adjustments */
+[dir="rtl"] .form-group {
+  margin-bottom: 1rem;
+}
+
+[dir="rtl"] .form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+/* Button group adjustments */
+[dir="rtl"] .btn-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+[dir="rtl"] .btn-group .btn:not(:last-child) {
+  margin-right: 0;
+}
+
+/* Utility classes for RTL */
+.rtl-text-right {
+  text-align: right !important;
+}
+
+.rtl-text-left {
+  text-align: left !important;
+}
+
+.rtl-float-right {
+  float: right !important;
+}
+
+.rtl-float-left {
+  float: left !important;
+}
+
+.rtl-margin-left {
+  margin-left: 1rem !important;
+  margin-right: 0 !important;
+}
+
+.rtl-margin-right {
+  margin-right: 1rem !important;
+  margin-left: 0 !important;
+}
+
+.rtl-padding-left {
+  padding-left: 1rem !important;
+  padding-right: 0 !important;
+}
+
+.rtl-padding-right {
+  padding-right: 1rem !important;
+  padding-left: 0 !important;
+}
+
+/* Media query for responsive RTL adjustments */
+@media (max-width: 768px) {
+  [dir="rtl"] .mobile-rwd {
+    text-align: center;
+  }
+  
+  [dir="rtl"] .mobile-stack {
+    flex-direction: column;
+  }
+}
+
+/* Print styles for RTL */
+@media print {
+  [dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+  }
+  
+  [dir="rtl"] .no-print {
+    display: none !important;
+  }
+}
+
+/* Dark mode RTL adjustments */
+.dark [dir="rtl"] {
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+}
+
+/* Focus and accessibility adjustments */
+[dir="rtl"] *:focus-visible {
+  outline-offset: 2px;
+  outline: 2px solid hsl(var(--ring));
+}
+
+/* Animation directions for RTL */
+[dir="rtl"] .slide-in-left {
+  animation: slideInRight 0.3s ease-out;
+}
+
+[dir="rtl"] .slide-in-right {
+  animation: slideInLeft 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 98%; /* #FAFAFA */
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 174 40% 51%; /* #4DB6AC */
+    --primary-foreground: 174 50% 95%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 174 38% 64%; /* #80CBC4 */
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 174 40% 51%;
+    --chart-1: 174 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 174 40% 51%;
+    --sidebar-primary-foreground: 174 50% 95%;
+    --sidebar-accent: 217.2 32.6% 17.5%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217.2 32.6% 17.5%;
+    --sidebar-ring: 174 38% 64%;
+
+  }
+
+  .dark {
+    --background: 222 47% 11%; /* Dark Blue */
+    --foreground: 210 40% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 174 40% 51%; /* #4DB6AC */
+    --primary-foreground: 174 50% 95%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 174 38% 64%; /* #80CBC4 */
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 174 38% 64%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

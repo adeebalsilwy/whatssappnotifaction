@@ -1,0 +1,74 @@
+{
+  "whatsapp_templates": [
+    {
+      "name": "account_opening_notification",
+      "category": "ACCOUNT_UPDATE",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "parameters": [
+            {
+              "type": "text",
+              "text": "عميلنا العزيز {customer_id} نود اعلامكم بانه تم فتح حسابكم {account_type} Product : {product_id} شكرا لاختياركم لنا,"
+            }
+          ]
+        }
+      ],
+      "variables": [
+        "customer_id",
+        "account_type",
+        "product_id"
+      ],
+      "description": "تنبيه فتح حساب للعملاء"
+    },
+    {
+      "name": "deposit_notification",
+      "category": "PAYMENT_UPDATE",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "parameters": [
+            {
+              "type": "text",
+              "text": "تم ايداع {amount} الى حسابك الذي ينتهي ب {last_digits} بتاريخ {date} رصيد الحساب {currency} {balance}"
+            }
+          ]
+        }
+      ],
+      "variables": [
+        "amount",
+        "last_digits",
+        "date",
+        "currency",
+        "balance"
+      ],
+      "description": "تنبيه إيداع الأموال"
+    },
+    {
+      "name": "withdrawal_notification",
+      "category": "PAYMENT_UPDATE",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "parameters": [
+            {
+              "type": "text",
+              "text": "تم خصم {amount} من حسابك المنتهي ب {last_digits} بتاريخ {date} رصيد الحساب {currency} {balance}"
+            }
+          ]
+        }
+      ],
+      "variables": [
+        "amount",
+        "last_digits",
+        "date",
+        "currency",
+        "balance"
+      ],
+      "description": "تنبيه خصم الأموال"
+    }
+  ]
+}

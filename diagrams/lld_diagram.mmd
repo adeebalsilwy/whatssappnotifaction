@@ -1,0 +1,49 @@
+graph TB
+    subgraph "Request Flow"
+        A[HTTP Request]
+        A --> B[Input Validation]
+        B --> C[Phone Number Normalization]
+        C --> D[Transaction ID Generation]
+        D --> E[Message Persistence]
+        E --> F[Provider Selection]
+        F --> G[Message Dispatch]
+        G --> H[Response Processing]
+        H --> I[Status Update]
+        I --> J[Response Return]
+    end
+    
+    subgraph "Provider Selection Logic"
+        K[Get Provider Priorities from DB]
+        L[Check Provider Availability]
+        M[Apply Retry Logic]
+        N[Execute Fallback Chain]
+        K --> L
+        L --> M
+        M --> N
+    end
+    
+    subgraph "Database Operations"
+        O[Providers Table]
+        P[Messages Table]
+        Q[Routing Rules Table]
+        R[Provider Priority Table]
+        S[Message Templates Table]
+    end
+    
+    subgraph "Logging System"
+        T[Ingress Logger]
+        U[Egress Logger]
+        V[Multi-category File Logs]
+        W[Audit Logger]
+    end
+    
+    A -.-> K
+    E -.-> O
+    E -.-> P
+    F -.-> Q
+    F -.-> R
+    F -.-> S
+    E -.-> T
+    H -.-> U
+    H -.-> V
+    H -.-> W
