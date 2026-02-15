@@ -155,7 +155,7 @@ export class WhatsAppNotificationService {
             retryPayload.messageType = 'TEXT';
             // Use the body if available, otherwise construct from variables
             if (!retryPayload.body || retryPayload.body === `Template: ${payload.templateId}`) {
-              retryPayload.body = `إشعار هام: يرجى العلم بخصوص ${payload.templateId}. تفاصيل: ${JSON.stringify(payload.variables)}`;
+              retryPayload.body = `بنك عدن الأول الإسلامي: إشعار هام بخصوص ${payload.templateId}. تفاصيل: ${JSON.stringify(payload.variables)}`;
             }
             result = await provider.sendTextMessage(retryPayload, appConfig);
           }

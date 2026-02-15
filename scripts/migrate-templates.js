@@ -142,7 +142,7 @@ async function migrate() {
                         const placeholders = (newComp.text.match(/{{(\d+)}}/g) || []).length;
                         if (placeholders > 0 && newComp.text.length < (placeholders * 30)) {
                             // Add meaningful padding for banking context
-                            const paddingStart = "إشعار من البنك: ";
+                            const paddingStart = "بنك عدن الأول الإسلامي: ";
                             const paddingEnd = " . يرجى العلم أن هذا إشعار تلقائي لضمان أمان حساباتكم وخدمتكم بشكل أفضل، نشكركم على اختياركم لنا وثقتكم الدائمة في خدماتنا المصرفية المتكاملة.";
 
                             if (!newComp.text.startsWith(paddingStart)) {

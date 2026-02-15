@@ -79,7 +79,7 @@ async function syncTemplates() {
                         // Check if it needs professional padding (short text with placeholders)
                         const placeholders = (comp.text.match(/{{(\d+)}}/g) || []).length;
                         if (placeholders > 0 && comp.text.length < (placeholders * 20)) {
-                            const paddingStart = "إشعار من البنك: ";
+                            const paddingStart = "بنك عدن الأول الإسلامي: ";
                             const paddingEnd = " . يرجى العلم أن هذا إشعار تلقائي لضمان أمان حساباتكم وخدمتكم بشكل أفضل، نشكركم على ثقتكم بنا.";
 
                             if (!comp.text.startsWith(paddingStart)) {
