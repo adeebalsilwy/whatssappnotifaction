@@ -22,7 +22,7 @@ export async function middleware(request: NextRequest) {
   const origin = request.nextUrl.origin;
   
   // Paths that don't require authentication
-  const publicPaths = ['/login', '/api/auth/login', '/api/auth/logout', '/_next', '/favicon.ico'];
+  const publicPaths = ['/login', '/api/auth/login', '/api/auth/logout', '/_next', '/favicon.ico', '/dashboard/api/whatsapp/send', '/api/whatsapp/send'];
   const isPublicPath = publicPaths.some(path => request.nextUrl.pathname.startsWith(path));
   
   // If it's a public path, allow access

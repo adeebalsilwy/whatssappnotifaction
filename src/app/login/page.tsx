@@ -87,8 +87,8 @@ export default function LoginPage() {
               <Shield className="h-8 w-8 text-white" />
             </div>
           </div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">بوابة الواتساب</h1>
-          <p className="text-gray-600">تسجيل الدخول إلى نظام إدارة الرسائل</p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">بنك عدن الأول الإسلامي</h1>
+          <p className="text-gray-600 text-lg font-medium">بوابة الواتساب - نظام إدارة الإشعارات</p>
         </div>
 
         <Card className="shadow-xl">
@@ -189,7 +189,7 @@ export default function LoginPage() {
         </Card>
 
         <div className="mt-8 text-center text-sm text-gray-500">
-          <p>© 2026 بوابة الواتساب - جميع الحقوق محفوظة</p>
+          <p>© 2026 بنك عدن الأول الإسلامي - جميع الحقوق محفوظة</p>
         </div>
       </div>
     </div>
