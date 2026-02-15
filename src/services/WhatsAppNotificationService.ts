@@ -75,7 +75,7 @@ export class WhatsAppNotificationService {
       payload.variables = { '1': payload.body };
     }
 
-    // --- Template Rendering if needed ---
+    // --- Template Rendering & Professional Wrapping ---
     if (payload.messageType === 'TEMPLATE' && payload.templateId && !(payload as any).template) {
       try {
         const lang = payload.language || 'ar';
@@ -86,8 +86,30 @@ export class WhatsAppNotificationService {
           payload.body = `Template: ${payload.templateId}`;
         }
       } catch (e) {
-        console.warn(`Could not render template ${payload.templateId}:`, (e as Error).message);
-        // We continue anyway, the provider might handle it if it only needs the ID
+        console.warn(`[WhatsAppService] Template '${payload.templateId}' rendering failed:`, (e as Error).message);
+
+        // --- PROFESSIONAL FALLBACK WRAPPING ---
+        // If specific template fails, wrap in the general professional template to ensure delivery
+        console.log(`[WhatsAppService] Wrapping content in 'arabic_general_notification' as a professional fallback...`);
+
+        const originalTemplateId = payload.templateId;
+        payload.templateId = 'arabic_general_notification';
+
+        // Construct a professional body for the general template if not already present
+        if (!payload.body || payload.body === 'N/A' || payload.body.startsWith('Template:')) {
+           const varsSummary = Object.values(payload.variables || {}).join(' - ');
+           payload.body = `بنك عدن الأول الإسلامي: إشعار بخصوص ${originalTemplateId}. التفاصيل: ${varsSummary}`;
+        }
+
+        payload.variables = { '1': payload.body };
+
+        try {
+           const fallbackRendered = this.templateService.renderTemplate('arabic_general_notification', { '1': payload.body }, 'ar');
+           (payload as any).template = fallbackRendered.template;
+        } catch (innerError) {
+           console.error(`[WhatsAppService] CRITICAL: General fallback template 'arabic_general_notification' is missing from database!`);
+           // At this point, Meta might still try to send with just the templateId if it exists on their side
+        }
       }
     }
 

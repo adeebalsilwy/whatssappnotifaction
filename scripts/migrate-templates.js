@@ -171,9 +171,8 @@ async function migrate() {
                 db.prepare(`
                     INSERT INTO templates (name, category, language, components, variables, description, updatedAt)
                     VALUES (?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
-                    ON CONFLICT(name) DO UPDATE SET
+                    ON CONFLICT(name, language) DO UPDATE SET
                         category = excluded.category,
-                        language = excluded.language,
                         components = excluded.components,
                         variables = excluded.variables,
                         description = excluded.description,
