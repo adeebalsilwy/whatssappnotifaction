@@ -16,7 +16,6 @@ import { TemplateService } from './TemplateService';
  * 3. Delegating the message sending task to the selected provider.
  * This decouples the API route from the provider-specific implementations.
  */
-import whatsapp_templates from '../config/whatsapp-arabic-templates.json';
 
 export class WhatsAppNotificationService {
   private providers: Partial<Record<Provider, IWhatsAppProvider>>;
@@ -65,6 +64,55 @@ export class WhatsAppNotificationService {
   public async send(payload: OutgoingMessagePayload): Promise<ProviderResult> {
     const appConfig = getConfig();
 
+    // --- Auto-Template Conversion for Meta Reliability ---
+    // If provider is Meta and message type is TEXT, convert to a General Template
+    // to bypass the 24-hour window restriction for new customers.
+    const effectiveProvider = payload.provider || appConfig.defaultProvider;
+    if (effectiveProvider === 'meta' && payload.messageType === 'TEXT') {
+      console.log(`[WhatsAppService] Converting TEXT message to Template for Meta reliability...`);
+      payload.messageType = 'TEMPLATE';
+      payload.templateId = 'arabic_general_notification';
+      payload.variables = { '1': payload.body };
+    }
+
+    // --- Template Rendering & Professional Wrapping ---
+    if (payload.messageType === 'TEMPLATE' && payload.templateId && !(payload as any).template) {
+      try {
+        const lang = payload.language || 'ar';
+        const rendered = this.templateService.renderTemplate(payload.templateId, payload.variables || {}, lang);
+        (payload as any).template = rendered.template;
+        // Also update body with a preview if it's empty
+        if (!payload.body || payload.body === 'N/A') {
+          payload.body = `Template: ${payload.templateId}`;
+        }
+      } catch (e) {
+        console.warn(`[WhatsAppService] Template '${payload.templateId}' rendering failed:`, (e as Error).message);
+
+        // --- PROFESSIONAL FALLBACK WRAPPING ---
+        // If specific template fails, wrap in the general professional template to ensure delivery
+        console.log(`[WhatsAppService] Wrapping content in 'arabic_general_notification' as a professional fallback...`);
+
+        const originalTemplateId = payload.templateId;
+        payload.templateId = 'arabic_general_notification';
+
+        // Construct a professional body for the general template if not already present
+        if (!payload.body || payload.body === 'N/A' || payload.body.startsWith('Template:')) {
+           const varsSummary = Object.values(payload.variables || {}).join(' - ');
+           payload.body = `بنك عدن الأول الإسلامي: إشعار بخصوص ${originalTemplateId}. التفاصيل: ${varsSummary}`;
+        }
+
+        payload.variables = { '1': payload.body };
+
+        try {
+           const fallbackRendered = this.templateService.renderTemplate('arabic_general_notification', { '1': payload.body }, 'ar');
+           (payload as any).template = fallbackRendered.template;
+        } catch (innerError) {
+           console.error(`[WhatsAppService] CRITICAL: General fallback template 'arabic_general_notification' is missing from database!`);
+           // At this point, Meta might still try to send with just the templateId if it exists on their side
+        }
+      }
+    }
+
     // --- Phone Number Normalization ---
     // Rule: If the country key (code) is not present, default to Yemen (+967).
     // We assume the key is present if the number starts with '+', '00', or '967'.
@@ -100,13 +148,46 @@ export class WhatsAppNotificationService {
 
     try {
       // Pass the current config to the provider
-      const result = await provider.sendTextMessage(payload, appConfig);
+      let result = await provider.sendTextMessage(payload, appConfig);
 
-      // --- Enhanced Fallback Logic ---
+      // --- Enhanced Fallback & Recovery Logic ---
       if (!result.success) {
-        const fallbackResult = await this.executeFallbackChain(payload, appConfig, providerName, result);
-        if (fallbackResult) {
-          return fallbackResult;
+        // Handle Meta Error #132001: Template translation missing
+        if (providerName === 'meta' && result.errorCode === '132001' && payload.templateId) {
+          console.warn(`[WhatsAppService] Meta Template "${payload.templateId}" translation missing. Attempting recovery...`);
+
+          // Try to find ANY translation for this template in our DB
+          const allTmpls = this.templateService.getAllTemplates();
+          const alternatives = allTmpls.filter(t => t.name === payload.templateId);
+
+          if (alternatives.length > 0) {
+            // Fallback to the first available language (often en or the only one we have)
+            const fallbackTmpl = alternatives[0];
+            console.log(`[WhatsAppService] Retrying with fallback language: ${fallbackTmpl.language}`);
+
+            const retryPayload = { ...payload };
+            const rendered = this.templateService.renderTemplate(payload.templateId, payload.variables || {}, fallbackTmpl.language);
+            (retryPayload as any).template = rendered.template;
+
+            result = await provider.sendTextMessage(retryPayload, appConfig);
+          } else {
+            // If no alternative found, convert to TEXT to ensure delivery
+            console.log(`[WhatsAppService] No alternative translation found. Converting to TEXT for emergency delivery.`);
+            const retryPayload = { ...payload };
+            retryPayload.messageType = 'TEXT';
+            // Use the body if available, otherwise construct from variables
+            if (!retryPayload.body || retryPayload.body === `Template: ${payload.templateId}`) {
+              retryPayload.body = `بنك عدن الأول الإسلامي: إشعار هام بخصوص ${payload.templateId}. تفاصيل: ${JSON.stringify(payload.variables)}`;
+            }
+            result = await provider.sendTextMessage(retryPayload, appConfig);
+          }
+        }
+
+        if (!result.success) {
+          const fallbackResult = await this.executeFallbackChain(payload, appConfig, providerName, result);
+          if (fallbackResult) {
+            return fallbackResult;
+          }
         }
       }
       // --------------------------------
@@ -303,11 +384,12 @@ export class WhatsAppNotificationService {
         messageType: 'TEMPLATE',
         templateId: templateName,
         // Keep a preview/body for logging and fallback; real template content is sent via meta.template
-        body: renderedTemplate.template.components[0]?.parameters[0]?.text || '',
+        body: `Template: ${templateName}`,
         meta: {
           sourceSystem: 'TemplateService',
           txnId: `tmpl-${Date.now()}`,
-          eventType: 'OTHER'
+          eventType: 'OTHER',
+          template: renderedTemplate.template // Put it in meta.template too for compatibility
         } as any,
         variables: Object.fromEntries(
           Object.entries(variables).map(([key, value]) => [key, String(value)])

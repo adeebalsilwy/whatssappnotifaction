@@ -1,74 +1,116 @@
 {
   "whatsapp_templates": [
     {
-      "name": "account_opening_notification",
-      "category": "ACCOUNT_UPDATE",
+      "name": "arabic_promotional_offer",
+      "category": "MARKETING",
       "language": "ar",
       "components": [
         {
           "type": "BODY",
-          "parameters": [
-            {
-              "type": "text",
-              "text": "عميلنا العزيز {customer_id} نود اعلامكم بانه تم فتح حسابكم {account_type} Product : {product_id} شكرا لاختياركم لنا,"
-            }
-          ]
+          "text": "إشعار من البنك: عرض خاص لك! {{1}} فقط لفترة محدودة. لا تفوت هذه الفرصة! الاستفادة حتى {{2}}. . نشكركم على ثقتكم بنا واستخدامكم لخدماتنا الإلكترونية.",
+          "example": {
+            "body_text": [["خصم 20% على القروض", "2024-12-31"]]
+          }
         }
-      ],
-      "variables": [
-        "customer_id",
-        "account_type",
-        "product_id"
-      ],
-      "description": "تنبيه فتح حساب للعملاء"
+      ]
     },
     {
-      "name": "deposit_notification",
-      "category": "PAYMENT_UPDATE",
+      "name": "arabic_loan_repayment_reminder",
+      "category": "UTILITY",
       "language": "ar",
       "components": [
         {
           "type": "BODY",
-          "parameters": [
-            {
-              "type": "text",
-              "text": "تم ايداع {amount} الى حسابك الذي ينتهي ب {last_digits} بتاريخ {date} رصيد الحساب {currency} {balance}"
-            }
-          ]
+          "text": "إشعار من البنك: تذكير بسيط: موعد سداد دفعة التمويل {{1}} القادمة هو {{2}} بقيمة {{3}}. رصيد الحساب {{4}} {{5}} . نشكركم على ثقتكم بنا واستخدامكم لخدماتنا الإلكترونية.",
+          "example": {
+            "body_text": [["الشخصي", "2024-06-01", "500.00", "1200.00", "USD"]]
+          }
         }
-      ],
-      "variables": [
-        "amount",
-        "last_digits",
-        "date",
-        "currency",
-        "balance"
-      ],
-      "description": "تنبيه إيداع الأموال"
+      ]
     },
     {
-      "name": "withdrawal_notification",
-      "category": "PAYMENT_UPDATE",
+      "name": "arabic_loan_disbursement",
+      "category": "UTILITY",
       "language": "ar",
       "components": [
         {
           "type": "BODY",
-          "parameters": [
-            {
-              "type": "text",
-              "text": "تم خصم {amount} من حسابك المنتهي ب {last_digits} بتاريخ {date} رصيد الحساب {currency} {balance}"
-            }
-          ]
+          "text": "إشعار من البنك: تم صرف تمويلك {{1}} بقيمة {{2}} إلى حسابك رقم {{3}}. تاريخ الصرف: {{4}} . نشكركم على ثقتكم بنا واستخدامكم لخدماتنا الإلكترونية.",
+          "example": {
+            "body_text": [["السيارات", "15000.00", "12345678", "2024-05-15"]]
+          }
         }
-      ],
-      "variables": [
-        "amount",
-        "last_digits",
-        "date",
-        "currency",
-        "balance"
-      ],
-      "description": "تنبيه خصم الأموال"
+      ]
+    },
+    {
+      "name": "arabic_cheque_deposited",
+      "category": "UTILITY",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "إشعار من البنك: تم إيداع الشيك رقم {{1}} بقيمة {{2}} إلى حسابك رقم {{3}}. الحالة: {{4}} . نشكركم على ثقتكم بنا واستخدامكم لخدماتنا الإلكترونية.",
+          "example": {
+            "body_text": [["CHQ-1002", "2000.00", "87654321", "تم التحصيل"]]
+          }
+        }
+      ]
+    },
+    {
+      "name": "arabic_low_balance_warning",
+      "category": "UTILITY",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "إشعار من البنك: يُرجى العلم أن رصيد حسابك {{1}} المنتهي بـ {{2}} أقل من الحد المطلوب. الرصيد الحالي: {{3}} {{4}} . نشكركم على ثقتكم بنا واستخدامكم لخدماتنا الإلكترونية.",
+          "example": {
+            "body_text": [["الجاري", "4433", "50.00", "USD"]]
+          }
+        }
+      ]
+    },
+    {
+      "name": "arabic_transaction_alert",
+      "category": "UTILITY",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "إشعار من البنك: لقد تمت عملية بقيمة {{1}} على حسابك المنتهي بـ {{2}}. الرصيد الجديد: {{3}} {{4}}. الوقت: {{5}} . نشكركم على ثقتكم بنا واستخدامكم لخدماتنا الإلكترونية.",
+          "example": {
+            "body_text": [["75.00", "9988", "1425.00", "USD", "10:30 AM"]]
+          }
+        }
+      ]
+    },
+    {
+      "name": "arabic_balance_inquiry",
+      "category": "UTILITY",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "إشعار من البنك: رصيد حسابك {{1}} المنتهي بـ {{2}} هو {{3}} {{4}} بتاريخ {{5}} . نشكركم على ثقتكم بنا واستخدامكم لخدماتنا الإلكترونية.",
+          "example": {
+            "body_text": [["التوفير", "1122", "8900.00", "USD", "2024-05-20"]]
+          }
+        }
+      ]
+    },
+    {
+      "name": "arabic_insurance_claim",
+      "category": "UTILITY",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "إشعار من البنك: تم استلام طلب تعويض التأمين رقم {{1}} بقيمة {{2}}. رقم مرجع الطلب هو {{3}}. سيتم معالجته بعناية خلال {{4}} أيام عمل. نحن هنا لضمان راحتكم.",
+          "example": {
+            "body_text": [["INS-445", "300.00", "REF-9981", "5"]]
+          }
+        }
+      ]
     }
   ]
 }

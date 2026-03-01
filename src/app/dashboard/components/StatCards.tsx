@@ -23,7 +23,9 @@ export function StatCards({ logs }: { logs: LogEntry[] }) {
           <MessageSquare className="h-4 w-4 text-muted-foreground" />
         </CardHeader>
         <CardContent>
-          <div className="text-2xl font-bold">{totalMessages.toLocaleString()}</div>
+          <div className="text-2xl font-bold" suppressHydrationWarning>
+            {totalMessages.toLocaleString('en-US')}
+          </div>
           <p className="text-xs text-muted-foreground">خلال الفترة المحددة</p>
         </CardContent>
       </Card>
@@ -33,9 +35,11 @@ export function StatCards({ logs }: { logs: LogEntry[] }) {
           <CheckCircle className="h-4 w-4 text-green-500" />
         </CardHeader>
         <CardContent>
-          <div className="text-2xl font-bold">{successfulMessages.toLocaleString()}</div>
+          <div className="text-2xl font-bold" suppressHydrationWarning>
+            {successfulMessages.toLocaleString('en-US')}
+          </div>
           <p className="text-xs text-muted-foreground">
-            {successRate.toFixed(1)}% نسبة النجاح
+            <span suppressHydrationWarning>{successRate.toFixed(1)}</span>% نسبة النجاح
           </p>
         </CardContent>
       </Card>
@@ -45,9 +49,11 @@ export function StatCards({ logs }: { logs: LogEntry[] }) {
           <AlertCircle className="h-4 w-4 text-destructive" />
         </CardHeader>
         <CardContent>
-          <div className="text-2xl font-bold">{failedMessages.toLocaleString()}</div>
+          <div className="text-2xl font-bold" suppressHydrationWarning>
+            {failedMessages.toLocaleString('en-US')}
+          </div>
           <p className="text-xs text-muted-foreground">
-            {(100 - successRate).toFixed(1)}% نسبة الفشل
+            <span suppressHydrationWarning>{(100 - successRate).toFixed(1)}</span>% نسبة الفشل
           </p>
         </CardContent>
       </Card>
@@ -58,9 +64,9 @@ export function StatCards({ logs }: { logs: LogEntry[] }) {
         </CardHeader>
         <CardContent>
           <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-            {Object.entries(providerCounts).map(([provider, count]) => (
-              <div key={provider} className="capitalize">
-                {provider}: <span className="font-bold">{count}</span>
+            {Object.entries(providerCounts).map(([provider, count], idx) => (
+              <div key={`${provider}-${idx}`} className="capitalize">
+                {provider || 'Unknown'}: <span className="font-bold" suppressHydrationWarning>{count.toLocaleString('en-US')}</span>
               </div>
             ))}
           </div>

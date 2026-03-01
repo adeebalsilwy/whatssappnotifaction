@@ -1,9 +1,6 @@
 import { NextResponse } from 'next/server';
 import { NextRequest } from 'next/server';
-import Database from 'better-sqlite3';
-import path from 'path';
-
-const dbPath = process.env.SQLITE_DB_PATH || path.join(process.cwd(), 'gateway.db');
+import { getDb } from '@/lib/db';
 
 // GET - Fetch single message with events
 export async function GET(
@@ -12,7 +9,7 @@ export async function GET(
 ) {
   try {
     const resolvedParams = await params;
-    const db = new Database(dbPath);
+    const db = getDb();
     
     // Get message details
     const message = db.prepare(`
@@ -32,8 +29,6 @@ export async function GET(
       WHERE messageId = ? 
       ORDER BY createdAt DESC
     `).all(resolvedParams.id);
-    
-    db.close();
     
     return NextResponse.json({
       success: true,
@@ -62,7 +57,7 @@ export async function PUT(
     const body = await request.json();
     const { status, priority } = body;
     
-    const db = new Database(dbPath);
+    const db = getDb();
     
     // Check if message exists
     const existingMessage = db.prepare(`
@@ -116,8 +111,6 @@ export async function PUT(
       }));
     }
     
-    db.close();
-    
     return NextResponse.json({
       success: true,
       data: {
@@ -142,7 +135,7 @@ export async function DELETE(
 ) {
   try {
     const resolvedParams = await params;
-    const db = new Database(dbPath);
+    const db = getDb();
     
     // Check if message exists
     const existingMessage = db.prepare(`
@@ -165,8 +158,6 @@ export async function DELETE(
     db.prepare(`
       DELETE FROM message_events WHERE messageId = ?
     `).run(resolvedParams.id);
-    
-    db.close();
     
     return NextResponse.json({
       success: true,

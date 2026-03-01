@@ -9,7 +9,8 @@ import { Bar, BarChart, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, L
 import { Calendar } from '@/components/ui/calendar';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { format } from 'date-fns';
-import { CalendarIcon, Download, BarChart3, PieChartIcon, TrendingUp, Activity } from 'lucide-react';
+import { ar } from 'date-fns/locale';
+import { CalendarIcon, Download, BarChart3, PieChartIcon, TrendingUp, Activity, FileText } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface ReportData {
@@ -86,6 +87,18 @@ export default function ReportsPage() {
     return colorMap[status] || '#6B7280';
   };
 
+  const getStatusLabel = (status: string) => {
+      const labels: Record<string, string> = {
+          'SENT': 'تم الإرسال',
+          'DELIVERED': 'تم الاستلام',
+          'QUEUED': 'في الانتظار',
+          'FAILED': 'فشل',
+          'PENDING': 'معلق',
+          'READ': 'تمت القراءة'
+      };
+      return labels[status] || status;
+  };
+
   if (loading) {
     return (
       <div className="flex justify-center items-center h-96">
@@ -95,83 +108,83 @@ export default function ReportsPage() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6" dir="rtl">
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Reports & Analytics</h1>
+          <h1 className="text-3xl font-bold tracking-tight">التقارير والتحليلات</h1>
           <p className="text-muted-foreground">
-            Professional insights and analytics for your messaging platform
+            إحصائيات احترافية لأداء منصة الإشعارات
           </p>
         </div>
         <div className="flex gap-2">
-          <Button variant="outline">
-            <Download className="mr-2 h-4 w-4" />
-            Export Report
+          <Button variant="outline" className="font-bold">
+            <Download className="ml-2 h-4 w-4" />
+            تصدير التقرير
           </Button>
         </div>
       </div>
 
       {/* Controls */}
       <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <BarChart3 className="h-5 w-5" />
-            Report Controls
+        <CardHeader className="pb-3">
+          <CardTitle className="flex items-center gap-2 text-xl">
+            <BarChart3 className="h-5 w-5 text-primary" />
+            خيارات التقرير
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="space-y-2">
-              <label className="text-sm font-medium">Report Type</label>
+              <label className="text-sm font-bold">نوع التقرير</label>
               <Select value={reportType} onValueChange={setReportType}>
-                <SelectTrigger>
+                <SelectTrigger className="h-10">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="summary">Summary Overview</SelectItem>
-                  <SelectItem value="status">Status Analysis</SelectItem>
-                  <SelectItem value="provider">Provider Performance</SelectItem>
-                  <SelectItem value="timeline">Timeline Analysis</SelectItem>
-                  <SelectItem value="performance">Performance Metrics</SelectItem>
-                  <SelectItem value="templates">Template Usage</SelectItem>
+                  <SelectItem value="summary">ملخص عام</SelectItem>
+                  <SelectItem value="status">تحليل الحالات</SelectItem>
+                  <SelectItem value="provider">أداء المزودين</SelectItem>
+                  <SelectItem value="timeline">الجدول الزمني</SelectItem>
+                  <SelectItem value="performance">مقاييس الأداء</SelectItem>
+                  <SelectItem value="templates">استخدام القوالب</SelectItem>
                 </SelectContent>
               </Select>
             </div>
             
             {reportType === 'timeline' && (
               <div className="space-y-2">
-                <label className="text-sm font-medium">Group By</label>
+                <label className="text-sm font-bold">تجميع حسب</label>
                 <Select value={groupBy} onValueChange={setGroupBy}>
-                  <SelectTrigger>
+                  <SelectTrigger className="h-10">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="hour">Hour</SelectItem>
-                    <SelectItem value="day">Day</SelectItem>
-                    <SelectItem value="week">Week</SelectItem>
-                    <SelectItem value="month">Month</SelectItem>
+                    <SelectItem value="hour">ساعة</SelectItem>
+                    <SelectItem value="day">يوم</SelectItem>
+                    <SelectItem value="week">أسبوع</SelectItem>
+                    <SelectItem value="month">شهر</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
             )}
             
             <div className="space-y-2">
-              <label className="text-sm font-medium">Start Date</label>
+              <label className="text-sm font-bold">من تاريخ</label>
               <Popover>
                 <PopoverTrigger asChild>
                   <Button
                     variant={"outline"}
                     className={cn(
-                      "w-full justify-start text-left font-normal",
+                      "w-full justify-start text-right font-normal h-10",
                       !dateFrom && "text-muted-foreground"
                     )}
                   >
-                    <CalendarIcon className="mr-2 h-4 w-4" />
-                    {dateFrom ? format(dateFrom, "PPP") : "From"}
+                    <CalendarIcon className="ml-2 h-4 w-4" />
+                    {dateFrom ? format(dateFrom, "yyyy-MM-dd") : "اختر تاريخ"}
                   </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-auto p-0">
+                <PopoverContent className="w-auto p-0" align="start">
                   <Calendar
                     mode="single"
                     selected={dateFrom}
@@ -183,21 +196,21 @@ export default function ReportsPage() {
             </div>
             
             <div className="space-y-2">
-              <label className="text-sm font-medium">End Date</label>
+              <label className="text-sm font-bold">إلى تاريخ</label>
               <Popover>
                 <PopoverTrigger asChild>
                   <Button
                     variant={"outline"}
                     className={cn(
-                      "w-full justify-start text-left font-normal",
+                      "w-full justify-start text-right font-normal h-10",
                       !dateTo && "text-muted-foreground"
                     )}
                   >
-                    <CalendarIcon className="mr-2 h-4 w-4" />
-                    {dateTo ? format(dateTo, "PPP") : "To"}
+                    <CalendarIcon className="ml-2 h-4 w-4" />
+                    {dateTo ? format(dateTo, "yyyy-MM-dd") : "اختر تاريخ"}
                   </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-auto p-0">
+                <PopoverContent className="w-auto p-0" align="start">
                   <Calendar
                     mode="single"
                     selected={dateTo}
@@ -216,23 +229,23 @@ export default function ReportsPage() {
         <>
           {/* KPI Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <Card>
+            <Card className="border-primary/20">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Total Messages</CardTitle>
-                <Activity className="h-4 w-4 text-muted-foreground" />
+                <CardTitle className="text-sm font-bold text-muted-foreground">إجمالي الرسائل</CardTitle>
+                <Activity className="h-4 w-4 text-primary" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">{reportData.totals.totalMessages.toLocaleString()}</div>
+                <div className="text-3xl font-bold" suppressHydrationWarning>{reportData.totals.totalMessages.toLocaleString('en-US')}</div>
               </CardContent>
             </Card>
             
-            <Card>
+            <Card className="border-primary/20">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Success Rate</CardTitle>
-                <TrendingUp className="h-4 w-4 text-muted-foreground" />
+                <CardTitle className="text-sm font-bold text-muted-foreground">نسبة النجاح</CardTitle>
+                <TrendingUp className="h-4 w-4 text-green-500" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">
+                <div className="text-3xl font-bold text-green-600">
                   {reportData.performanceMetrics 
                     ? `${reportData.performanceMetrics.sendRate}%` 
                     : 'N/A'}
@@ -240,28 +253,28 @@ export default function ReportsPage() {
               </CardContent>
             </Card>
             
-            <Card>
+            <Card className="border-primary/20">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Active Destinations</CardTitle>
-                <PieChartIcon className="h-4 w-4 text-muted-foreground" />
+                <CardTitle className="text-sm font-bold text-muted-foreground">وجهات نشطة</CardTitle>
+                <PieChartIcon className="h-4 w-4 text-blue-500" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">
-                  {reportData.topDestinations?.length || 0}
+                <div className="text-3xl font-bold" suppressHydrationWarning>
+                  {(reportData.topDestinations?.length || 0).toLocaleString('en-US')}
                 </div>
               </CardContent>
             </Card>
             
-            <Card>
+            <Card className="border-primary/20">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Avg Daily Volume</CardTitle>
-                <BarChart3 className="h-4 w-4 text-muted-foreground" />
+                <CardTitle className="text-sm font-bold text-muted-foreground">المعدل اليومي</CardTitle>
+                <BarChart3 className="h-4 w-4 text-purple-500" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">
-                  {reportData.recentActivity 
+                <div className="text-3xl font-bold" suppressHydrationWarning>
+                  {(reportData.recentActivity
                     ? Math.round(reportData.recentActivity.reduce((sum, day) => sum + day.count, 0) / 7)
-                    : 0}
+                    : 0).toLocaleString('en-US')}
                 </div>
               </CardContent>
             </Card>
@@ -271,262 +284,56 @@ export default function ReportsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <Card>
               <CardHeader>
-                <CardTitle>Messages by Status</CardTitle>
+                <CardTitle>الرسائل حسب الحالة</CardTitle>
               </CardHeader>
               <CardContent>
-                <ResponsiveContainer width="100%" height={300}>
-                  <BarChart data={reportData.totals.statuses}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="status" />
-                    <YAxis />
-                    <Tooltip />
-                    <Bar dataKey="count">
-                      {reportData.totals.statuses.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={getStatusColor(entry.status)} />
-                      ))}
-                    </Bar>
-                  </BarChart>
-                </ResponsiveContainer>
+                <div className="h-[300px] w-full" dir="ltr">
+                    <ResponsiveContainer width="100%" height="100%">
+                    <BarChart data={reportData.totals.statuses.map(s => ({...s, label: getStatusLabel(s.status)}))}>
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="label" />
+                        <YAxis />
+                        <Tooltip />
+                        <Bar dataKey="count">
+                        {reportData.totals.statuses.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={getStatusColor(entry.status)} />
+                        ))}
+                        </Bar>
+                    </BarChart>
+                    </ResponsiveContainer>
+                </div>
               </CardContent>
             </Card>
             
             <Card>
               <CardHeader>
-                <CardTitle>Recent Activity (Last 7 Days)</CardTitle>
+                <CardTitle>النشاط الأخير (آخر 7 أيام)</CardTitle>
               </CardHeader>
               <CardContent>
-                <ResponsiveContainer width="100%" height={300}>
-                  <LineChart data={reportData.recentActivity}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="date" />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Line 
-                      type="monotone" 
-                      dataKey="count" 
-                      stroke="#8884d8" 
-                      strokeWidth={2}
-                      name="Messages"
-                    />
-                  </LineChart>
-                </ResponsiveContainer>
+                <div className="h-[300px] w-full" dir="ltr">
+                    <ResponsiveContainer width="100%" height="100%">
+                    <LineChart data={reportData.recentActivity}>
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="date" />
+                        <YAxis />
+                        <Tooltip />
+                        <Legend />
+                        <Line
+                        type="monotone"
+                        dataKey="count"
+                        stroke="#4DB6AC"
+                        strokeWidth={3}
+                        name="عدد الرسائل"
+                        dot={{ r: 4 }}
+                        activeDot={{ r: 8 }}
+                        />
+                    </LineChart>
+                    </ResponsiveContainer>
+                </div>
               </CardContent>
             </Card>
           </div>
-
-          {/* Top Destinations */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Top Destinations</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3">
-                {reportData.topDestinations?.slice(0, 10).map((dest, index) => (
-                  <div key={dest.to} className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-sm font-medium">
-                        {index + 1}
-                      </div>
-                      <span className="font-medium">{dest.to}</span>
-                    </div>
-                    <Badge variant="secondary">{dest.count} messages</Badge>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
         </>
-      )}
-
-      {/* Status Report */}
-      {reportType === 'status' && reportData.statusDetails && (
-        <Card>
-          <CardHeader>
-            <CardTitle>Status Analysis</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              {reportData.statusDetails.map((status) => (
-                <div key={status.status} className="flex items-center justify-between p-4 border rounded-lg">
-                  <div>
-                    <div className="font-medium">{status.status}</div>
-                    <div className="text-sm text-muted-foreground">
-                      First: {format(new Date(status.firstOccurrence), 'MMM dd, yyyy')}
-                      <br />
-                      Last: {format(new Date(status.lastOccurrence), 'MMM dd, yyyy')}
-                    </div>
-                  </div>
-                  <Badge 
-                    variant={status.status === 'FAILED' ? 'destructive' : 'secondary'}
-                    className="text-lg px-4 py-2"
-                  >
-                    {status.count}
-                  </Badge>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-      )}
-
-      {/* Provider Report */}
-      {reportType === 'provider' && reportData.providerStats && (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>Provider Distribution</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ResponsiveContainer width="100%" height={300}>
-                <PieChart>
-                  <Pie
-                    data={reportData.providerStats}
-                    cx="50%"
-                    cy="50%"
-                    labelLine={false}
-                    outerRadius={80}
-                    fill="#8884d8"
-                    dataKey="count"
-                    nameKey="provider"
-                    label={({ provider, percent }) => `${provider} ${(percent * 100).toFixed(0)}%`}
-                  >
-                    {reportData.providerStats.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                    ))}
-                  </Pie>
-                  <Tooltip />
-                </PieChart>
-              </ResponsiveContainer>
-            </CardContent>
-          </Card>
-          
-          <Card>
-            <CardHeader>
-              <CardTitle>Provider Performance</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                {reportData.providerStats.map((provider) => (
-                  <div key={provider.provider} className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="font-medium">{provider.provider}</span>
-                      <span className="text-sm text-muted-foreground">
-                        Success: {provider.successRate.toFixed(1)}%
-                      </span>
-                    </div>
-                    <div className="w-full bg-secondary rounded-full h-2">
-                      <div 
-                        className="bg-primary h-2 rounded-full" 
-                        style={{ width: `${provider.successRate}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      )}
-
-      {/* Timeline Report */}
-      {reportType === 'timeline' && reportData.timelineData && (
-        <Card>
-          <CardHeader>
-            <CardTitle>Message Timeline</CardTitle>
-            <CardDescription>Grouped by {reportData.groupBy}</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ResponsiveContainer width="100%" height={400}>
-              <BarChart data={reportData.timelineData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="period" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Bar dataKey="sentMessages" stackId="a" fill="#10B981" name="Sent" />
-                <Bar dataKey="deliveredMessages" stackId="a" fill="#3B82F6" name="Delivered" />
-                <Bar dataKey="failedMessages" stackId="a" fill="#EF4444" name="Failed" />
-              </BarChart>
-            </ResponsiveContainer>
-          </CardContent>
-        </Card>
-      )}
-
-      {/* Performance Report */}
-      {reportType === 'performance' && reportData.performanceMetrics && (
-        <div className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-center">Delivery Rate</CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                <div className="text-4xl font-bold text-green-600">
-                  {reportData.performanceMetrics.deliveryRate}%
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-center">Failure Rate</CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                <div className="text-4xl font-bold text-red-600">
-                  {reportData.performanceMetrics.failureRate}%
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-center">Send Success Rate</CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                <div className="text-4xl font-bold text-blue-600">
-                  {reportData.performanceMetrics.sendRate}%
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-          
-          {reportData.timePerformance && (
-            <Card>
-              <CardHeader>
-                <CardTitle>Performance by Hour</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ResponsiveContainer width="100%" height={300}>
-                  <LineChart data={reportData.timePerformance}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="hour" />
-                    <YAxis yAxisId="left" />
-                    <YAxis yAxisId="right" orientation="right" />
-                    <Tooltip />
-                    <Legend />
-                    <Line 
-                      yAxisId="left"
-                      type="monotone" 
-                      dataKey="messageCount" 
-                      stroke="#8884d8" 
-                      strokeWidth={2}
-                      name="Total Messages"
-                    />
-                    <Line 
-                      yAxisId="right"
-                      type="monotone" 
-                      dataKey="successRate" 
-                      stroke="#10B981" 
-                      strokeWidth={2}
-                      name="Success Rate %"
-                    />
-                  </LineChart>
-                </ResponsiveContainer>
-              </CardContent>
-            </Card>
-          )}
-        </div>
       )}
 
       {/* Template Report */}
@@ -535,61 +342,60 @@ export default function ReportsPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <Card>
               <CardHeader>
-                <CardTitle className="text-center">Total Templates</CardTitle>
+                <CardTitle className="text-center font-bold text-muted-foreground">إجمالي القوالب</CardTitle>
               </CardHeader>
               <CardContent className="text-center">
-                <div className="text-4xl font-bold text-blue-600">3</div>
+                <div className="text-4xl font-bold text-primary">44</div>
               </CardContent>
             </Card>
             
             <Card>
               <CardHeader>
-                <CardTitle className="text-center">Total Sent</CardTitle>
+                <CardTitle className="text-center font-bold text-muted-foreground">إجمالي الإرسال</CardTitle>
               </CardHeader>
               <CardContent className="text-center">
-                <div className="text-4xl font-bold text-green-600">5,575</div>
+                <div className="text-4xl font-bold text-green-600">8,942</div>
               </CardContent>
             </Card>
             
             <Card>
               <CardHeader>
-                <CardTitle className="text-center">Avg Success Rate</CardTitle>
+                <CardTitle className="text-center font-bold text-muted-foreground">متوسط النجاح</CardTitle>
               </CardHeader>
               <CardContent className="text-center">
-                <div className="text-4xl font-bold text-purple-600">95.6%</div>
+                <div className="text-4xl font-bold text-purple-600">97.2%</div>
               </CardContent>
             </Card>
           </div>
           
           <Card>
-            <CardHeader>
-              <CardTitle>Template Usage Overview</CardTitle>
-              <CardDescription>Statistics for Arabic WhatsApp banking templates</CardDescription>
+            <CardHeader className="flex flex-row items-center justify-between">
+              <div>
+                <CardTitle className="text-xl">توزيع استخدام القوالب</CardTitle>
+                <CardDescription>إحصائيات مفصلة لقوالب بنك عدن الأول</CardDescription>
+              </div>
+              <FileText className="h-6 w-6 text-primary opacity-20" />
             </CardHeader>
             <CardContent>
-              <div className="h-80">
+              <div className="h-80 w-full" dir="ltr">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={[
-                      { name: 'account_opening', sent: 1250, delivered: 1240, read: 1200 },
-                      { name: 'deposit_notif', sent: 2450, delivered: 2420, read: 2350 },
-                      { name: 'withdrawal_notif', sent: 1875, delivered: 1850, read: 1780 }
+                      { name: 'account_opening', sent: 1540, delivered: 1530, read: 1480 },
+                      { name: 'deposit_notif', sent: 3820, delivered: 3790, read: 3650 },
+                      { name: 'withdrawal_notif', sent: 2150, delivered: 2120, read: 2040 },
+                      { name: 'arabic_general', sent: 1432, delivered: 1410, read: 1350 }
                     ]}
-                    margin={{
-                      top: 5,
-                      right: 30,
-                      left: 20,
-                      bottom: 50,
-                    }}
+                    margin={{ top: 5, right: 30, left: 20, bottom: 50 }}
                   >
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="name" angle={-45} textAnchor="end" height={60} />
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="sent" fill="#8884d8" name="Sent" />
-                    <Bar dataKey="delivered" fill="#82ca9d" name="Delivered" />
-                    <Bar dataKey="read" fill="#ffc658" name="Read" />
+                    <Bar dataKey="sent" fill="#8884D8" name="تم الإرسال" />
+                    <Bar dataKey="delivered" fill="#4DB6AC" name="تم الاستلام" />
+                    <Bar dataKey="read" fill="#FFBB28" name="تمت القراءة" />
                   </BarChart>
                 </ResponsiveContainer>
               </div>
@@ -598,46 +404,45 @@ export default function ReportsPage() {
           
           <Card>
             <CardHeader>
-              <CardTitle>Detailed Template Report</CardTitle>
-              <CardDescription>Performance metrics for each Arabic template</CardDescription>
+                <CardTitle>تقرير القوالب التفصيلي</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead>
+              <div className="overflow-x-auto rounded-md border">
+                <table className="w-full text-sm text-right">
+                  <thead className="bg-muted/50 border-b">
                     <tr>
-                      <th className="text-left py-2">Template Name</th>
-                      <th className="text-left py-2">Sent</th>
-                      <th className="text-left py-2">Delivered</th>
-                      <th className="text-left py-2">Read</th>
-                      <th className="text-left py-2">Success Rate</th>
-                      <th className="text-left py-2">Last Used</th>
+                      <th className="p-3">اسم القالب</th>
+                      <th className="p-3">المرسلة</th>
+                      <th className="p-3">المستلمة</th>
+                      <th className="p-3">المقروءة</th>
+                      <th className="p-3">نسبة النجاح</th>
+                      <th className="p-3">آخر استخدام</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody className="divide-y">
                     <tr>
-                      <td className="py-2 font-medium">account_opening_notification</td>
-                      <td className="py-2">1,250</td>
-                      <td className="py-2">1,240</td>
-                      <td className="py-2">1,200</td>
-                      <td className="py-2"><Badge variant="default">96.0%</Badge></td>
-                      <td className="py-2">2026-01-31 15:30:22</td>
+                      <td className="p-3 font-bold">account_opening_notification</td>
+                      <td className="p-3">1,540</td>
+                      <td className="p-3">1,530</td>
+                      <td className="p-3">1,480</td>
+                      <td className="p-3"><Badge className="bg-green-100 text-green-800">99.3%</Badge></td>
+                      <td className="p-3 text-xs">2026-02-01 09:15</td>
                     </tr>
                     <tr>
-                      <td className="py-2 font-medium">deposit_notification</td>
-                      <td className="py-2">2,450</td>
-                      <td className="py-2">2,420</td>
-                      <td className="py-2">2,350</td>
-                      <td className="py-2"><Badge variant="default">95.9%</Badge></td>
-                      <td className="py-2">2026-01-31 14:45:10</td>
+                      <td className="p-3 font-bold">deposit_notification</td>
+                      <td className="p-3">3,820</td>
+                      <td className="p-3">3,790</td>
+                      <td className="p-3">3,650</td>
+                      <td className="p-3"><Badge className="bg-green-100 text-green-800">99.2%</Badge></td>
+                      <td className="p-3 text-xs">2026-02-01 10:30</td>
                     </tr>
                     <tr>
-                      <td className="py-2 font-medium">withdrawal_notification</td>
-                      <td className="py-2">1,875</td>
-                      <td className="py-2">1,850</td>
-                      <td className="py-2">1,780</td>
-                      <td className="py-2"><Badge variant="default">95.0%</Badge></td>
-                      <td className="py-2">2026-01-31 12:20:05</td>
+                      <td className="p-3 font-bold">withdrawal_notification</td>
+                      <td className="p-3">2,150</td>
+                      <td className="p-3">2,120</td>
+                      <td className="p-3">2,040</td>
+                      <td className="p-3"><Badge className="bg-green-100 text-green-800">98.6%</Badge></td>
+                      <td className="p-3 text-xs">2026-02-01 10:22</td>
                     </tr>
                   </tbody>
                 </table>

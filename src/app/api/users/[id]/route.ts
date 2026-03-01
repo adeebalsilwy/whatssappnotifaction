@@ -266,7 +266,6 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
         `Updated user: ${updatedUser?.username || userId}`
       );
     } finally {
-      db.close();
     }
     
     return NextResponse.json({
@@ -372,7 +371,6 @@ export async function DELETE(request: NextRequest, { params }: { params: Promise
         `Deleted user: ${user.username}`
       );
     } finally {
-      db.close();
     }
     
     return NextResponse.json({

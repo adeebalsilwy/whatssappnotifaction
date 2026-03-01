@@ -21,17 +21,20 @@ export function getDefaultConfig(): AppConfig {
     apiNotificationUrl: process.env.APINOTIFICATION_URL || 'https://apinotification.firstaden-bank.com/',
     providers: {
       meta: {
-        url: process.env.META_WHATSAPP_API_URL || 'https://graph.facebook.com/v20.0',
+        url: process.env.META_WHATSAPP_API_URL || 'https://graph.facebook.com/v24.0',
         token: process.env.META_WHATSAPP_TOKEN || '',
         numberId: process.env.META_WHATSAPP_NUMBER_ID || '',
         webhookVerifyToken: process.env.META_WEBHOOK_VERIFY_TOKEN || '',
+        wabaId: process.env.WABA_ID || '',
+        appSecret: process.env.META_APP_SECRET || '',
       },
       vonage: {
         url: process.env.VONAGE_API_URL || 'https://messages-sandbox.nexmo.com/v1/messages',
-        apiKey: process.env.VONAGE_API_KEY || '82f67722',
-        apiSecret: process.env.VONAGE_API_SECRET || 'bd8T07s2n@e@2zN2Q!J',
-        from: process.env.VONAGE_FROM_NUMBER || '967774577134',
-        fromNumber: process.env.VONAGE_FROM_NUMBER || '967774577134',
+        apiKey: process.env.VONAGE_API_KEY || '',
+        apiSecret: process.env.VONAGE_API_SECRET || '',
+        from: process.env.VONAGE_FROM_NUMBER || '',
+        fromNumber: process.env.VONAGE_FROM_NUMBER || '',
+        applicationId: process.env.VONAGE_APPLICATION_ID || '',
       },
       generic: {
         url: process.env.GENERIC_WHATSAPP_URL || '',
@@ -92,8 +95,11 @@ export async function loadConfig(): Promise<AppConfig> {
 
   // Ensure env vars always win for sensitive fields
   mergedConfig.providers.meta!.token = process.env.META_WHATSAPP_TOKEN ?? mergedConfig.providers.meta!.token;
+  mergedConfig.providers.meta!.numberId = process.env.META_WHATSAPP_NUMBER_ID ?? mergedConfig.providers.meta!.numberId;
+  mergedConfig.providers.meta!.wabaId = process.env.WABA_ID ?? mergedConfig.providers.meta!.wabaId;
   mergedConfig.providers.vonage!.apiKey = process.env.VONAGE_API_KEY ?? mergedConfig.providers.vonage!.apiKey;
   mergedConfig.providers.vonage!.apiSecret = process.env.VONAGE_API_SECRET ?? mergedConfig.providers.vonage!.apiSecret;
+  mergedConfig.providers.vonage!.applicationId = process.env.VONAGE_APPLICATION_ID ?? mergedConfig.providers.vonage!.applicationId;
   mergedConfig.providers.generic!.token = process.env.GENERIC_WHATSAPP_TOKEN ?? mergedConfig.providers.generic!.token;
   mergedConfig.providers.direct!.token = process.env.DIRECT_WHATSAPP_TOKEN ?? mergedConfig.providers.direct!.token;
   mergedConfig.apiNotificationUrl = process.env.APINOTIFICATION_URL ?? mergedConfig.apiNotificationUrl; 
@@ -120,8 +126,11 @@ export function loadConfigSync(): AppConfig {
     },
   }; 
   merged.providers.meta!.token = process.env.META_WHATSAPP_TOKEN ?? merged.providers.meta!.token;
+  merged.providers.meta!.numberId = process.env.META_WHATSAPP_NUMBER_ID ?? merged.providers.meta!.numberId;
+  merged.providers.meta!.wabaId = process.env.WABA_ID ?? merged.providers.meta!.wabaId;
   merged.providers.vonage!.apiKey = process.env.VONAGE_API_KEY ?? merged.providers.vonage!.apiKey;
   merged.providers.vonage!.apiSecret = process.env.VONAGE_API_SECRET ?? merged.providers.vonage!.apiSecret;
+  merged.providers.vonage!.applicationId = process.env.VONAGE_APPLICATION_ID ?? merged.providers.vonage!.applicationId;
   merged.providers.generic!.token = process.env.GENERIC_WHATSAPP_TOKEN ?? merged.providers.generic!.token;
   merged.providers.direct!.token = process.env.DIRECT_WHATSAPP_TOKEN ?? merged.providers.direct!.token;
   merged.apiNotificationUrl = process.env.APINOTIFICATION_URL ?? merged.apiNotificationUrl;

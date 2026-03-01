@@ -7,6 +7,26 @@ import getConfig from '@/config/providers';
 import { insertApiLog, insertMessage, updateApiLog } from '@/server/repository';
 
 /**
+ * GET handler to provide instructions and avoid 405 Method Not Allowed errors.
+ */
+export async function GET() {
+  return NextResponse.json({
+    success: true,
+    message: 'WhatsApp Notification Gateway is active.',
+    usage: {
+      method: 'POST',
+      endpoint: '/api/whatsapp/send',
+      payload: {
+        to: '+967774577134',
+        message: 'Your message content here',
+        provider: 'meta (optional)',
+        messageType: 'TEXT or TEMPLATE (optional)'
+      }
+    }
+  });
+}
+
+/**
  * API Route for sending WhatsApp messages.
  * This is the single entry point for the Core Banking system.
  * It handles request validation, service orchestration, logging (DB + File), and response generation.

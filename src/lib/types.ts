@@ -56,6 +56,8 @@ export type ProviderConfig = {
   webhookVerifyToken?: string;
   username?: string;
   password?: string;
+  wabaId?: string;
+  appSecret?: string;
 };
 
 /**

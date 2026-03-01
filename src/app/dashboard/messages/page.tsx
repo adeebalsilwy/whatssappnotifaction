@@ -13,8 +13,10 @@ import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, Pagi
 import { Calendar } from '@/components/ui/calendar';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { format } from 'date-fns';
-import { CalendarIcon, PlusCircle, Search, Filter, Download, Eye, Edit, Trash2 } from 'lucide-react';
+import { ar } from 'date-fns/locale';
+import { CalendarIcon, PlusCircle, Search, Filter, Download, Eye, Edit, Trash2, Send, History } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { toast } from '@/hooks/use-toast';
 
 interface Message {
   id: number;
@@ -28,8 +30,6 @@ interface Message {
   metadata: string;
   createdAt: string;
   updatedAt: string;
-  lastEventType?: string;
-  lastEventTime?: string;
 }
 
 interface PaginationInfo {
@@ -109,10 +109,11 @@ export default function MessagesPage() {
       if (data.success) {
         setIsCreateDialogOpen(false);
         setNewMessage({ to: '', message: '', priority: 'normal' });
+        toast({ title: 'تم الإرسال', description: 'تم إنشاء الرسالة بنجاح' });
         fetchMessages();
       }
     } catch (error) {
-      console.error('Error creating message:', error);
+      toast({ title: 'خطأ', description: 'فشل إنشاء الرسالة', variant: 'destructive' });
     }
   };
 
@@ -134,16 +135,17 @@ export default function MessagesPage() {
       if (data.success) {
         setIsEditDialogOpen(false);
         setEditingMessage(null);
+        toast({ title: 'تم التحديث', description: 'تم تحديث حالة الرسالة' });
         fetchMessages();
       }
     } catch (error) {
-      console.error('Error updating message:', error);
+        toast({ title: 'خطأ', description: 'فشل التحديث', variant: 'destructive' });
     }
   };
 
   // Handle delete message
   const handleDeleteMessage = async (id: number) => {
-    if (!confirm('Are you sure you want to delete this message?')) return;
+    if (!confirm('هل أنت متأكد من حذف هذه الرسالة من السجل؟')) return;
     
     try {
       const response = await fetch(`/api/messages/${id}`, {
@@ -152,10 +154,11 @@ export default function MessagesPage() {
       
       const data = await response.json();
       if (data.success) {
+        toast({ title: 'تم الحذف', description: 'تم حذف السجل بنجاح' });
         fetchMessages();
       }
     } catch (error) {
-      console.error('Error deleting message:', error);
+        toast({ title: 'خطأ', description: 'فشل الحذف', variant: 'destructive' });
     }
   };
 
@@ -166,12 +169,12 @@ export default function MessagesPage() {
 
   const getStatusBadge = (status: string) => {
     const statusMap: Record<string, { variant: 'default' | 'secondary' | 'destructive' | 'outline', label: string }> = {
-      'QUEUED': { variant: 'secondary', label: 'Queued' },
-      'SENT': { variant: 'default', label: 'Sent' },
-      'DELIVERED': { variant: 'default', label: 'Delivered' },
-      'READ': { variant: 'default', label: 'Read' },
-      'FAILED': { variant: 'destructive', label: 'Failed' },
-      'PENDING': { variant: 'outline', label: 'Pending' }
+      'QUEUED': { variant: 'secondary', label: 'في الانتظار' },
+      'SENT': { variant: 'default', label: 'تم الإرسال' },
+      'DELIVERED': { variant: 'default', label: 'تم الاستلام' },
+      'READ': { variant: 'default', label: 'تمت القراءة' },
+      'FAILED': { variant: 'destructive', label: 'فشل' },
+      'PENDING': { variant: 'outline', label: 'معلق' }
     };
     
     const statusInfo = statusMap[status] || { variant: 'secondary', label: status };
@@ -180,9 +183,9 @@ export default function MessagesPage() {
 
   const getPriorityBadge = (priority: string) => {
     const priorityMap: Record<string, { variant: 'default' | 'secondary' | 'destructive' | 'outline', label: string }> = {
-      'high': { variant: 'destructive', label: 'High' },
-      'normal': { variant: 'default', label: 'Normal' },
-      'low': { variant: 'secondary', label: 'Low' }
+      'high': { variant: 'destructive', label: 'عالية' },
+      'normal': { variant: 'default', label: 'عادية' },
+      'low': { variant: 'secondary', label: 'منخفضة' }
     };
     
     const priorityInfo = priorityMap[priority] || { variant: 'default', label: priority };
@@ -190,72 +193,73 @@ export default function MessagesPage() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6" dir="rtl">
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Message Management</h1>
+          <h1 className="text-3xl font-bold tracking-tight">إدارة الرسائل</h1>
           <p className="text-muted-foreground">
-            Manage and monitor all your WhatsApp messages
+            تتبع ومراقبة جميع الرسائل الصادرة والواردة عبر النظام
           </p>
         </div>
         <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
           <DialogTrigger asChild>
-            <Button>
-              <PlusCircle className="mr-2 h-4 w-4" />
-              New Message
+            <Button className="font-bold">
+              <PlusCircle className="ml-2 h-4 w-4" />
+              إرسال رسالة يدوية
             </Button>
           </DialogTrigger>
           <DialogContent className="sm:max-w-[425px]">
             <DialogHeader>
-              <DialogTitle>Create New Message</DialogTitle>
+              <DialogTitle>إنشاء رسالة جديدة</DialogTitle>
               <DialogDescription>
-                Send a new WhatsApp message to your customers
+                إرسال إشعار واتساب يدوي لعملاء البنك
               </DialogDescription>
             </DialogHeader>
             <div className="grid gap-4 py-4">
               <div className="grid grid-cols-4 items-center gap-4">
                 <Label htmlFor="to" className="text-right">
-                  Phone Number
+                  رقم الهاتف
                 </Label>
                 <Input
                   id="to"
                   value={newMessage.to}
                   onChange={(e) => setNewMessage({...newMessage, to: e.target.value})}
                   className="col-span-3"
-                  placeholder="+967774577134"
+                  placeholder="967774577134"
+                  dir="ltr"
                 />
               </div>
               <div className="grid grid-cols-4 items-center gap-4">
                 <Label htmlFor="message" className="text-right">
-                  Message
+                  محتوى الرسالة
                 </Label>
                 <textarea
                   id="message"
                   value={newMessage.message}
                   onChange={(e) => setNewMessage({...newMessage, message: e.target.value})}
-                  className="col-span-3 min-h-[120px] rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                  placeholder="Enter your message here..."
+                  className="col-span-3 min-h-[120px] rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                  placeholder="اكتب نص الرسالة هنا..."
                 />
               </div>
               <div className="grid grid-cols-4 items-center gap-4">
                 <Label htmlFor="priority" className="text-right">
-                  Priority
+                  الأولوية
                 </Label>
                 <Select value={newMessage.priority} onValueChange={(value) => setNewMessage({...newMessage, priority: value})}>
                   <SelectTrigger className="col-span-3">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="low">Low</SelectItem>
-                    <SelectItem value="normal">Normal</SelectItem>
-                    <SelectItem value="high">High</SelectItem>
+                    <SelectItem value="low">منخفضة</SelectItem>
+                    <SelectItem value="normal">عادية</SelectItem>
+                    <SelectItem value="high">عالية</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
             </div>
             <DialogFooter>
-              <Button onClick={handleCreateMessage}>Send Message</Button>
+              <Button onClick={handleCreateMessage} className="w-full">إرسال الآن</Button>
             </DialogFooter>
           </DialogContent>
         </Dialog>
@@ -263,73 +267,76 @@ export default function MessagesPage() {
 
       {/* Filters */}
       <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Filter className="h-5 w-5" />
-            Filters
+        <CardHeader className="pb-3">
+          <CardTitle className="flex items-center gap-2 text-xl">
+            <Filter className="h-5 w-5 text-primary" />
+            تصفية السجلات
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="search">Phone Number</Label>
-              <Input
-                id="search"
-                placeholder="Search by phone number..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
+              <Label>رقم الهاتف</Label>
+              <div className="relative">
+                <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Input
+                    placeholder="بحث بالرقم..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="pr-10"
+                    dir="ltr"
+                />
+              </div>
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="status">Status</Label>
+              <Label>الحالة</Label>
               <Select value={statusFilter} onValueChange={setStatusFilter}>
                 <SelectTrigger>
-                  <SelectValue placeholder="All Statuses" />
+                  <SelectValue placeholder="كل الحالات" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all">All Statuses</SelectItem>
-                  <SelectItem value="QUEUED">Queued</SelectItem>
-                  <SelectItem value="SENT">Sent</SelectItem>
-                  <SelectItem value="DELIVERED">Delivered</SelectItem>
-                  <SelectItem value="FAILED">Failed</SelectItem>
-                  <SelectItem value="PENDING">Pending</SelectItem>
+                  <SelectItem value="all">كل الحالات</SelectItem>
+                  <SelectItem value="SENT">تم الإرسال</SelectItem>
+                  <SelectItem value="DELIVERED">تم الاستلام</SelectItem>
+                  <SelectItem value="FAILED">فشل</SelectItem>
+                  <SelectItem value="PENDING">معلق</SelectItem>
                 </SelectContent>
               </Select>
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="priority">Priority</Label>
+              <Label>الأولوية</Label>
               <Select value={priorityFilter} onValueChange={setPriorityFilter}>
                 <SelectTrigger>
-                  <SelectValue placeholder="All Priorities" />
+                  <SelectValue placeholder="كل الأولويات" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all">All Priorities</SelectItem>
-                  <SelectItem value="high">High</SelectItem>
-                  <SelectItem value="normal">Normal</SelectItem>
-                  <SelectItem value="low">Low</SelectItem>
+                  <SelectItem value="all">كل الأولويات</SelectItem>
+                  <SelectItem value="high">عالية</SelectItem>
+                  <SelectItem value="normal">عادية</SelectItem>
+                  <SelectItem value="low">منخفضة</SelectItem>
                 </SelectContent>
               </Select>
             </div>
             
             <div className="space-y-2">
-              <Label>Date Range</Label>
+              <Label>نطاق التاريخ</Label>
               <div className="flex gap-2">
                 <Popover>
                   <PopoverTrigger asChild>
                     <Button
                       variant={"outline"}
                       className={cn(
-                        "w-full justify-start text-left font-normal",
+                        "w-full justify-start text-right font-normal h-10",
                         !dateFrom && "text-muted-foreground"
                       )}
                     >
-                      <CalendarIcon className="mr-2 h-4 w-4" />
-                      {dateFrom ? format(dateFrom, "PPP") : "From"}
+                      <CalendarIcon className="ml-2 h-4 w-4" />
+                      {dateFrom ? format(dateFrom, "yyyy-MM-dd") : "من"}
                     </Button>
                   </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0">
+                  <PopoverContent className="w-auto p-0" align="start">
                     <Calendar
                       mode="single"
                       selected={dateFrom}
@@ -344,15 +351,15 @@ export default function MessagesPage() {
                     <Button
                       variant={"outline"}
                       className={cn(
-                        "w-full justify-start text-left font-normal",
+                        "w-full justify-start text-right font-normal h-10",
                         !dateTo && "text-muted-foreground"
                       )}
                     >
-                      <CalendarIcon className="mr-2 h-4 w-4" />
-                      {dateTo ? format(dateTo, "PPP") : "To"}
+                      <CalendarIcon className="ml-2 h-4 w-4" />
+                      {dateTo ? format(dateTo, "yyyy-MM-dd") : "إلى"}
                     </Button>
                   </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0">
+                  <PopoverContent className="w-auto p-0" align="start">
                     <Calendar
                       mode="single"
                       selected={dateTo}
@@ -369,84 +376,91 @@ export default function MessagesPage() {
 
       {/* Messages Table */}
       <Card>
-        <CardHeader>
-          <CardTitle>Messages</CardTitle>
-          <CardDescription>
-            Showing {messages.length} of {pagination.total} messages
-          </CardDescription>
+        <CardHeader className="flex flex-row items-center justify-between">
+          <div>
+            <CardTitle>الرسائل المرسلة</CardTitle>
+            <CardDescription>
+              عرض {(pagination.page - 1) * pagination.limit + 1} إلى {Math.min(pagination.page * pagination.limit, pagination.total)} من إجمالي {pagination.total} رسالة
+            </CardDescription>
+          </div>
+          <Button variant="outline" size="sm" onClick={fetchMessages}>
+            <History className="ml-2 h-4 w-4" />
+            تحديث القائمة
+          </Button>
         </CardHeader>
         <CardContent>
           {loading ? (
-            <div className="flex justify-center items-center h-32">
+            <div className="flex justify-center items-center h-64">
               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
             </div>
           ) : (
             <>
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>ID</TableHead>
-                    <TableHead>To</TableHead>
-                    <TableHead>Message</TableHead>
-                    <TableHead>Status</TableHead>
-                    <TableHead>Priority</TableHead>
-                    <TableHead>Created</TableHead>
-                    <TableHead className="text-right">Actions</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {messages.map((message) => (
-                    <TableRow key={message.id}>
-                      <TableCell className="font-medium">{message.id}</TableCell>
-                      <TableCell>{message.to}</TableCell>
-                      <TableCell className="max-w-xs truncate">
-                        {message.message.substring(0, 50)}...
-                      </TableCell>
-                      <TableCell>{getStatusBadge(message.status)}</TableCell>
-                      <TableCell>{getPriorityBadge(message.priority)}</TableCell>
-                      <TableCell>{format(new Date(message.createdAt), 'MMM dd, yyyy HH:mm')}</TableCell>
-                      <TableCell className="text-right">
-                        <div className="flex justify-end gap-2">
-                          <Button variant="outline" size="sm">
-                            <Eye className="h-4 w-4" />
-                          </Button>
-                          <Button 
-                            variant="outline" 
-                            size="sm"
-                            onClick={() => {
-                              setEditingMessage(message);
-                              setIsEditDialogOpen(true);
-                            }}
-                          >
-                            <Edit className="h-4 w-4" />
-                          </Button>
-                          <Button 
-                            variant="outline" 
-                            size="sm"
-                            onClick={() => handleDeleteMessage(message.id)}
-                          >
-                            <Trash2 className="h-4 w-4" />
-                          </Button>
-                        </div>
-                      </TableCell>
+              <div className="rounded-md border overflow-hidden">
+                <Table>
+                  <TableHeader className="bg-muted/50">
+                    <TableRow>
+                      <TableHead className="w-16">ID</TableHead>
+                      <TableHead>المستلم</TableHead>
+                      <TableHead className="w-1/3">الرسالة</TableHead>
+                      <TableHead>الحالة</TableHead>
+                      <TableHead>الأولوية</TableHead>
+                      <TableHead>التاريخ</TableHead>
+                      <TableHead className="text-left">الإجراءات</TableHead>
                     </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
+                  </TableHeader>
+                  <TableBody>
+                    {messages.map((message) => (
+                      <TableRow key={message.id} className="hover:bg-muted/30">
+                        <TableCell className="font-mono text-xs">{message.id}</TableCell>
+                        <TableCell dir="ltr" className="text-right font-medium">{message.to}</TableCell>
+                        <TableCell className="max-w-xs truncate text-sm">
+                          {message.message}
+                        </TableCell>
+                        <TableCell>{getStatusBadge(message.status)}</TableCell>
+                        <TableCell>{getPriorityBadge(message.priority)}</TableCell>
+                        <TableCell className="text-xs whitespace-nowrap">
+                            {format(new Date(message.createdAt), 'yyyy/MM/dd HH:mm', { locale: ar })}
+                        </TableCell>
+                        <TableCell className="text-left">
+                          <div className="flex justify-start gap-1">
+                            <Button variant="ghost" size="icon" className="h-8 w-8">
+                              <Eye className="h-4 w-4" />
+                            </Button>
+                            <Button
+                                variant="ghost"
+                                size="icon"
+                                className="h-8 w-8"
+                                onClick={() => {
+                                    setEditingMessage(message);
+                                    setIsEditDialogOpen(true);
+                                }}
+                            >
+                              <Edit className="h-4 w-4" />
+                            </Button>
+                            <Button
+                                variant="ghost"
+                                size="icon"
+                                className="h-8 w-8 text-destructive hover:bg-destructive/10"
+                                onClick={() => handleDeleteMessage(message.id)}
+                            >
+                              <Trash2 className="h-4 w-4" />
+                            </Button>
+                          </div>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </div>
               
               {/* Pagination */}
-              <div className="flex items-center justify-between pt-4">
-                <div className="text-sm text-muted-foreground">
-                  Showing {(pagination.page - 1) * pagination.limit + 1} to{' '}
-                  {Math.min(pagination.page * pagination.limit, pagination.total)} of{' '}
-                  {pagination.total} entries
-                </div>
+              <div className="mt-6">
                 <Pagination>
                   <PaginationContent>
                     <PaginationItem>
                       <PaginationPrevious 
                         href="#" 
-                        onClick={(e: React.MouseEvent) => {
+                        onClick={(e) => {
                           e.preventDefault();
                           if (pagination.page > 1) {
                             setPagination({...pagination, page: pagination.page - 1});
@@ -462,7 +476,7 @@ export default function MessagesPage() {
                           <PaginationLink 
                             href="#" 
                             isActive={pagination.page === pageNum}
-                            onClick={(e: React.MouseEvent) => {
+                            onClick={(e) => {
                               e.preventDefault();
                               setPagination({...pagination, page: pageNum});
                             }}
@@ -482,7 +496,7 @@ export default function MessagesPage() {
                     <PaginationItem>
                       <PaginationNext 
                         href="#" 
-                        onClick={(e: React.MouseEvent) => {
+                        onClick={(e) => {
                           e.preventDefault();
                           if (pagination.page < pagination.totalPages) {
                             setPagination({...pagination, page: pagination.page + 1});
@@ -502,16 +516,16 @@ export default function MessagesPage() {
       <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle>Edit Message</DialogTitle>
+            <DialogTitle>تعديل حالة الرسالة</DialogTitle>
             <DialogDescription>
-              Update message properties
+              تعديل خصائص الرسالة المسجلة يدوياً
             </DialogDescription>
           </DialogHeader>
           {editingMessage && (
             <div className="grid gap-4 py-4">
               <div className="grid grid-cols-4 items-center gap-4">
                 <Label htmlFor="edit-status" className="text-right">
-                  Status
+                  الحالة
                 </Label>
                 <Select 
                   value={editingMessage.status} 
@@ -521,17 +535,16 @@ export default function MessagesPage() {
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="QUEUED">Queued</SelectItem>
-                    <SelectItem value="SENT">Sent</SelectItem>
-                    <SelectItem value="DELIVERED">Delivered</SelectItem>
-                    <SelectItem value="FAILED">Failed</SelectItem>
-                    <SelectItem value="PENDING">Pending</SelectItem>
+                    <SelectItem value="QUEUED">في الانتظار</SelectItem>
+                    <SelectItem value="SENT">تم الإرسال</SelectItem>
+                    <SelectItem value="DELIVERED">تم الاستلام</SelectItem>
+                    <SelectItem value="FAILED">فشل</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
               <div className="grid grid-cols-4 items-center gap-4">
                 <Label htmlFor="edit-priority" className="text-right">
-                  Priority
+                  الأولوية
                 </Label>
                 <Select 
                   value={editingMessage.priority} 
@@ -541,16 +554,16 @@ export default function MessagesPage() {
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="low">Low</SelectItem>
-                    <SelectItem value="normal">Normal</SelectItem>
-                    <SelectItem value="high">High</SelectItem>
+                    <SelectItem value="low">منخفضة</SelectItem>
+                    <SelectItem value="normal">عادية</SelectItem>
+                    <SelectItem value="high">عالية</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
             </div>
           )}
           <DialogFooter>
-            <Button onClick={handleUpdateMessage}>Save Changes</Button>
+            <Button onClick={handleUpdateMessage} className="w-full">حفظ التغييرات</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>

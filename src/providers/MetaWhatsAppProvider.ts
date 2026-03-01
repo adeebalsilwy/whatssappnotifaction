@@ -25,11 +25,13 @@ export class MetaWhatsAppProvider implements IWhatsAppProvider {
     // If caller requested a TEMPLATE, forward Meta's template object (preferred) — otherwise send text
     let requestBody: any;
 
-    if ((payload.messageType === 'TEMPLATE' && (payload as any).meta?.template) || (payload as any).templateId) {
+    if ((payload.messageType === 'TEMPLATE' && ((payload as any).template || (payload as any).meta?.template)) || (payload as any).templateId) {
       // Use provided rendered template if present, otherwise build a minimal template object
-      const templateObj = (payload as any).meta?.template || {
+      const templateObj = (payload as any).template || (payload as any).meta?.template || {
         name: payload.templateId,
-        language: { code: 'en_US' },
+        language: {
+          code: payload.language || (payload.templateId?.startsWith('arabic_') || payload.templateId?.includes('-ar') ? 'ar' : 'en_US')
+        },
         components: []
       };
 

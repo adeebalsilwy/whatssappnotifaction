@@ -373,6 +373,23 @@
         }
       ],
       "description": "عرض ترويجي"
+    },
+    {
+      "name": "arabic_general_notification",
+      "category": "UTILITY",
+      "language": "ar",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "عميلنا العزيز، نود إخطاركم بما يلي: {{1}} . نشكركم على ثقتكم في بنك عدن الأول الإسلامي.",
+          "example": {
+            "body_text": [
+              ["هذا إشعار تجريبي"]
+            ]
+          }
+        }
+      ],
+      "description": "إشعار عام لضمان الوصول"
     }
   ]
 }

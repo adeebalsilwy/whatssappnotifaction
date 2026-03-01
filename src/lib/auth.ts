@@ -78,7 +78,6 @@ export async function createSession(userId: number, ipAddress?: string, userAgen
     const session = db.prepare('SELECT * FROM user_sessions WHERE session_token = ?').get(sessionToken) as Session;
     return session;
   } finally {
-    db.close();
   }
 }
 
@@ -107,7 +106,6 @@ export async function validateSession(sessionToken: string): Promise<User | null
     
     return null;
   } finally {
-    db.close();
   }
 }
 
@@ -123,7 +121,6 @@ export async function destroySession(sessionToken: string, userId?: number): Pro
       await logUserLogout(userId);
     }
   } finally {
-    db.close();
   }
 }
 
@@ -233,7 +230,6 @@ export async function authenticateUser(credentials: LoginCredentials, ipAddress?
     console.error('Authentication error:', error);
     return { error: 'حدث خطأ أثناء تسجيل الدخول' };
   } finally {
-    db.close();
   }
 }
 
@@ -294,7 +290,6 @@ export async function registerUser(userData: RegisterData, createdByUserId?: num
     console.error('Registration error:', error);
     return { error: 'حدث خطأ أثناء إنشاء المستخدم' };
   } finally {
-    db.close();
   }
 }
 
@@ -310,7 +305,6 @@ export async function getUserById(userId: number): Promise<User | null> {
     }
     return null;
   } finally {
-    db.close();
   }
 }
 
@@ -379,7 +373,6 @@ export async function updateUserProfile(userId: number, updates: Partial<User>):
     console.error('Profile update error:', error);
     return { error: 'حدث خطأ أثناء تحديث الملف الشخصي' };
   } finally {
-    db.close();
   }
 }
 
@@ -413,6 +406,5 @@ export async function changePassword(userId: number, currentPassword: string, ne
     console.error('Password change error:', error);
     return { success: false, error: 'حدث خطأ أثناء تغيير كلمة المرور' };
   } finally {
-    db.close();
   }
 }
