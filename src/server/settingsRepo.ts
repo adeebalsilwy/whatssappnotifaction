@@ -17,14 +17,13 @@ function ensureTablesExist(): void {
       );
     `);
   } finally {
-    db.close();
   }
 }
 
 // Initialize tables on module load
 ensureTablesExist();
 
-const KNOWN_PROVIDERS: Provider[] = ['meta', 'vonage', 'twilio', 'legacy', 'generic', 'direct'];
+const KNOWN_PROVIDERS: Provider[] = ['meta', 'vonage', 'twilio', 'legacy', 'generic', 'direct', 'fad'];
 
 
 export function getSettings(): AppConfig {
@@ -68,7 +67,6 @@ export function getSettings(): AppConfig {
       providers: providersOut
     };
   } finally {
-    db.close();
   }
 }
 
@@ -104,6 +102,5 @@ export function upsertSettings(input: AppConfig): void {
         .run(name, enabled ? 1 : 0, JSON.stringify(restConfig));
     }
   } finally {
-    db.close();
   }
 }

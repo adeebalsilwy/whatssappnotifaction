@@ -1,0 +1,600 @@
+{
+  "timestamp": "2026-02-21T11:53:18.144Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771674798144333423689",
+  "originalRecipient": "9670781333423",
+  "formattedNumber": "0781333423",
+  "messageLength": 131,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-21T11:53:18.173Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771674798144333423689",
+  "recipient": "0781333423",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 22,
+  "messageReference": "1771674798144333423689"
+}
+{
+  "timestamp": "2026-02-21T11:53:19.016Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771674799016333423459",
+  "originalRecipient": "9670781333423",
+  "formattedNumber": "0781333423",
+  "messageLength": 131,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-21T11:53:19.036Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771674799016333423459",
+  "recipient": "0781333423",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 18,
+  "messageReference": "1771674799016333423459"
+}
+{
+  "timestamp": "2026-02-21T11:53:19.369Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771674799369333423867",
+  "originalRecipient": "9670781333423",
+  "formattedNumber": "0781333423",
+  "messageLength": 131,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-21T11:53:19.390Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771674799369333423867",
+  "recipient": "0781333423",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 19,
+  "messageReference": "1771674799369333423867"
+}
+{
+  "timestamp": "2026-02-21T11:53:19.783Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771674799783333423255",
+  "originalRecipient": "9670781333423",
+  "formattedNumber": "0781333423",
+  "messageLength": 131,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-21T11:53:19.800Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771674799783333423255",
+  "recipient": "0781333423",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 15,
+  "messageReference": "1771674799783333423255"
+}
+{
+  "timestamp": "2026-02-21T11:53:20.221Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771674800221333423827",
+  "originalRecipient": "9670781333423",
+  "formattedNumber": "0781333423",
+  "messageLength": 131,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-21T11:53:20.240Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771674800221333423827",
+  "recipient": "0781333423",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 18,
+  "messageReference": "1771674800221333423827"
+}
+{
+  "timestamp": "2026-02-21T11:53:20.591Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771674800591333423075",
+  "originalRecipient": "9670781333423",
+  "formattedNumber": "0781333423",
+  "messageLength": 47,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-21T11:53:20.607Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771674800591333423075",
+  "recipient": "0781333423",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 15,
+  "messageReference": "1771674800591333423075"
+}
+{
+  "timestamp": "2026-02-21T11:53:21.181Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771674801181221860282",
+  "originalRecipient": "00967779221860",
+  "formattedNumber": "00967779221860",
+  "messageLength": 47,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-21T11:53:21.201Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771674801181221860282",
+  "recipient": "00967779221860",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 18,
+  "messageReference": "1771674801181221860282"
+}
+{
+  "timestamp": "2026-02-21T11:53:22.543Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771674802543221860189",
+  "originalRecipient": "00967779221860",
+  "formattedNumber": "00967779221860",
+  "messageLength": 131,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-21T11:53:22.561Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771674802543221860189",
+  "recipient": "00967779221860",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 16,
+  "messageReference": "1771674802543221860189"
+}
+{
+  "timestamp": "2026-02-21T11:53:22.971Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771674802971333423017",
+  "originalRecipient": "9670781333423",
+  "formattedNumber": "0781333423",
+  "messageLength": 47,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-21T11:53:22.988Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771674802971333423017",
+  "recipient": "0781333423",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 16,
+  "messageReference": "1771674802971333423017"
+}
+{
+  "timestamp": "2026-02-21T11:53:23.701Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771674803701333423391",
+  "originalRecipient": "9670781333423",
+  "formattedNumber": "0781333423",
+  "messageLength": 47,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-21T11:53:23.719Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771674803701333423391",
+  "recipient": "0781333423",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 17,
+  "messageReference": "1771674803701333423391"
+}
+{
+  "timestamp": "2026-02-21T11:53:24.344Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771674804344333423345",
+  "originalRecipient": "9670781333423",
+  "formattedNumber": "0781333423",
+  "messageLength": 47,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-21T11:53:24.361Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771674804344333423345",
+  "recipient": "0781333423",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 16,
+  "messageReference": "1771674804344333423345"
+}
+{
+  "timestamp": "2026-02-21T11:53:25.013Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771674805013333423434",
+  "originalRecipient": "9670781333423",
+  "formattedNumber": "0781333423",
+  "messageLength": 47,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-21T11:53:25.030Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771674805013333423434",
+  "recipient": "0781333423",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 16,
+  "messageReference": "1771674805013333423434"
+}
+{
+  "timestamp": "2026-02-21T11:53:25.662Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771674805662333423209",
+  "originalRecipient": "9670781333423",
+  "formattedNumber": "0781333423",
+  "messageLength": 47,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-21T11:53:25.678Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771674805662333423209",
+  "recipient": "0781333423",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 15,
+  "messageReference": "1771674805662333423209"
+}
+{
+  "timestamp": "2026-02-21T11:53:26.282Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771674806282333423981",
+  "originalRecipient": "9670781333423",
+  "formattedNumber": "0781333423",
+  "messageLength": 59,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-21T11:53:26.298Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771674806282333423981",
+  "recipient": "0781333423",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 14,
+  "messageReference": "1771674806282333423981"
+}
+{
+  "timestamp": "2026-02-21T11:53:26.840Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771674806840333423457",
+  "originalRecipient": "9670781333423",
+  "formattedNumber": "0781333423",
+  "messageLength": 143,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-21T11:53:26.856Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771674806840333423457",
+  "recipient": "0781333423",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 14,
+  "messageReference": "1771674806840333423457"
+}
+{
+  "timestamp": "2026-02-21T11:53:27.274Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771674807274333423111",
+  "originalRecipient": "00962781333423",
+  "formattedNumber": "00962781333423",
+  "messageLength": 131,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-21T11:53:27.290Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771674807274333423111",
+  "recipient": "00962781333423",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 15,
+  "messageReference": "1771674807274333423111"
+}
+{
+  "timestamp": "2026-02-21T11:53:27.673Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771674807673333423175",
+  "originalRecipient": "00962781333423",
+  "formattedNumber": "00962781333423",
+  "messageLength": 131,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-21T11:53:27.692Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771674807673333423175",
+  "recipient": "00962781333423",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 17,
+  "messageReference": "1771674807673333423175"
+}
+{
+  "timestamp": "2026-02-21T11:53:28.037Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771674808037333423158",
+  "originalRecipient": "00962781333423",
+  "formattedNumber": "00962781333423",
+  "messageLength": 131,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-21T11:53:28.054Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771674808037333423158",
+  "recipient": "00962781333423",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 16,
+  "messageReference": "1771674808037333423158"
+}
+{
+  "timestamp": "2026-02-21T11:53:28.410Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771674808410333423227",
+  "originalRecipient": "00962781333423",
+  "formattedNumber": "00962781333423",
+  "messageLength": 143,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-21T11:53:28.425Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771674808410333423227",
+  "recipient": "00962781333423",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 14,
+  "messageReference": "1771674808410333423227"
+}
+{
+  "timestamp": "2026-02-21T11:53:28.767Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771674808767333423442",
+  "originalRecipient": "9670781333423",
+  "formattedNumber": "0781333423",
+  "messageLength": 143,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-21T11:53:28.783Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771674808767333423442",
+  "recipient": "0781333423",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 14,
+  "messageReference": "1771674808767333423442"
+}
+{
+  "timestamp": "2026-02-21T11:53:29.153Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771674809153333423840",
+  "originalRecipient": "9670781333423",
+  "formattedNumber": "0781333423",
+  "messageLength": 131,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-21T11:53:29.170Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771674809153333423840",
+  "recipient": "0781333423",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 16,
+  "messageReference": "1771674809153333423840"
+}
+{
+  "timestamp": "2026-02-21T11:53:29.490Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771674809490333423298",
+  "originalRecipient": "9670781333423",
+  "formattedNumber": "0781333423",
+  "messageLength": 47,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-21T11:53:29.506Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771674809490333423298",
+  "recipient": "0781333423",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 14,
+  "messageReference": "1771674809490333423298"
+}
+{
+  "timestamp": "2026-02-21T11:53:30.004Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771674810004333423366",
+  "originalRecipient": "9670781333423",
+  "formattedNumber": "0781333423",
+  "messageLength": 47,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-21T11:53:30.021Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771674810004333423366",
+  "recipient": "0781333423",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 16,
+  "messageReference": "1771674810004333423366"
+}
+{
+  "timestamp": "2026-02-21T11:53:30.572Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771674810572333423359",
+  "originalRecipient": "9670781333423",
+  "formattedNumber": "0781333423",
+  "messageLength": 47,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-21T11:53:30.593Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771674810572333423359",
+  "recipient": "0781333423",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 19,
+  "messageReference": "1771674810572333423359"
+}
+{
+  "timestamp": "2026-02-21T11:53:31.419Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771674811419333423100",
+  "originalRecipient": "9670781333423",
+  "formattedNumber": "0781333423",
+  "messageLength": 131,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-21T11:53:31.439Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771674811419333423100",
+  "recipient": "0781333423",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 18,
+  "messageReference": "1771674811419333423100"
+}

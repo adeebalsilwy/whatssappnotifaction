@@ -1,0 +1,690 @@
+{
+  "timestamp": "2026-02-21T11:53:18.141Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674798141-on7u0vx29",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "0781333423",
+    "body": "Your card PIN code is (XXXX).\r\nThis PIN is for your card ending with (1234). \r\nPlease keep it safe and do not share it with anyone.",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-21T11:53:19.012Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674798141-on7u0vx29",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 871,
+  "meta": {
+    "success": false,
+    "errorCode": "132018",
+    "errorMessage": "(#132018) There’s an issue with the parameters in your template"
+  },
+  "fad": {
+    "success": true,
+    "providerMessageId": "1771674798144333423689"
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-21T11:53:19.014Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674799014-2e3mv8pro",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "0781333423",
+    "body": "Your card PIN code is (XXXX).\r\nThis PIN is for your card ending with (1234). \r\nPlease keep it safe and do not share it with anyone.",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-21T11:53:19.366Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674799014-2e3mv8pro",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 352,
+  "meta": {
+    "success": false,
+    "errorCode": "132018",
+    "errorMessage": "(#132018) There’s an issue with the parameters in your template"
+  },
+  "fad": {
+    "success": true,
+    "providerMessageId": "1771674799016333423459"
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-21T11:53:19.367Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674799367-6svn0gfjz",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "0781333423",
+    "body": "Your card PIN code is (XXXX).\r\nThis PIN is for your card ending with (1234). \r\nPlease keep it safe and do not share it with anyone.",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-21T11:53:19.780Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674799367-6svn0gfjz",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 413,
+  "meta": {
+    "success": false,
+    "errorCode": "132018",
+    "errorMessage": "(#132018) There’s an issue with the parameters in your template"
+  },
+  "fad": {
+    "success": true,
+    "providerMessageId": "1771674799369333423867"
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-21T11:53:19.782Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674799782-000871a1q",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "0781333423",
+    "body": "Your card PIN code is (XXXX).\r\nThis PIN is for your card ending with (1234). \r\nPlease keep it safe and do not share it with anyone.",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-21T11:53:20.217Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674799782-000871a1q",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 435,
+  "meta": {
+    "success": false,
+    "errorCode": "132018",
+    "errorMessage": "(#132018) There’s an issue with the parameters in your template"
+  },
+  "fad": {
+    "success": true,
+    "providerMessageId": "1771674799783333423255"
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-21T11:53:20.219Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674800219-l9l18s16i",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "0781333423",
+    "body": "Your card PIN code is (XXXX).\r\nThis PIN is for your card ending with (1234). \r\nPlease keep it safe and do not share it with anyone.",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-21T11:53:20.587Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674800219-l9l18s16i",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 368,
+  "meta": {
+    "success": false,
+    "errorCode": "132018",
+    "errorMessage": "(#132018) There’s an issue with the parameters in your template"
+  },
+  "fad": {
+    "success": true,
+    "providerMessageId": "1771674800221333423827"
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-21T11:53:20.589Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674800589-rv8br52dc",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "0781333423",
+    "body": "الرقم السري لبطاقتك التي تنتهي بـ 1234 هو XXXX.",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-21T11:53:21.178Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674800589-rv8br52dc",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 589,
+  "meta": {
+    "success": true,
+    "providerMessageId": "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSMTQyRUJGRUFGRkNGN0ZBMDk1AA=="
+  },
+  "fad": {
+    "success": true,
+    "providerMessageId": "1771674800591333423075"
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-21T11:53:21.179Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674801179-gbe34rz5t",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "00967779221860",
+    "body": "الرقم السري لبطاقتك التي تنتهي بـ 1234 هو XXXX.",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-21T11:53:22.539Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674801179-gbe34rz5t",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 1360,
+  "meta": {
+    "success": false,
+    "errorCode": "131009",
+    "errorMessage": "(#131009) Parameter value is not valid"
+  },
+  "fad": {
+    "success": true,
+    "providerMessageId": "1771674801181221860282"
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-21T11:53:22.541Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674802541-uqwqejpxj",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "00967779221860",
+    "body": "Your card PIN code is (XXXX).\r\nThis PIN is for your card ending with (1234). \r\nPlease keep it safe and do not share it with anyone.",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-21T11:53:22.969Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674802541-uqwqejpxj",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 428,
+  "meta": {
+    "success": false,
+    "errorCode": "131009",
+    "errorMessage": "(#131009) Parameter value is not valid"
+  },
+  "fad": {
+    "success": true,
+    "providerMessageId": "1771674802543221860189"
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-21T11:53:22.970Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674802970-yf6mrwc6q",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "0781333423",
+    "body": "الرقم السري لبطاقتك التي تنتهي بـ 1234 هو 4444.",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-21T11:53:23.698Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674802970-yf6mrwc6q",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 728,
+  "meta": {
+    "success": true,
+    "providerMessageId": "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSOURFRDE2RjBCMEQ3NzFCRjc2AA=="
+  },
+  "fad": {
+    "success": true,
+    "providerMessageId": "1771674802971333423017"
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-21T11:53:23.699Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674803699-tixfxtopd",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "0781333423",
+    "body": "الرقم السري لبطاقتك التي تنتهي بـ 1234 هو 4444.",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-21T11:53:24.341Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674803699-tixfxtopd",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 642,
+  "meta": {
+    "success": true,
+    "providerMessageId": "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSNzY4OUNFQzhEQzc2NUFCNjlGAA=="
+  },
+  "fad": {
+    "success": true,
+    "providerMessageId": "1771674803701333423391"
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-21T11:53:24.342Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674804342-xmhjvhwa5",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "0781333423",
+    "body": "الرقم السري لبطاقتك التي تنتهي بـ 1234 هو 4444.",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-21T11:53:25.011Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674804342-xmhjvhwa5",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 669,
+  "meta": {
+    "success": true,
+    "providerMessageId": "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSNEUwM0I2M0NCN0Q3RjlEMjEwAA=="
+  },
+  "fad": {
+    "success": true,
+    "providerMessageId": "1771674804344333423345"
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-21T11:53:25.011Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674805011-e4l1dkpwx",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "0781333423",
+    "body": "الرقم السري لبطاقتك التي تنتهي بـ 1234 هو 4444.",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-21T11:53:25.659Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674805011-e4l1dkpwx",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 648,
+  "meta": {
+    "success": true,
+    "providerMessageId": "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSQTVBRjMxQTFGNzEwRjVBN0Y0AA=="
+  },
+  "fad": {
+    "success": true,
+    "providerMessageId": "1771674805013333423434"
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-21T11:53:25.660Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674805660-qxmdv4zaz",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "0781333423",
+    "body": "الرقم السري لبطاقتك التي تنتهي بـ 1234 هو 4444.",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-21T11:53:26.279Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674805660-qxmdv4zaz",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 619,
+  "meta": {
+    "success": true,
+    "providerMessageId": "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSODhEOTVFRkFEQzgwOTQ2QkJFAA=="
+  },
+  "fad": {
+    "success": true,
+    "providerMessageId": "1771674805662333423209"
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-21T11:53:26.280Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674806280-9gzpmv37g",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "0781333423",
+    "body": "الرقم السري لبطاقتك التي تنتهي بـ 9119166517567366 هو 4444.",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-21T11:53:26.837Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674806280-9gzpmv37g",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 557,
+  "meta": {
+    "success": true,
+    "providerMessageId": "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSNTJFQjZERUQyRTBFM0MyRDlBAA=="
+  },
+  "fad": {
+    "success": true,
+    "providerMessageId": "1771674806282333423981"
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-21T11:53:26.839Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674806839-arujx5f0t",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "0781333423",
+    "body": "Your card PIN code is (4444).\r\nThis PIN is for your card ending with (9119166517567366). \r\nPlease keep it safe and do not share it with anyone.",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-21T11:53:27.271Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674806839-arujx5f0t",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 432,
+  "meta": {
+    "success": false,
+    "errorCode": "132018",
+    "errorMessage": "(#132018) There’s an issue with the parameters in your template"
+  },
+  "fad": {
+    "success": true,
+    "providerMessageId": "1771674806840333423457"
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-21T11:53:27.272Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674807272-npbb0yo10",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "00962781333423",
+    "body": "Your card PIN code is (5124).\r\nThis PIN is for your card ending with (7366). \r\nPlease keep it safe and do not share it with anyone.",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-21T11:53:27.671Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674807272-npbb0yo10",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 399,
+  "meta": {
+    "success": false,
+    "errorCode": "131009",
+    "errorMessage": "(#131009) Parameter value is not valid"
+  },
+  "fad": {
+    "success": true,
+    "providerMessageId": "1771674807274333423111"
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-21T11:53:27.672Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674807672-xgotljk0b",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "00962781333423",
+    "body": "Your card PIN code is (5124).\r\nThis PIN is for your card ending with (7366). \r\nPlease keep it safe and do not share it with anyone.",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-21T11:53:28.034Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674807672-xgotljk0b",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 362,
+  "meta": {
+    "success": false,
+    "errorCode": "131009",
+    "errorMessage": "(#131009) Parameter value is not valid"
+  },
+  "fad": {
+    "success": true,
+    "providerMessageId": "1771674807673333423175"
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-21T11:53:28.035Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674808035-pbcpubp3z",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "00962781333423",
+    "body": "Your card PIN code is (5124).\r\nThis PIN is for your card ending with (7366). \r\nPlease keep it safe and do not share it with anyone.",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-21T11:53:28.408Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674808035-pbcpubp3z",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 373,
+  "meta": {
+    "success": false,
+    "errorCode": "131009",
+    "errorMessage": "(#131009) Parameter value is not valid"
+  },
+  "fad": {
+    "success": true,
+    "providerMessageId": "1771674808037333423158"
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-21T11:53:28.409Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674808409-tcgxxlcy2",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "00962781333423",
+    "body": "Your card PIN code is (5124).\r\nThis PIN is for your card ending with (9119166517567366). \r\nPlease keep it safe and do not share it with anyone.",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-21T11:53:28.764Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674808409-tcgxxlcy2",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 355,
+  "meta": {
+    "success": false,
+    "errorCode": "131009",
+    "errorMessage": "(#131009) Parameter value is not valid"
+  },
+  "fad": {
+    "success": true,
+    "providerMessageId": "1771674808410333423227"
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-21T11:53:28.765Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674808765-6w0ypv2xn",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "0781333423",
+    "body": "Your card PIN code is (4444).\r\nThis PIN is for your card ending with (9119166517567366). \r\nPlease keep it safe and do not share it with anyone.",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-21T11:53:29.149Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674808765-6w0ypv2xn",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 384,
+  "meta": {
+    "success": false,
+    "errorCode": "132018",
+    "errorMessage": "(#132018) There’s an issue with the parameters in your template"
+  },
+  "fad": {
+    "success": true,
+    "providerMessageId": "1771674808767333423442"
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-21T11:53:29.151Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674809151-pw4zq8532",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "0781333423",
+    "body": "Your card PIN code is (4444).\r\nThis PIN is for your card ending with (1234). \r\nPlease keep it safe and do not share it with anyone.",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-21T11:53:29.487Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674809151-pw4zq8532",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 336,
+  "meta": {
+    "success": false,
+    "errorCode": "132018",
+    "errorMessage": "(#132018) There’s an issue with the parameters in your template"
+  },
+  "fad": {
+    "success": true,
+    "providerMessageId": "1771674809153333423840"
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-21T11:53:29.488Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674809488-q0c2mx756",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "0781333423",
+    "body": "الرقم السري لبطاقتك التي تنتهي بـ 1234 هو 4444.",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-21T11:53:30.001Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674809488-q0c2mx756",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 513,
+  "meta": {
+    "success": true,
+    "providerMessageId": "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSNzc4Q0I3MjgyMjg4MDNDQ0VGAA=="
+  },
+  "fad": {
+    "success": true,
+    "providerMessageId": "1771674809490333423298"
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-21T11:53:30.002Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674810002-mgnm4a9zi",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "0781333423",
+    "body": "الرقم السري لبطاقتك التي تنتهي بـ 1234 هو 4444.",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-21T11:53:30.569Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674810002-mgnm4a9zi",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 567,
+  "meta": {
+    "success": true,
+    "providerMessageId": "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSQ0FFQTA4MEQ5OTQ4MEM3OUQxAA=="
+  },
+  "fad": {
+    "success": true,
+    "providerMessageId": "1771674810004333423366"
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-21T11:53:30.570Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674810570-hghs1ah1x",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "0781333423",
+    "body": "الرقم السري لبطاقتك التي تنتهي بـ 5678 هو 4444.",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-21T11:53:31.415Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674810570-hghs1ah1x",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 845,
+  "meta": {
+    "success": true,
+    "providerMessageId": "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSMkFCQzZFMDYxNUNERTYyODJEAA=="
+  },
+  "fad": {
+    "success": true,
+    "providerMessageId": "1771674810572333423359"
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-21T11:53:31.417Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674811417-svrynn0zr",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "0781333423",
+    "body": "Your card PIN code is (4444).\r\nThis PIN is for your card ending with (5678). \r\nPlease keep it safe and do not share it with anyone.",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-21T11:53:31.772Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771674811417-svrynn0zr",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 355,
+  "meta": {
+    "success": false,
+    "errorCode": "132018",
+    "errorMessage": "(#132018) There’s an issue with the parameters in your template"
+  },
+  "fad": {
+    "success": true,
+    "providerMessageId": "1771674811419333423100"
+  },
+  "overallSuccess": true
+}

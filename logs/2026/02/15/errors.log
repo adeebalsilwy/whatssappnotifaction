@@ -1,0 +1,187 @@
+{
+  "timestamp": "2026-02-15T19:35:33.745Z",
+  "category": "errors",
+  "requestId": "0bb1975e-e995-400e-b5b6-be6e7ba3738c",
+  "action": "DB_INSERT_MESSAGE_FAILED",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node",
+  "payload": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "body": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك.",
+    "meta": {},
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك."
+    }
+  }
+}
+{
+  "timestamp": "2026-02-15T19:35:39.182Z",
+  "category": "errors",
+  "requestId": "5c2a32fc-7ea9-4969-8f58-a01cc9c411af",
+  "action": "DB_INSERT_MESSAGE_FAILED",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node",
+  "payload": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "body": "Welcome to First Aden Islamic Bank. This is an important notification.",
+    "meta": {},
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "Welcome to First Aden Islamic Bank. This is an important notification."
+    }
+  }
+}
+{
+  "timestamp": "2026-02-15T19:48:05.835Z",
+  "category": "errors",
+  "requestId": "68bd008a-b074-43af-92ac-afef684a7a4e",
+  "action": "DB_INSERT_MESSAGE_FAILED",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node",
+  "payload": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "body": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك.",
+    "meta": {},
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك."
+    }
+  }
+}
+{
+  "timestamp": "2026-02-15T19:48:09.971Z",
+  "category": "errors",
+  "requestId": "f71e42a8-644d-470c-88c2-13ac66f3eb34",
+  "action": "DB_INSERT_MESSAGE_FAILED",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node",
+  "payload": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "body": "Welcome to First Aden Islamic Bank. This is an important notification.",
+    "meta": {},
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "Welcome to First Aden Islamic Bank. This is an important notification."
+    }
+  }
+}
+{
+  "timestamp": "2026-02-15T19:48:14.139Z",
+  "category": "errors",
+  "requestId": "17f42823-307a-4cc6-ac00-25cf43741c6e",
+  "action": "DB_INSERT_MESSAGE_FAILED",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node",
+  "payload": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "Your account balance is now 5000 YER"
+    },
+    "body": "Your account balance is now 5000 YER",
+    "meta": {}
+  }
+}
+{
+  "timestamp": "2026-02-15T19:48:23.483Z",
+  "category": "errors",
+  "requestId": "22266db9-d415-466c-99e1-d281e45e12b6",
+  "action": "DB_INSERT_MESSAGE_FAILED",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node",
+  "payload": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "body": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك.",
+    "meta": {},
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك."
+    }
+  }
+}
+{
+  "timestamp": "2026-02-15T19:48:29.100Z",
+  "category": "errors",
+  "requestId": "45a7dfe5-ef49-44fe-9bd5-2e6f0dd3db86",
+  "action": "DB_INSERT_MESSAGE_FAILED",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node",
+  "payload": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "body": "Welcome to First Aden Islamic Bank. This is an important notification.",
+    "meta": {},
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "Welcome to First Aden Islamic Bank. This is an important notification."
+    }
+  }
+}
+{
+  "timestamp": "2026-02-15T19:48:33.097Z",
+  "category": "errors",
+  "requestId": "b719956e-6133-4998-8d0d-b43889f3b2ce",
+  "action": "DB_INSERT_MESSAGE_FAILED",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node",
+  "payload": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "Your account balance is now 5000 YER"
+    },
+    "body": "Your account balance is now 5000 YER",
+    "meta": {}
+  }
+}
+{
+  "timestamp": "2026-02-15T19:52:49.226Z",
+  "category": "errors",
+  "requestId": "0cec1eb7-0cef-4c16-a749-03c27d8b6e00",
+  "action": "DB_INSERT_MESSAGE_FAILED",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node",
+  "payload": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "body": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك.",
+    "meta": {},
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك."
+    }
+  }
+}
+{
+  "timestamp": "2026-02-15T19:52:53.364Z",
+  "category": "errors",
+  "requestId": "f96e5db4-3618-4a26-bf3e-4efcfd6ad956",
+  "action": "DB_INSERT_MESSAGE_FAILED",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node",
+  "payload": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "body": "Welcome to First Aden Islamic Bank. This is an important notification.",
+    "meta": {},
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "Welcome to First Aden Islamic Bank. This is an important notification."
+    }
+  }
+}
+{
+  "timestamp": "2026-02-15T19:52:57.405Z",
+  "category": "errors",
+  "requestId": "4b2eed00-fcbb-431f-8ec3-99637e943fe4",
+  "action": "DB_INSERT_MESSAGE_FAILED",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node",
+  "payload": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "Your account balance is now 5000 YER"
+    },
+    "body": "Your account balance is now 5000 YER",
+    "meta": {}
+  }
+}

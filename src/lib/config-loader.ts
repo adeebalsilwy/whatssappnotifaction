@@ -2,128 +2,222 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import type { AppConfig, Provider } from '@/lib/types';
 import dotenv from 'dotenv';
-import { getSettings as getSettingsFromSqlite, upsertSettings as upsertSettingsToSqlite } from '@/server/settingsRepo';
+import { getSettings as getSettingsFromSqlite } from '@/server/settingsRepo';
 
-// Load environment variables from .env.local
 dotenv.config({ path: path.join(process.cwd(), '.env.local') });
 
 const configFilePath = path.join(process.cwd(), 'src', 'config', 'whatsapp-config.json');
 
-/**
- * Provides a default configuration structure.
- * This is used as a fallback if the config file doesn't exist or is invalid.
- * It's also used to create the initial config file.
- * It prioritizes environment variables over hardcoded values.
- */
+type Maybe<T> = T | undefined | null;
+
+/** Treat undefined/null/empty-string as "missing" */
+function pick<T>(...values: Array<Maybe<T> | ''>): T | undefined {
+  for (const v of values) {
+    if (v !== undefined && v !== null && v !== '') return v as T;
+  }
+  return undefined;
+}
+
+function pickStr(...values: Array<Maybe<string> | ''>): string {
+  return pick<string>(...values) ?? '';
+}
+
+function pickProvider(...values: Array<Maybe<Provider> | ''>): Provider {
+  return (pick<Provider>(...values) ?? 'meta') as Provider;
+}
+
+/** Default structure only (no forcing empty strings) */
 export function getDefaultConfig(): AppConfig {
   return {
-    defaultProvider: (process.env.DEFAULT_PROVIDER as Provider) || 'meta',
-    apiNotificationUrl: process.env.APINOTIFICATION_URL || 'https://apinotification.firstaden-bank.com/',
+    defaultProvider: pickProvider(process.env.DEFAULT_PROVIDER as Provider, 'meta'),
+    apiNotificationUrl: pickStr(process.env.APINOTIFICATION_URL, 'https://apinotification.firstaden-bank.com/'),
     providers: {
       meta: {
-        url: process.env.META_WHATSAPP_API_URL || 'https://graph.facebook.com/v20.0',
-        token: process.env.META_WHATSAPP_TOKEN || '',
-        numberId: process.env.META_WHATSAPP_NUMBER_ID || '',
-        webhookVerifyToken: process.env.META_WEBHOOK_VERIFY_TOKEN || '',
+        url: pickStr(process.env.META_WHATSAPP_API_URL, 'https://graph.facebook.com/v24.0'),
+        token: pickStr(process.env.META_WHATSAPP_TOKEN),
+        numberId: pickStr(process.env.META_WHATSAPP_NUMBER_ID),
+        webhookVerifyToken: pickStr(process.env.META_WEBHOOK_VERIFY_TOKEN),
+        wabaId: pickStr(process.env.WABA_ID),
+        appSecret: pickStr(process.env.META_APP_SECRET),
       },
       vonage: {
-        url: process.env.VONAGE_API_URL || 'https://messages-sandbox.nexmo.com/v1/messages',
-        apiKey: process.env.VONAGE_API_KEY || '82f67722',
-        apiSecret: process.env.VONAGE_API_SECRET || 'bd8T07s2n@e@2zN2Q!J',
-        from: process.env.VONAGE_FROM_NUMBER || '967774577134',
-        fromNumber: process.env.VONAGE_FROM_NUMBER || '967774577134',
+        url: pickStr(process.env.VONAGE_API_URL, 'https://messages-sandbox.nexmo.com/v1/messages'),
+        apiKey: pickStr(process.env.VONAGE_API_KEY),
+        apiSecret: pickStr(process.env.VONAGE_API_SECRET),
+        from: pickStr(process.env.VONAGE_FROM_NUMBER),
+        fromNumber: pickStr(process.env.VONAGE_FROM_NUMBER),
+        applicationId: pickStr(process.env.VONAGE_APPLICATION_ID),
       },
       generic: {
-        url: process.env.GENERIC_WHATSAPP_URL || '',
-        token: process.env.GENERIC_WHATSAPP_TOKEN || '',
+        url: pickStr(process.env.GENERIC_WHATSAPP_URL),
+        token: pickStr(process.env.GENERIC_WHATSAPP_TOKEN),
       },
       direct: {
-        url: process.env.DIRECT_WHATSAPP_URL || '',
-        token: process.env.DIRECT_WHATSAPP_TOKEN || '',
-        from: process.env.DIRECT_WHATSAPP_FROM || '967774577134',
+        url: pickStr(process.env.DIRECT_WHATSAPP_URL),
+        token: pickStr(process.env.DIRECT_WHATSAPP_TOKEN),
+        from: pickStr(process.env.DIRECT_WHATSAPP_FROM, '967774577134'),
+      },
+      fad: {
+        url: pickStr(process.env.FAD_API_URL, 'https://api.fad.ye/sms/send'),
+        username: pickStr(process.env.FAD_USERNAME),
+        password: pickStr(process.env.FAD_PASSWORD),
+        authMethod: pickStr(process.env.FAD_AUTH_METHOD, 'basic'),
+        customAuthHeaders: process.env.FAD_CUSTOM_AUTH_HEADERS ? JSON.parse(process.env.FAD_CUSTOM_AUTH_HEADERS) : undefined,
+        userId: pickStr(process.env.FAD_USERID),
+        userid: pickStr(process.env.FAD_USERID), // Same value for alternative spelling
+        userID: pickStr(process.env.FAD_USERID), // Same value for alternative spelling
       },
     },
   };
 }
 
-/**
- * Loads the application configuration. It follows a layered approach:
- * 1. Load default values.
- * 2. Override with values from the JSON config file.
- * 3. Override with values from environment variables (highest priority).
- * This ensures that environment variables always take precedence for security.
- * @returns A promise that resolves to the final AppConfig object.
- */
 export async function loadConfig(): Promise<AppConfig> {
-  const defaultConfig = getDefaultConfig();
+  const defaults = getDefaultConfig();
   let fileConfig: Partial<AppConfig> = {};
 
   try {
-    // Try to read the existing config file
     await fs.mkdir(path.dirname(configFilePath), { recursive: true });
     const fileContent = await fs.readFile(configFilePath, 'utf-8');
     fileConfig = JSON.parse(fileContent);
-  } catch (error) {
-    if (error instanceof Error && 'code' in error && error.code === 'ENOENT') {
-      // Config file doesn't exist, create it with defaults.
+  } catch (error: any) {
+    if (error?.code === 'ENOENT') {
       console.log('Config file not found, creating a new one with default values.');
-      await fs.writeFile(configFilePath, JSON.stringify(defaultConfig, null, 2));
-      fileConfig = defaultConfig;
+      await fs.writeFile(configFilePath, JSON.stringify(defaults, null, 2));
+      fileConfig = defaults;
     } else {
-      // Other error reading file, log it but continue with defaults.
-      console.error('Failed to read or parse config file. Using default config.', error);
+      console.error('Failed to read or parse config file. Using defaults.', error);
     }
   }
 
-  // Deep merge configs: defaults < fileConfig < env variables
-  // Note: This merge logic gives precedence to env vars loaded in getDefaultConfig.
-  const mergedConfig: AppConfig = {
-    ...defaultConfig,
+  // Merge with priority: ENV (if not empty) > fileConfig > defaults
+  const cfg: AppConfig = {
+    ...defaults,
     ...fileConfig,
-    apiNotificationUrl: process.env.APINOTIFICATION_URL || fileConfig.apiNotificationUrl || defaultConfig.apiNotificationUrl,
-    defaultProvider: (process.env.DEFAULT_PROVIDER as Provider) || fileConfig.defaultProvider || defaultConfig.defaultProvider,
+    apiNotificationUrl: pickStr(process.env.APINOTIFICATION_URL, fileConfig.apiNotificationUrl, defaults.apiNotificationUrl),
+    defaultProvider: pickProvider(
+      process.env.DEFAULT_PROVIDER as Provider,
+      fileConfig.defaultProvider as Provider,
+      defaults.defaultProvider
+    ),
     providers: {
-      meta: { ...defaultConfig.providers.meta, ...fileConfig.providers?.meta },
-      vonage: { ...defaultConfig.providers.vonage, ...fileConfig.providers?.vonage },
-      generic: { ...defaultConfig.providers.generic, ...fileConfig.providers?.generic },
-      direct: { ...defaultConfig.providers.direct, ...fileConfig.providers?.direct },
+      meta: {
+        ...defaults.providers.meta,
+        ...fileConfig.providers?.meta,
+        url: pickStr(process.env.META_WHATSAPP_API_URL, fileConfig.providers?.meta?.url, defaults.providers.meta!.url),
+        token: pickStr(process.env.META_WHATSAPP_TOKEN, fileConfig.providers?.meta?.token, defaults.providers.meta!.token),
+        numberId: pickStr(process.env.META_WHATSAPP_NUMBER_ID, fileConfig.providers?.meta?.numberId, defaults.providers.meta!.numberId),
+        webhookVerifyToken: pickStr(process.env.META_WEBHOOK_VERIFY_TOKEN, fileConfig.providers?.meta?.webhookVerifyToken, defaults.providers.meta!.webhookVerifyToken),
+        wabaId: pickStr(process.env.WABA_ID, fileConfig.providers?.meta?.wabaId, defaults.providers.meta!.wabaId),
+        appSecret: pickStr(process.env.META_APP_SECRET, fileConfig.providers?.meta?.appSecret, defaults.providers.meta!.appSecret),
+      },
+      vonage: {
+        ...defaults.providers.vonage,
+        ...fileConfig.providers?.vonage,
+        url: pickStr(process.env.VONAGE_API_URL, fileConfig.providers?.vonage?.url, defaults.providers.vonage!.url),
+        apiKey: pickStr(process.env.VONAGE_API_KEY, fileConfig.providers?.vonage?.apiKey, defaults.providers.vonage!.apiKey),
+        apiSecret: pickStr(process.env.VONAGE_API_SECRET, fileConfig.providers?.vonage?.apiSecret, defaults.providers.vonage!.apiSecret),
+        applicationId: pickStr(process.env.VONAGE_APPLICATION_ID, fileConfig.providers?.vonage?.applicationId, defaults.providers.vonage!.applicationId),
+        from: pickStr(process.env.VONAGE_FROM_NUMBER, fileConfig.providers?.vonage?.from, defaults.providers.vonage!.from),
+        fromNumber: pickStr(process.env.VONAGE_FROM_NUMBER, fileConfig.providers?.vonage?.fromNumber, defaults.providers.vonage!.fromNumber),
+      },
+      generic: {
+        ...defaults.providers.generic,
+        ...fileConfig.providers?.generic,
+        url: pickStr(process.env.GENERIC_WHATSAPP_URL, fileConfig.providers?.generic?.url, defaults.providers.generic!.url),
+        token: pickStr(process.env.GENERIC_WHATSAPP_TOKEN, fileConfig.providers?.generic?.token, defaults.providers.generic!.token),
+      },
+      direct: {
+        ...defaults.providers.direct,
+        ...fileConfig.providers?.direct,
+        url: pickStr(process.env.DIRECT_WHATSAPP_URL, fileConfig.providers?.direct?.url, defaults.providers.direct!.url),
+        token: pickStr(process.env.DIRECT_WHATSAPP_TOKEN, fileConfig.providers?.direct?.token, defaults.providers.direct!.token),
+        from: pickStr(process.env.DIRECT_WHATSAPP_FROM, fileConfig.providers?.direct?.from, defaults.providers.direct!.from),
+      },
+      fad: {
+        ...defaults.providers.fad,
+        ...fileConfig.providers?.fad,
+        url: pickStr(process.env.FAD_API_URL, fileConfig.providers?.fad?.url, defaults.providers.fad!.url),
+        username: pickStr(process.env.FAD_USERNAME, fileConfig.providers?.fad?.username, defaults.providers.fad!.username),
+        password: pickStr(process.env.FAD_PASSWORD, fileConfig.providers?.fad?.password, defaults.providers.fad!.password),
+        authMethod: pickStr(process.env.FAD_AUTH_METHOD, fileConfig.providers?.fad?.authMethod, defaults.providers.fad!.authMethod),
+        customAuthHeaders: process.env.FAD_CUSTOM_AUTH_HEADERS ? JSON.parse(process.env.FAD_CUSTOM_AUTH_HEADERS) : 
+                          fileConfig.providers?.fad?.customAuthHeaders || defaults.providers.fad!.customAuthHeaders,
+        userId: pickStr(process.env.FAD_USERID, fileConfig.providers?.fad?.userId, defaults.providers.fad!.userId),
+        userid: pickStr(process.env.FAD_USERID, fileConfig.providers?.fad?.userid, defaults.providers.fad!.userid),
+        userID: pickStr(process.env.FAD_USERID, fileConfig.providers?.fad?.userID, defaults.providers.fad!.userID),
+      },
     },
-  }; 
+  };
 
-  // Ensure env vars always win for sensitive fields
-  mergedConfig.providers.meta!.token = process.env.META_WHATSAPP_TOKEN ?? mergedConfig.providers.meta!.token;
-  mergedConfig.providers.vonage!.apiKey = process.env.VONAGE_API_KEY ?? mergedConfig.providers.vonage!.apiKey;
-  mergedConfig.providers.vonage!.apiSecret = process.env.VONAGE_API_SECRET ?? mergedConfig.providers.vonage!.apiSecret;
-  mergedConfig.providers.generic!.token = process.env.GENERIC_WHATSAPP_TOKEN ?? mergedConfig.providers.generic!.token;
-  mergedConfig.providers.direct!.token = process.env.DIRECT_WHATSAPP_TOKEN ?? mergedConfig.providers.direct!.token;
-  mergedConfig.apiNotificationUrl = process.env.APINOTIFICATION_URL ?? mergedConfig.apiNotificationUrl; 
-
-  return mergedConfig;
+  return cfg;
 }
 
 export function loadConfigSync(): AppConfig {
-  const defaultConfig = getDefaultConfig();
+  const defaults = getDefaultConfig();
   let sqliteConfig: AppConfig | null = null;
+
   try {
     sqliteConfig = getSettingsFromSqlite();
-  } catch { }
-  const merged: AppConfig = {
-    ...defaultConfig,
+  } catch {}
+
+  const cfg: AppConfig = {
+    ...defaults,
     ...(sqliteConfig || {}),
-    apiNotificationUrl: process.env.APINOTIFICATION_URL || sqliteConfig?.apiNotificationUrl || defaultConfig.apiNotificationUrl,
-    defaultProvider: (process.env.DEFAULT_PROVIDER as Provider) || sqliteConfig?.defaultProvider || defaultConfig.defaultProvider,
+    apiNotificationUrl: pickStr(process.env.APINOTIFICATION_URL, sqliteConfig?.apiNotificationUrl, defaults.apiNotificationUrl),
+    defaultProvider: pickProvider(
+      process.env.DEFAULT_PROVIDER as Provider,
+      sqliteConfig?.defaultProvider as Provider,
+      defaults.defaultProvider
+    ),
     providers: {
-      meta: { ...defaultConfig.providers.meta, ...(sqliteConfig?.providers.meta || {}) },
-      vonage: { ...defaultConfig.providers.vonage, ...(sqliteConfig?.providers.vonage || {}) },
-      generic: { ...defaultConfig.providers.generic, ...(sqliteConfig?.providers.generic || {}) },
-      direct: { ...defaultConfig.providers.direct, ...(sqliteConfig?.providers.direct || {}) },
+      meta: {
+        ...defaults.providers.meta,
+        ...(sqliteConfig?.providers?.meta || {}),
+        url: pickStr(process.env.META_WHATSAPP_API_URL, sqliteConfig?.providers?.meta?.url, defaults.providers.meta!.url),
+        token: pickStr(process.env.META_WHATSAPP_TOKEN, sqliteConfig?.providers?.meta?.token, defaults.providers.meta!.token),
+        numberId: pickStr(process.env.META_WHATSAPP_NUMBER_ID, sqliteConfig?.providers?.meta?.numberId, defaults.providers.meta!.numberId),
+        webhookVerifyToken: pickStr(process.env.META_WEBHOOK_VERIFY_TOKEN, sqliteConfig?.providers?.meta?.webhookVerifyToken, defaults.providers.meta!.webhookVerifyToken),
+        wabaId: pickStr(process.env.WABA_ID, sqliteConfig?.providers?.meta?.wabaId, defaults.providers.meta!.wabaId),
+        appSecret: pickStr(process.env.META_APP_SECRET, sqliteConfig?.providers?.meta?.appSecret, defaults.providers.meta!.appSecret),
+      },
+      vonage: {
+        ...defaults.providers.vonage,
+        ...(sqliteConfig?.providers?.vonage || {}),
+        url: pickStr(process.env.VONAGE_API_URL, sqliteConfig?.providers?.vonage?.url, defaults.providers.vonage!.url),
+        apiKey: pickStr(process.env.VONAGE_API_KEY, sqliteConfig?.providers?.vonage?.apiKey, defaults.providers.vonage!.apiKey),
+        apiSecret: pickStr(process.env.VONAGE_API_SECRET, sqliteConfig?.providers?.vonage?.apiSecret, defaults.providers.vonage!.apiSecret),
+        applicationId: pickStr(process.env.VONAGE_APPLICATION_ID, sqliteConfig?.providers?.vonage?.applicationId, defaults.providers.vonage!.applicationId),
+        from: pickStr(process.env.VONAGE_FROM_NUMBER, sqliteConfig?.providers?.vonage?.from, defaults.providers.vonage!.from),
+        fromNumber: pickStr(process.env.VONAGE_FROM_NUMBER, sqliteConfig?.providers?.vonage?.fromNumber, defaults.providers.vonage!.fromNumber),
+      },
+      generic: {
+        ...defaults.providers.generic,
+        ...(sqliteConfig?.providers?.generic || {}),
+        url: pickStr(process.env.GENERIC_WHATSAPP_URL, sqliteConfig?.providers?.generic?.url, defaults.providers.generic!.url),
+        token: pickStr(process.env.GENERIC_WHATSAPP_TOKEN, sqliteConfig?.providers?.generic?.token, defaults.providers.generic!.token),
+      },
+      direct: {
+        ...defaults.providers.direct,
+        ...(sqliteConfig?.providers?.direct || {}),
+        url: pickStr(process.env.DIRECT_WHATSAPP_URL, sqliteConfig?.providers?.direct?.url, defaults.providers.direct!.url),
+        token: pickStr(process.env.DIRECT_WHATSAPP_TOKEN, sqliteConfig?.providers?.direct?.token, defaults.providers.direct!.token),
+        from: pickStr(process.env.DIRECT_WHATSAPP_FROM, sqliteConfig?.providers?.direct?.from, defaults.providers.direct!.from),
+      },
+      fad: {
+        ...defaults.providers.fad,
+        ...(sqliteConfig?.providers?.fad || {}),
+        url: pickStr(process.env.FAD_API_URL, sqliteConfig?.providers?.fad?.url, defaults.providers.fad!.url),
+        username: pickStr(process.env.FAD_USERNAME, sqliteConfig?.providers?.fad?.username, defaults.providers.fad!.username),
+        password: pickStr(process.env.FAD_PASSWORD, sqliteConfig?.providers?.fad?.password, defaults.providers.fad!.password),
+        authMethod: pickStr(process.env.FAD_AUTH_METHOD, sqliteConfig?.providers?.fad?.authMethod, defaults.providers.fad!.authMethod),
+        customAuthHeaders: process.env.FAD_CUSTOM_AUTH_HEADERS ? JSON.parse(process.env.FAD_CUSTOM_AUTH_HEADERS) :
+                          sqliteConfig?.providers?.fad?.customAuthHeaders || defaults.providers.fad!.customAuthHeaders,
+        userId: pickStr(process.env.FAD_USERID, sqliteConfig?.providers?.fad?.userId, defaults.providers.fad!.userId),
+        userid: pickStr(process.env.FAD_USERID, sqliteConfig?.providers?.fad?.userid, defaults.providers.fad!.userid),
+        userID: pickStr(process.env.FAD_USERID, sqliteConfig?.providers?.fad?.userID, defaults.providers.fad!.userID),
+      },
     },
-  }; 
-  merged.providers.meta!.token = process.env.META_WHATSAPP_TOKEN ?? merged.providers.meta!.token;
-  merged.providers.vonage!.apiKey = process.env.VONAGE_API_KEY ?? merged.providers.vonage!.apiKey;
-  merged.providers.vonage!.apiSecret = process.env.VONAGE_API_SECRET ?? merged.providers.vonage!.apiSecret;
-  merged.providers.generic!.token = process.env.GENERIC_WHATSAPP_TOKEN ?? merged.providers.generic!.token;
-  merged.providers.direct!.token = process.env.DIRECT_WHATSAPP_TOKEN ?? merged.providers.direct!.token;
-  merged.apiNotificationUrl = process.env.APINOTIFICATION_URL ?? merged.apiNotificationUrl;
-  return merged;
+  };
+
+  return cfg;
 }

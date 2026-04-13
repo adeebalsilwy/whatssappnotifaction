@@ -1,17 +1,24 @@
 import Database from 'better-sqlite3';
 import path from 'path';
 
+import fs from 'fs';
+
 // SQLite database instance
 let sqliteDb: Database.Database | null = null;
 
 /**
  * Get the SQLite database instance
  */
-  const dataPath = path.join(process.cwd(), 'data', 'gateway.db');
-
 export function getDb() {
     if (!sqliteDb) {
-        const dbPath = process.env.SQLITE_DB_PATH || path.join(process.cwd(), 'gateway.db');
+        const dbPath = process.env.SQLITE_DB_PATH || path.join(process.cwd(), 'data', 'gateway.db');
+        
+        // Ensure directory exists
+        const dir = path.dirname(dbPath);
+        if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir, { recursive: true });
+        }
+        
         sqliteDb = new Database(dbPath);
         
         // Ensure tables exist for SQLite
@@ -69,6 +76,22 @@ function initializeSQLiteTables(db: Database.Database) {
             createdAt TEXT DEFAULT CURRENT_TIMESTAMP
         );
     `);
+
+    // Templates table for professional template storage
+    db.exec(`
+        CREATE TABLE IF NOT EXISTS templates (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            language TEXT NOT NULL,
+            category TEXT NOT NULL,
+            components TEXT NOT NULL, -- JSON string of components
+            variables TEXT, -- JSON string of variable names
+            description TEXT,
+            createdAt TEXT DEFAULT CURRENT_TIMESTAMP,
+            updatedAt TEXT DEFAULT CURRENT_TIMESTAMP,
+            UNIQUE(name, language)
+        );
+    `);
 }
 
 /**
@@ -87,7 +110,7 @@ export async function executeQuery(query: string, params?: any[]) {
     
     if (query.toUpperCase().includes('INSERT') && query.toUpperCase().includes('RETURNING')) {
         // Handle INSERT with RETURNING for SQLite
-        const stmt = db.prepare(query.replace(/\$([0-9]+)/g, '?').replace(/RETURNING.*$/, ''));
+        const stmt = db.prepare(query.replace(/\$([0-9]+)/g, '?').replace(/RETURNING.*$/i, ''));
         const result = stmt.run(params || []);
         
         // Return in format compatible with PostgreSQL

@@ -1,0 +1,774 @@
+{
+  "timestamp": "2026-02-15T19:35:28.419Z",
+  "category": "meta_delivery",
+  "transactionId": "simultaneous-1771184128412-46lx89s6j",
+  "action": "SEND_ATTEMPT",
+  "provider": "meta",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T19:35:28.422Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 60
+}
+{
+  "timestamp": "2026-02-15T19:35:33.527Z",
+  "category": "meta_delivery",
+  "action": "SEND_FAILURE",
+  "recipient": "+967774577134",
+  "httpStatus": 400,
+  "errorCode": "100",
+  "errorMessage": "Unsupported post request. Object with ID '1398033981696517' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+  "providerResponse": {
+    "error": {
+      "message": "Unsupported post request. Object with ID '1398033981696517' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+      "type": "GraphMethodException",
+      "code": 100,
+      "error_subcode": 33,
+      "fbtrace_id": "AWEc5XSVDcSMxUBMT9vRSVc"
+    }
+  },
+  "durationMs": 5102
+}
+{
+  "timestamp": "2026-02-15T19:35:33.530Z",
+  "category": "meta_delivery",
+  "transactionId": "simultaneous-1771184128412-46lx89s6j",
+  "action": "SEND_RESULT",
+  "provider": "meta",
+  "success": false,
+  "errorCode": "100",
+  "errorMessage": "Unsupported post request. Object with ID '1398033981696517' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+  "durationMs": 5111
+}
+{
+  "timestamp": "2026-02-15T19:35:37.214Z",
+  "category": "meta_delivery",
+  "transactionId": "simultaneous-1771184137207-0cju4lf37",
+  "action": "SEND_ATTEMPT",
+  "provider": "meta",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T19:35:37.216Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 70
+}
+{
+  "timestamp": "2026-02-15T19:35:39.074Z",
+  "category": "meta_delivery",
+  "action": "SEND_FAILURE",
+  "recipient": "+967774577134",
+  "httpStatus": 400,
+  "errorCode": "100",
+  "errorMessage": "Unsupported post request. Object with ID '1398033981696517' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+  "providerResponse": {
+    "error": {
+      "message": "Unsupported post request. Object with ID '1398033981696517' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+      "type": "GraphMethodException",
+      "code": 100,
+      "error_subcode": 33,
+      "fbtrace_id": "AZ0xXfTH-jC1wMcrVVx-0JJ"
+    }
+  },
+  "durationMs": 1856
+}
+{
+  "timestamp": "2026-02-15T19:35:39.076Z",
+  "category": "meta_delivery",
+  "transactionId": "simultaneous-1771184137207-0cju4lf37",
+  "action": "SEND_RESULT",
+  "provider": "meta",
+  "success": false,
+  "errorCode": "100",
+  "errorMessage": "Unsupported post request. Object with ID '1398033981696517' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+  "durationMs": 1862
+}
+{
+  "timestamp": "2026-02-15T19:48:02.403Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 60
+}
+{
+  "timestamp": "2026-02-15T19:48:05.679Z",
+  "category": "meta_delivery",
+  "action": "SEND_FAILURE",
+  "recipient": "+967774577134",
+  "httpStatus": 400,
+  "errorCode": "100",
+  "errorMessage": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+  "providerResponse": {
+    "error": {
+      "message": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+      "type": "GraphMethodException",
+      "code": 100,
+      "error_subcode": 33,
+      "fbtrace_id": "AdQsSpJUWlD-kQWe4MmPMwU"
+    }
+  },
+  "durationMs": 3274
+}
+{
+  "timestamp": "2026-02-15T19:48:09.199Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 70
+}
+{
+  "timestamp": "2026-02-15T19:48:09.847Z",
+  "category": "meta_delivery",
+  "action": "SEND_FAILURE",
+  "recipient": "+967774577134",
+  "httpStatus": 400,
+  "errorCode": "100",
+  "errorMessage": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+  "providerResponse": {
+    "error": {
+      "message": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+      "type": "GraphMethodException",
+      "code": 100,
+      "error_subcode": 33,
+      "fbtrace_id": "AG0l05ReRA8dRlzy7C3z5sE"
+    }
+  },
+  "durationMs": 647
+}
+{
+  "timestamp": "2026-02-15T19:48:13.311Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 36
+}
+{
+  "timestamp": "2026-02-15T19:48:14.027Z",
+  "category": "meta_delivery",
+  "action": "SEND_FAILURE",
+  "recipient": "+967774577134",
+  "httpStatus": 400,
+  "errorCode": "100",
+  "errorMessage": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+  "providerResponse": {
+    "error": {
+      "message": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+      "type": "GraphMethodException",
+      "code": 100,
+      "error_subcode": 33,
+      "fbtrace_id": "Abkf_tVadARgxYAnz2rDD7_"
+    }
+  },
+  "durationMs": 714
+}
+{
+  "timestamp": "2026-02-15T19:48:21.465Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 60
+}
+{
+  "timestamp": "2026-02-15T19:48:23.383Z",
+  "category": "meta_delivery",
+  "action": "SEND_FAILURE",
+  "recipient": "+967774577134",
+  "httpStatus": 400,
+  "errorCode": "100",
+  "errorMessage": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+  "providerResponse": {
+    "error": {
+      "message": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+      "type": "GraphMethodException",
+      "code": 100,
+      "error_subcode": 33,
+      "fbtrace_id": "ABbPSBv4_gUHVEzulGt8oZ5"
+    }
+  },
+  "durationMs": 1915
+}
+{
+  "timestamp": "2026-02-15T19:48:26.833Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 70
+}
+{
+  "timestamp": "2026-02-15T19:48:28.958Z",
+  "category": "meta_delivery",
+  "action": "SEND_FAILURE",
+  "recipient": "+967774577134",
+  "httpStatus": 400,
+  "errorCode": "100",
+  "errorMessage": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+  "providerResponse": {
+    "error": {
+      "message": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+      "type": "GraphMethodException",
+      "code": 100,
+      "error_subcode": 33,
+      "fbtrace_id": "AG5__YtzXpDllsbyhCy2osb"
+    }
+  },
+  "durationMs": 2122
+}
+{
+  "timestamp": "2026-02-15T19:48:32.456Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 36
+}
+{
+  "timestamp": "2026-02-15T19:48:32.988Z",
+  "category": "meta_delivery",
+  "action": "SEND_FAILURE",
+  "recipient": "+967774577134",
+  "httpStatus": 400,
+  "errorCode": "100",
+  "errorMessage": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+  "providerResponse": {
+    "error": {
+      "message": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+      "type": "GraphMethodException",
+      "code": 100,
+      "error_subcode": 33,
+      "fbtrace_id": "ADLu9pCVIrHWKZ0HCOPN4zV"
+    }
+  },
+  "durationMs": 530
+}
+{
+  "timestamp": "2026-02-15T19:52:47.720Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 60
+}
+{
+  "timestamp": "2026-02-15T19:52:49.076Z",
+  "category": "meta_delivery",
+  "action": "SEND_FAILURE",
+  "recipient": "+967774577134",
+  "httpStatus": 400,
+  "errorCode": "132000",
+  "errorMessage": "(#132000) Number of parameters does not match the expected number of params",
+  "providerResponse": {
+    "error": {
+      "message": "(#132000) Number of parameters does not match the expected number of params",
+      "type": "OAuthException",
+      "code": 132000,
+      "error_data": {
+        "messaging_product": "whatsapp",
+        "details": "body: number of localizable_params (0) does not match the expected number of params (1)"
+      },
+      "fbtrace_id": "AZ9PW17EkIhVWtoBt3bmpOn"
+    }
+  },
+  "durationMs": 1354
+}
+{
+  "timestamp": "2026-02-15T19:52:52.586Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 70
+}
+{
+  "timestamp": "2026-02-15T19:52:53.245Z",
+  "category": "meta_delivery",
+  "action": "SEND_FAILURE",
+  "recipient": "+967774577134",
+  "httpStatus": 400,
+  "errorCode": "132000",
+  "errorMessage": "(#132000) Number of parameters does not match the expected number of params",
+  "providerResponse": {
+    "error": {
+      "message": "(#132000) Number of parameters does not match the expected number of params",
+      "type": "OAuthException",
+      "code": 132000,
+      "error_data": {
+        "messaging_product": "whatsapp",
+        "details": "body: number of localizable_params (0) does not match the expected number of params (1)"
+      },
+      "fbtrace_id": "AJugcuAOSuMF1Q19cgOJflA"
+    }
+  },
+  "durationMs": 658
+}
+{
+  "timestamp": "2026-02-15T19:52:56.719Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 36
+}
+{
+  "timestamp": "2026-02-15T19:52:57.302Z",
+  "category": "meta_delivery",
+  "action": "SEND_FAILURE",
+  "recipient": "+967774577134",
+  "httpStatus": 400,
+  "errorCode": "132000",
+  "errorMessage": "(#132000) Number of parameters does not match the expected number of params",
+  "providerResponse": {
+    "error": {
+      "message": "(#132000) Number of parameters does not match the expected number of params",
+      "type": "OAuthException",
+      "code": 132000,
+      "error_data": {
+        "messaging_product": "whatsapp",
+        "details": "body: number of localizable_params (0) does not match the expected number of params (1)"
+      },
+      "fbtrace_id": "Aue-UNZvkJnvY44OjVaGYhx"
+    }
+  },
+  "durationMs": 582
+}
+{
+  "timestamp": "2026-02-15T20:36:11.575Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 60
+}
+{
+  "timestamp": "2026-02-15T20:36:12.939Z",
+  "category": "meta_delivery",
+  "action": "SEND_SUCCESS",
+  "recipient": "+967774577134",
+  "providerResponse": {
+    "messaging_product": "whatsapp",
+    "contacts": [
+      {
+        "input": "+967774577134",
+        "wa_id": "967774577134"
+      }
+    ],
+    "messages": [
+      {
+        "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRUI4OTQ2QkMzNkM3ODcwNDg1AA==",
+        "message_status": "accepted"
+      }
+    ]
+  },
+  "messageIds": [
+    "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRUI4OTQ2QkMzNkM3ODcwNDg1AA=="
+  ],
+  "durationMs": 1361
+}
+{
+  "timestamp": "2026-02-15T20:36:25.582Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 70
+}
+{
+  "timestamp": "2026-02-15T20:36:27.044Z",
+  "category": "meta_delivery",
+  "action": "SEND_SUCCESS",
+  "recipient": "+967774577134",
+  "providerResponse": {
+    "messaging_product": "whatsapp",
+    "contacts": [
+      {
+        "input": "+967774577134",
+        "wa_id": "967774577134"
+      }
+    ],
+    "messages": [
+      {
+        "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSMTRDMTcyRjhEN0Q3MENEQkM3AA==",
+        "message_status": "accepted"
+      }
+    ]
+  },
+  "messageIds": [
+    "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSMTRDMTcyRjhEN0Q3MENEQkM3AA=="
+  ],
+  "durationMs": 1460
+}
+{
+  "timestamp": "2026-02-15T20:36:39.569Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 36
+}
+{
+  "timestamp": "2026-02-15T20:36:50.192Z",
+  "category": "meta_delivery",
+  "action": "SEND_EXCEPTION",
+  "recipient": "+967774577134",
+  "error": "fetch failed",
+  "stack": "TypeError: fetch failed\n    at node:internal/deps/undici/undici:16480:13\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at runNextTicks (node:internal/process/task_queues:69:3)\n    at process.processImmediate (node:internal/timers:472:9)\n    at process.callbackTrampoline (node:internal/async_hooks:131:14)\n    at async MetaWhatsAppProvider.sendTextMessage (F:\\my project\\nodejs\\whatsapp\\.next\\server\\chunks\\[root-of-the-server]__c8d25cbd._.js:422:30)\n    at async WhatsAppNotificationService.sendViaProvider (F:\\my project\\nodejs\\whatsapp\\.next\\server\\chunks\\[root-of-the-server]__c8d25cbd._.js:2920:28)\n    at async Promise.allSettled (index 0)\n    at async WhatsAppNotificationService.send (F:\\my project\\nodejs\\whatsapp\\.next\\server\\chunks\\[root-of-the-server]__c8d25cbd._.js:2826:45)\n    at async POST (F:\\my project\\nodejs\\whatsapp\\.next\\server\\chunks\\[root-of-the-server]__c8d25cbd._.js:3556:18)\n    at async AppRouteRouteModule.do (F:\\my project\\nodejs\\whatsapp\\node_modules\\next\\dist\\compiled\\next-server\\app-route-turbo.runtime.dev.js:5:38696)\n    at async AppRouteRouteModule.handle (F:\\my project\\nodejs\\whatsapp\\node_modules\\next\\dist\\compiled\\next-server\\app-route-turbo.runtime.dev.js:5:45978)\n    at async responseGenerator (F:\\my project\\nodejs\\whatsapp\\.next\\server\\chunks\\node_modules_next_57e03122._.js:14164:38)\n    at async AppRouteRouteModule.handleResponse (F:\\my project\\nodejs\\whatsapp\\node_modules\\next\\dist\\compiled\\next-server\\app-route-turbo.runtime.dev.js:1:187643)\n    at async handleResponse (F:\\my project\\nodejs\\whatsapp\\.next\\server\\chunks\\node_modules_next_57e03122._.js:14226:32)\n    at async handler (F:\\my project\\nodejs\\whatsapp\\.next\\server\\chunks\\node_modules_next_57e03122._.js:14278:13)\n    at async DevServer.renderToResponseWithComponentsImpl (F:\\my project\\nodejs\\whatsapp\\node_modules\\next\\dist\\server\\base-server.js:1422:9)\n    at async DevServer.renderPageComponent (F:\\my project\\nodejs\\whatsapp\\node_modules\\next\\dist\\server\\base-server.js:1474:24)\n    at async DevServer.renderToResponseImpl (F:\\my project\\nodejs\\whatsapp\\node_modules\\next\\dist\\server\\base-server.js:1514:32)\n    at async DevServer.pipeImpl (F:\\my project\\nodejs\\whatsapp\\node_modules\\next\\dist\\server\\base-server.js:1025:25)\n    at async NextNodeServer.handleCatchallRenderRequest (F:\\my project\\nodejs\\whatsapp\\node_modules\\next\\dist\\server\\next-server.js:393:17)\n    at async DevServer.handleRequestImpl (F:\\my project\\nodejs\\whatsapp\\node_modules\\next\\dist\\server\\base-server.js:916:17)\n    at async F:\\my project\\nodejs\\whatsapp\\node_modules\\next\\dist\\server\\dev\\next-dev-server.js:399:20\n    at async Span.traceAsyncFn (F:\\my project\\nodejs\\whatsapp\\node_modules\\next\\dist\\trace\\trace.js:157:20)\n    at async DevServer.handleRequest (F:\\my project\\nodejs\\whatsapp\\node_modules\\next\\dist\\server\\dev\\next-dev-server.js:395:24)\n    at async invokeRender (F:\\my project\\nodejs\\whatsapp\\node_modules\\next\\dist\\server\\lib\\router-server.js:240:21)\n    at async handleRequest (F:\\my project\\nodejs\\whatsapp\\node_modules\\next\\dist\\server\\lib\\router-server.js:437:24)\n    at async requestHandlerImpl (F:\\my project\\nodejs\\whatsapp\\node_modules\\next\\dist\\server\\lib\\router-server.js:485:13)\n    at async Server.requestListener (F:\\my project\\nodejs\\whatsapp\\node_modules\\next\\dist\\server\\lib\\start-server.js:226:13)",
+  "durationMs": 10621
+}
+{
+  "timestamp": "2026-02-15T20:37:05.967Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 60
+}
+{
+  "timestamp": "2026-02-15T20:37:09.257Z",
+  "category": "meta_delivery",
+  "action": "SEND_SUCCESS",
+  "recipient": "+967774577134",
+  "providerResponse": {
+    "messaging_product": "whatsapp",
+    "contacts": [
+      {
+        "input": "+967774577134",
+        "wa_id": "967774577134"
+      }
+    ],
+    "messages": [
+      {
+        "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSMDNDQjY4RDIyQ0EwN0RFMDFEAA==",
+        "message_status": "accepted"
+      }
+    ]
+  },
+  "messageIds": [
+    "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSMDNDQjY4RDIyQ0EwN0RFMDFEAA=="
+  ],
+  "durationMs": 3289
+}
+{
+  "timestamp": "2026-02-15T20:37:19.983Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 70
+}
+{
+  "timestamp": "2026-02-15T20:37:24.077Z",
+  "category": "meta_delivery",
+  "action": "SEND_SUCCESS",
+  "recipient": "+967774577134",
+  "providerResponse": {
+    "messaging_product": "whatsapp",
+    "contacts": [
+      {
+        "input": "+967774577134",
+        "wa_id": "967774577134"
+      }
+    ],
+    "messages": [
+      {
+        "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNUEzMzBBNUU3QTg1RjQ2QzY5AA==",
+        "message_status": "accepted"
+      }
+    ]
+  },
+  "messageIds": [
+    "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNUEzMzBBNUU3QTg1RjQ2QzY5AA=="
+  ],
+  "durationMs": 4092
+}
+{
+  "timestamp": "2026-02-15T20:37:33.924Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 36
+}
+{
+  "timestamp": "2026-02-15T20:37:36.629Z",
+  "category": "meta_delivery",
+  "action": "SEND_SUCCESS",
+  "recipient": "+967774577134",
+  "providerResponse": {
+    "messaging_product": "whatsapp",
+    "contacts": [
+      {
+        "input": "+967774577134",
+        "wa_id": "967774577134"
+      }
+    ],
+    "messages": [
+      {
+        "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQTNDNEVEMzk3N0QyMEY3RDU2AA==",
+        "message_status": "accepted"
+      }
+    ]
+  },
+  "messageIds": [
+    "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQTNDNEVEMzk3N0QyMEY3RDU2AA=="
+  ],
+  "durationMs": 2703
+}
+{
+  "timestamp": "2026-02-15T20:37:38.513Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 12
+}
+{
+  "timestamp": "2026-02-15T20:37:39.554Z",
+  "category": "meta_delivery",
+  "action": "SEND_SUCCESS",
+  "recipient": "+967774577134",
+  "providerResponse": {
+    "messaging_product": "whatsapp",
+    "contacts": [
+      {
+        "input": "+967774577134",
+        "wa_id": "967774577134"
+      }
+    ],
+    "messages": [
+      {
+        "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNjg3RTQwODc3NjgzRjY5NDg1AA==",
+        "message_status": "accepted"
+      }
+    ]
+  },
+  "messageIds": [
+    "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNjg3RTQwODc3NjgzRjY5NDg1AA=="
+  ],
+  "durationMs": 1039
+}
+{
+  "timestamp": "2026-02-15T20:39:24.065Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 60
+}
+{
+  "timestamp": "2026-02-15T20:39:25.556Z",
+  "category": "meta_delivery",
+  "action": "SEND_SUCCESS",
+  "recipient": "+967774577134",
+  "providerResponse": {
+    "messaging_product": "whatsapp",
+    "contacts": [
+      {
+        "input": "+967774577134",
+        "wa_id": "967774577134"
+      }
+    ],
+    "messages": [
+      {
+        "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRDhGODkyNTNBNkM2NTIxQjJFAA==",
+        "message_status": "accepted"
+      }
+    ]
+  },
+  "messageIds": [
+    "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRDhGODkyNTNBNkM2NTIxQjJFAA=="
+  ],
+  "durationMs": 1487
+}
+{
+  "timestamp": "2026-02-15T20:39:38.150Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 70
+}
+{
+  "timestamp": "2026-02-15T20:39:47.847Z",
+  "category": "meta_delivery",
+  "action": "SEND_SUCCESS",
+  "recipient": "+967774577134",
+  "providerResponse": {
+    "messaging_product": "whatsapp",
+    "contacts": [
+      {
+        "input": "+967774577134",
+        "wa_id": "967774577134"
+      }
+    ],
+    "messages": [
+      {
+        "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNkRCODg5NUJBMjNBQ0U1REY0AA==",
+        "message_status": "accepted"
+      }
+    ]
+  },
+  "messageIds": [
+    "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNkRCODg5NUJBMjNBQ0U1REY0AA=="
+  ],
+  "durationMs": 9695
+}
+{
+  "timestamp": "2026-02-15T20:39:52.118Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 36
+}
+{
+  "timestamp": "2026-02-15T20:39:53.230Z",
+  "category": "meta_delivery",
+  "action": "SEND_SUCCESS",
+  "recipient": "+967774577134",
+  "providerResponse": {
+    "messaging_product": "whatsapp",
+    "contacts": [
+      {
+        "input": "+967774577134",
+        "wa_id": "967774577134"
+      }
+    ],
+    "messages": [
+      {
+        "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRjVERkQ1MkExQUFDOTA3MTk2AA==",
+        "message_status": "accepted"
+      }
+    ]
+  },
+  "messageIds": [
+    "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRjVERkQ1MkExQUFDOTA3MTk2AA=="
+  ],
+  "durationMs": 1110
+}
+{
+  "timestamp": "2026-02-15T20:40:20.813Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 12
+}
+{
+  "timestamp": "2026-02-15T20:40:22.025Z",
+  "category": "meta_delivery",
+  "action": "SEND_SUCCESS",
+  "recipient": "+967774577134",
+  "providerResponse": {
+    "messaging_product": "whatsapp",
+    "contacts": [
+      {
+        "input": "+967774577134",
+        "wa_id": "967774577134"
+      }
+    ],
+    "messages": [
+      {
+        "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQzA5QjBENzY2QjQ0QzlGMkU2AA==",
+        "message_status": "accepted"
+      }
+    ]
+  },
+  "messageIds": [
+    "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQzA5QjBENzY2QjQ0QzlGMkU2AA=="
+  ],
+  "durationMs": 1209
+}
+{
+  "timestamp": "2026-02-15T20:41:02.868Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 10
+}
+{
+  "timestamp": "2026-02-15T20:41:04.280Z",
+  "category": "meta_delivery",
+  "action": "SEND_SUCCESS",
+  "recipient": "+967774577134",
+  "providerResponse": {
+    "messaging_product": "whatsapp",
+    "contacts": [
+      {
+        "input": "+967774577134",
+        "wa_id": "967774577134"
+      }
+    ],
+    "messages": [
+      {
+        "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSODE0OUNERDBBODFFNzE1NjU2AA==",
+        "message_status": "accepted"
+      }
+    ]
+  },
+  "messageIds": [
+    "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSODE0OUNERDBBODFFNzE1NjU2AA=="
+  ],
+  "durationMs": 1409
+}

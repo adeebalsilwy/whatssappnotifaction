@@ -1,0 +1,207 @@
+{
+  "timestamp": "2026-02-19T08:31:03.829Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 37
+}
+{
+  "timestamp": "2026-02-19T08:31:04.745Z",
+  "category": "meta_delivery",
+  "action": "SEND_SUCCESS",
+  "recipient": "967774577134",
+  "providerResponse": {
+    "messaging_product": "whatsapp",
+    "contacts": [
+      {
+        "input": "967774577134",
+        "wa_id": "967774577134"
+      }
+    ],
+    "messages": [
+      {
+        "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQTgyNURGNDFGNzAzQTE0RTQ0AA==",
+        "message_status": "accepted"
+      }
+    ]
+  },
+  "messageIds": [
+    "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQTgyNURGNDFGNzAzQTE0RTQ0AA=="
+  ],
+  "durationMs": 913
+}
+{
+  "timestamp": "2026-02-19T08:32:17.719Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 37
+}
+{
+  "timestamp": "2026-02-19T08:32:18.588Z",
+  "category": "meta_delivery",
+  "action": "SEND_SUCCESS",
+  "recipient": "967774577134",
+  "providerResponse": {
+    "messaging_product": "whatsapp",
+    "contacts": [
+      {
+        "input": "967774577134",
+        "wa_id": "967774577134"
+      }
+    ],
+    "messages": [
+      {
+        "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRTA3REFGNURBMTc4RjIxMjQ1AA==",
+        "message_status": "accepted"
+      }
+    ]
+  },
+  "messageIds": [
+    "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRTA3REFGNURBMTc4RjIxMjQ1AA=="
+  ],
+  "durationMs": 865
+}
+{
+  "timestamp": "2026-02-19T08:34:53.708Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 37
+}
+{
+  "timestamp": "2026-02-19T08:34:54.568Z",
+  "category": "meta_delivery",
+  "action": "SEND_SUCCESS",
+  "recipient": "967774577134",
+  "providerResponse": {
+    "messaging_product": "whatsapp",
+    "contacts": [
+      {
+        "input": "967774577134",
+        "wa_id": "967774577134"
+      }
+    ],
+    "messages": [
+      {
+        "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNDdGNUM4OUE1MDdBOTc5NzU3AA==",
+        "message_status": "accepted"
+      }
+    ]
+  },
+  "messageIds": [
+    "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNDdGNUM4OUE1MDdBOTc5NzU3AA=="
+  ],
+  "durationMs": 857
+}
+{
+  "timestamp": "2026-02-19T08:37:42.778Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 37
+}
+{
+  "timestamp": "2026-02-19T08:37:44.679Z",
+  "category": "meta_delivery",
+  "action": "SEND_SUCCESS",
+  "recipient": "967774577134",
+  "providerResponse": {
+    "messaging_product": "whatsapp",
+    "contacts": [
+      {
+        "input": "967774577134",
+        "wa_id": "967774577134"
+      }
+    ],
+    "messages": [
+      {
+        "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSOUJDQ0U2OTdCNEM3QUQwOUNEAA==",
+        "message_status": "accepted"
+      }
+    ]
+  },
+  "messageIds": [
+    "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSOUJDQ0U2OTdCNEM3QUQwOUNEAA=="
+  ],
+  "durationMs": 1898
+}
+{
+  "timestamp": "2026-02-19T08:51:32.113Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 37
+}
+{
+  "timestamp": "2026-02-19T08:51:33.123Z",
+  "category": "meta_delivery",
+  "action": "SEND_FAILURE",
+  "recipient": "+967774577134",
+  "httpStatus": 400,
+  "errorCode": "131008",
+  "errorMessage": "(#131008) Required parameter is missing",
+  "providerResponse": {
+    "error": {
+      "message": "(#131008) Required parameter is missing",
+      "type": "OAuthException",
+      "code": 131008,
+      "error_data": {
+        "messaging_product": "whatsapp",
+        "details": "Parameter of type text is missing text value"
+      },
+      "fbtrace_id": "AybvyxBgm8Gm6bmOVmgbRxF"
+    }
+  },
+  "durationMs": 1009
+}
+{
+  "timestamp": "2026-02-19T08:53:44.700Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 37
+}
+{
+  "timestamp": "2026-02-19T08:53:46.135Z",
+  "category": "meta_delivery",
+  "action": "SEND_SUCCESS",
+  "recipient": "967774577134",
+  "providerResponse": {
+    "messaging_product": "whatsapp",
+    "contacts": [
+      {
+        "input": "967774577134",
+        "wa_id": "967774577134"
+      }
+    ],
+    "messages": [
+      {
+        "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSODkxMTVGMTE0ODJGMTE4RTZFAA==",
+        "message_status": "accepted"
+      }
+    ]
+  },
+  "messageIds": [
+    "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSODkxMTVGMTE0ODJGMTE4RTZFAA=="
+  ],
+  "durationMs": 1431
+}

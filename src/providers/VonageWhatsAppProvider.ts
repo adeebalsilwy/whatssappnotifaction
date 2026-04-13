@@ -79,7 +79,7 @@ export class VonageWhatsAppProvider implements IWhatsAppProvider {
       }
 
       // Default: send as text
-      const result = await sdkProvider.send(payload.to, payload.body, transId);
+      const result = await sdkProvider.send(payload.to, payload.body || '', transId);
 
       if (result.success) {
         return {

@@ -36,20 +36,37 @@ router.post('/vonage/status', async (req: Request, res: Response) => {
         // Update message status in database
         if (client_ref) {
             const { MessagesRepository } = await import('../storage/sqlite/repositories/messages.repo');
+            const { DeliveryTracker } = await import('@/lib/delivery-tracker');
             const repo = new MessagesRepository();
+            const tracker = DeliveryTracker.getInstance();
 
             const statusMap: Record<string, string> = {
-                'submitted': 'QUEUED',
-                'delivered': 'SENT',
-                'read': 'SENT',
+                'submitted': 'ACCEPTED',
+                'delivered': 'DELIVERED',
+                'read': 'READ',
                 'rejected': 'FAILED',
                 'failed': 'FAILED'
             };
 
-            const newStatus = statusMap[status] || 'QUEUED';
+            const newStatus = statusMap[status] || 'ACCEPTED';
             const errorMsg = error ? `${error.type}: ${error.title}` : undefined;
 
+            // Update main message status
             await repo.updateStatus(client_ref, newStatus, message_uuid, errorMsg);
+            
+            // Track detailed status
+            await tracker.createStatusRecord({
+                transId: client_ref,
+                message_id: message_uuid,
+                provider_id: 'vonage',
+                status: newStatus as any,
+                timestamp: new Date(timestamp).toISOString(),
+                reason: status,
+                error_code: error ? error.type : undefined,
+                error_message: errorMsg,
+                metadata: JSON.stringify({ status_details: req.body })
+            });
+            
             console.log(`[Vonage Webhook] Updated ${client_ref} to ${newStatus}`);
         }
 

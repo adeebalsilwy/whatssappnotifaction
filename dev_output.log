@@ -1,0 +1,20 @@
+   ▲ Next.js 15.5.9 (Turbopack)
+   - Local:        http://localhost:9876
+   - Network:      http://192.168.0.2:9876
+
+ ✓ Starting...
+ ○ Compiling middleware ...
+ ✓ Compiled middleware in 1027ms
+ ✓ Ready in 4.3s
+ ○ Compiling /login ...
+ ✓ Compiled /login in 9.5s
+ GET /login?redirect=%2Fdashboard%2Ftesting 200 in 11343ms
+ ○ Compiling /api/auth/validate ...
+ ✓ Compiled /api/auth/validate in 1120ms
+ GET /api/auth/validate 401 in 1922ms
+ GET /login 200 in 220ms
+ GET /api/auth/validate 401 in 349ms
+ ✓ Compiled /api/auth/login in 228ms
+ POST /api/auth/login 401 in 695ms
+ GET /login?redirect=%2Fdashboard%2Ftesting 200 in 219ms
+ GET /api/auth/validate 401 in 300ms

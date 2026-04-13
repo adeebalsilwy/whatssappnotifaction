@@ -12,10 +12,10 @@ export type MessageInsert = {
 };
 
 export async function insertMessage(msg: MessageInsert) {
-  // Use SQLite syntax
+  // Use SQLite syntax with RETURNING for ID
   const res = await executeQuery(
     `INSERT INTO messages (referenceId, sender, [to], message, status, providerMessageId, priority, metadata)
-     VALUES (?,?,?,?,?,?,?,?)`,
+     VALUES (?,?,?,?,?,?,?,?) RETURNING id`,
     [
       msg.referenceId || null,
       msg.sender || null,
@@ -64,7 +64,7 @@ export type ApiLogInsert = {
 export async function insertApiLog(log: ApiLogInsert) {
   await executeQuery(
     `INSERT INTO api_logs (requestId, endpoint, method, requestHeadersMasked, requestBodyMasked, responseStatus, responseBody, latencyMs, ip)
-     VALUES (?,?,?,?,?,?,?,?,?)`,
+     VALUES (?,?,?,?,?,?,?,?,?) RETURNING id`,
     [
       log.requestId,
       log.endpoint,

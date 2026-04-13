@@ -1,0 +1,161 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Data Source=192.168.155.200;Initial Catalog=CISRemittanceNetwork2025;User ID=CIS;Password=1n1N@#A#d@4D$;"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "Jwt": {
+    "Key": "youw/nWigZFXkLaKej1W45ccif/+O+PodikGLJitTtYRWWBU4VZ9flR1MrDuAPVV3KSRsTNJF0YnAzzo2ZVwcyLiDoi2s2FUTxSQNqMt7HR5W/RUcXgJbjT7XGGHuq1pBOtXokuT0vtELvtSMEmrt+DMo1klwktw2ch2B/IyLfZOZ7aO5RQaDMuDau8MXqJ0msFZk9V6dEbJXLUYrbYsC4xhN3eQdKtY5APVYZ2J7fBzAsWquuHIPgcYXXzLpr10H+o1M44VTvkVzUkn5bdJ2TVrqmiLCEX5Q0SpI8b9vF6PoXEpznT3LMnZHBb16H0U/T5TeEJT+GWoh+eMvx8mOg==",
+    "Issuer": "https://fdo.net",
+    "Audiance": "https://fdo.net/"
+  },
+  "StartupConfig": {
+    "TokenEncriptionKey": "0",
+    "ForceHttpsRedirection": false,
+    "UseSecurityHeaders": false,
+    "UseSecureHashFilter": false,
+    "UseResponseCompression": true,
+    "UseRateLimiter": false,
+    "ShowAPIDocumentation": true,
+    "RateLimitTotalSeconds": 10,
+    "UseIPWishList": {
+      "Status": false,
+      "IPs": [
+        "::1"
+      ]
+    }
+  },
+  "SystemConfig": {
+    "APIVersion": 2.1,
+    "RemittancePublicIdStartWith": "",
+    "RemittanceExpressIdStartWith": "",
+    "RemittanceIdLength": 9,
+    "EnableValidatingRemittanceRestriction": true,
+    "EnableSMS": true,
+    "EnableCheckSusbendedCauses": true,
+    "RequireRemittanceDetailedData": false,
+    "ImmediateExtraDataFormTriggerd": false,
+    "RestrictPymentForFingerPrintedRemittances": true
+  },
+  "ExternalRemittancesSettings": {
+    "URL": "https://localhost:5001/api/"
+  },
+  "IBSRemittancesSettings": [
+    {
+     "URL": "https://unm-agents.com:6663/",
+     "UserName": "AlwasitAPI",
+     "Password": "fad@1234",
+     "SecretCode": "U1n?i1f$i2e?dn!e0t@W5o9rk",
+     "SubChannelType": "Wasit_vud1z",
+     "ChannelType": "2",
+     "ClientSecret": "Wasit_vud1z",
+     "DeviceID": null,
+     "AgentBranchCode": "AlwasitFAD",
+     "DistinationId": 3,
+     "NetworkId":2
+    },
+    {
+      "URL": "https://unm-yemen.com:6663/",
+      "UserName": "",
+      "Password": "_",
+      "SecretCode": "U1n?$5o9rk",
+      "SubChannelType": "_123",
+      "ChannelType": "2",
+      "ClientSecret": "_123",
+      "DeviceID": "123456789",
+      "AgentBranchCode": "shumul_123",
+      "DistinationId": 1594,
+      "NetworkId": 2
+    }
+  ],
+  "CISRemittancesSettings": [
+    {
+      "URL": "http://23.111.158.174:6663/",
+      "UserName": "",
+      "Password": "",
+      "Certificate": "",
+      "MachineCode": "",
+      "MachineCode2": 123456,
+      "Version": 3.8,
+      "DistinationId": 3547,
+      "NetworkId": 10
+    }
+  ],
+  
+
+
+ "RemittancesSettings": [
+
+  {
+
+    "URL": "https://must.center/APIProd/api",
+
+    "UserName": "adenfirst-api",
+
+    "Password": "W'9^[xMp97c4Vc=)Zj",
+
+    "Certificate": "",
+
+    "MachineCode": "AdenFirstIslamic-Bank-AgentRemittanceService",
+
+    "MachineCode2": 362695584,
+
+    "Version": 5,
+
+    "DistinationId": 11,
+
+    "NetworkId": 10
+
+  },
+
+   {
+
+    "URL": "https://alb.shhbay.com:8082/Agent/api",
+
+    "UserName": "FirstBank",
+
+    "Password": "firstbank@#$2025",
+
+    "Certificate": "",
+
+    "MachineCode": "FirstAdenBank-API",
+
+    "MachineCode2": 102365387,
+
+    "Version": 4,
+
+    "DistinationId": 12,
+
+    "NetworkId": 13
+
+  }
+
+  ],
+"ExternalServices": {
+    "ServiceType": 1,
+    "CompanyName": " بنك عدن الاول",
+    "ServiceName": "فاد موني  ",
+    "MobileQueryURL": "https://paysms2.cismobile.net/API/BillPayment/",
+    "MobilePaymentURL": "https://paysms2.cismobile.net/API/BillPayment/",
+    "DepositURL": "",
+    "SMSSettings": {
+      "SMSURL": "https://paysms2.cismobile.net/API/",
+      "SMSServer": "",
+      "SMSUser": "",
+      "SMSPass": "",
+      "SMSToken": "0",
+      "SMSApplicationID": 0,
+      "SMSChannel": 0
+    },
+    "MobilePaymentUserName": "",
+    "MobilePaymentPassword": "",
+    "APIKey": "0",
+    "XAppKey": "0",
+    "XAPIKey": "0"
+  }
+}

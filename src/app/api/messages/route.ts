@@ -97,8 +97,6 @@ export async function GET(request: Request) {
     
     const totalCount = db.prepare(countQuery).get(...countParams) as { total: number };
     
-    db.close();
-    
     return NextResponse.json({
       success: true,
       data: messages,
@@ -156,8 +154,6 @@ export async function POST(request: Request) {
       message, 
       priority 
     }));
-    
-    db.close();
     
     return NextResponse.json({
       success: true,

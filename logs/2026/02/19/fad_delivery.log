@@ -1,0 +1,213 @@
+{
+  "timestamp": "2026-02-19T08:31:03.830Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771489863830577134592",
+  "originalRecipient": "967774577134",
+  "formattedNumber": "774577134",
+  "messageLength": 37,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-19T08:31:03.855Z",
+  "category": "fad_delivery",
+  "action": "SEND_EXCEPTION",
+  "recipient": "967774577134",
+  "error": "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+  "stack": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON\n    at JSON.parse (<anonymous>)\n    at parseJSONFromBytes (node:internal/deps/undici/undici:4248:19)\n    at successSteps (node:internal/deps/undici/undici:6886:27)\n    at readAllBytes (node:internal/deps/undici/undici:5796:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)"
+}
+{
+  "timestamp": "2026-02-19T08:32:17.720Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771489937720577134580",
+  "originalRecipient": "967774577134",
+  "formattedNumber": "774577134",
+  "messageLength": 37,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-19T08:32:17.757Z",
+  "category": "fad_delivery",
+  "action": "SEND_FAILURE",
+  "transactionId": "1771489937720577134580",
+  "recipient": "774577134",
+  "httpStatus": 401,
+  "error": "Non-JSON response received: <!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Draft//EN\">\n<HTML>\n<HEAD>\n<TITLE>Error 401--Unauthorized</TITLE>\n</HEAD>\n<BODY bgcolor=\"white\">\n<FONT FACE=Helvetica><BR CLEAR=all>\n<TABLE border=0 cellspac...",
+  "providerResponse": {
+    "error": "Non-JSON response received: <!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Draft//EN\">\n<HTML>\n<HEAD>\n<TITLE>Error 401--Unauthorized</TITLE>\n</HEAD>\n<BODY bgcolor=\"white\">\n<FONT FACE=Helvetica><BR CLEAR=all>\n<TABLE border=0 cellspac...",
+    "message": "FAD API returned non-JSON response"
+  },
+  "durationMs": 28
+}
+{
+  "timestamp": "2026-02-19T08:34:53.709Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771490093709577134935",
+  "originalRecipient": "967774577134",
+  "formattedNumber": "774577134",
+  "messageLength": 37,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-19T08:34:53.727Z",
+  "category": "fad_delivery",
+  "action": "SEND_FAILURE",
+  "transactionId": "1771490093709577134935",
+  "recipient": "774577134",
+  "httpStatus": 401,
+  "error": "Authentication failed (401 Unauthorized): <!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Draft//EN\">\n<HTML>\n<HEAD>\n<TITLE>Error 401--Unauthorized</TITLE>\n</HEAD>\n<BODY bgcolor=\"white\">\n<FONT FACE=Helvetica><BR CLEAR=all>\n<TABLE border=0 cellspac...",
+  "providerResponse": {
+    "error": "Authentication failed (401 Unauthorized): <!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Draft//EN\">\n<HTML>\n<HEAD>\n<TITLE>Error 401--Unauthorized</TITLE>\n</HEAD>\n<BODY bgcolor=\"white\">\n<FONT FACE=Helvetica><BR CLEAR=all>\n<TABLE border=0 cellspac...",
+    "message": "FAD API authentication failed - check credentials",
+    "errorCode": "AUTHENTICATION_ERROR"
+  },
+  "durationMs": 13
+}
+{
+  "timestamp": "2026-02-19T08:37:42.779Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771490262778577134415",
+  "originalRecipient": "967774577134",
+  "formattedNumber": "774577134",
+  "messageLength": 37,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-19T08:37:42.796Z",
+  "category": "fad_delivery",
+  "action": "SEND_FAILURE",
+  "transactionId": "1771490262778577134415",
+  "recipient": "774577134",
+  "httpStatus": 401,
+  "error": "Authentication failed (401 Unauthorized): <!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Draft//EN\">\n<HTML>\n<HEAD>\n<TITLE>Error 401--Unauthorized</TITLE>\n</HEAD>\n<BODY bgcolor=\"white\">\n<FONT FACE=Helvetica><BR CLEAR=all>\n<TABLE border=0 cellspac...",
+  "providerResponse": {
+    "error": "Authentication failed (401 Unauthorized): <!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Draft//EN\">\n<HTML>\n<HEAD>\n<TITLE>Error 401--Unauthorized</TITLE>\n</HEAD>\n<BODY bgcolor=\"white\">\n<FONT FACE=Helvetica><BR CLEAR=all>\n<TABLE border=0 cellspac...",
+    "message": "FAD API authentication failed - check credentials",
+    "errorCode": "AUTHENTICATION_ERROR"
+  },
+  "durationMs": 12
+}
+{
+  "timestamp": "2026-02-19T08:48:56.818Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771490936817577134004",
+  "originalRecipient": "774577134",
+  "formattedNumber": "774577134",
+  "messageLength": 56,
+  "hasTemplate": false
+}
+{
+  "timestamp": "2026-02-19T08:48:56.887Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771490936817577134004",
+  "recipient": "774577134",
+  "providerResponse": {
+    "error": "Non-JSON response received: {\"Error_no\" : 0 ,\"Error_Name\": \"successful\"}",
+    "message": "FAD API returned non-JSON response"
+  },
+  "durationMs": 64,
+  "messageReference": "N/A"
+}
+{
+  "timestamp": "2026-02-19T08:50:11.964Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771491011964577134597",
+  "originalRecipient": "774577134",
+  "formattedNumber": "774577134",
+  "messageLength": 56,
+  "hasTemplate": false
+}
+{
+  "timestamp": "2026-02-19T08:50:12.037Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771491011964577134597",
+  "recipient": "774577134",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 67,
+  "messageReference": "1771491011964577134597"
+}
+{
+  "timestamp": "2026-02-19T08:51:07.800Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771491067800577134006",
+  "originalRecipient": "774577134",
+  "formattedNumber": "774577134",
+  "messageLength": 56,
+  "hasTemplate": false
+}
+{
+  "timestamp": "2026-02-19T08:51:07.873Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771491067800577134006",
+  "recipient": "774577134",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 67,
+  "messageReference": "1771491067800577134006"
+}
+{
+  "timestamp": "2026-02-19T08:51:32.113Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771491092113577134617",
+  "originalRecipient": "+967774577134",
+  "formattedNumber": "774577134",
+  "messageLength": 37,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-19T08:51:32.204Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771491092113577134617",
+  "recipient": "774577134",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 40,
+  "messageReference": "1771491092113577134617"
+}
+{
+  "timestamp": "2026-02-19T08:53:44.702Z",
+  "category": "fad_delivery",
+  "action": "SEND_ATTEMPT",
+  "transactionId": "1771491224702577134542",
+  "originalRecipient": "967774577134",
+  "formattedNumber": "774577134",
+  "messageLength": 37,
+  "hasTemplate": true,
+  "messageType": "TEMPLATE"
+}
+{
+  "timestamp": "2026-02-19T08:53:44.733Z",
+  "category": "fad_delivery",
+  "action": "SEND_SUCCESS",
+  "transactionId": "1771491224702577134542",
+  "recipient": "774577134",
+  "providerResponse": {
+    "Error_no": 0,
+    "Error_Name": "successful"
+  },
+  "durationMs": 21,
+  "messageReference": "1771491224702577134542"
+}

@@ -43,7 +43,7 @@ export async function POST(request: Request) {
     timestamp: new Date().toISOString(),
     provider: payload.provider || appConfig.defaultProvider,
     to: payload.to,
-    body: payload.body,
+    body: payload.body || '',
     meta: payload.meta,
     providerResult: result,
   };

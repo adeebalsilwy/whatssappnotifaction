@@ -5,7 +5,7 @@ import { generateMockLogs } from '@/app/dashboard/mock';
 
 const baseLogsDir = path.join(process.cwd(), 'logs');
 
-export type LogCategory = 'messages' | 'api' | 'errors' | 'webhooks' | 'vonage_debug' | 'meta_debug' | 'fallback' | 'sms_delivery' | 'delivery_confirmation';
+export type LogCategory = 'messages' | 'a2a' | 'api' | 'errors' | 'webhooks' | 'vonage_debug' | 'meta_debug' | 'fallback' | 'sms_delivery' | 'delivery_confirmation' | 'simultaneous_delivery' | 'meta_delivery' | 'fad_delivery';
 
 /**
  * Creates the hierarchical logs directory structure if it doesn't exist.
@@ -27,7 +27,7 @@ async function ensureLogDirectory(year: number, month: number, day: number): Pro
 function formatLogData(data: any): string {
   if (typeof data === 'string') return data;
   try {
-    return JSON.stringify(data);
+    return JSON.stringify(data, null, 2); // Pretty print JSON for better readability
   } catch {
     return String(data);
   }
@@ -51,7 +51,14 @@ export async function logToFile(category: LogCategory, data: any): Promise<void>
   const fileName = `${category}.log`;
   const filePath = path.join(logDir, fileName);
 
-  const logLine = `[${timestamp}] ${formatLogData(data)}\n`;
+  // Create structured log entry
+  const logEntry = {
+    timestamp,
+    category,
+    ...data
+  };
+
+  const logLine = `${formatLogData(logEntry)}\n`;
 
   try {
     await fs.appendFile(filePath, logLine);
@@ -131,14 +138,8 @@ export async function getLogsByDate(year: number, month: number, day: number, ca
     for (const line of lines) {
       if (logs.length >= limit) break;
       try {
-        let jsonStr = line;
-        if (line.trim().startsWith('[')) {
-          const closingBracket = line.indexOf('] ');
-          if (closingBracket > -1) {
-            jsonStr = line.substring(closingBracket + 1).trim();
-          }
-        }
-        logs.push(JSON.parse(jsonStr));
+        const logEntry = JSON.parse(line);
+        logs.push(logEntry);
       } catch {
         // Skip malformed lines
       }
@@ -191,36 +192,70 @@ export async function getLogs(limit = 100): Promise<LogEntry[]> {
           if (allLogs.length >= limit) break;
           
           const dayPath = path.join(monthPath, day);
-          const messagesFilePath = path.join(dayPath, 'messages.log');
           
-          try {
-            // Check if messages.log exists for this day
-            await fs.access(messagesFilePath);
+          // Try different log categories
+          const categories: LogCategory[] = ['messages', 'a2a', 'simultaneous_delivery', 'meta_delivery', 'fad_delivery'];
+          
+          for (const category of categories) {
+            if (allLogs.length >= limit) break;
             
-            const fileContent = await fs.readFile(messagesFilePath, 'utf-8');
-            const lines = fileContent.trim().split('\n').reverse(); // Read lines from bottom to top
+            const logFilePath = path.join(dayPath, `${category}.log`);
             
-            for (const line of lines) {
-              if (allLogs.length >= limit) break;
-              try {
-                // Extract JSON part from [TIMESTAMP] JSON format
-                let jsonStr = line;
-                if (line.trim().startsWith('[')) {
-                  const closingBracket = line.indexOf('] ');
-                  if (closingBracket > -1) {
-                    jsonStr = line.substring(closingBracket + 1).trim();
+            try {
+              // Check if log file exists for this day
+              await fs.access(logFilePath);
+              
+              const fileContent = await fs.readFile(logFilePath, 'utf-8');
+              const lines = fileContent.trim().split('\n').reverse(); // Read lines from bottom to top
+              
+              for (const line of lines) {
+                if (allLogs.length >= limit) break;
+                try {
+                  const logEntry = JSON.parse(line);
+                  
+                  // Convert to LogEntry format for dashboard compatibility
+                  if (category === 'messages' || category === 'simultaneous_delivery') {
+                    allLogs.push({
+                      timestamp: logEntry.timestamp,
+                      provider: logEntry.provider || 'simultaneous',
+                      to: logEntry.payload?.to || logEntry.recipient || '',
+                      body: logEntry.payload?.body || logEntry.message || '',
+                      meta: {},
+                      providerResult: {
+                        success: logEntry.success || logEntry.meta?.success || logEntry.fad?.success,
+                        provider: logEntry.provider || 'simultaneous',
+                        providerMessageId: logEntry.providerMessageId || logEntry.meta?.providerMessageId || logEntry.fad?.providerMessageId,
+                        rawResponse: logEntry.rawResponse || {},
+                        errorCode: logEntry.errorCode,
+                        errorMessage: logEntry.errorMessage
+                      }
+                    });
+                  } else if (category === 'a2a') {
+                    // Handle A2A logs
+                    allLogs.push({
+                      timestamp: logEntry.timestamp,
+                      provider: 'a2a',
+                      to: logEntry.mobileNo || '',
+                      body: logEntry.message || logEntry.details?.response?.a2AResponse?.body?.ltsNotifications?.[0]?.MsgText || '',
+                      meta: { sourceSystem: 'A2A' },
+                      providerResult: {
+                        success: logEntry.status?.toLowerCase().includes('success') || logEntry.status?.toLowerCase().includes('sent'),
+                        provider: 'a2a',
+                        providerMessageId: undefined,
+                        rawResponse: logEntry.response || logEntry.details || {},
+                        errorCode: logEntry.error ? 'A2A_ERROR' : undefined,
+                        errorMessage: logEntry.error || undefined
+                      }
+                    });
                   }
+                } catch (e) {
+                  // Skip malformed lines
                 }
-                
-                const logEntry: LogEntry = JSON.parse(jsonStr);
-                allLogs.push(logEntry);
-              } catch (e) {
-                // Skip malformed lines
               }
+            } catch {
+              // Log file doesn't exist for this category, continue to next
+              continue;
             }
-          } catch {
-            // messages.log doesn't exist for this day, continue to next day
-            continue;
           }
         }
       }

@@ -22,8 +22,12 @@ export async function GET(request: Request) {
     const allowedTokens = getAllowedVerifyTokens();
 
     if (mode === 'subscribe' && token && allowedTokens.includes(token)) {
-      console.log('[Meta Webhook] Verification successful');
-      return new Response(challenge || '', { status: 200 });
+      console.log(`[Meta Webhook] Verification successful for token: ${token}`);
+      // Meta requires the response to be exactly the challenge string with a 200 status
+      return new Response(challenge, { 
+        status: 200,
+        headers: { 'Content-Type': 'text/plain' }
+      });
     } else {
       console.error('[Meta Webhook] Verification failed', { mode, token, allowedTokens });
       return new Response('Verification token mismatch', { status: 403 });

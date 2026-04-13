@@ -100,6 +100,32 @@ export class DatabaseService {
       );
     `);
 
+        // 7. Message Status Tracking (تتبع حالة تسليم الرسائل)
+        await db.exec(`
+      CREATE TABLE IF NOT EXISTS message_status (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        transId TEXT NOT NULL,
+        message_id TEXT,
+        provider_id TEXT NOT NULL,
+        status TEXT NOT NULL,
+        timestamp TEXT NOT NULL,
+        reason TEXT,
+        error_code TEXT,
+        error_message TEXT,
+        metadata TEXT,
+        created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (transId) REFERENCES messages(transId)
+      );
+    `);
+
+        // Create indexes for better performance
+        await db.exec(`
+      CREATE INDEX IF NOT EXISTS idx_message_status_transId ON message_status(transId);
+      CREATE INDEX IF NOT EXISTS idx_message_status_status ON message_status(status);
+      CREATE INDEX IF NOT EXISTS idx_message_status_timestamp ON message_status(timestamp);
+      CREATE INDEX IF NOT EXISTS idx_message_status_provider ON message_status(provider_id);
+    `);
+
         // Seed default providers
         const count = await db.get<{ c: number }>('SELECT count(*) as c FROM providers');
         if (count && count.c === 0) {

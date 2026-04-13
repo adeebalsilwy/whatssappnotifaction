@@ -4,7 +4,7 @@ import type { OutgoingMessagePayloadSchema } from './validation';
 /**
  * Defines the list of supported WhatsApp providers.
  */
-export const providers = ['meta', 'vonage', 'generic', 'direct', 'legacy', 'twilio', 'fad'] as const;
+export const providers = ['meta', 'vonage', 'generic', 'direct', 'legacy', 'twilio', 'fad', 'a2a'] as const;
 
 export type Provider = (typeof providers)[number];
 
@@ -56,6 +56,13 @@ export type ProviderConfig = {
   webhookVerifyToken?: string;
   username?: string;
   password?: string;
+  wabaId?: string;
+  appSecret?: string;
+  authMethod?: string;  // Add authentication method support
+  customAuthHeaders?: Record<string, string>;  // Add custom auth headers support
+  userId?: string;     // Add userId support for APIs that require it
+  userid?: string;     // Alternative spelling
+  userID?: string;     // Alternative spelling
 };
 
 /**

@@ -1,0 +1,50 @@
+
+
+
+ "RemittancesSettings": [
+
+  {
+
+    "URL": "https://must.center/AgentTest/api",
+
+    "UserName": "بنك عدن الاول/ادارة",
+
+    "Password": "123456",
+
+    "Certificate": "",
+
+    "MachineCode": "aden first Bank bankDemo-AgentRemittanceService",
+
+    "MachineCode2": 365784915,
+
+    "Version": 5,
+
+    "DistinationId": 11,
+
+    "NetworkId": 10
+
+  },
+
+   {
+
+    "URL": "https://alb.shhbay.com:8082/Agent/api",
+
+    "UserName": "FirstBank",
+
+    "Password": "firstbank@#$2025",
+
+    "Certificate": "",
+
+    "MachineCode": "FirstAdenBank-API",
+
+    "MachineCode2": 102365387,
+
+    "Version": 4,
+
+    "DistinationId": 12,
+
+    "NetworkId": 13
+
+  }
+
+  ]

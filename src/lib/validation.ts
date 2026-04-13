@@ -21,9 +21,10 @@ export const OutgoingMessagePayloadSchema = z.preprocess(preprocessor, z.object(
     messageType: z.enum(['TEXT','TEMPLATE']).optional().default('TEXT'),
     to: z.string().min(1, 'Recipient phone number (to) is required.'),
     from: z.string().optional(),
+    language: z.string().optional(),
     templateId: z.string().optional(),
     variables: z.record(z.string()).optional(),
-    body: z.string().min(1, 'Message content is required (use "message" or "body").'),
+    body: z.string().optional(),
     // message field is handled by preprocess, so we don't strictly need it here, 
     // but if we want to allow it to pass through (though unused), we can add .strip() or just ignore.
     // We made meta optional for easier integration
@@ -64,5 +65,15 @@ export const ProviderSettingsSchema = z.object({
             token: z.string().optional(),
             from: z.string().optional(),
         }),
+        fad: z.object({
+            url: z.string().url().optional().or(z.literal('')),
+            username: z.string().optional(),
+            password: z.string().optional(),
+            authMethod: z.string().optional(),
+            customAuthHeaders: z.record(z.string()).optional(),
+            userId: z.string().optional(),
+            userid: z.string().optional(),
+            userID: z.string().optional(),
+        }).partial(),
     })
 });

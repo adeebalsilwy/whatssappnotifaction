@@ -1,0 +1,3793 @@
+{
+  "timestamp": "2026-02-15T19:35:33.752Z",
+  "category": "messages",
+  "provider": "meta",
+  "to": "+967774577134",
+  "body": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك.",
+  "variables": {
+    "1": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك."
+  },
+  "meta": {},
+  "providerResult": {
+    "success": false,
+    "provider": "simultaneous",
+    "rawResponse": {
+      "meta": {
+        "success": false,
+        "provider": "meta",
+        "rawResponse": {
+          "error": {
+            "message": "Unsupported post request. Object with ID '1398033981696517' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+            "type": "GraphMethodException",
+            "code": 100,
+            "error_subcode": 33,
+            "fbtrace_id": "AWEc5XSVDcSMxUBMT9vRSVc"
+          }
+        },
+        "errorCode": "100",
+        "errorMessage": "Unsupported post request. Object with ID '1398033981696517' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+        "metadata": {
+          "deliveryDurationMs": 5111,
+          "transactionId": "simultaneous-1771184128412-46lx89s6j"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "FAD provider is not configured properly."
+        },
+        "errorCode": "CONFIGURATION_ERROR",
+        "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+        "metadata": {
+          "deliveryDurationMs": 12,
+          "transactionId": "simultaneous-1771184128412-46lx89s6j"
+        }
+      },
+      "totalTimeMs": 5120
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771184128412-46lx89s6j",
+      "metaSuccess": false,
+      "fadSuccess": false,
+      "deliveryTimeMs": 5120
+    }
+  },
+  "request": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "body": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك.",
+    "meta": {},
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك."
+    }
+  },
+  "response": {
+    "success": false,
+    "provider": "simultaneous",
+    "rawResponse": {
+      "meta": {
+        "success": false,
+        "provider": "meta",
+        "rawResponse": {
+          "error": {
+            "message": "Unsupported post request. Object with ID '1398033981696517' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+            "type": "GraphMethodException",
+            "code": 100,
+            "error_subcode": 33,
+            "fbtrace_id": "AWEc5XSVDcSMxUBMT9vRSVc"
+          }
+        },
+        "errorCode": "100",
+        "errorMessage": "Unsupported post request. Object with ID '1398033981696517' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+        "metadata": {
+          "deliveryDurationMs": 5111,
+          "transactionId": "simultaneous-1771184128412-46lx89s6j"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "FAD provider is not configured properly."
+        },
+        "errorCode": "CONFIGURATION_ERROR",
+        "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+        "metadata": {
+          "deliveryDurationMs": 12,
+          "transactionId": "simultaneous-1771184128412-46lx89s6j"
+        }
+      },
+      "totalTimeMs": 5120
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771184128412-46lx89s6j",
+      "metaSuccess": false,
+      "fadSuccess": false,
+      "deliveryTimeMs": 5120
+    }
+  },
+  "isDashboardCall": false
+}
+{
+  "timestamp": "2026-02-15T19:35:39.188Z",
+  "category": "messages",
+  "provider": "meta",
+  "to": "+967774577134",
+  "body": "Welcome to First Aden Islamic Bank. This is an important notification.",
+  "variables": {
+    "1": "Welcome to First Aden Islamic Bank. This is an important notification."
+  },
+  "meta": {},
+  "providerResult": {
+    "success": false,
+    "provider": "simultaneous",
+    "rawResponse": {
+      "meta": {
+        "success": false,
+        "provider": "meta",
+        "rawResponse": {
+          "error": {
+            "message": "Unsupported post request. Object with ID '1398033981696517' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+            "type": "GraphMethodException",
+            "code": 100,
+            "error_subcode": 33,
+            "fbtrace_id": "AZ0xXfTH-jC1wMcrVVx-0JJ"
+          }
+        },
+        "errorCode": "100",
+        "errorMessage": "Unsupported post request. Object with ID '1398033981696517' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+        "metadata": {
+          "deliveryDurationMs": 1862,
+          "transactionId": "simultaneous-1771184137207-0cju4lf37"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "FAD provider is not configured properly."
+        },
+        "errorCode": "CONFIGURATION_ERROR",
+        "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+        "metadata": {
+          "deliveryDurationMs": 6,
+          "transactionId": "simultaneous-1771184137207-0cju4lf37"
+        }
+      },
+      "totalTimeMs": 1871
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771184137207-0cju4lf37",
+      "metaSuccess": false,
+      "fadSuccess": false,
+      "deliveryTimeMs": 1871
+    }
+  },
+  "request": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "body": "Welcome to First Aden Islamic Bank. This is an important notification.",
+    "meta": {},
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "Welcome to First Aden Islamic Bank. This is an important notification."
+    }
+  },
+  "response": {
+    "success": false,
+    "provider": "simultaneous",
+    "rawResponse": {
+      "meta": {
+        "success": false,
+        "provider": "meta",
+        "rawResponse": {
+          "error": {
+            "message": "Unsupported post request. Object with ID '1398033981696517' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+            "type": "GraphMethodException",
+            "code": 100,
+            "error_subcode": 33,
+            "fbtrace_id": "AZ0xXfTH-jC1wMcrVVx-0JJ"
+          }
+        },
+        "errorCode": "100",
+        "errorMessage": "Unsupported post request. Object with ID '1398033981696517' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+        "metadata": {
+          "deliveryDurationMs": 1862,
+          "transactionId": "simultaneous-1771184137207-0cju4lf37"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "FAD provider is not configured properly."
+        },
+        "errorCode": "CONFIGURATION_ERROR",
+        "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+        "metadata": {
+          "deliveryDurationMs": 6,
+          "transactionId": "simultaneous-1771184137207-0cju4lf37"
+        }
+      },
+      "totalTimeMs": 1871
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771184137207-0cju4lf37",
+      "metaSuccess": false,
+      "fadSuccess": false,
+      "deliveryTimeMs": 1871
+    }
+  },
+  "isDashboardCall": false
+}
+{
+  "timestamp": "2026-02-15T19:48:02.401Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771184882394-bqqhde0hi",
+  "action": "SEND_ATTEMPT",
+  "provider": "meta",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T19:48:02.401Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771184882394-bqqhde0hi",
+  "action": "SEND_ATTEMPT",
+  "provider": "fad",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T19:48:02.409Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771184882394-bqqhde0hi",
+  "action": "SEND_RESULT",
+  "provider": "fad",
+  "success": false,
+  "errorCode": "CONFIGURATION_ERROR",
+  "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+  "durationMs": 8
+}
+{
+  "timestamp": "2026-02-15T19:48:05.680Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771184882394-bqqhde0hi",
+  "action": "SEND_RESULT",
+  "provider": "meta",
+  "success": false,
+  "errorCode": "100",
+  "errorMessage": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+  "durationMs": 3279
+}
+{
+  "timestamp": "2026-02-15T19:48:05.841Z",
+  "category": "messages",
+  "provider": "meta",
+  "to": "+967774577134",
+  "body": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك.",
+  "meta": {},
+  "providerResult": {
+    "success": false,
+    "provider": "meta",
+    "rawResponse": {
+      "meta": {
+        "success": false,
+        "provider": "meta",
+        "rawResponse": {
+          "error": {
+            "message": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+            "type": "GraphMethodException",
+            "code": 100,
+            "error_subcode": 33,
+            "fbtrace_id": "AdQsSpJUWlD-kQWe4MmPMwU"
+          }
+        },
+        "errorCode": "100",
+        "errorMessage": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+        "metadata": {
+          "deliveryDurationMs": 3279,
+          "transactionId": "simultaneous-1771184882394-bqqhde0hi"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "FAD provider is not configured properly."
+        },
+        "errorCode": "CONFIGURATION_ERROR",
+        "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+        "metadata": {
+          "deliveryDurationMs": 8,
+          "transactionId": "simultaneous-1771184882394-bqqhde0hi"
+        }
+      },
+      "totalTimeMs": 3291
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771184882394-bqqhde0hi",
+      "metaSuccess": false,
+      "fadSuccess": false,
+      "deliveryTimeMs": 3291
+    }
+  },
+  "request": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "body": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك.",
+    "meta": {},
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك."
+    }
+  },
+  "response": {
+    "success": false,
+    "provider": "meta",
+    "rawResponse": {
+      "meta": {
+        "success": false,
+        "provider": "meta",
+        "rawResponse": {
+          "error": {
+            "message": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+            "type": "GraphMethodException",
+            "code": 100,
+            "error_subcode": 33,
+            "fbtrace_id": "AdQsSpJUWlD-kQWe4MmPMwU"
+          }
+        },
+        "errorCode": "100",
+        "errorMessage": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+        "metadata": {
+          "deliveryDurationMs": 3279,
+          "transactionId": "simultaneous-1771184882394-bqqhde0hi"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "FAD provider is not configured properly."
+        },
+        "errorCode": "CONFIGURATION_ERROR",
+        "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+        "metadata": {
+          "deliveryDurationMs": 8,
+          "transactionId": "simultaneous-1771184882394-bqqhde0hi"
+        }
+      },
+      "totalTimeMs": 3291
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771184882394-bqqhde0hi",
+      "metaSuccess": false,
+      "fadSuccess": false,
+      "deliveryTimeMs": 3291
+    }
+  }
+}
+{
+  "timestamp": "2026-02-15T19:48:09.197Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771184889190-n1j57t726",
+  "action": "SEND_ATTEMPT",
+  "provider": "meta",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T19:48:09.197Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771184889190-n1j57t726",
+  "action": "SEND_ATTEMPT",
+  "provider": "fad",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T19:48:09.202Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771184889190-n1j57t726",
+  "action": "SEND_RESULT",
+  "provider": "fad",
+  "success": false,
+  "errorCode": "CONFIGURATION_ERROR",
+  "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+  "durationMs": 5
+}
+{
+  "timestamp": "2026-02-15T19:48:09.848Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771184889190-n1j57t726",
+  "action": "SEND_RESULT",
+  "provider": "meta",
+  "success": false,
+  "errorCode": "100",
+  "errorMessage": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+  "durationMs": 651
+}
+{
+  "timestamp": "2026-02-15T19:48:09.976Z",
+  "category": "messages",
+  "provider": "meta",
+  "to": "+967774577134",
+  "body": "Welcome to First Aden Islamic Bank. This is an important notification.",
+  "meta": {},
+  "providerResult": {
+    "success": false,
+    "provider": "meta",
+    "rawResponse": {
+      "meta": {
+        "success": false,
+        "provider": "meta",
+        "rawResponse": {
+          "error": {
+            "message": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+            "type": "GraphMethodException",
+            "code": 100,
+            "error_subcode": 33,
+            "fbtrace_id": "AG0l05ReRA8dRlzy7C3z5sE"
+          }
+        },
+        "errorCode": "100",
+        "errorMessage": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+        "metadata": {
+          "deliveryDurationMs": 651,
+          "transactionId": "simultaneous-1771184889190-n1j57t726"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "FAD provider is not configured properly."
+        },
+        "errorCode": "CONFIGURATION_ERROR",
+        "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+        "metadata": {
+          "deliveryDurationMs": 5,
+          "transactionId": "simultaneous-1771184889190-n1j57t726"
+        }
+      },
+      "totalTimeMs": 660
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771184889190-n1j57t726",
+      "metaSuccess": false,
+      "fadSuccess": false,
+      "deliveryTimeMs": 660
+    }
+  },
+  "request": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "body": "Welcome to First Aden Islamic Bank. This is an important notification.",
+    "meta": {},
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "Welcome to First Aden Islamic Bank. This is an important notification."
+    }
+  },
+  "response": {
+    "success": false,
+    "provider": "meta",
+    "rawResponse": {
+      "meta": {
+        "success": false,
+        "provider": "meta",
+        "rawResponse": {
+          "error": {
+            "message": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+            "type": "GraphMethodException",
+            "code": 100,
+            "error_subcode": 33,
+            "fbtrace_id": "AG0l05ReRA8dRlzy7C3z5sE"
+          }
+        },
+        "errorCode": "100",
+        "errorMessage": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+        "metadata": {
+          "deliveryDurationMs": 651,
+          "transactionId": "simultaneous-1771184889190-n1j57t726"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "FAD provider is not configured properly."
+        },
+        "errorCode": "CONFIGURATION_ERROR",
+        "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+        "metadata": {
+          "deliveryDurationMs": 5,
+          "transactionId": "simultaneous-1771184889190-n1j57t726"
+        }
+      },
+      "totalTimeMs": 660
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771184889190-n1j57t726",
+      "metaSuccess": false,
+      "fadSuccess": false,
+      "deliveryTimeMs": 660
+    }
+  }
+}
+{
+  "timestamp": "2026-02-15T19:48:13.309Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771184893303-b1iyybww2",
+  "action": "SEND_ATTEMPT",
+  "provider": "meta",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T19:48:13.310Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771184893303-b1iyybww2",
+  "action": "SEND_ATTEMPT",
+  "provider": "fad",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T19:48:13.315Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771184893303-b1iyybww2",
+  "action": "SEND_RESULT",
+  "provider": "fad",
+  "success": false,
+  "errorCode": "CONFIGURATION_ERROR",
+  "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+  "durationMs": 5
+}
+{
+  "timestamp": "2026-02-15T19:48:14.029Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771184893303-b1iyybww2",
+  "action": "SEND_RESULT",
+  "provider": "meta",
+  "success": false,
+  "errorCode": "100",
+  "errorMessage": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+  "durationMs": 720
+}
+{
+  "timestamp": "2026-02-15T19:48:14.144Z",
+  "category": "messages",
+  "provider": "meta",
+  "to": "+967774577134",
+  "body": "Your account balance is now 5000 YER",
+  "meta": {},
+  "providerResult": {
+    "success": false,
+    "provider": "meta",
+    "rawResponse": {
+      "meta": {
+        "success": false,
+        "provider": "meta",
+        "rawResponse": {
+          "error": {
+            "message": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+            "type": "GraphMethodException",
+            "code": 100,
+            "error_subcode": 33,
+            "fbtrace_id": "Abkf_tVadARgxYAnz2rDD7_"
+          }
+        },
+        "errorCode": "100",
+        "errorMessage": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+        "metadata": {
+          "deliveryDurationMs": 720,
+          "transactionId": "simultaneous-1771184893303-b1iyybww2"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "FAD provider is not configured properly."
+        },
+        "errorCode": "CONFIGURATION_ERROR",
+        "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+        "metadata": {
+          "deliveryDurationMs": 5,
+          "transactionId": "simultaneous-1771184893303-b1iyybww2"
+        }
+      },
+      "totalTimeMs": 728
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771184893303-b1iyybww2",
+      "metaSuccess": false,
+      "fadSuccess": false,
+      "deliveryTimeMs": 728
+    }
+  },
+  "request": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "Your account balance is now 5000 YER"
+    },
+    "body": "Your account balance is now 5000 YER",
+    "meta": {}
+  },
+  "response": {
+    "success": false,
+    "provider": "meta",
+    "rawResponse": {
+      "meta": {
+        "success": false,
+        "provider": "meta",
+        "rawResponse": {
+          "error": {
+            "message": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+            "type": "GraphMethodException",
+            "code": 100,
+            "error_subcode": 33,
+            "fbtrace_id": "Abkf_tVadARgxYAnz2rDD7_"
+          }
+        },
+        "errorCode": "100",
+        "errorMessage": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+        "metadata": {
+          "deliveryDurationMs": 720,
+          "transactionId": "simultaneous-1771184893303-b1iyybww2"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "FAD provider is not configured properly."
+        },
+        "errorCode": "CONFIGURATION_ERROR",
+        "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+        "metadata": {
+          "deliveryDurationMs": 5,
+          "transactionId": "simultaneous-1771184893303-b1iyybww2"
+        }
+      },
+      "totalTimeMs": 728
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771184893303-b1iyybww2",
+      "metaSuccess": false,
+      "fadSuccess": false,
+      "deliveryTimeMs": 728
+    }
+  }
+}
+{
+  "timestamp": "2026-02-15T19:48:21.463Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771184901456-lof6znus6",
+  "action": "SEND_ATTEMPT",
+  "provider": "meta",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T19:48:21.464Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771184901456-lof6znus6",
+  "action": "SEND_ATTEMPT",
+  "provider": "fad",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T19:48:21.470Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771184901456-lof6znus6",
+  "action": "SEND_RESULT",
+  "provider": "fad",
+  "success": false,
+  "errorCode": "CONFIGURATION_ERROR",
+  "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+  "durationMs": 6
+}
+{
+  "timestamp": "2026-02-15T19:48:23.384Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771184901456-lof6znus6",
+  "action": "SEND_RESULT",
+  "provider": "meta",
+  "success": false,
+  "errorCode": "100",
+  "errorMessage": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+  "durationMs": 1921
+}
+{
+  "timestamp": "2026-02-15T19:48:23.494Z",
+  "category": "messages",
+  "provider": "meta",
+  "to": "+967774577134",
+  "body": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك.",
+  "meta": {},
+  "providerResult": {
+    "success": false,
+    "provider": "meta",
+    "rawResponse": {
+      "meta": {
+        "success": false,
+        "provider": "meta",
+        "rawResponse": {
+          "error": {
+            "message": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+            "type": "GraphMethodException",
+            "code": 100,
+            "error_subcode": 33,
+            "fbtrace_id": "ABbPSBv4_gUHVEzulGt8oZ5"
+          }
+        },
+        "errorCode": "100",
+        "errorMessage": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+        "metadata": {
+          "deliveryDurationMs": 1921,
+          "transactionId": "simultaneous-1771184901456-lof6znus6"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "FAD provider is not configured properly."
+        },
+        "errorCode": "CONFIGURATION_ERROR",
+        "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+        "metadata": {
+          "deliveryDurationMs": 6,
+          "transactionId": "simultaneous-1771184901456-lof6znus6"
+        }
+      },
+      "totalTimeMs": 1930
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771184901456-lof6znus6",
+      "metaSuccess": false,
+      "fadSuccess": false,
+      "deliveryTimeMs": 1930
+    }
+  },
+  "request": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "body": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك.",
+    "meta": {},
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك."
+    }
+  },
+  "response": {
+    "success": false,
+    "provider": "meta",
+    "rawResponse": {
+      "meta": {
+        "success": false,
+        "provider": "meta",
+        "rawResponse": {
+          "error": {
+            "message": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+            "type": "GraphMethodException",
+            "code": 100,
+            "error_subcode": 33,
+            "fbtrace_id": "ABbPSBv4_gUHVEzulGt8oZ5"
+          }
+        },
+        "errorCode": "100",
+        "errorMessage": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+        "metadata": {
+          "deliveryDurationMs": 1921,
+          "transactionId": "simultaneous-1771184901456-lof6znus6"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "FAD provider is not configured properly."
+        },
+        "errorCode": "CONFIGURATION_ERROR",
+        "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+        "metadata": {
+          "deliveryDurationMs": 6,
+          "transactionId": "simultaneous-1771184901456-lof6znus6"
+        }
+      },
+      "totalTimeMs": 1930
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771184901456-lof6znus6",
+      "metaSuccess": false,
+      "fadSuccess": false,
+      "deliveryTimeMs": 1930
+    }
+  }
+}
+{
+  "timestamp": "2026-02-15T19:48:26.831Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771184906825-e3anaiqog",
+  "action": "SEND_ATTEMPT",
+  "provider": "meta",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T19:48:26.831Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771184906825-e3anaiqog",
+  "action": "SEND_ATTEMPT",
+  "provider": "fad",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T19:48:26.837Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771184906825-e3anaiqog",
+  "action": "SEND_RESULT",
+  "provider": "fad",
+  "success": false,
+  "errorCode": "CONFIGURATION_ERROR",
+  "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+  "durationMs": 6
+}
+{
+  "timestamp": "2026-02-15T19:48:28.959Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771184906825-e3anaiqog",
+  "action": "SEND_RESULT",
+  "provider": "meta",
+  "success": false,
+  "errorCode": "100",
+  "errorMessage": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+  "durationMs": 2128
+}
+{
+  "timestamp": "2026-02-15T19:48:29.106Z",
+  "category": "messages",
+  "provider": "meta",
+  "to": "+967774577134",
+  "body": "Welcome to First Aden Islamic Bank. This is an important notification.",
+  "meta": {},
+  "providerResult": {
+    "success": false,
+    "provider": "meta",
+    "rawResponse": {
+      "meta": {
+        "success": false,
+        "provider": "meta",
+        "rawResponse": {
+          "error": {
+            "message": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+            "type": "GraphMethodException",
+            "code": 100,
+            "error_subcode": 33,
+            "fbtrace_id": "AG5__YtzXpDllsbyhCy2osb"
+          }
+        },
+        "errorCode": "100",
+        "errorMessage": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+        "metadata": {
+          "deliveryDurationMs": 2128,
+          "transactionId": "simultaneous-1771184906825-e3anaiqog"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "FAD provider is not configured properly."
+        },
+        "errorCode": "CONFIGURATION_ERROR",
+        "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+        "metadata": {
+          "deliveryDurationMs": 6,
+          "transactionId": "simultaneous-1771184906825-e3anaiqog"
+        }
+      },
+      "totalTimeMs": 2136
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771184906825-e3anaiqog",
+      "metaSuccess": false,
+      "fadSuccess": false,
+      "deliveryTimeMs": 2136
+    }
+  },
+  "request": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "body": "Welcome to First Aden Islamic Bank. This is an important notification.",
+    "meta": {},
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "Welcome to First Aden Islamic Bank. This is an important notification."
+    }
+  },
+  "response": {
+    "success": false,
+    "provider": "meta",
+    "rawResponse": {
+      "meta": {
+        "success": false,
+        "provider": "meta",
+        "rawResponse": {
+          "error": {
+            "message": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+            "type": "GraphMethodException",
+            "code": 100,
+            "error_subcode": 33,
+            "fbtrace_id": "AG5__YtzXpDllsbyhCy2osb"
+          }
+        },
+        "errorCode": "100",
+        "errorMessage": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+        "metadata": {
+          "deliveryDurationMs": 2128,
+          "transactionId": "simultaneous-1771184906825-e3anaiqog"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "FAD provider is not configured properly."
+        },
+        "errorCode": "CONFIGURATION_ERROR",
+        "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+        "metadata": {
+          "deliveryDurationMs": 6,
+          "transactionId": "simultaneous-1771184906825-e3anaiqog"
+        }
+      },
+      "totalTimeMs": 2136
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771184906825-e3anaiqog",
+      "metaSuccess": false,
+      "fadSuccess": false,
+      "deliveryTimeMs": 2136
+    }
+  }
+}
+{
+  "timestamp": "2026-02-15T19:48:32.453Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771184912447-m6p6t6dmq",
+  "action": "SEND_ATTEMPT",
+  "provider": "meta",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T19:48:32.453Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771184912447-m6p6t6dmq",
+  "action": "SEND_ATTEMPT",
+  "provider": "fad",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T19:48:32.460Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771184912447-m6p6t6dmq",
+  "action": "SEND_RESULT",
+  "provider": "fad",
+  "success": false,
+  "errorCode": "CONFIGURATION_ERROR",
+  "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+  "durationMs": 7
+}
+{
+  "timestamp": "2026-02-15T19:48:32.990Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771184912447-m6p6t6dmq",
+  "action": "SEND_RESULT",
+  "provider": "meta",
+  "success": false,
+  "errorCode": "100",
+  "errorMessage": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+  "durationMs": 537
+}
+{
+  "timestamp": "2026-02-15T19:48:33.102Z",
+  "category": "messages",
+  "provider": "meta",
+  "to": "+967774577134",
+  "body": "Your account balance is now 5000 YER",
+  "meta": {},
+  "providerResult": {
+    "success": false,
+    "provider": "meta",
+    "rawResponse": {
+      "meta": {
+        "success": false,
+        "provider": "meta",
+        "rawResponse": {
+          "error": {
+            "message": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+            "type": "GraphMethodException",
+            "code": 100,
+            "error_subcode": 33,
+            "fbtrace_id": "ADLu9pCVIrHWKZ0HCOPN4zV"
+          }
+        },
+        "errorCode": "100",
+        "errorMessage": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+        "metadata": {
+          "deliveryDurationMs": 537,
+          "transactionId": "simultaneous-1771184912447-m6p6t6dmq"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "FAD provider is not configured properly."
+        },
+        "errorCode": "CONFIGURATION_ERROR",
+        "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+        "metadata": {
+          "deliveryDurationMs": 7,
+          "transactionId": "simultaneous-1771184912447-m6p6t6dmq"
+        }
+      },
+      "totalTimeMs": 545
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771184912447-m6p6t6dmq",
+      "metaSuccess": false,
+      "fadSuccess": false,
+      "deliveryTimeMs": 545
+    }
+  },
+  "request": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "Your account balance is now 5000 YER"
+    },
+    "body": "Your account balance is now 5000 YER",
+    "meta": {}
+  },
+  "response": {
+    "success": false,
+    "provider": "meta",
+    "rawResponse": {
+      "meta": {
+        "success": false,
+        "provider": "meta",
+        "rawResponse": {
+          "error": {
+            "message": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+            "type": "GraphMethodException",
+            "code": 100,
+            "error_subcode": 33,
+            "fbtrace_id": "ADLu9pCVIrHWKZ0HCOPN4zV"
+          }
+        },
+        "errorCode": "100",
+        "errorMessage": "Unsupported post request. Object with ID '924029037464319' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+        "metadata": {
+          "deliveryDurationMs": 537,
+          "transactionId": "simultaneous-1771184912447-m6p6t6dmq"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "FAD provider is not configured properly."
+        },
+        "errorCode": "CONFIGURATION_ERROR",
+        "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+        "metadata": {
+          "deliveryDurationMs": 7,
+          "transactionId": "simultaneous-1771184912447-m6p6t6dmq"
+        }
+      },
+      "totalTimeMs": 545
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771184912447-m6p6t6dmq",
+      "metaSuccess": false,
+      "fadSuccess": false,
+      "deliveryTimeMs": 545
+    }
+  }
+}
+{
+  "timestamp": "2026-02-15T19:52:47.717Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771185167710-izq5h04w7",
+  "action": "SEND_ATTEMPT",
+  "provider": "meta",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T19:52:47.718Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771185167710-izq5h04w7",
+  "action": "SEND_ATTEMPT",
+  "provider": "fad",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T19:52:47.727Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771185167710-izq5h04w7",
+  "action": "SEND_RESULT",
+  "provider": "fad",
+  "success": false,
+  "errorCode": "CONFIGURATION_ERROR",
+  "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+  "durationMs": 9
+}
+{
+  "timestamp": "2026-02-15T19:52:49.078Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771185167710-izq5h04w7",
+  "action": "SEND_RESULT",
+  "provider": "meta",
+  "success": false,
+  "errorCode": "132000",
+  "errorMessage": "(#132000) Number of parameters does not match the expected number of params",
+  "durationMs": 1361
+}
+{
+  "timestamp": "2026-02-15T19:52:49.231Z",
+  "category": "messages",
+  "provider": "meta",
+  "to": "+967774577134",
+  "body": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك.",
+  "meta": {},
+  "providerResult": {
+    "success": false,
+    "provider": "meta",
+    "rawResponse": {
+      "meta": {
+        "success": false,
+        "provider": "meta",
+        "rawResponse": {
+          "error": {
+            "message": "(#132000) Number of parameters does not match the expected number of params",
+            "type": "OAuthException",
+            "code": 132000,
+            "error_data": {
+              "messaging_product": "whatsapp",
+              "details": "body: number of localizable_params (0) does not match the expected number of params (1)"
+            },
+            "fbtrace_id": "AZ9PW17EkIhVWtoBt3bmpOn"
+          }
+        },
+        "errorCode": "132000",
+        "errorMessage": "(#132000) Number of parameters does not match the expected number of params",
+        "metadata": {
+          "deliveryDurationMs": 1361,
+          "transactionId": "simultaneous-1771185167710-izq5h04w7"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "FAD provider is not configured properly."
+        },
+        "errorCode": "CONFIGURATION_ERROR",
+        "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+        "metadata": {
+          "deliveryDurationMs": 9,
+          "transactionId": "simultaneous-1771185167710-izq5h04w7"
+        }
+      },
+      "totalTimeMs": 1370
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771185167710-izq5h04w7",
+      "metaSuccess": false,
+      "fadSuccess": false,
+      "deliveryTimeMs": 1370
+    }
+  },
+  "request": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "body": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك.",
+    "meta": {},
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك."
+    }
+  },
+  "response": {
+    "success": false,
+    "provider": "meta",
+    "rawResponse": {
+      "meta": {
+        "success": false,
+        "provider": "meta",
+        "rawResponse": {
+          "error": {
+            "message": "(#132000) Number of parameters does not match the expected number of params",
+            "type": "OAuthException",
+            "code": 132000,
+            "error_data": {
+              "messaging_product": "whatsapp",
+              "details": "body: number of localizable_params (0) does not match the expected number of params (1)"
+            },
+            "fbtrace_id": "AZ9PW17EkIhVWtoBt3bmpOn"
+          }
+        },
+        "errorCode": "132000",
+        "errorMessage": "(#132000) Number of parameters does not match the expected number of params",
+        "metadata": {
+          "deliveryDurationMs": 1361,
+          "transactionId": "simultaneous-1771185167710-izq5h04w7"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "FAD provider is not configured properly."
+        },
+        "errorCode": "CONFIGURATION_ERROR",
+        "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+        "metadata": {
+          "deliveryDurationMs": 9,
+          "transactionId": "simultaneous-1771185167710-izq5h04w7"
+        }
+      },
+      "totalTimeMs": 1370
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771185167710-izq5h04w7",
+      "metaSuccess": false,
+      "fadSuccess": false,
+      "deliveryTimeMs": 1370
+    }
+  }
+}
+{
+  "timestamp": "2026-02-15T19:52:52.584Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771185172577-486x2gil4",
+  "action": "SEND_ATTEMPT",
+  "provider": "meta",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T19:52:52.584Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771185172577-486x2gil4",
+  "action": "SEND_ATTEMPT",
+  "provider": "fad",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T19:52:52.590Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771185172577-486x2gil4",
+  "action": "SEND_RESULT",
+  "provider": "fad",
+  "success": false,
+  "errorCode": "CONFIGURATION_ERROR",
+  "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+  "durationMs": 6
+}
+{
+  "timestamp": "2026-02-15T19:52:53.247Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771185172577-486x2gil4",
+  "action": "SEND_RESULT",
+  "provider": "meta",
+  "success": false,
+  "errorCode": "132000",
+  "errorMessage": "(#132000) Number of parameters does not match the expected number of params",
+  "durationMs": 663
+}
+{
+  "timestamp": "2026-02-15T19:52:53.375Z",
+  "category": "messages",
+  "provider": "meta",
+  "to": "+967774577134",
+  "body": "Welcome to First Aden Islamic Bank. This is an important notification.",
+  "meta": {},
+  "providerResult": {
+    "success": false,
+    "provider": "meta",
+    "rawResponse": {
+      "meta": {
+        "success": false,
+        "provider": "meta",
+        "rawResponse": {
+          "error": {
+            "message": "(#132000) Number of parameters does not match the expected number of params",
+            "type": "OAuthException",
+            "code": 132000,
+            "error_data": {
+              "messaging_product": "whatsapp",
+              "details": "body: number of localizable_params (0) does not match the expected number of params (1)"
+            },
+            "fbtrace_id": "AJugcuAOSuMF1Q19cgOJflA"
+          }
+        },
+        "errorCode": "132000",
+        "errorMessage": "(#132000) Number of parameters does not match the expected number of params",
+        "metadata": {
+          "deliveryDurationMs": 663,
+          "transactionId": "simultaneous-1771185172577-486x2gil4"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "FAD provider is not configured properly."
+        },
+        "errorCode": "CONFIGURATION_ERROR",
+        "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+        "metadata": {
+          "deliveryDurationMs": 6,
+          "transactionId": "simultaneous-1771185172577-486x2gil4"
+        }
+      },
+      "totalTimeMs": 672
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771185172577-486x2gil4",
+      "metaSuccess": false,
+      "fadSuccess": false,
+      "deliveryTimeMs": 672
+    }
+  },
+  "request": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "body": "Welcome to First Aden Islamic Bank. This is an important notification.",
+    "meta": {},
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "Welcome to First Aden Islamic Bank. This is an important notification."
+    }
+  },
+  "response": {
+    "success": false,
+    "provider": "meta",
+    "rawResponse": {
+      "meta": {
+        "success": false,
+        "provider": "meta",
+        "rawResponse": {
+          "error": {
+            "message": "(#132000) Number of parameters does not match the expected number of params",
+            "type": "OAuthException",
+            "code": 132000,
+            "error_data": {
+              "messaging_product": "whatsapp",
+              "details": "body: number of localizable_params (0) does not match the expected number of params (1)"
+            },
+            "fbtrace_id": "AJugcuAOSuMF1Q19cgOJflA"
+          }
+        },
+        "errorCode": "132000",
+        "errorMessage": "(#132000) Number of parameters does not match the expected number of params",
+        "metadata": {
+          "deliveryDurationMs": 663,
+          "transactionId": "simultaneous-1771185172577-486x2gil4"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "FAD provider is not configured properly."
+        },
+        "errorCode": "CONFIGURATION_ERROR",
+        "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+        "metadata": {
+          "deliveryDurationMs": 6,
+          "transactionId": "simultaneous-1771185172577-486x2gil4"
+        }
+      },
+      "totalTimeMs": 672
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771185172577-486x2gil4",
+      "metaSuccess": false,
+      "fadSuccess": false,
+      "deliveryTimeMs": 672
+    }
+  }
+}
+{
+  "timestamp": "2026-02-15T19:52:56.717Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771185176710-pp7qvw15m",
+  "action": "SEND_ATTEMPT",
+  "provider": "meta",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T19:52:56.717Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771185176710-pp7qvw15m",
+  "action": "SEND_ATTEMPT",
+  "provider": "fad",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T19:52:56.722Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771185176710-pp7qvw15m",
+  "action": "SEND_RESULT",
+  "provider": "fad",
+  "success": false,
+  "errorCode": "CONFIGURATION_ERROR",
+  "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+  "durationMs": 5
+}
+{
+  "timestamp": "2026-02-15T19:52:57.304Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771185176710-pp7qvw15m",
+  "action": "SEND_RESULT",
+  "provider": "meta",
+  "success": false,
+  "errorCode": "132000",
+  "errorMessage": "(#132000) Number of parameters does not match the expected number of params",
+  "durationMs": 587
+}
+{
+  "timestamp": "2026-02-15T19:52:57.410Z",
+  "category": "messages",
+  "provider": "meta",
+  "to": "+967774577134",
+  "body": "Your account balance is now 5000 YER",
+  "meta": {},
+  "providerResult": {
+    "success": false,
+    "provider": "meta",
+    "rawResponse": {
+      "meta": {
+        "success": false,
+        "provider": "meta",
+        "rawResponse": {
+          "error": {
+            "message": "(#132000) Number of parameters does not match the expected number of params",
+            "type": "OAuthException",
+            "code": 132000,
+            "error_data": {
+              "messaging_product": "whatsapp",
+              "details": "body: number of localizable_params (0) does not match the expected number of params (1)"
+            },
+            "fbtrace_id": "Aue-UNZvkJnvY44OjVaGYhx"
+          }
+        },
+        "errorCode": "132000",
+        "errorMessage": "(#132000) Number of parameters does not match the expected number of params",
+        "metadata": {
+          "deliveryDurationMs": 587,
+          "transactionId": "simultaneous-1771185176710-pp7qvw15m"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "FAD provider is not configured properly."
+        },
+        "errorCode": "CONFIGURATION_ERROR",
+        "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+        "metadata": {
+          "deliveryDurationMs": 5,
+          "transactionId": "simultaneous-1771185176710-pp7qvw15m"
+        }
+      },
+      "totalTimeMs": 596
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771185176710-pp7qvw15m",
+      "metaSuccess": false,
+      "fadSuccess": false,
+      "deliveryTimeMs": 596
+    }
+  },
+  "request": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "Your account balance is now 5000 YER"
+    },
+    "body": "Your account balance is now 5000 YER",
+    "meta": {}
+  },
+  "response": {
+    "success": false,
+    "provider": "meta",
+    "rawResponse": {
+      "meta": {
+        "success": false,
+        "provider": "meta",
+        "rawResponse": {
+          "error": {
+            "message": "(#132000) Number of parameters does not match the expected number of params",
+            "type": "OAuthException",
+            "code": 132000,
+            "error_data": {
+              "messaging_product": "whatsapp",
+              "details": "body: number of localizable_params (0) does not match the expected number of params (1)"
+            },
+            "fbtrace_id": "Aue-UNZvkJnvY44OjVaGYhx"
+          }
+        },
+        "errorCode": "132000",
+        "errorMessage": "(#132000) Number of parameters does not match the expected number of params",
+        "metadata": {
+          "deliveryDurationMs": 587,
+          "transactionId": "simultaneous-1771185176710-pp7qvw15m"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "FAD provider is not configured properly."
+        },
+        "errorCode": "CONFIGURATION_ERROR",
+        "errorMessage": "FAD provider is missing URL, username, or password in settings.",
+        "metadata": {
+          "deliveryDurationMs": 5,
+          "transactionId": "simultaneous-1771185176710-pp7qvw15m"
+        }
+      },
+      "totalTimeMs": 596
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771185176710-pp7qvw15m",
+      "metaSuccess": false,
+      "fadSuccess": false,
+      "deliveryTimeMs": 596
+    }
+  }
+}
+{
+  "timestamp": "2026-02-15T20:36:11.572Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187771565-h6gp3qw7m",
+  "action": "SEND_ATTEMPT",
+  "provider": "meta",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T20:36:11.572Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187771565-h6gp3qw7m",
+  "action": "SEND_ATTEMPT",
+  "provider": "fad",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T20:36:12.942Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187771565-h6gp3qw7m",
+  "action": "SEND_RESULT",
+  "provider": "meta",
+  "success": true,
+  "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRUI4OTQ2QkMzNkM3ODcwNDg1AA==",
+  "durationMs": 1370
+}
+{
+  "timestamp": "2026-02-15T20:36:22.217Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187771565-h6gp3qw7m",
+  "action": "SEND_RESULT",
+  "provider": "fad",
+  "success": false,
+  "errorCode": "FAD_EXCEPTION",
+  "errorMessage": "fetch failed",
+  "durationMs": 10645
+}
+{
+  "timestamp": "2026-02-15T20:36:22.222Z",
+  "category": "messages",
+  "provider": "meta",
+  "to": "+967774577134",
+  "body": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك.",
+  "meta": {},
+  "providerResult": {
+    "success": true,
+    "provider": "meta",
+    "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRUI4OTQ2QkMzNkM3ODcwNDg1AA==",
+    "rawResponse": {
+      "meta": {
+        "success": true,
+        "provider": "meta",
+        "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRUI4OTQ2QkMzNkM3ODcwNDg1AA==",
+        "rawResponse": {
+          "messaging_product": "whatsapp",
+          "contacts": [
+            {
+              "input": "+967774577134",
+              "wa_id": "967774577134"
+            }
+          ],
+          "messages": [
+            {
+              "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRUI4OTQ2QkMzNkM3ODcwNDg1AA==",
+              "message_status": "accepted"
+            }
+          ]
+        },
+        "metadata": {
+          "deliveryDurationMs": 1370,
+          "messageIds": [
+            "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRUI4OTQ2QkMzNkM3ODcwNDg1AA=="
+          ],
+          "transactionId": "simultaneous-1771187771565-h6gp3qw7m"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "fetch failed"
+        },
+        "errorCode": "FAD_EXCEPTION",
+        "errorMessage": "fetch failed",
+        "metadata": {
+          "deliveryDurationMs": 10645,
+          "transactionId": "simultaneous-1771187771565-h6gp3qw7m"
+        }
+      },
+      "totalTimeMs": 10654
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771187771565-h6gp3qw7m",
+      "metaSuccess": true,
+      "fadSuccess": false,
+      "metaMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRUI4OTQ2QkMzNkM3ODcwNDg1AA==",
+      "deliveryTimeMs": 10654
+    }
+  },
+  "request": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "body": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك.",
+    "meta": {},
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك."
+    },
+    "template": {
+      "name": "arabic_general_notification",
+      "language": {
+        "code": "ar"
+      },
+      "components": [
+        {
+          "type": "body",
+          "parameters": [
+            {
+              "type": "text",
+              "text": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "response": {
+    "success": true,
+    "provider": "meta",
+    "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRUI4OTQ2QkMzNkM3ODcwNDg1AA==",
+    "rawResponse": {
+      "meta": {
+        "success": true,
+        "provider": "meta",
+        "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRUI4OTQ2QkMzNkM3ODcwNDg1AA==",
+        "rawResponse": {
+          "messaging_product": "whatsapp",
+          "contacts": [
+            {
+              "input": "+967774577134",
+              "wa_id": "967774577134"
+            }
+          ],
+          "messages": [
+            {
+              "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRUI4OTQ2QkMzNkM3ODcwNDg1AA==",
+              "message_status": "accepted"
+            }
+          ]
+        },
+        "metadata": {
+          "deliveryDurationMs": 1370,
+          "messageIds": [
+            "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRUI4OTQ2QkMzNkM3ODcwNDg1AA=="
+          ],
+          "transactionId": "simultaneous-1771187771565-h6gp3qw7m"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "fetch failed"
+        },
+        "errorCode": "FAD_EXCEPTION",
+        "errorMessage": "fetch failed",
+        "metadata": {
+          "deliveryDurationMs": 10645,
+          "transactionId": "simultaneous-1771187771565-h6gp3qw7m"
+        }
+      },
+      "totalTimeMs": 10654
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771187771565-h6gp3qw7m",
+      "metaSuccess": true,
+      "fadSuccess": false,
+      "metaMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRUI4OTQ2QkMzNkM3ODcwNDg1AA==",
+      "deliveryTimeMs": 10654
+    }
+  }
+}
+{
+  "timestamp": "2026-02-15T20:36:25.580Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187785578-gkvvnjbh8",
+  "action": "SEND_ATTEMPT",
+  "provider": "meta",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T20:36:25.581Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187785578-gkvvnjbh8",
+  "action": "SEND_ATTEMPT",
+  "provider": "fad",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T20:36:27.047Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187785578-gkvvnjbh8",
+  "action": "SEND_RESULT",
+  "provider": "meta",
+  "success": true,
+  "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSMTRDMTcyRjhEN0Q3MENEQkM3AA==",
+  "durationMs": 1467
+}
+{
+  "timestamp": "2026-02-15T20:36:36.225Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187785578-gkvvnjbh8",
+  "action": "SEND_RESULT",
+  "provider": "fad",
+  "success": false,
+  "errorCode": "FAD_EXCEPTION",
+  "errorMessage": "fetch failed",
+  "durationMs": 10644
+}
+{
+  "timestamp": "2026-02-15T20:36:36.228Z",
+  "category": "messages",
+  "provider": "meta",
+  "to": "+967774577134",
+  "body": "Welcome to First Aden Islamic Bank. This is an important notification.",
+  "meta": {},
+  "providerResult": {
+    "success": true,
+    "provider": "meta",
+    "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSMTRDMTcyRjhEN0Q3MENEQkM3AA==",
+    "rawResponse": {
+      "meta": {
+        "success": true,
+        "provider": "meta",
+        "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSMTRDMTcyRjhEN0Q3MENEQkM3AA==",
+        "rawResponse": {
+          "messaging_product": "whatsapp",
+          "contacts": [
+            {
+              "input": "+967774577134",
+              "wa_id": "967774577134"
+            }
+          ],
+          "messages": [
+            {
+              "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSMTRDMTcyRjhEN0Q3MENEQkM3AA==",
+              "message_status": "accepted"
+            }
+          ]
+        },
+        "metadata": {
+          "deliveryDurationMs": 1467,
+          "messageIds": [
+            "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSMTRDMTcyRjhEN0Q3MENEQkM3AA=="
+          ],
+          "transactionId": "simultaneous-1771187785578-gkvvnjbh8"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "fetch failed"
+        },
+        "errorCode": "FAD_EXCEPTION",
+        "errorMessage": "fetch failed",
+        "metadata": {
+          "deliveryDurationMs": 10644,
+          "transactionId": "simultaneous-1771187785578-gkvvnjbh8"
+        }
+      },
+      "totalTimeMs": 10648
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771187785578-gkvvnjbh8",
+      "metaSuccess": true,
+      "fadSuccess": false,
+      "metaMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSMTRDMTcyRjhEN0Q3MENEQkM3AA==",
+      "deliveryTimeMs": 10648
+    }
+  },
+  "request": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "body": "Welcome to First Aden Islamic Bank. This is an important notification.",
+    "meta": {},
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "Welcome to First Aden Islamic Bank. This is an important notification."
+    },
+    "template": {
+      "name": "arabic_general_notification",
+      "language": {
+        "code": "ar"
+      },
+      "components": [
+        {
+          "type": "body",
+          "parameters": [
+            {
+              "type": "text",
+              "text": "Welcome to First Aden Islamic Bank. This is an important notification."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "response": {
+    "success": true,
+    "provider": "meta",
+    "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSMTRDMTcyRjhEN0Q3MENEQkM3AA==",
+    "rawResponse": {
+      "meta": {
+        "success": true,
+        "provider": "meta",
+        "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSMTRDMTcyRjhEN0Q3MENEQkM3AA==",
+        "rawResponse": {
+          "messaging_product": "whatsapp",
+          "contacts": [
+            {
+              "input": "+967774577134",
+              "wa_id": "967774577134"
+            }
+          ],
+          "messages": [
+            {
+              "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSMTRDMTcyRjhEN0Q3MENEQkM3AA==",
+              "message_status": "accepted"
+            }
+          ]
+        },
+        "metadata": {
+          "deliveryDurationMs": 1467,
+          "messageIds": [
+            "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSMTRDMTcyRjhEN0Q3MENEQkM3AA=="
+          ],
+          "transactionId": "simultaneous-1771187785578-gkvvnjbh8"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "fetch failed"
+        },
+        "errorCode": "FAD_EXCEPTION",
+        "errorMessage": "fetch failed",
+        "metadata": {
+          "deliveryDurationMs": 10644,
+          "transactionId": "simultaneous-1771187785578-gkvvnjbh8"
+        }
+      },
+      "totalTimeMs": 10648
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771187785578-gkvvnjbh8",
+      "metaSuccess": true,
+      "fadSuccess": false,
+      "metaMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSMTRDMTcyRjhEN0Q3MENEQkM3AA==",
+      "deliveryTimeMs": 10648
+    }
+  }
+}
+{
+  "timestamp": "2026-02-15T20:36:39.567Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187799564-iaj4ectj5",
+  "action": "SEND_ATTEMPT",
+  "provider": "meta",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T20:36:39.567Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187799564-iaj4ectj5",
+  "action": "SEND_ATTEMPT",
+  "provider": "fad",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T20:36:50.196Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187799564-iaj4ectj5",
+  "action": "SEND_RESULT",
+  "provider": "meta",
+  "success": false,
+  "errorCode": "FETCH_ERROR",
+  "errorMessage": "fetch failed",
+  "durationMs": 10629
+}
+{
+  "timestamp": "2026-02-15T20:36:50.196Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187799564-iaj4ectj5",
+  "action": "SEND_RESULT",
+  "provider": "fad",
+  "success": false,
+  "errorCode": "FAD_EXCEPTION",
+  "errorMessage": "fetch failed",
+  "durationMs": 10629
+}
+{
+  "timestamp": "2026-02-15T20:36:50.199Z",
+  "category": "messages",
+  "provider": "meta",
+  "to": "+967774577134",
+  "body": "Your account balance is now 5000 YER",
+  "meta": {},
+  "providerResult": {
+    "success": false,
+    "provider": "meta",
+    "rawResponse": {
+      "meta": {
+        "success": false,
+        "provider": "meta",
+        "rawResponse": {
+          "error": "fetch failed"
+        },
+        "errorCode": "FETCH_ERROR",
+        "errorMessage": "fetch failed",
+        "metadata": {
+          "deliveryDurationMs": 10629,
+          "transactionId": "simultaneous-1771187799564-iaj4ectj5"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "fetch failed"
+        },
+        "errorCode": "FAD_EXCEPTION",
+        "errorMessage": "fetch failed",
+        "metadata": {
+          "deliveryDurationMs": 10629,
+          "transactionId": "simultaneous-1771187799564-iaj4ectj5"
+        }
+      },
+      "totalTimeMs": 10633
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771187799564-iaj4ectj5",
+      "metaSuccess": false,
+      "fadSuccess": false,
+      "deliveryTimeMs": 10633
+    }
+  },
+  "request": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "Your account balance is now 5000 YER"
+    },
+    "body": "Your account balance is now 5000 YER",
+    "meta": {},
+    "template": {
+      "name": "arabic_general_notification",
+      "language": {
+        "code": "ar"
+      },
+      "components": [
+        {
+          "type": "body",
+          "parameters": [
+            {
+              "type": "text",
+              "text": "Your account balance is now 5000 YER"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "response": {
+    "success": false,
+    "provider": "meta",
+    "rawResponse": {
+      "meta": {
+        "success": false,
+        "provider": "meta",
+        "rawResponse": {
+          "error": "fetch failed"
+        },
+        "errorCode": "FETCH_ERROR",
+        "errorMessage": "fetch failed",
+        "metadata": {
+          "deliveryDurationMs": 10629,
+          "transactionId": "simultaneous-1771187799564-iaj4ectj5"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "fetch failed"
+        },
+        "errorCode": "FAD_EXCEPTION",
+        "errorMessage": "fetch failed",
+        "metadata": {
+          "deliveryDurationMs": 10629,
+          "transactionId": "simultaneous-1771187799564-iaj4ectj5"
+        }
+      },
+      "totalTimeMs": 10633
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771187799564-iaj4ectj5",
+      "metaSuccess": false,
+      "fadSuccess": false,
+      "deliveryTimeMs": 10633
+    }
+  }
+}
+{
+  "timestamp": "2026-02-15T20:37:05.965Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187825963-vnk43ncxx",
+  "action": "SEND_ATTEMPT",
+  "provider": "meta",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T20:37:05.965Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187825963-vnk43ncxx",
+  "action": "SEND_ATTEMPT",
+  "provider": "fad",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T20:37:09.261Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187825963-vnk43ncxx",
+  "action": "SEND_RESULT",
+  "provider": "meta",
+  "success": true,
+  "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSMDNDQjY4RDIyQ0EwN0RFMDFEAA==",
+  "durationMs": 3296
+}
+{
+  "timestamp": "2026-02-15T20:37:16.645Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187825963-vnk43ncxx",
+  "action": "SEND_RESULT",
+  "provider": "fad",
+  "success": false,
+  "errorCode": "FAD_EXCEPTION",
+  "errorMessage": "fetch failed",
+  "durationMs": 10680
+}
+{
+  "timestamp": "2026-02-15T20:37:16.648Z",
+  "category": "messages",
+  "provider": "meta",
+  "to": "+967774577134",
+  "body": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك.",
+  "meta": {},
+  "providerResult": {
+    "success": true,
+    "provider": "meta",
+    "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSMDNDQjY4RDIyQ0EwN0RFMDFEAA==",
+    "rawResponse": {
+      "meta": {
+        "success": true,
+        "provider": "meta",
+        "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSMDNDQjY4RDIyQ0EwN0RFMDFEAA==",
+        "rawResponse": {
+          "messaging_product": "whatsapp",
+          "contacts": [
+            {
+              "input": "+967774577134",
+              "wa_id": "967774577134"
+            }
+          ],
+          "messages": [
+            {
+              "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSMDNDQjY4RDIyQ0EwN0RFMDFEAA==",
+              "message_status": "accepted"
+            }
+          ]
+        },
+        "metadata": {
+          "deliveryDurationMs": 3296,
+          "messageIds": [
+            "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSMDNDQjY4RDIyQ0EwN0RFMDFEAA=="
+          ],
+          "transactionId": "simultaneous-1771187825963-vnk43ncxx"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "fetch failed"
+        },
+        "errorCode": "FAD_EXCEPTION",
+        "errorMessage": "fetch failed",
+        "metadata": {
+          "deliveryDurationMs": 10680,
+          "transactionId": "simultaneous-1771187825963-vnk43ncxx"
+        }
+      },
+      "totalTimeMs": 10684
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771187825963-vnk43ncxx",
+      "metaSuccess": true,
+      "fadSuccess": false,
+      "metaMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSMDNDQjY4RDIyQ0EwN0RFMDFEAA==",
+      "deliveryTimeMs": 10684
+    }
+  },
+  "request": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "body": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك.",
+    "meta": {},
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك."
+    },
+    "template": {
+      "name": "arabic_general_notification",
+      "language": {
+        "code": "ar"
+      },
+      "components": [
+        {
+          "type": "body",
+          "parameters": [
+            {
+              "type": "text",
+              "text": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "response": {
+    "success": true,
+    "provider": "meta",
+    "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSMDNDQjY4RDIyQ0EwN0RFMDFEAA==",
+    "rawResponse": {
+      "meta": {
+        "success": true,
+        "provider": "meta",
+        "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSMDNDQjY4RDIyQ0EwN0RFMDFEAA==",
+        "rawResponse": {
+          "messaging_product": "whatsapp",
+          "contacts": [
+            {
+              "input": "+967774577134",
+              "wa_id": "967774577134"
+            }
+          ],
+          "messages": [
+            {
+              "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSMDNDQjY4RDIyQ0EwN0RFMDFEAA==",
+              "message_status": "accepted"
+            }
+          ]
+        },
+        "metadata": {
+          "deliveryDurationMs": 3296,
+          "messageIds": [
+            "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSMDNDQjY4RDIyQ0EwN0RFMDFEAA=="
+          ],
+          "transactionId": "simultaneous-1771187825963-vnk43ncxx"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "fetch failed"
+        },
+        "errorCode": "FAD_EXCEPTION",
+        "errorMessage": "fetch failed",
+        "metadata": {
+          "deliveryDurationMs": 10680,
+          "transactionId": "simultaneous-1771187825963-vnk43ncxx"
+        }
+      },
+      "totalTimeMs": 10684
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771187825963-vnk43ncxx",
+      "metaSuccess": true,
+      "fadSuccess": false,
+      "metaMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSMDNDQjY4RDIyQ0EwN0RFMDFEAA==",
+      "deliveryTimeMs": 10684
+    }
+  }
+}
+{
+  "timestamp": "2026-02-15T20:37:19.981Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187839979-aayx6uutl",
+  "action": "SEND_ATTEMPT",
+  "provider": "meta",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T20:37:19.982Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187839979-aayx6uutl",
+  "action": "SEND_ATTEMPT",
+  "provider": "fad",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T20:37:24.079Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187839979-aayx6uutl",
+  "action": "SEND_RESULT",
+  "provider": "meta",
+  "success": true,
+  "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNUEzMzBBNUU3QTg1RjQ2QzY5AA==",
+  "durationMs": 4098
+}
+{
+  "timestamp": "2026-02-15T20:37:30.596Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187839979-aayx6uutl",
+  "action": "SEND_RESULT",
+  "provider": "fad",
+  "success": false,
+  "errorCode": "FAD_EXCEPTION",
+  "errorMessage": "fetch failed",
+  "durationMs": 10614
+}
+{
+  "timestamp": "2026-02-15T20:37:30.601Z",
+  "category": "messages",
+  "provider": "meta",
+  "to": "+967774577134",
+  "body": "Welcome to First Aden Islamic Bank. This is an important notification.",
+  "meta": {},
+  "providerResult": {
+    "success": true,
+    "provider": "meta",
+    "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNUEzMzBBNUU3QTg1RjQ2QzY5AA==",
+    "rawResponse": {
+      "meta": {
+        "success": true,
+        "provider": "meta",
+        "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNUEzMzBBNUU3QTg1RjQ2QzY5AA==",
+        "rawResponse": {
+          "messaging_product": "whatsapp",
+          "contacts": [
+            {
+              "input": "+967774577134",
+              "wa_id": "967774577134"
+            }
+          ],
+          "messages": [
+            {
+              "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNUEzMzBBNUU3QTg1RjQ2QzY5AA==",
+              "message_status": "accepted"
+            }
+          ]
+        },
+        "metadata": {
+          "deliveryDurationMs": 4098,
+          "messageIds": [
+            "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNUEzMzBBNUU3QTg1RjQ2QzY5AA=="
+          ],
+          "transactionId": "simultaneous-1771187839979-aayx6uutl"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "fetch failed"
+        },
+        "errorCode": "FAD_EXCEPTION",
+        "errorMessage": "fetch failed",
+        "metadata": {
+          "deliveryDurationMs": 10614,
+          "transactionId": "simultaneous-1771187839979-aayx6uutl"
+        }
+      },
+      "totalTimeMs": 10618
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771187839979-aayx6uutl",
+      "metaSuccess": true,
+      "fadSuccess": false,
+      "metaMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNUEzMzBBNUU3QTg1RjQ2QzY5AA==",
+      "deliveryTimeMs": 10618
+    }
+  },
+  "request": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "body": "Welcome to First Aden Islamic Bank. This is an important notification.",
+    "meta": {},
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "Welcome to First Aden Islamic Bank. This is an important notification."
+    },
+    "template": {
+      "name": "arabic_general_notification",
+      "language": {
+        "code": "ar"
+      },
+      "components": [
+        {
+          "type": "body",
+          "parameters": [
+            {
+              "type": "text",
+              "text": "Welcome to First Aden Islamic Bank. This is an important notification."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "response": {
+    "success": true,
+    "provider": "meta",
+    "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNUEzMzBBNUU3QTg1RjQ2QzY5AA==",
+    "rawResponse": {
+      "meta": {
+        "success": true,
+        "provider": "meta",
+        "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNUEzMzBBNUU3QTg1RjQ2QzY5AA==",
+        "rawResponse": {
+          "messaging_product": "whatsapp",
+          "contacts": [
+            {
+              "input": "+967774577134",
+              "wa_id": "967774577134"
+            }
+          ],
+          "messages": [
+            {
+              "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNUEzMzBBNUU3QTg1RjQ2QzY5AA==",
+              "message_status": "accepted"
+            }
+          ]
+        },
+        "metadata": {
+          "deliveryDurationMs": 4098,
+          "messageIds": [
+            "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNUEzMzBBNUU3QTg1RjQ2QzY5AA=="
+          ],
+          "transactionId": "simultaneous-1771187839979-aayx6uutl"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "fetch failed"
+        },
+        "errorCode": "FAD_EXCEPTION",
+        "errorMessage": "fetch failed",
+        "metadata": {
+          "deliveryDurationMs": 10614,
+          "transactionId": "simultaneous-1771187839979-aayx6uutl"
+        }
+      },
+      "totalTimeMs": 10618
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771187839979-aayx6uutl",
+      "metaSuccess": true,
+      "fadSuccess": false,
+      "metaMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNUEzMzBBNUU3QTg1RjQ2QzY5AA==",
+      "deliveryTimeMs": 10618
+    }
+  }
+}
+{
+  "timestamp": "2026-02-15T20:37:33.921Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187853919-ind8ds8nr",
+  "action": "SEND_ATTEMPT",
+  "provider": "meta",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T20:37:33.921Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187853919-ind8ds8nr",
+  "action": "SEND_ATTEMPT",
+  "provider": "fad",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T20:37:36.631Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187853919-ind8ds8nr",
+  "action": "SEND_RESULT",
+  "provider": "meta",
+  "success": true,
+  "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQTNDNEVEMzk3N0QyMEY3RDU2AA==",
+  "durationMs": 2710
+}
+{
+  "timestamp": "2026-02-15T20:37:38.511Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187858508-3wlriklbs",
+  "action": "SEND_ATTEMPT",
+  "provider": "meta",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T20:37:38.512Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187858508-3wlriklbs",
+  "action": "SEND_ATTEMPT",
+  "provider": "fad",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T20:37:39.556Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187858508-3wlriklbs",
+  "action": "SEND_RESULT",
+  "provider": "meta",
+  "success": true,
+  "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNjg3RTQwODc3NjgzRjY5NDg1AA==",
+  "durationMs": 1045
+}
+{
+  "timestamp": "2026-02-15T20:37:44.531Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187853919-ind8ds8nr",
+  "action": "SEND_RESULT",
+  "provider": "fad",
+  "success": false,
+  "errorCode": "FAD_EXCEPTION",
+  "errorMessage": "fetch failed",
+  "durationMs": 10610
+}
+{
+  "timestamp": "2026-02-15T20:37:44.535Z",
+  "category": "messages",
+  "provider": "meta",
+  "to": "+967774577134",
+  "body": "Your account balance is now 5000 YER",
+  "meta": {},
+  "providerResult": {
+    "success": true,
+    "provider": "meta",
+    "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQTNDNEVEMzk3N0QyMEY3RDU2AA==",
+    "rawResponse": {
+      "meta": {
+        "success": true,
+        "provider": "meta",
+        "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQTNDNEVEMzk3N0QyMEY3RDU2AA==",
+        "rawResponse": {
+          "messaging_product": "whatsapp",
+          "contacts": [
+            {
+              "input": "+967774577134",
+              "wa_id": "967774577134"
+            }
+          ],
+          "messages": [
+            {
+              "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQTNDNEVEMzk3N0QyMEY3RDU2AA==",
+              "message_status": "accepted"
+            }
+          ]
+        },
+        "metadata": {
+          "deliveryDurationMs": 2710,
+          "messageIds": [
+            "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQTNDNEVEMzk3N0QyMEY3RDU2AA=="
+          ],
+          "transactionId": "simultaneous-1771187853919-ind8ds8nr"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "fetch failed"
+        },
+        "errorCode": "FAD_EXCEPTION",
+        "errorMessage": "fetch failed",
+        "metadata": {
+          "deliveryDurationMs": 10610,
+          "transactionId": "simultaneous-1771187853919-ind8ds8nr"
+        }
+      },
+      "totalTimeMs": 10614
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771187853919-ind8ds8nr",
+      "metaSuccess": true,
+      "fadSuccess": false,
+      "metaMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQTNDNEVEMzk3N0QyMEY3RDU2AA==",
+      "deliveryTimeMs": 10614
+    }
+  },
+  "request": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "Your account balance is now 5000 YER"
+    },
+    "body": "Your account balance is now 5000 YER",
+    "meta": {},
+    "template": {
+      "name": "arabic_general_notification",
+      "language": {
+        "code": "ar"
+      },
+      "components": [
+        {
+          "type": "body",
+          "parameters": [
+            {
+              "type": "text",
+              "text": "Your account balance is now 5000 YER"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "response": {
+    "success": true,
+    "provider": "meta",
+    "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQTNDNEVEMzk3N0QyMEY3RDU2AA==",
+    "rawResponse": {
+      "meta": {
+        "success": true,
+        "provider": "meta",
+        "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQTNDNEVEMzk3N0QyMEY3RDU2AA==",
+        "rawResponse": {
+          "messaging_product": "whatsapp",
+          "contacts": [
+            {
+              "input": "+967774577134",
+              "wa_id": "967774577134"
+            }
+          ],
+          "messages": [
+            {
+              "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQTNDNEVEMzk3N0QyMEY3RDU2AA==",
+              "message_status": "accepted"
+            }
+          ]
+        },
+        "metadata": {
+          "deliveryDurationMs": 2710,
+          "messageIds": [
+            "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQTNDNEVEMzk3N0QyMEY3RDU2AA=="
+          ],
+          "transactionId": "simultaneous-1771187853919-ind8ds8nr"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "fetch failed"
+        },
+        "errorCode": "FAD_EXCEPTION",
+        "errorMessage": "fetch failed",
+        "metadata": {
+          "deliveryDurationMs": 10610,
+          "transactionId": "simultaneous-1771187853919-ind8ds8nr"
+        }
+      },
+      "totalTimeMs": 10614
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771187853919-ind8ds8nr",
+      "metaSuccess": true,
+      "fadSuccess": false,
+      "metaMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQTNDNEVEMzk3N0QyMEY3RDU2AA==",
+      "deliveryTimeMs": 10614
+    }
+  }
+}
+{
+  "timestamp": "2026-02-15T20:37:49.109Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187858508-3wlriklbs",
+  "action": "SEND_RESULT",
+  "provider": "fad",
+  "success": false,
+  "errorCode": "FAD_EXCEPTION",
+  "errorMessage": "fetch failed",
+  "durationMs": 10597
+}
+{
+  "timestamp": "2026-02-15T20:37:49.112Z",
+  "category": "messages",
+  "provider": "meta",
+  "to": "+967774577134",
+  "body": "Test message",
+  "meta": {},
+  "providerResult": {
+    "success": true,
+    "provider": "meta",
+    "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNjg3RTQwODc3NjgzRjY5NDg1AA==",
+    "rawResponse": {
+      "meta": {
+        "success": true,
+        "provider": "meta",
+        "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNjg3RTQwODc3NjgzRjY5NDg1AA==",
+        "rawResponse": {
+          "messaging_product": "whatsapp",
+          "contacts": [
+            {
+              "input": "+967774577134",
+              "wa_id": "967774577134"
+            }
+          ],
+          "messages": [
+            {
+              "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNjg3RTQwODc3NjgzRjY5NDg1AA==",
+              "message_status": "accepted"
+            }
+          ]
+        },
+        "metadata": {
+          "deliveryDurationMs": 1045,
+          "messageIds": [
+            "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNjg3RTQwODc3NjgzRjY5NDg1AA=="
+          ],
+          "transactionId": "simultaneous-1771187858508-3wlriklbs"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "fetch failed"
+        },
+        "errorCode": "FAD_EXCEPTION",
+        "errorMessage": "fetch failed",
+        "metadata": {
+          "deliveryDurationMs": 10597,
+          "transactionId": "simultaneous-1771187858508-3wlriklbs"
+        }
+      },
+      "totalTimeMs": 10602
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771187858508-3wlriklbs",
+      "metaSuccess": true,
+      "fadSuccess": false,
+      "metaMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNjg3RTQwODc3NjgzRjY5NDg1AA==",
+      "deliveryTimeMs": 10602
+    }
+  },
+  "request": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "body": "Test message",
+    "meta": {},
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "Test message"
+    },
+    "template": {
+      "name": "arabic_general_notification",
+      "language": {
+        "code": "ar"
+      },
+      "components": [
+        {
+          "type": "body",
+          "parameters": [
+            {
+              "type": "text",
+              "text": "Test message"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "response": {
+    "success": true,
+    "provider": "meta",
+    "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNjg3RTQwODc3NjgzRjY5NDg1AA==",
+    "rawResponse": {
+      "meta": {
+        "success": true,
+        "provider": "meta",
+        "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNjg3RTQwODc3NjgzRjY5NDg1AA==",
+        "rawResponse": {
+          "messaging_product": "whatsapp",
+          "contacts": [
+            {
+              "input": "+967774577134",
+              "wa_id": "967774577134"
+            }
+          ],
+          "messages": [
+            {
+              "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNjg3RTQwODc3NjgzRjY5NDg1AA==",
+              "message_status": "accepted"
+            }
+          ]
+        },
+        "metadata": {
+          "deliveryDurationMs": 1045,
+          "messageIds": [
+            "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNjg3RTQwODc3NjgzRjY5NDg1AA=="
+          ],
+          "transactionId": "simultaneous-1771187858508-3wlriklbs"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "fetch failed"
+        },
+        "errorCode": "FAD_EXCEPTION",
+        "errorMessage": "fetch failed",
+        "metadata": {
+          "deliveryDurationMs": 10597,
+          "transactionId": "simultaneous-1771187858508-3wlriklbs"
+        }
+      },
+      "totalTimeMs": 10602
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771187858508-3wlriklbs",
+      "metaSuccess": true,
+      "fadSuccess": false,
+      "metaMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNjg3RTQwODc3NjgzRjY5NDg1AA==",
+      "deliveryTimeMs": 10602
+    }
+  }
+}
+{
+  "timestamp": "2026-02-15T20:39:24.062Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187964056-aukrgdjlm",
+  "action": "SEND_ATTEMPT",
+  "provider": "meta",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T20:39:24.062Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187964056-aukrgdjlm",
+  "action": "SEND_ATTEMPT",
+  "provider": "fad",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T20:39:25.559Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187964056-aukrgdjlm",
+  "action": "SEND_RESULT",
+  "provider": "meta",
+  "success": true,
+  "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRDhGODkyNTNBNkM2NTIxQjJFAA==",
+  "durationMs": 1497
+}
+{
+  "timestamp": "2026-02-15T20:39:34.740Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187964056-aukrgdjlm",
+  "action": "SEND_RESULT",
+  "provider": "fad",
+  "success": false,
+  "errorCode": "FAD_EXCEPTION",
+  "errorMessage": "fetch failed",
+  "durationMs": 10678
+}
+{
+  "timestamp": "2026-02-15T20:39:34.746Z",
+  "category": "messages",
+  "provider": "meta",
+  "to": "+967774577134",
+  "body": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك.",
+  "meta": {},
+  "providerResult": {
+    "success": true,
+    "provider": "meta",
+    "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRDhGODkyNTNBNkM2NTIxQjJFAA==",
+    "rawResponse": {
+      "meta": {
+        "success": true,
+        "provider": "meta",
+        "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRDhGODkyNTNBNkM2NTIxQjJFAA==",
+        "rawResponse": {
+          "messaging_product": "whatsapp",
+          "contacts": [
+            {
+              "input": "+967774577134",
+              "wa_id": "967774577134"
+            }
+          ],
+          "messages": [
+            {
+              "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRDhGODkyNTNBNkM2NTIxQjJFAA==",
+              "message_status": "accepted"
+            }
+          ]
+        },
+        "metadata": {
+          "deliveryDurationMs": 1497,
+          "messageIds": [
+            "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRDhGODkyNTNBNkM2NTIxQjJFAA=="
+          ],
+          "transactionId": "simultaneous-1771187964056-aukrgdjlm"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "fetch failed"
+        },
+        "errorCode": "FAD_EXCEPTION",
+        "errorMessage": "fetch failed",
+        "metadata": {
+          "deliveryDurationMs": 10678,
+          "transactionId": "simultaneous-1771187964056-aukrgdjlm"
+        }
+      },
+      "totalTimeMs": 10686
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771187964056-aukrgdjlm",
+      "metaSuccess": true,
+      "fadSuccess": false,
+      "metaMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRDhGODkyNTNBNkM2NTIxQjJFAA==",
+      "deliveryTimeMs": 10686
+    }
+  },
+  "request": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "body": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك.",
+    "meta": {},
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك."
+    },
+    "template": {
+      "name": "arabic_general_notification",
+      "language": {
+        "code": "ar"
+      },
+      "components": [
+        {
+          "type": "body",
+          "parameters": [
+            {
+              "type": "text",
+              "text": "مرحباً بك في بنك عدن الأول الإسلامي. هذا إشعار هام من البنك."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "response": {
+    "success": true,
+    "provider": "meta",
+    "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRDhGODkyNTNBNkM2NTIxQjJFAA==",
+    "rawResponse": {
+      "meta": {
+        "success": true,
+        "provider": "meta",
+        "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRDhGODkyNTNBNkM2NTIxQjJFAA==",
+        "rawResponse": {
+          "messaging_product": "whatsapp",
+          "contacts": [
+            {
+              "input": "+967774577134",
+              "wa_id": "967774577134"
+            }
+          ],
+          "messages": [
+            {
+              "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRDhGODkyNTNBNkM2NTIxQjJFAA==",
+              "message_status": "accepted"
+            }
+          ]
+        },
+        "metadata": {
+          "deliveryDurationMs": 1497,
+          "messageIds": [
+            "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRDhGODkyNTNBNkM2NTIxQjJFAA=="
+          ],
+          "transactionId": "simultaneous-1771187964056-aukrgdjlm"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "fetch failed"
+        },
+        "errorCode": "FAD_EXCEPTION",
+        "errorMessage": "fetch failed",
+        "metadata": {
+          "deliveryDurationMs": 10678,
+          "transactionId": "simultaneous-1771187964056-aukrgdjlm"
+        }
+      },
+      "totalTimeMs": 10686
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771187964056-aukrgdjlm",
+      "metaSuccess": true,
+      "fadSuccess": false,
+      "metaMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRDhGODkyNTNBNkM2NTIxQjJFAA==",
+      "deliveryTimeMs": 10686
+    }
+  }
+}
+{
+  "timestamp": "2026-02-15T20:39:38.147Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187978144-aewo4ca0p",
+  "action": "SEND_ATTEMPT",
+  "provider": "meta",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T20:39:38.148Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187978144-aewo4ca0p",
+  "action": "SEND_ATTEMPT",
+  "provider": "fad",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T20:39:47.850Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187978144-aewo4ca0p",
+  "action": "SEND_RESULT",
+  "provider": "meta",
+  "success": true,
+  "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNkRCODg5NUJBMjNBQ0U1REY0AA==",
+  "durationMs": 9703
+}
+{
+  "timestamp": "2026-02-15T20:39:48.740Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187978144-aewo4ca0p",
+  "action": "SEND_RESULT",
+  "provider": "fad",
+  "success": false,
+  "errorCode": "FAD_EXCEPTION",
+  "errorMessage": "fetch failed",
+  "durationMs": 10592
+}
+{
+  "timestamp": "2026-02-15T20:39:48.745Z",
+  "category": "messages",
+  "provider": "meta",
+  "to": "+967774577134",
+  "body": "Welcome to First Aden Islamic Bank. This is an important notification.",
+  "meta": {},
+  "providerResult": {
+    "success": true,
+    "provider": "meta",
+    "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNkRCODg5NUJBMjNBQ0U1REY0AA==",
+    "rawResponse": {
+      "meta": {
+        "success": true,
+        "provider": "meta",
+        "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNkRCODg5NUJBMjNBQ0U1REY0AA==",
+        "rawResponse": {
+          "messaging_product": "whatsapp",
+          "contacts": [
+            {
+              "input": "+967774577134",
+              "wa_id": "967774577134"
+            }
+          ],
+          "messages": [
+            {
+              "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNkRCODg5NUJBMjNBQ0U1REY0AA==",
+              "message_status": "accepted"
+            }
+          ]
+        },
+        "metadata": {
+          "deliveryDurationMs": 9703,
+          "messageIds": [
+            "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNkRCODg5NUJBMjNBQ0U1REY0AA=="
+          ],
+          "transactionId": "simultaneous-1771187978144-aewo4ca0p"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "fetch failed"
+        },
+        "errorCode": "FAD_EXCEPTION",
+        "errorMessage": "fetch failed",
+        "metadata": {
+          "deliveryDurationMs": 10592,
+          "transactionId": "simultaneous-1771187978144-aewo4ca0p"
+        }
+      },
+      "totalTimeMs": 10598
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771187978144-aewo4ca0p",
+      "metaSuccess": true,
+      "fadSuccess": false,
+      "metaMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNkRCODg5NUJBMjNBQ0U1REY0AA==",
+      "deliveryTimeMs": 10598
+    }
+  },
+  "request": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "body": "Welcome to First Aden Islamic Bank. This is an important notification.",
+    "meta": {},
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "Welcome to First Aden Islamic Bank. This is an important notification."
+    },
+    "template": {
+      "name": "arabic_general_notification",
+      "language": {
+        "code": "ar"
+      },
+      "components": [
+        {
+          "type": "body",
+          "parameters": [
+            {
+              "type": "text",
+              "text": "Welcome to First Aden Islamic Bank. This is an important notification."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "response": {
+    "success": true,
+    "provider": "meta",
+    "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNkRCODg5NUJBMjNBQ0U1REY0AA==",
+    "rawResponse": {
+      "meta": {
+        "success": true,
+        "provider": "meta",
+        "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNkRCODg5NUJBMjNBQ0U1REY0AA==",
+        "rawResponse": {
+          "messaging_product": "whatsapp",
+          "contacts": [
+            {
+              "input": "+967774577134",
+              "wa_id": "967774577134"
+            }
+          ],
+          "messages": [
+            {
+              "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNkRCODg5NUJBMjNBQ0U1REY0AA==",
+              "message_status": "accepted"
+            }
+          ]
+        },
+        "metadata": {
+          "deliveryDurationMs": 9703,
+          "messageIds": [
+            "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNkRCODg5NUJBMjNBQ0U1REY0AA=="
+          ],
+          "transactionId": "simultaneous-1771187978144-aewo4ca0p"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "fetch failed"
+        },
+        "errorCode": "FAD_EXCEPTION",
+        "errorMessage": "fetch failed",
+        "metadata": {
+          "deliveryDurationMs": 10592,
+          "transactionId": "simultaneous-1771187978144-aewo4ca0p"
+        }
+      },
+      "totalTimeMs": 10598
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771187978144-aewo4ca0p",
+      "metaSuccess": true,
+      "fadSuccess": false,
+      "metaMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNkRCODg5NUJBMjNBQ0U1REY0AA==",
+      "deliveryTimeMs": 10598
+    }
+  }
+}
+{
+  "timestamp": "2026-02-15T20:39:52.115Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187992112-vctx7ab30",
+  "action": "SEND_ATTEMPT",
+  "provider": "meta",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T20:39:52.116Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187992112-vctx7ab30",
+  "action": "SEND_ATTEMPT",
+  "provider": "fad",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T20:39:53.232Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187992112-vctx7ab30",
+  "action": "SEND_RESULT",
+  "provider": "meta",
+  "success": true,
+  "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRjVERkQ1MkExQUFDOTA3MTk2AA==",
+  "durationMs": 1117
+}
+{
+  "timestamp": "2026-02-15T20:40:02.748Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771187992112-vctx7ab30",
+  "action": "SEND_RESULT",
+  "provider": "fad",
+  "success": false,
+  "errorCode": "FAD_EXCEPTION",
+  "errorMessage": "fetch failed",
+  "durationMs": 10632
+}
+{
+  "timestamp": "2026-02-15T20:40:02.753Z",
+  "category": "messages",
+  "provider": "meta",
+  "to": "+967774577134",
+  "body": "Your account balance is now 5000 YER",
+  "meta": {},
+  "providerResult": {
+    "success": true,
+    "provider": "meta",
+    "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRjVERkQ1MkExQUFDOTA3MTk2AA==",
+    "rawResponse": {
+      "meta": {
+        "success": true,
+        "provider": "meta",
+        "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRjVERkQ1MkExQUFDOTA3MTk2AA==",
+        "rawResponse": {
+          "messaging_product": "whatsapp",
+          "contacts": [
+            {
+              "input": "+967774577134",
+              "wa_id": "967774577134"
+            }
+          ],
+          "messages": [
+            {
+              "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRjVERkQ1MkExQUFDOTA3MTk2AA==",
+              "message_status": "accepted"
+            }
+          ]
+        },
+        "metadata": {
+          "deliveryDurationMs": 1117,
+          "messageIds": [
+            "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRjVERkQ1MkExQUFDOTA3MTk2AA=="
+          ],
+          "transactionId": "simultaneous-1771187992112-vctx7ab30"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "fetch failed"
+        },
+        "errorCode": "FAD_EXCEPTION",
+        "errorMessage": "fetch failed",
+        "metadata": {
+          "deliveryDurationMs": 10632,
+          "transactionId": "simultaneous-1771187992112-vctx7ab30"
+        }
+      },
+      "totalTimeMs": 10638
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771187992112-vctx7ab30",
+      "metaSuccess": true,
+      "fadSuccess": false,
+      "metaMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRjVERkQ1MkExQUFDOTA3MTk2AA==",
+      "deliveryTimeMs": 10638
+    }
+  },
+  "request": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "Your account balance update notification"
+    },
+    "body": "Your account balance is now 5000 YER",
+    "meta": {},
+    "template": {
+      "name": "arabic_general_notification",
+      "language": {
+        "code": "ar"
+      },
+      "components": [
+        {
+          "type": "body",
+          "parameters": [
+            {
+              "type": "text",
+              "text": "Your account balance update notification"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "response": {
+    "success": true,
+    "provider": "meta",
+    "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRjVERkQ1MkExQUFDOTA3MTk2AA==",
+    "rawResponse": {
+      "meta": {
+        "success": true,
+        "provider": "meta",
+        "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRjVERkQ1MkExQUFDOTA3MTk2AA==",
+        "rawResponse": {
+          "messaging_product": "whatsapp",
+          "contacts": [
+            {
+              "input": "+967774577134",
+              "wa_id": "967774577134"
+            }
+          ],
+          "messages": [
+            {
+              "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRjVERkQ1MkExQUFDOTA3MTk2AA==",
+              "message_status": "accepted"
+            }
+          ]
+        },
+        "metadata": {
+          "deliveryDurationMs": 1117,
+          "messageIds": [
+            "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRjVERkQ1MkExQUFDOTA3MTk2AA=="
+          ],
+          "transactionId": "simultaneous-1771187992112-vctx7ab30"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "fetch failed"
+        },
+        "errorCode": "FAD_EXCEPTION",
+        "errorMessage": "fetch failed",
+        "metadata": {
+          "deliveryDurationMs": 10632,
+          "transactionId": "simultaneous-1771187992112-vctx7ab30"
+        }
+      },
+      "totalTimeMs": 10638
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771187992112-vctx7ab30",
+      "metaSuccess": true,
+      "fadSuccess": false,
+      "metaMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRjVERkQ1MkExQUFDOTA3MTk2AA==",
+      "deliveryTimeMs": 10638
+    }
+  }
+}
+{
+  "timestamp": "2026-02-15T20:40:20.811Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771188020808-gcft55hgx",
+  "action": "SEND_ATTEMPT",
+  "provider": "meta",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T20:40:20.811Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771188020808-gcft55hgx",
+  "action": "SEND_ATTEMPT",
+  "provider": "fad",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T20:40:22.027Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771188020808-gcft55hgx",
+  "action": "SEND_RESULT",
+  "provider": "meta",
+  "success": true,
+  "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQzA5QjBENzY2QjQ0QzlGMkU2AA==",
+  "durationMs": 1216
+}
+{
+  "timestamp": "2026-02-15T20:40:31.460Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771188020808-gcft55hgx",
+  "action": "SEND_RESULT",
+  "provider": "fad",
+  "success": false,
+  "errorCode": "FAD_EXCEPTION",
+  "errorMessage": "fetch failed",
+  "durationMs": 10649
+}
+{
+  "timestamp": "2026-02-15T20:40:31.464Z",
+  "category": "messages",
+  "provider": "meta",
+  "to": "+967774577134",
+  "body": "Test message",
+  "meta": {},
+  "providerResult": {
+    "success": true,
+    "provider": "meta",
+    "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQzA5QjBENzY2QjQ0QzlGMkU2AA==",
+    "rawResponse": {
+      "meta": {
+        "success": true,
+        "provider": "meta",
+        "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQzA5QjBENzY2QjQ0QzlGMkU2AA==",
+        "rawResponse": {
+          "messaging_product": "whatsapp",
+          "contacts": [
+            {
+              "input": "+967774577134",
+              "wa_id": "967774577134"
+            }
+          ],
+          "messages": [
+            {
+              "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQzA5QjBENzY2QjQ0QzlGMkU2AA==",
+              "message_status": "accepted"
+            }
+          ]
+        },
+        "metadata": {
+          "deliveryDurationMs": 1216,
+          "messageIds": [
+            "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQzA5QjBENzY2QjQ0QzlGMkU2AA=="
+          ],
+          "transactionId": "simultaneous-1771188020808-gcft55hgx"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "fetch failed"
+        },
+        "errorCode": "FAD_EXCEPTION",
+        "errorMessage": "fetch failed",
+        "metadata": {
+          "deliveryDurationMs": 10649,
+          "transactionId": "simultaneous-1771188020808-gcft55hgx"
+        }
+      },
+      "totalTimeMs": 10654
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771188020808-gcft55hgx",
+      "metaSuccess": true,
+      "fadSuccess": false,
+      "metaMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQzA5QjBENzY2QjQ0QzlGMkU2AA==",
+      "deliveryTimeMs": 10654
+    }
+  },
+  "request": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "body": "Test message",
+    "meta": {},
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "Test message"
+    },
+    "template": {
+      "name": "arabic_general_notification",
+      "language": {
+        "code": "ar"
+      },
+      "components": [
+        {
+          "type": "body",
+          "parameters": [
+            {
+              "type": "text",
+              "text": "Test message"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "response": {
+    "success": true,
+    "provider": "meta",
+    "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQzA5QjBENzY2QjQ0QzlGMkU2AA==",
+    "rawResponse": {
+      "meta": {
+        "success": true,
+        "provider": "meta",
+        "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQzA5QjBENzY2QjQ0QzlGMkU2AA==",
+        "rawResponse": {
+          "messaging_product": "whatsapp",
+          "contacts": [
+            {
+              "input": "+967774577134",
+              "wa_id": "967774577134"
+            }
+          ],
+          "messages": [
+            {
+              "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQzA5QjBENzY2QjQ0QzlGMkU2AA==",
+              "message_status": "accepted"
+            }
+          ]
+        },
+        "metadata": {
+          "deliveryDurationMs": 1216,
+          "messageIds": [
+            "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQzA5QjBENzY2QjQ0QzlGMkU2AA=="
+          ],
+          "transactionId": "simultaneous-1771188020808-gcft55hgx"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "fetch failed"
+        },
+        "errorCode": "FAD_EXCEPTION",
+        "errorMessage": "fetch failed",
+        "metadata": {
+          "deliveryDurationMs": 10649,
+          "transactionId": "simultaneous-1771188020808-gcft55hgx"
+        }
+      },
+      "totalTimeMs": 10654
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771188020808-gcft55hgx",
+      "metaSuccess": true,
+      "fadSuccess": false,
+      "metaMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQzA5QjBENzY2QjQ0QzlGMkU2AA==",
+      "deliveryTimeMs": 10654
+    }
+  }
+}
+{
+  "timestamp": "2026-02-15T20:41:02.865Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771188062863-j475qebxt",
+  "action": "SEND_ATTEMPT",
+  "provider": "meta",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T20:41:02.866Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771188062863-j475qebxt",
+  "action": "SEND_ATTEMPT",
+  "provider": "fad",
+  "recipient": "+967774577134",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true
+}
+{
+  "timestamp": "2026-02-15T20:41:04.282Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771188062863-j475qebxt",
+  "action": "SEND_RESULT",
+  "provider": "meta",
+  "success": true,
+  "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSODE0OUNERDBBODFFNzE1NjU2AA==",
+  "durationMs": 1417
+}
+{
+  "timestamp": "2026-02-15T20:41:13.529Z",
+  "category": "messages",
+  "transactionId": "simultaneous-1771188062863-j475qebxt",
+  "action": "SEND_RESULT",
+  "provider": "fad",
+  "success": false,
+  "errorCode": "FAD_EXCEPTION",
+  "errorMessage": "fetch failed",
+  "durationMs": 10663
+}
+{
+  "timestamp": "2026-02-15T20:41:13.534Z",
+  "category": "messages",
+  "provider": "meta",
+  "to": "+967774577134",
+  "body": "Quick test",
+  "meta": {},
+  "providerResult": {
+    "success": true,
+    "provider": "meta",
+    "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSODE0OUNERDBBODFFNzE1NjU2AA==",
+    "rawResponse": {
+      "meta": {
+        "success": true,
+        "provider": "meta",
+        "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSODE0OUNERDBBODFFNzE1NjU2AA==",
+        "rawResponse": {
+          "messaging_product": "whatsapp",
+          "contacts": [
+            {
+              "input": "+967774577134",
+              "wa_id": "967774577134"
+            }
+          ],
+          "messages": [
+            {
+              "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSODE0OUNERDBBODFFNzE1NjU2AA==",
+              "message_status": "accepted"
+            }
+          ]
+        },
+        "metadata": {
+          "deliveryDurationMs": 1417,
+          "messageIds": [
+            "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSODE0OUNERDBBODFFNzE1NjU2AA=="
+          ],
+          "transactionId": "simultaneous-1771188062863-j475qebxt"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "fetch failed"
+        },
+        "errorCode": "FAD_EXCEPTION",
+        "errorMessage": "fetch failed",
+        "metadata": {
+          "deliveryDurationMs": 10663,
+          "transactionId": "simultaneous-1771188062863-j475qebxt"
+        }
+      },
+      "totalTimeMs": 10668
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771188062863-j475qebxt",
+      "metaSuccess": true,
+      "fadSuccess": false,
+      "metaMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSODE0OUNERDBBODFFNzE1NjU2AA==",
+      "deliveryTimeMs": 10668
+    }
+  },
+  "request": {
+    "messageType": "TEMPLATE",
+    "to": "+967774577134",
+    "body": "Quick test",
+    "meta": {},
+    "templateId": "arabic_general_notification",
+    "variables": {
+      "1": "Quick test"
+    },
+    "template": {
+      "name": "arabic_general_notification",
+      "language": {
+        "code": "ar"
+      },
+      "components": [
+        {
+          "type": "body",
+          "parameters": [
+            {
+              "type": "text",
+              "text": "Quick test"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "response": {
+    "success": true,
+    "provider": "meta",
+    "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSODE0OUNERDBBODFFNzE1NjU2AA==",
+    "rawResponse": {
+      "meta": {
+        "success": true,
+        "provider": "meta",
+        "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSODE0OUNERDBBODFFNzE1NjU2AA==",
+        "rawResponse": {
+          "messaging_product": "whatsapp",
+          "contacts": [
+            {
+              "input": "+967774577134",
+              "wa_id": "967774577134"
+            }
+          ],
+          "messages": [
+            {
+              "id": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSODE0OUNERDBBODFFNzE1NjU2AA==",
+              "message_status": "accepted"
+            }
+          ]
+        },
+        "metadata": {
+          "deliveryDurationMs": 1417,
+          "messageIds": [
+            "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSODE0OUNERDBBODFFNzE1NjU2AA=="
+          ],
+          "transactionId": "simultaneous-1771188062863-j475qebxt"
+        }
+      },
+      "fad": {
+        "success": false,
+        "provider": "fad",
+        "rawResponse": {
+          "error": "fetch failed"
+        },
+        "errorCode": "FAD_EXCEPTION",
+        "errorMessage": "fetch failed",
+        "metadata": {
+          "deliveryDurationMs": 10663,
+          "transactionId": "simultaneous-1771188062863-j475qebxt"
+        }
+      },
+      "totalTimeMs": 10668
+    },
+    "metadata": {
+      "transactionId": "simultaneous-1771188062863-j475qebxt",
+      "metaSuccess": true,
+      "fadSuccess": false,
+      "metaMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSODE0OUNERDBBODFFNzE1NjU2AA==",
+      "deliveryTimeMs": 10668
+    }
+  }
+}

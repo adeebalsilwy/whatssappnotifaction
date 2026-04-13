@@ -1,0 +1,323 @@
+{
+  "timestamp": "2026-02-15T19:35:28.394Z",
+  "category": "api",
+  "requestId": "0bb1975e-e995-400e-b5b6-be6e7ba3738c",
+  "action": "REQUEST_RECEIVED",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node"
+}
+{
+  "timestamp": "2026-02-15T19:35:28.403Z",
+  "category": "api",
+  "requestId": "0bb1975e-e995-400e-b5b6-be6e7ba3738c",
+  "action": "UPDATE_BODY",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node"
+}
+{
+  "timestamp": "2026-02-15T19:35:33.857Z",
+  "category": "api",
+  "requestId": "0bb1975e-e995-400e-b5b6-be6e7ba3738c",
+  "action": "RESPONSE_FINAL",
+  "status": 500,
+  "latency": 5465
+}
+{
+  "timestamp": "2026-02-15T19:35:37.198Z",
+  "category": "api",
+  "requestId": "5c2a32fc-7ea9-4969-8f58-a01cc9c411af",
+  "action": "REQUEST_RECEIVED",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node"
+}
+{
+  "timestamp": "2026-02-15T19:35:37.203Z",
+  "category": "api",
+  "requestId": "5c2a32fc-7ea9-4969-8f58-a01cc9c411af",
+  "action": "UPDATE_BODY",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node"
+}
+{
+  "timestamp": "2026-02-15T19:35:39.305Z",
+  "category": "api",
+  "requestId": "5c2a32fc-7ea9-4969-8f58-a01cc9c411af",
+  "action": "RESPONSE_FINAL",
+  "status": 500,
+  "latency": 2109
+}
+{
+  "timestamp": "2026-02-15T19:48:02.382Z",
+  "category": "api",
+  "requestId": "68bd008a-b074-43af-92ac-afef684a7a4e",
+  "action": "REQUEST_RECEIVED",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node"
+}
+{
+  "timestamp": "2026-02-15T19:48:02.389Z",
+  "category": "api",
+  "requestId": "68bd008a-b074-43af-92ac-afef684a7a4e",
+  "action": "UPDATE_BODY",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node"
+}
+{
+  "timestamp": "2026-02-15T19:48:05.846Z",
+  "category": "api",
+  "requestId": "68bd008a-b074-43af-92ac-afef684a7a4e",
+  "action": "RESPONSE_FINAL",
+  "status": 500,
+  "latency": 3466
+}
+{
+  "timestamp": "2026-02-15T19:48:09.181Z",
+  "category": "api",
+  "requestId": "f71e42a8-644d-470c-88c2-13ac66f3eb34",
+  "action": "REQUEST_RECEIVED",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node"
+}
+{
+  "timestamp": "2026-02-15T19:48:09.185Z",
+  "category": "api",
+  "requestId": "f71e42a8-644d-470c-88c2-13ac66f3eb34",
+  "action": "UPDATE_BODY",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node"
+}
+{
+  "timestamp": "2026-02-15T19:48:09.980Z",
+  "category": "api",
+  "requestId": "f71e42a8-644d-470c-88c2-13ac66f3eb34",
+  "action": "RESPONSE_FINAL",
+  "status": 500,
+  "latency": 801
+}
+{
+  "timestamp": "2026-02-15T19:48:13.293Z",
+  "category": "api",
+  "requestId": "17f42823-307a-4cc6-ac00-25cf43741c6e",
+  "action": "REQUEST_RECEIVED",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node"
+}
+{
+  "timestamp": "2026-02-15T19:48:13.297Z",
+  "category": "api",
+  "requestId": "17f42823-307a-4cc6-ac00-25cf43741c6e",
+  "action": "UPDATE_BODY",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node"
+}
+{
+  "timestamp": "2026-02-15T19:48:14.148Z",
+  "category": "api",
+  "requestId": "17f42823-307a-4cc6-ac00-25cf43741c6e",
+  "action": "RESPONSE_FINAL",
+  "status": 500,
+  "latency": 858
+}
+{
+  "timestamp": "2026-02-15T19:48:17.478Z",
+  "category": "api",
+  "requestId": "8f599929-2aeb-4fc9-be79-b7c104c709e1",
+  "action": "REQUEST_RECEIVED",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node"
+}
+{
+  "timestamp": "2026-02-15T19:48:17.482Z",
+  "category": "api",
+  "requestId": "8f599929-2aeb-4fc9-be79-b7c104c709e1",
+  "action": "UPDATE_BODY",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node"
+}
+{
+  "timestamp": "2026-02-15T19:48:17.487Z",
+  "category": "api",
+  "requestId": "8f599929-2aeb-4fc9-be79-b7c104c709e1",
+  "action": "RESPONSE_400",
+  "body": {
+    "success": false,
+    "errorCode": "VALIDATION_ERROR",
+    "errors": [
+      "to: Required"
+    ]
+  }
+}
+{
+  "timestamp": "2026-02-15T19:48:21.447Z",
+  "category": "api",
+  "requestId": "22266db9-d415-466c-99e1-d281e45e12b6",
+  "action": "REQUEST_RECEIVED",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node"
+}
+{
+  "timestamp": "2026-02-15T19:48:21.451Z",
+  "category": "api",
+  "requestId": "22266db9-d415-466c-99e1-d281e45e12b6",
+  "action": "UPDATE_BODY",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node"
+}
+{
+  "timestamp": "2026-02-15T19:48:23.497Z",
+  "category": "api",
+  "requestId": "22266db9-d415-466c-99e1-d281e45e12b6",
+  "action": "RESPONSE_FINAL",
+  "status": 500,
+  "latency": 2053
+}
+{
+  "timestamp": "2026-02-15T19:48:26.815Z",
+  "category": "api",
+  "requestId": "45a7dfe5-ef49-44fe-9bd5-2e6f0dd3db86",
+  "action": "REQUEST_RECEIVED",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node"
+}
+{
+  "timestamp": "2026-02-15T19:48:26.820Z",
+  "category": "api",
+  "requestId": "45a7dfe5-ef49-44fe-9bd5-2e6f0dd3db86",
+  "action": "UPDATE_BODY",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node"
+}
+{
+  "timestamp": "2026-02-15T19:48:29.111Z",
+  "category": "api",
+  "requestId": "45a7dfe5-ef49-44fe-9bd5-2e6f0dd3db86",
+  "action": "RESPONSE_FINAL",
+  "status": 500,
+  "latency": 2298
+}
+{
+  "timestamp": "2026-02-15T19:48:32.438Z",
+  "category": "api",
+  "requestId": "b719956e-6133-4998-8d0d-b43889f3b2ce",
+  "action": "REQUEST_RECEIVED",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node"
+}
+{
+  "timestamp": "2026-02-15T19:48:32.442Z",
+  "category": "api",
+  "requestId": "b719956e-6133-4998-8d0d-b43889f3b2ce",
+  "action": "UPDATE_BODY",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node"
+}
+{
+  "timestamp": "2026-02-15T19:48:33.107Z",
+  "category": "api",
+  "requestId": "b719956e-6133-4998-8d0d-b43889f3b2ce",
+  "action": "RESPONSE_FINAL",
+  "status": 500,
+  "latency": 671
+}
+{
+  "timestamp": "2026-02-15T19:48:36.421Z",
+  "category": "api",
+  "requestId": "46fd37ad-5ff8-478e-b9e6-8a567c49ad3f",
+  "action": "REQUEST_RECEIVED",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node"
+}
+{
+  "timestamp": "2026-02-15T19:48:36.425Z",
+  "category": "api",
+  "requestId": "46fd37ad-5ff8-478e-b9e6-8a567c49ad3f",
+  "action": "UPDATE_BODY",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node"
+}
+{
+  "timestamp": "2026-02-15T19:48:36.429Z",
+  "category": "api",
+  "requestId": "46fd37ad-5ff8-478e-b9e6-8a567c49ad3f",
+  "action": "RESPONSE_400",
+  "body": {
+    "success": false,
+    "errorCode": "VALIDATION_ERROR",
+    "errors": [
+      "to: Required"
+    ]
+  }
+}
+{
+  "timestamp": "2026-02-15T19:52:47.695Z",
+  "category": "api",
+  "requestId": "0cec1eb7-0cef-4c16-a749-03c27d8b6e00",
+  "action": "REQUEST_RECEIVED",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node"
+}
+{
+  "timestamp": "2026-02-15T19:52:47.702Z",
+  "category": "api",
+  "requestId": "0cec1eb7-0cef-4c16-a749-03c27d8b6e00",
+  "action": "UPDATE_BODY",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node"
+}
+{
+  "timestamp": "2026-02-15T19:52:49.237Z",
+  "category": "api",
+  "requestId": "0cec1eb7-0cef-4c16-a749-03c27d8b6e00",
+  "action": "RESPONSE_FINAL",
+  "status": 500,
+  "latency": 1545
+}
+{
+  "timestamp": "2026-02-15T19:52:52.569Z",
+  "category": "api",
+  "requestId": "f96e5db4-3618-4a26-bf3e-4efcfd6ad956",
+  "action": "REQUEST_RECEIVED",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node"
+}
+{
+  "timestamp": "2026-02-15T19:52:52.573Z",
+  "category": "api",
+  "requestId": "f96e5db4-3618-4a26-bf3e-4efcfd6ad956",
+  "action": "UPDATE_BODY",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node"
+}
+{
+  "timestamp": "2026-02-15T19:52:53.379Z",
+  "category": "api",
+  "requestId": "f96e5db4-3618-4a26-bf3e-4efcfd6ad956",
+  "action": "RESPONSE_FINAL",
+  "status": 500,
+  "latency": 812
+}
+{
+  "timestamp": "2026-02-15T19:52:56.701Z",
+  "category": "api",
+  "requestId": "4b2eed00-fcbb-431f-8ec3-99637e943fe4",
+  "action": "REQUEST_RECEIVED",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node"
+}
+{
+  "timestamp": "2026-02-15T19:52:56.705Z",
+  "category": "api",
+  "requestId": "4b2eed00-fcbb-431f-8ec3-99637e943fe4",
+  "action": "UPDATE_BODY",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node"
+}
+{
+  "timestamp": "2026-02-15T19:52:57.415Z",
+  "category": "api",
+  "requestId": "4b2eed00-fcbb-431f-8ec3-99637e943fe4",
+  "action": "RESPONSE_FINAL",
+  "status": 500,
+  "latency": 717
+}
+{
+  "timestamp": "2026-02-15T19:53:00.747Z",
+  "category": "api",
+  "requestId": "4b91f59e-337e-4993-afa9-8bba8e36fc43",
+  "action": "REQUEST_RECEIVED",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node"
+}
+{
+  "timestamp": "2026-02-15T19:53:00.751Z",
+  "category": "api",
+  "requestId": "4b91f59e-337e-4993-afa9-8bba8e36fc43",
+  "action": "UPDATE_BODY",
+  "error": "Could not locate the bindings file. Tried:\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Debug\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\out\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\Release\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\build\\default\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\compiled\\25.6.0\\win32\\x64\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\release\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\debug\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\addon-build\\default\\install-root\\better_sqlite3.node\n → F:\\my project\\nodejs\\whatsapp\\node_modules\\better-sqlite3\\lib\\binding\\node-v141-win32-x64\\better_sqlite3.node"
+}
+{
+  "timestamp": "2026-02-15T19:53:00.756Z",
+  "category": "api",
+  "requestId": "4b91f59e-337e-4993-afa9-8bba8e36fc43",
+  "action": "RESPONSE_400",
+  "body": {
+    "success": false,
+    "errorCode": "VALIDATION_ERROR",
+    "errors": [
+      "to: Required"
+    ]
+  }
+}

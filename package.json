@@ -19,6 +19,7 @@
     "test-new-token": "tsx scripts/test-new-token.ts",
     "send-template": "tsx scripts/send-whatsapp-templates.ts",
     "test-webhook": "tsx scripts/test-webhook-configuration.ts",
+    "test-webhook-delivery": "tsx scripts/test-webhook-delivery.ts",
     "gateway:dev": "nodemon --config src/gateway/nodemon.json"
   },
   "dependencies": {

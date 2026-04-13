@@ -1,0 +1,830 @@
+{
+  "timestamp": "2026-02-21T11:53:18.144Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "9670781333423",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 131
+}
+{
+  "timestamp": "2026-02-21T11:53:19.010Z",
+  "category": "meta_delivery",
+  "action": "SEND_FAILURE",
+  "recipient": "9670781333423",
+  "httpStatus": 400,
+  "errorCode": "132018",
+  "errorMessage": "(#132018) There’s an issue with the parameters in your template",
+  "providerResponse": {
+    "error": {
+      "message": "(#132018) There’s an issue with the parameters in your template",
+      "type": "OAuthException",
+      "code": 132018,
+      "error_data": {
+        "messaging_product": "whatsapp",
+        "details": "Param text cannot have new-line/tab characters or more than 4 consecutive spaces"
+      },
+      "fbtrace_id": "ALUkscsxVzOymyG1Ih3bCRd"
+    }
+  },
+  "durationMs": 865
+}
+{
+  "timestamp": "2026-02-21T11:53:19.016Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "9670781333423",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 131
+}
+{
+  "timestamp": "2026-02-21T11:53:19.364Z",
+  "category": "meta_delivery",
+  "action": "SEND_FAILURE",
+  "recipient": "9670781333423",
+  "httpStatus": 400,
+  "errorCode": "132018",
+  "errorMessage": "(#132018) There’s an issue with the parameters in your template",
+  "providerResponse": {
+    "error": {
+      "message": "(#132018) There’s an issue with the parameters in your template",
+      "type": "OAuthException",
+      "code": 132018,
+      "error_data": {
+        "messaging_product": "whatsapp",
+        "details": "Param text cannot have new-line/tab characters or more than 4 consecutive spaces"
+      },
+      "fbtrace_id": "A3VHTmzmd9C4M0AEr59Py2g"
+    }
+  },
+  "durationMs": 347
+}
+{
+  "timestamp": "2026-02-21T11:53:19.369Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "9670781333423",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 131
+}
+{
+  "timestamp": "2026-02-21T11:53:19.778Z",
+  "category": "meta_delivery",
+  "action": "SEND_FAILURE",
+  "recipient": "9670781333423",
+  "httpStatus": 400,
+  "errorCode": "132018",
+  "errorMessage": "(#132018) There’s an issue with the parameters in your template",
+  "providerResponse": {
+    "error": {
+      "message": "(#132018) There’s an issue with the parameters in your template",
+      "type": "OAuthException",
+      "code": 132018,
+      "error_data": {
+        "messaging_product": "whatsapp",
+        "details": "Param text cannot have new-line/tab characters or more than 4 consecutive spaces"
+      },
+      "fbtrace_id": "A2oY136fNgHug_WnnRlrQKb"
+    }
+  },
+  "durationMs": 408
+}
+{
+  "timestamp": "2026-02-21T11:53:19.783Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "9670781333423",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 131
+}
+{
+  "timestamp": "2026-02-21T11:53:20.215Z",
+  "category": "meta_delivery",
+  "action": "SEND_FAILURE",
+  "recipient": "9670781333423",
+  "httpStatus": 400,
+  "errorCode": "132018",
+  "errorMessage": "(#132018) There’s an issue with the parameters in your template",
+  "providerResponse": {
+    "error": {
+      "message": "(#132018) There’s an issue with the parameters in your template",
+      "type": "OAuthException",
+      "code": 132018,
+      "error_data": {
+        "messaging_product": "whatsapp",
+        "details": "Param text cannot have new-line/tab characters or more than 4 consecutive spaces"
+      },
+      "fbtrace_id": "A_dWENuQshmssZIrL2LssvL"
+    }
+  },
+  "durationMs": 431
+}
+{
+  "timestamp": "2026-02-21T11:53:20.221Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "9670781333423",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 131
+}
+{
+  "timestamp": "2026-02-21T11:53:20.586Z",
+  "category": "meta_delivery",
+  "action": "SEND_FAILURE",
+  "recipient": "9670781333423",
+  "httpStatus": 400,
+  "errorCode": "132018",
+  "errorMessage": "(#132018) There’s an issue with the parameters in your template",
+  "providerResponse": {
+    "error": {
+      "message": "(#132018) There’s an issue with the parameters in your template",
+      "type": "OAuthException",
+      "code": 132018,
+      "error_data": {
+        "messaging_product": "whatsapp",
+        "details": "Param text cannot have new-line/tab characters or more than 4 consecutive spaces"
+      },
+      "fbtrace_id": "A3zwJhm6R0DWDc3Qjw8ESHA"
+    }
+  },
+  "durationMs": 365
+}
+{
+  "timestamp": "2026-02-21T11:53:20.591Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "9670781333423",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 47
+}
+{
+  "timestamp": "2026-02-21T11:53:21.176Z",
+  "category": "meta_delivery",
+  "action": "SEND_SUCCESS",
+  "recipient": "9670781333423",
+  "providerResponse": {
+    "messaging_product": "whatsapp",
+    "contacts": [
+      {
+        "input": "9670781333423",
+        "wa_id": "967781333423"
+      }
+    ],
+    "messages": [
+      {
+        "id": "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSMTQyRUJGRUFGRkNGN0ZBMDk1AA==",
+        "message_status": "accepted"
+      }
+    ]
+  },
+  "messageIds": [
+    "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSMTQyRUJGRUFGRkNGN0ZBMDk1AA=="
+  ],
+  "durationMs": 585
+}
+{
+  "timestamp": "2026-02-21T11:53:21.181Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "00967779221860",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 47
+}
+{
+  "timestamp": "2026-02-21T11:53:22.520Z",
+  "category": "meta_delivery",
+  "action": "SEND_FAILURE",
+  "recipient": "00967779221860",
+  "httpStatus": 400,
+  "errorCode": "131009",
+  "errorMessage": "(#131009) Parameter value is not valid",
+  "providerResponse": {
+    "error": {
+      "message": "(#131009) Parameter value is not valid",
+      "code": 131009,
+      "type": "OAuthException",
+      "error_data": {
+        "messaging_product": "whatsapp",
+        "details": "The phone number is malformed: Please use the format: +1234567890."
+      },
+      "fbtrace_id": "A6FQIGuajIItfQLMtA9q6DJ"
+    }
+  },
+  "durationMs": 1338
+}
+{
+  "timestamp": "2026-02-21T11:53:22.543Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "00967779221860",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 131
+}
+{
+  "timestamp": "2026-02-21T11:53:22.966Z",
+  "category": "meta_delivery",
+  "action": "SEND_FAILURE",
+  "recipient": "00967779221860",
+  "httpStatus": 400,
+  "errorCode": "131009",
+  "errorMessage": "(#131009) Parameter value is not valid",
+  "providerResponse": {
+    "error": {
+      "message": "(#131009) Parameter value is not valid",
+      "type": "OAuthException",
+      "code": 131009,
+      "error_data": {
+        "messaging_product": "whatsapp",
+        "details": "The phone number is malformed: Please use the format: +1234567890."
+      },
+      "fbtrace_id": "AS94t5rwee_U71aTdukMoRX"
+    }
+  },
+  "durationMs": 422
+}
+{
+  "timestamp": "2026-02-21T11:53:22.971Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "9670781333423",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 47
+}
+{
+  "timestamp": "2026-02-21T11:53:23.696Z",
+  "category": "meta_delivery",
+  "action": "SEND_SUCCESS",
+  "recipient": "9670781333423",
+  "providerResponse": {
+    "messaging_product": "whatsapp",
+    "contacts": [
+      {
+        "input": "9670781333423",
+        "wa_id": "967781333423"
+      }
+    ],
+    "messages": [
+      {
+        "id": "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSOURFRDE2RjBCMEQ3NzFCRjc2AA==",
+        "message_status": "accepted"
+      }
+    ]
+  },
+  "messageIds": [
+    "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSOURFRDE2RjBCMEQ3NzFCRjc2AA=="
+  ],
+  "durationMs": 725
+}
+{
+  "timestamp": "2026-02-21T11:53:23.701Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "9670781333423",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 47
+}
+{
+  "timestamp": "2026-02-21T11:53:24.339Z",
+  "category": "meta_delivery",
+  "action": "SEND_SUCCESS",
+  "recipient": "9670781333423",
+  "providerResponse": {
+    "messaging_product": "whatsapp",
+    "contacts": [
+      {
+        "input": "9670781333423",
+        "wa_id": "967781333423"
+      }
+    ],
+    "messages": [
+      {
+        "id": "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSNzY4OUNFQzhEQzc2NUFCNjlGAA==",
+        "message_status": "accepted"
+      }
+    ]
+  },
+  "messageIds": [
+    "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSNzY4OUNFQzhEQzc2NUFCNjlGAA=="
+  ],
+  "durationMs": 637
+}
+{
+  "timestamp": "2026-02-21T11:53:24.344Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "9670781333423",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 47
+}
+{
+  "timestamp": "2026-02-21T11:53:25.009Z",
+  "category": "meta_delivery",
+  "action": "SEND_SUCCESS",
+  "recipient": "9670781333423",
+  "providerResponse": {
+    "messaging_product": "whatsapp",
+    "contacts": [
+      {
+        "input": "9670781333423",
+        "wa_id": "967781333423"
+      }
+    ],
+    "messages": [
+      {
+        "id": "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSNEUwM0I2M0NCN0Q3RjlEMjEwAA==",
+        "message_status": "accepted"
+      }
+    ]
+  },
+  "messageIds": [
+    "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSNEUwM0I2M0NCN0Q3RjlEMjEwAA=="
+  ],
+  "durationMs": 664
+}
+{
+  "timestamp": "2026-02-21T11:53:25.014Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "9670781333423",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 47
+}
+{
+  "timestamp": "2026-02-21T11:53:25.658Z",
+  "category": "meta_delivery",
+  "action": "SEND_SUCCESS",
+  "recipient": "9670781333423",
+  "providerResponse": {
+    "messaging_product": "whatsapp",
+    "contacts": [
+      {
+        "input": "9670781333423",
+        "wa_id": "967781333423"
+      }
+    ],
+    "messages": [
+      {
+        "id": "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSQTVBRjMxQTFGNzEwRjVBN0Y0AA==",
+        "message_status": "accepted"
+      }
+    ]
+  },
+  "messageIds": [
+    "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSQTVBRjMxQTFGNzEwRjVBN0Y0AA=="
+  ],
+  "durationMs": 643
+}
+{
+  "timestamp": "2026-02-21T11:53:25.662Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "9670781333423",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 47
+}
+{
+  "timestamp": "2026-02-21T11:53:26.277Z",
+  "category": "meta_delivery",
+  "action": "SEND_SUCCESS",
+  "recipient": "9670781333423",
+  "providerResponse": {
+    "messaging_product": "whatsapp",
+    "contacts": [
+      {
+        "input": "9670781333423",
+        "wa_id": "967781333423"
+      }
+    ],
+    "messages": [
+      {
+        "id": "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSODhEOTVFRkFEQzgwOTQ2QkJFAA==",
+        "message_status": "accepted"
+      }
+    ]
+  },
+  "messageIds": [
+    "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSODhEOTVFRkFEQzgwOTQ2QkJFAA=="
+  ],
+  "durationMs": 615
+}
+{
+  "timestamp": "2026-02-21T11:53:26.282Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "9670781333423",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 59
+}
+{
+  "timestamp": "2026-02-21T11:53:26.835Z",
+  "category": "meta_delivery",
+  "action": "SEND_SUCCESS",
+  "recipient": "9670781333423",
+  "providerResponse": {
+    "messaging_product": "whatsapp",
+    "contacts": [
+      {
+        "input": "9670781333423",
+        "wa_id": "967781333423"
+      }
+    ],
+    "messages": [
+      {
+        "id": "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSNTJFQjZERUQyRTBFM0MyRDlBAA==",
+        "message_status": "accepted"
+      }
+    ]
+  },
+  "messageIds": [
+    "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSNTJFQjZERUQyRTBFM0MyRDlBAA=="
+  ],
+  "durationMs": 552
+}
+{
+  "timestamp": "2026-02-21T11:53:26.840Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "9670781333423",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 143
+}
+{
+  "timestamp": "2026-02-21T11:53:27.269Z",
+  "category": "meta_delivery",
+  "action": "SEND_FAILURE",
+  "recipient": "9670781333423",
+  "httpStatus": 400,
+  "errorCode": "132018",
+  "errorMessage": "(#132018) There’s an issue with the parameters in your template",
+  "providerResponse": {
+    "error": {
+      "message": "(#132018) There’s an issue with the parameters in your template",
+      "type": "OAuthException",
+      "code": 132018,
+      "error_data": {
+        "messaging_product": "whatsapp",
+        "details": "Param text cannot have new-line/tab characters or more than 4 consecutive spaces"
+      },
+      "fbtrace_id": "Altz_pu_JjH5S9BdG0VJrH5"
+    }
+  },
+  "durationMs": 428
+}
+{
+  "timestamp": "2026-02-21T11:53:27.274Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "00962781333423",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 131
+}
+{
+  "timestamp": "2026-02-21T11:53:27.669Z",
+  "category": "meta_delivery",
+  "action": "SEND_FAILURE",
+  "recipient": "00962781333423",
+  "httpStatus": 400,
+  "errorCode": "131009",
+  "errorMessage": "(#131009) Parameter value is not valid",
+  "providerResponse": {
+    "error": {
+      "message": "(#131009) Parameter value is not valid",
+      "type": "OAuthException",
+      "code": 131009,
+      "error_data": {
+        "messaging_product": "whatsapp",
+        "details": "The phone number is malformed: Please use the format: +1234567890."
+      },
+      "fbtrace_id": "A6CUYv-kOXiUplAeYFn4qY4"
+    }
+  },
+  "durationMs": 395
+}
+{
+  "timestamp": "2026-02-21T11:53:27.673Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "00962781333423",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 131
+}
+{
+  "timestamp": "2026-02-21T11:53:28.032Z",
+  "category": "meta_delivery",
+  "action": "SEND_FAILURE",
+  "recipient": "00962781333423",
+  "httpStatus": 400,
+  "errorCode": "131009",
+  "errorMessage": "(#131009) Parameter value is not valid",
+  "providerResponse": {
+    "error": {
+      "message": "(#131009) Parameter value is not valid",
+      "type": "OAuthException",
+      "code": 131009,
+      "error_data": {
+        "messaging_product": "whatsapp",
+        "details": "The phone number is malformed: Please use the format: +1234567890."
+      },
+      "fbtrace_id": "A5s4myO1hR1Hl8nyL3xGRON"
+    }
+  },
+  "durationMs": 358
+}
+{
+  "timestamp": "2026-02-21T11:53:28.037Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "00962781333423",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 131
+}
+{
+  "timestamp": "2026-02-21T11:53:28.407Z",
+  "category": "meta_delivery",
+  "action": "SEND_FAILURE",
+  "recipient": "00962781333423",
+  "httpStatus": 400,
+  "errorCode": "131009",
+  "errorMessage": "(#131009) Parameter value is not valid",
+  "providerResponse": {
+    "error": {
+      "message": "(#131009) Parameter value is not valid",
+      "type": "OAuthException",
+      "code": 131009,
+      "error_data": {
+        "messaging_product": "whatsapp",
+        "details": "The phone number is malformed: Please use the format: +1234567890."
+      },
+      "fbtrace_id": "AMCo8u7qwufhC6kkOWlaQ5_"
+    }
+  },
+  "durationMs": 370
+}
+{
+  "timestamp": "2026-02-21T11:53:28.410Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "00962781333423",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 143
+}
+{
+  "timestamp": "2026-02-21T11:53:28.763Z",
+  "category": "meta_delivery",
+  "action": "SEND_FAILURE",
+  "recipient": "00962781333423",
+  "httpStatus": 400,
+  "errorCode": "131009",
+  "errorMessage": "(#131009) Parameter value is not valid",
+  "providerResponse": {
+    "error": {
+      "message": "(#131009) Parameter value is not valid",
+      "type": "OAuthException",
+      "code": 131009,
+      "error_data": {
+        "messaging_product": "whatsapp",
+        "details": "The phone number is malformed: Please use the format: +1234567890."
+      },
+      "fbtrace_id": "AXjDGqBIcExYDImETIiqsq3"
+    }
+  },
+  "durationMs": 352
+}
+{
+  "timestamp": "2026-02-21T11:53:28.767Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "9670781333423",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 143
+}
+{
+  "timestamp": "2026-02-21T11:53:29.147Z",
+  "category": "meta_delivery",
+  "action": "SEND_FAILURE",
+  "recipient": "9670781333423",
+  "httpStatus": 400,
+  "errorCode": "132018",
+  "errorMessage": "(#132018) There’s an issue with the parameters in your template",
+  "providerResponse": {
+    "error": {
+      "message": "(#132018) There’s an issue with the parameters in your template",
+      "type": "OAuthException",
+      "code": 132018,
+      "error_data": {
+        "messaging_product": "whatsapp",
+        "details": "Param text cannot have new-line/tab characters or more than 4 consecutive spaces"
+      },
+      "fbtrace_id": "AcuqwEjUgp7JVWuh_vT-Qg5"
+    }
+  },
+  "durationMs": 379
+}
+{
+  "timestamp": "2026-02-21T11:53:29.152Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "9670781333423",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 131
+}
+{
+  "timestamp": "2026-02-21T11:53:29.485Z",
+  "category": "meta_delivery",
+  "action": "SEND_FAILURE",
+  "recipient": "9670781333423",
+  "httpStatus": 400,
+  "errorCode": "132018",
+  "errorMessage": "(#132018) There’s an issue with the parameters in your template",
+  "providerResponse": {
+    "error": {
+      "message": "(#132018) There’s an issue with the parameters in your template",
+      "type": "OAuthException",
+      "code": 132018,
+      "error_data": {
+        "messaging_product": "whatsapp",
+        "details": "Param text cannot have new-line/tab characters or more than 4 consecutive spaces"
+      },
+      "fbtrace_id": "ATqV2LkVsAHXigq4MbIClSF"
+    }
+  },
+  "durationMs": 332
+}
+{
+  "timestamp": "2026-02-21T11:53:29.490Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "9670781333423",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 47
+}
+{
+  "timestamp": "2026-02-21T11:53:29.999Z",
+  "category": "meta_delivery",
+  "action": "SEND_SUCCESS",
+  "recipient": "9670781333423",
+  "providerResponse": {
+    "messaging_product": "whatsapp",
+    "contacts": [
+      {
+        "input": "9670781333423",
+        "wa_id": "967781333423"
+      }
+    ],
+    "messages": [
+      {
+        "id": "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSNzc4Q0I3MjgyMjg4MDNDQ0VGAA==",
+        "message_status": "accepted"
+      }
+    ]
+  },
+  "messageIds": [
+    "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSNzc4Q0I3MjgyMjg4MDNDQ0VGAA=="
+  ],
+  "durationMs": 508
+}
+{
+  "timestamp": "2026-02-21T11:53:30.004Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "9670781333423",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 47
+}
+{
+  "timestamp": "2026-02-21T11:53:30.567Z",
+  "category": "meta_delivery",
+  "action": "SEND_SUCCESS",
+  "recipient": "9670781333423",
+  "providerResponse": {
+    "messaging_product": "whatsapp",
+    "contacts": [
+      {
+        "input": "9670781333423",
+        "wa_id": "967781333423"
+      }
+    ],
+    "messages": [
+      {
+        "id": "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSQ0FFQTA4MEQ5OTQ4MEM3OUQxAA==",
+        "message_status": "accepted"
+      }
+    ]
+  },
+  "messageIds": [
+    "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSQ0FFQTA4MEQ5OTQ4MEM3OUQxAA=="
+  ],
+  "durationMs": 563
+}
+{
+  "timestamp": "2026-02-21T11:53:30.572Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "9670781333423",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 47
+}
+{
+  "timestamp": "2026-02-21T11:53:31.412Z",
+  "category": "meta_delivery",
+  "action": "SEND_SUCCESS",
+  "recipient": "9670781333423",
+  "providerResponse": {
+    "messaging_product": "whatsapp",
+    "contacts": [
+      {
+        "input": "9670781333423",
+        "wa_id": "967781333423"
+      }
+    ],
+    "messages": [
+      {
+        "id": "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSMkFCQzZFMDYxNUNERTYyODJEAA==",
+        "message_status": "accepted"
+      }
+    ]
+  },
+  "messageIds": [
+    "wamid.HBgMOTY3NzgxMzMzNDIzFQIAERgSMkFCQzZFMDYxNUNERTYyODJEAA=="
+  ],
+  "durationMs": 839
+}
+{
+  "timestamp": "2026-02-21T11:53:31.419Z",
+  "category": "meta_delivery",
+  "action": "SEND_ATTEMPT",
+  "recipient": "9670781333423",
+  "messageType": "TEMPLATE",
+  "hasTemplate": true,
+  "templateId": "arabic_general_notification",
+  "messageLength": 131
+}
+{
+  "timestamp": "2026-02-21T11:53:31.770Z",
+  "category": "meta_delivery",
+  "action": "SEND_FAILURE",
+  "recipient": "9670781333423",
+  "httpStatus": 400,
+  "errorCode": "132018",
+  "errorMessage": "(#132018) There’s an issue with the parameters in your template",
+  "providerResponse": {
+    "error": {
+      "message": "(#132018) There’s an issue with the parameters in your template",
+      "type": "OAuthException",
+      "code": 132018,
+      "error_data": {
+        "messaging_product": "whatsapp",
+        "details": "Param text cannot have new-line/tab characters or more than 4 consecutive spaces"
+      },
+      "fbtrace_id": "A9bdy4zNtV-ng3Q27tF2ydG"
+    }
+  },
+  "durationMs": 350
+}

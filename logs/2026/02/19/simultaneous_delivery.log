@@ -1,0 +1,166 @@
+{
+  "timestamp": "2026-02-19T08:31:03.819Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771489863819-hpdpi8ioa",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "967774577134",
+    "body": "اختبار الاشهارات sms , whatssapp معا ",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-19T08:31:04.750Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771489863819-hpdpi8ioa",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 931,
+  "meta": {
+    "success": true,
+    "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSQTgyNURGNDFGNzAzQTE0RTQ0AA=="
+  },
+  "fad": {
+    "success": false,
+    "errorCode": "FAD_EXCEPTION",
+    "errorMessage": "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-19T08:32:17.711Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771489937711-owkylmzew",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "967774577134",
+    "body": "اختبار الاشهارات sms , whatssapp معا ",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-19T08:32:18.593Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771489937711-owkylmzew",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 882,
+  "meta": {
+    "success": true,
+    "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSRTA3REFGNURBMTc4RjIxMjQ1AA=="
+  },
+  "fad": {
+    "success": false,
+    "errorCode": "FAD_API_ERROR",
+    "errorMessage": "Non-JSON response received: <!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Draft//EN\">\n<HTML>\n<HEAD>\n<TITLE>Error 401--Unauthorized</TITLE>\n</HEAD>\n<BODY bgcolor=\"white\">\n<FONT FACE=Helvetica><BR CLEAR=all>\n<TABLE border=0 cellspac..."
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-19T08:34:53.701Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771490093701-gw4gr8nny",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "967774577134",
+    "body": "اختبار الاشهارات sms , whatssapp معا ",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-19T08:34:54.572Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771490093701-gw4gr8nny",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 871,
+  "meta": {
+    "success": true,
+    "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSNDdGNUM4OUE1MDdBOTc5NzU3AA=="
+  },
+  "fad": {
+    "success": false,
+    "errorCode": "AUTHENTICATION_ERROR",
+    "errorMessage": "Authentication failed (401 Unauthorized): <!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Draft//EN\">\n<HTML>\n<HEAD>\n<TITLE>Error 401--Unauthorized</TITLE>\n</HEAD>\n<BODY bgcolor=\"white\">\n<FONT FACE=Helvetica><BR CLEAR=all>\n<TABLE border=0 cellspac..."
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-19T08:37:42.772Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771490262772-8k8i35kbo",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "967774577134",
+    "body": "اختبار الاشهارات sms , whatssapp معا ",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-19T08:37:44.682Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771490262772-8k8i35kbo",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 1910,
+  "meta": {
+    "success": true,
+    "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSOUJDQ0U2OTdCNEM3QUQwOUNEAA=="
+  },
+  "fad": {
+    "success": false,
+    "errorCode": "AUTHENTICATION_ERROR",
+    "errorMessage": "Authentication failed (401 Unauthorized): <!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Draft//EN\">\n<HTML>\n<HEAD>\n<TITLE>Error 401--Unauthorized</TITLE>\n</HEAD>\n<BODY bgcolor=\"white\">\n<FONT FACE=Helvetica><BR CLEAR=all>\n<TABLE border=0 cellspac..."
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-19T08:51:32.101Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771491092100-5l47ur7u4",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "+967774577134",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-19T08:51:33.125Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771491092100-5l47ur7u4",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 1025,
+  "meta": {
+    "success": false,
+    "errorCode": "131008",
+    "errorMessage": "(#131008) Required parameter is missing"
+  },
+  "fad": {
+    "success": true,
+    "providerMessageId": "1771491092113577134617"
+  },
+  "overallSuccess": true
+}
+{
+  "timestamp": "2026-02-19T08:53:44.691Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771491224691-5mrzt1gqd",
+  "action": "DELIVERY_INITIATED",
+  "payload": {
+    "to": "967774577134",
+    "body": "اختبار الاشهارات sms , whatssapp معا ",
+    "messageType": "TEXT"
+  }
+}
+{
+  "timestamp": "2026-02-19T08:53:46.140Z",
+  "category": "simultaneous_delivery",
+  "transactionId": "simultaneous-1771491224691-5mrzt1gqd",
+  "action": "DELIVERY_COMPLETED",
+  "totalTimeMs": 1449,
+  "meta": {
+    "success": true,
+    "providerMessageId": "wamid.HBgMOTY3Nzc0NTc3MTM0FQIAERgSODkxMTVGMTE0ODJGMTE4RTZFAA=="
+  },
+  "fad": {
+    "success": true,
+    "providerMessageId": "1771491224702577134542"
+  },
+  "overallSuccess": true
+}

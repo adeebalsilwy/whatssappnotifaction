@@ -26,6 +26,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogFooter,
 } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
 import { 
@@ -52,7 +53,9 @@ import {
   User, 
   Mail, 
   Calendar,
-  Filter
+  Filter,
+  Lock,
+  UserCheck
 } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 
@@ -157,7 +160,7 @@ export default function UsersManagementPage() {
   };
 
   const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('ar-SA', {
+    return new Date(dateString).toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'short',
       day: 'numeric'
@@ -170,7 +173,7 @@ export default function UsersManagementPage() {
         <div>
           <h1 className="text-3xl font-bold tracking-tight">إدارة المستخدمين</h1>
           <p className="text-muted-foreground">
-            إدارة حسابات المستخدمين وصلاحياتهم
+            إدارة حسابات المستخدمين وصلاحياتهم الاحترافية
           </p>
         </div>
         <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
@@ -180,17 +183,17 @@ export default function UsersManagementPage() {
               إضافة مستخدم جديد
             </Button>
           </DialogTrigger>
-          <DialogContent>
+          <DialogContent className="sm:max-w-[500px]">
             <DialogHeader>
               <DialogTitle>إنشاء مستخدم جديد</DialogTitle>
               <DialogDescription>
-                أدخل بيانات المستخدم الجديد
+                أدخل بيانات المستخدم الجديد وتأكد من منح الصلاحيات المناسبة
               </DialogDescription>
             </DialogHeader>
             <CreateUserForm onSuccess={() => {
               setIsCreateDialogOpen(false);
               fetchUsers();
-            }} />
+            }} onCancel={() => setIsCreateDialogOpen(false)} />
           </DialogContent>
         </Dialog>
       </div>
@@ -198,24 +201,27 @@ export default function UsersManagementPage() {
       {/* Filters */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Filter className="h-5 w-5" />
+          <CardTitle className="flex items-center gap-2 text-xl">
+            <Filter className="h-5 w-5 text-primary" />
             عوامل التصفية
           </CardTitle>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSearch} className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div className="relative">
-              <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-              <Input
-                placeholder="بحث باسم المستخدم أو البريد الإلكتروني..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="pr-10"
-              />
+            <div className="space-y-2">
+              <Label>بحث</Label>
+              <div className="relative">
+                <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Input
+                  placeholder="اسم المستخدم أو البريد..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="pr-10"
+                />
+              </div>
             </div>
             
-            <div>
+            <div className="space-y-2">
               <Label>الدور</Label>
               <Select value={roleFilter} onValueChange={setRoleFilter}>
                 <SelectTrigger>
@@ -230,7 +236,7 @@ export default function UsersManagementPage() {
               </Select>
             </div>
             
-            <div>
+            <div className="space-y-2">
               <Label>الحالة</Label>
               <Select value={statusFilter} onValueChange={setStatusFilter}>
                 <SelectTrigger>
@@ -246,9 +252,8 @@ export default function UsersManagementPage() {
             </div>
             
             <div className="flex items-end">
-              <Button type="submit" className="w-full">
-                <Search className="ml-2 h-4 w-4" />
-                بحث
+              <Button type="submit" className="w-full" variant="outline">
+                تطبيق التصفية
               </Button>
             </div>
           </form>
@@ -257,11 +262,16 @@ export default function UsersManagementPage() {
 
       {/* Users Table */}
       <Card>
-        <CardHeader>
-          <CardTitle>قائمة المستخدمين</CardTitle>
-          <CardDescription>
-            إجمالي {pagination.total} مستخدم
-          </CardDescription>
+        <CardHeader className="flex flex-row items-center justify-between">
+          <div>
+            <CardTitle>قائمة المستخدمين</CardTitle>
+            <CardDescription>
+                إجمالي <span suppressHydrationWarning>{pagination.total.toLocaleString('en-US')}</span> مستخدم مسجلين في النظام
+            </CardDescription>
+          </div>
+          <Button variant="ghost" size="icon" onClick={fetchUsers}>
+            <Calendar className="h-4 w-4" />
+          </Button>
         </CardHeader>
         <CardContent>
           {loading ? (
@@ -278,55 +288,40 @@ export default function UsersManagementPage() {
             </div>
           ) : (
             <>
-              <div className="rounded-md border">
+              <div className="rounded-md border overflow-hidden">
                 <Table>
-                  <TableHeader>
+                  <TableHeader className="bg-muted/50">
                     <TableRow>
-                      <TableHead>المستخدم</TableHead>
+                      <TableHead className="w-[300px]">المستخدم</TableHead>
                       <TableHead>الدور</TableHead>
                       <TableHead>الحالة</TableHead>
                       <TableHead>آخر دخول</TableHead>
-                      <TableHead>تاريخ الإنشاء</TableHead>
-                      <TableHead className="text-right">الإجراءات</TableHead>
+                      <TableHead className="text-left">الإجراءات</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {users.map((user) => (
-                      <TableRow key={user.id}>
+                      <TableRow key={user.id} className="hover:bg-muted/30">
                         <TableCell>
                           <div className="flex items-center gap-3">
-                            <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
-                              <span className="text-primary font-medium">
-                                {user.first_name?.charAt(0) || user.username.charAt(0)}
-                              </span>
+                            <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary border border-primary/20">
+                              <User className="h-5 w-5" />
                             </div>
-                            <div>
-                              <div className="font-medium">{user.username}</div>
-                              <div className="text-sm text-muted-foreground flex items-center gap-1">
-                                <Mail className="h-3 w-3" />
-                                {user.email || 'لا يوجد بريد إلكتروني'}
-                              </div>
-                              {(user.first_name || user.last_name) && (
-                                <div className="text-sm text-muted-foreground">
-                                  {user.first_name} {user.last_name}
-                                </div>
-                              )}
+                            <div className="flex flex-col">
+                              <span className="font-semibold">{user.username}</span>
+                              <span className="text-xs text-muted-foreground truncate max-w-[180px]">
+                                {user.email || 'بدون بريد'}
+                              </span>
                             </div>
                           </div>
                         </TableCell>
                         <TableCell>{getRoleBadge(user.role)}</TableCell>
                         <TableCell>{getStatusBadge(user.status)}</TableCell>
-                        <TableCell>
-                          {user.last_login ? formatDate(user.last_login) : 'لم يقم بتسجيل الدخول'}
+                        <TableCell className="text-sm">
+                          {user.last_login ? formatDate(user.last_login) : '---'}
                         </TableCell>
-                        <TableCell>
-                          <div className="flex items-center gap-1">
-                            <Calendar className="h-4 w-4 text-muted-foreground" />
-                            {formatDate(user.created_at)}
-                          </div>
-                        </TableCell>
-                        <TableCell className="text-right">
-                          <div className="flex justify-end gap-2">
+                        <TableCell className="text-left">
+                          <div className="flex justify-start gap-2">
                             <EditUserDialog user={user} onSuccess={fetchUsers} />
                             {user.role !== 'admin' && (
                               <DeleteUserButton userId={user.id} userName={user.username} onSuccess={fetchUsers} />
@@ -356,29 +351,29 @@ export default function UsersManagementPage() {
                         />
                       </PaginationItem>
                       
-                      {[...Array(Math.min(5, pagination.pages))].map((_, i) => {
+                      {[...Array(pagination.pages)].map((_, i) => {
                         const pageNum = i + 1;
-                        return (
-                          <PaginationItem key={pageNum}>
-                            <PaginationLink 
-                              href="#" 
-                              isActive={pagination.page === pageNum}
-                              onClick={(e) => {
-                                e.preventDefault();
-                                setPagination(prev => ({ ...prev, page: pageNum }));
-                              }}
-                            >
-                              {pageNum}
-                            </PaginationLink>
-                          </PaginationItem>
-                        );
+                        // Only show near pages
+                        if (pageNum === 1 || pageNum === pagination.pages || (pageNum >= pagination.page - 1 && pageNum <= pagination.page + 1)) {
+                          return (
+                            <PaginationItem key={pageNum}>
+                              <PaginationLink 
+                                href="#" 
+                                isActive={pagination.page === pageNum}
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  setPagination(prev => ({ ...prev, page: pageNum }));
+                                }}
+                              >
+                                {pageNum}
+                              </PaginationLink>
+                            </PaginationItem>
+                          );
+                        } else if (pageNum === 2 || pageNum === pagination.pages - 1) {
+                          return <PaginationItem key={pageNum}><PaginationEllipsis /></PaginationItem>;
+                        }
+                        return null;
                       })}
-                      
-                      {pagination.pages > 5 && (
-                        <PaginationItem>
-                          <PaginationEllipsis />
-                        </PaginationItem>
-                      )}
                       
                       <PaginationItem>
                         <PaginationNext 
@@ -403,27 +398,244 @@ export default function UsersManagementPage() {
   );
 }
 
-// CreateUserForm component would go here
-function CreateUserForm({ onSuccess }: { onSuccess: () => void }) {
-  // Implementation for create user form
-  return <div>نموذج إنشاء المستخدم</div>;
-}
+function CreateUserForm({ onSuccess, onCancel }: { onSuccess: () => void; onCancel: () => void }) {
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    username: '',
+    password: '',
+    email: '',
+    role: 'user',
+    status: 'active',
+    first_name: '',
+    last_name: ''
+  });
 
-// EditUserDialog component would go here
-function EditUserDialog({ user, onSuccess }: { user: User; onSuccess: () => void }) {
-  // Implementation for edit user dialog
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const response = await fetch('/api/users', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast({ title: 'تم إنشاء المستخدم', description: 'تمت إضافة المستخدم الجديد بنجاح' });
+        onSuccess();
+      } else {
+        toast({ title: 'خطأ', description: data.error, variant: 'destructive' });
+      }
+    } catch (err) {
+      toast({ title: 'خطأ', description: 'فشل الاتصال بالخادم', variant: 'destructive' });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <Button variant="outline" size="sm">
-      <Edit className="h-4 w-4 ml-1" />
-      تعديل
-    </Button>
+    <form onSubmit={handleSubmit} className="space-y-4 py-4">
+      <div className="grid grid-cols-2 gap-4">
+        <div className="space-y-2">
+          <Label>اسم المستخدم</Label>
+          <Input 
+            required 
+            value={formData.username} 
+            onChange={(e) => setFormData({...formData, username: e.target.value})}
+          />
+        </div>
+        <div className="space-y-2">
+          <Label>كلمة المرور</Label>
+          <Input 
+            type="password" 
+            required 
+            value={formData.password} 
+            onChange={(e) => setFormData({...formData, password: e.target.value})}
+          />
+        </div>
+      </div>
+      
+      <div className="space-y-2">
+        <Label>البريد الإلكتروني</Label>
+        <Input 
+          type="email" 
+          value={formData.email} 
+          onChange={(e) => setFormData({...formData, email: e.target.value})}
+        />
+      </div>
+
+      <div className="grid grid-cols-2 gap-4">
+        <div className="space-y-2">
+          <Label>الاسم الأول</Label>
+          <Input 
+            value={formData.first_name} 
+            onChange={(e) => setFormData({...formData, first_name: e.target.value})}
+          />
+        </div>
+        <div className="space-y-2">
+          <Label>اللقب</Label>
+          <Input 
+            value={formData.last_name} 
+            onChange={(e) => setFormData({...formData, last_name: e.target.value})}
+          />
+        </div>
+      </div>
+
+      <div className="grid grid-cols-2 gap-4">
+        <div className="space-y-2">
+          <Label>الدور</Label>
+          <Select value={formData.role} onValueChange={(v) => setFormData({...formData, role: v})}>
+            <SelectTrigger><SelectValue /></SelectTrigger>
+            <SelectContent>
+              <SelectItem value="admin">مدير (Admin)</SelectItem>
+              <SelectItem value="manager">مدير قسم (Manager)</SelectItem>
+              <SelectItem value="user">مستخدم (User)</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+        <div className="space-y-2">
+          <Label>الحالة</Label>
+          <Select value={formData.status} onValueChange={(v) => setFormData({...formData, status: v})}>
+            <SelectTrigger><SelectValue /></SelectTrigger>
+            <SelectContent>
+              <SelectItem value="active">نشط</SelectItem>
+              <SelectItem value="inactive">غير نشط</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+      </div>
+
+      <DialogFooter className="gap-2 pt-4">
+        <Button type="button" variant="ghost" onClick={onCancel}>إلغاء</Button>
+        <Button type="submit" disabled={loading}>
+          {loading ? 'جاري الحفظ...' : 'إنشاء المستخدم'}
+        </Button>
+      </DialogFooter>
+    </form>
   );
 }
 
-// DeleteUserButton component would go here
+function EditUserDialog({ user, onSuccess }: { user: User; onSuccess: () => void }) {
+  const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    email: user.email || '',
+    role: user.role,
+    status: user.status,
+    first_name: user.first_name || '',
+    last_name: user.last_name || ''
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const response = await fetch(`/api/users/${user.id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast({ title: 'تم التحديث', description: 'تم تحديث بيانات المستخدم بنجاح' });
+        setOpen(false);
+        onSuccess();
+      } else {
+        toast({ title: 'خطأ', description: data.error, variant: 'destructive' });
+      }
+    } catch (err) {
+      toast({ title: 'خطأ', description: 'فشل الاتصال بالخادم', variant: 'destructive' });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <Dialog open={open} onOpenChange={setOpen}>
+      <DialogTrigger asChild>
+        <Button variant="outline" size="sm" className="h-8 px-2">
+          <Edit className="h-4 w-4 ml-1" />
+          تعديل
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[500px]">
+        <DialogHeader>
+          <DialogTitle>تعديل بيانات المستخدم: {user.username}</DialogTitle>
+          <DialogDescription>تعديل الصلاحيات والحالة والمعلومات الأساسية</DialogDescription>
+        </DialogHeader>
+        <form onSubmit={handleSubmit} className="space-y-4 py-4">
+          <div className="space-y-2">
+            <Label>البريد الإلكتروني</Label>
+            <Input 
+              type="email" 
+              value={formData.email} 
+              onChange={(e) => setFormData({...formData, email: e.target.value})}
+            />
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label>الاسم الأول</Label>
+              <Input 
+                value={formData.first_name} 
+                onChange={(e) => setFormData({...formData, first_name: e.target.value})}
+              />
+            </div>
+            <div className="space-y-2">
+              <Label>اللقب</Label>
+              <Input 
+                value={formData.last_name} 
+                onChange={(e) => setFormData({...formData, last_name: e.target.value})}
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label>الدور</Label>
+              <Select value={formData.role} onValueChange={(v) => setFormData({...formData, role: v})}>
+                <SelectTrigger><SelectValue /></SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="admin">مدير (Admin)</SelectItem>
+                  <SelectItem value="manager">مدير قسم (Manager)</SelectItem>
+                  <SelectItem value="user">مستخدم (User)</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            <div className="space-y-2">
+              <Label>الحالة</Label>
+              <Select value={formData.status} onValueChange={(v) => setFormData({...formData, status: v})}>
+                <SelectTrigger><SelectValue /></SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="active">نشط</SelectItem>
+                  <SelectItem value="inactive">غير نشط</SelectItem>
+                  <SelectItem value="locked">مقفل (Locked)</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+
+          <DialogFooter className="gap-2 pt-4">
+            <Button type="button" variant="ghost" onClick={() => setOpen(false)}>إلغاء</Button>
+            <Button type="submit" disabled={loading}>
+              {loading ? 'جاري الحفظ...' : 'حفظ التعديلات'}
+            </Button>
+          </DialogFooter>
+        </form>
+      </DialogContent>
+    </Dialog>
+  );
+}
+
 function DeleteUserButton({ userId, userName, onSuccess }: { userId: number; userName: string; onSuccess: () => void }) {
   const handleDelete = async () => {
-    if (confirm(`هل أنت متأكد من حذف المستخدم ${userName}؟`)) {
+    if (confirm(`هل أنت متأكد من حذف المستخدم ${userName}؟ لا يمكن التراجع عن هذا الإجراء.`)) {
       try {
         const response = await fetch(`/api/users/${userId}`, {
           method: 'DELETE',
@@ -433,8 +645,8 @@ function DeleteUserButton({ userId, userName, onSuccess }: { userId: number; use
         
         if (data.success) {
           toast({
-            title: 'نجاح',
-            description: 'تم حذف المستخدم بنجاح'
+            title: 'تم الحذف',
+            description: `تم حذف المستخدم ${userName} بنجاح`
           });
           onSuccess();
         } else {
@@ -455,7 +667,7 @@ function DeleteUserButton({ userId, userName, onSuccess }: { userId: number; use
   };
 
   return (
-    <Button variant="destructive" size="sm" onClick={handleDelete}>
+    <Button variant="destructive" size="sm" className="h-8 px-2" onClick={handleDelete}>
       <Trash2 className="h-4 w-4 ml-1" />
       حذف
     </Button>
