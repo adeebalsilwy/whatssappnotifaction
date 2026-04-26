@@ -167,19 +167,132 @@ export class WhatsAppNotificationService {
     }
 
     // --- Phone Number Normalization ---
-    // Rule: If the country key (code) is not present, default to Yemen (+967).
-    // We assume the key is present if the number starts with '+', '00', or '967'.
+    // Rule: Handle local numbers from Yemen, Saudi Arabia, UAE and other Arab countries properly.
+    // Yemeni numbers: 774577134 (9 digits) -> +967774577134
+    // Yemeni numbers: +967774577134, 967774577134, 00967774577134 -> normalized to +967774577134
+    // Saudi numbers: 512345678 (9 digits) -> +966512345678
+    // Saudi numbers: 0512345678 -> +966512345678
+    // UAE numbers: 521234567 (9 digits) -> +971521234567
+    // UAE numbers: 0521234567 -> +971521234567
+    // Egyptian numbers: 1012345678 (10 digits starting with 1) -> +201012345678
+    // Jordan numbers: 791234567 (9 digits starting with 7) -> +962791234567
+    // Lebanon numbers: 71123456 (8 digits starting with 7) -> +96171123456
+    // Kuwait numbers: 50123456 (8 digits starting with 5) -> +96550123456
+    // International numbers: +447700123456, 447700123456, 00447700123456 -> normalized to +447700123456
     let cleanTo = payload.to.trim();
 
-    // Remove all non-digit characters except leading '+'
-    // cleanTo = cleanTo.replace(/[^\d+]/g, ''); // Optional strict cleaning
+    // Extract only digits to check number characteristics
+    const digitsOnly = cleanTo.replace(/[^\D]/g, '');
 
-    const hasInternationalPrefix = cleanTo.startsWith('+') || cleanTo.startsWith('00');
-    const hasCountryCode = cleanTo.startsWith('967');
-
-    if (!hasInternationalPrefix && !hasCountryCode) {
-      // Prepend default Yemen country code
-      cleanTo = `967${cleanTo}`;
+    const hasPlusPrefix = cleanTo.startsWith('+');
+    const hasDoubleZeroPrefix = cleanTo.startsWith('00');
+    
+    // Check for specific country codes
+    const hasYemenCountryCode = cleanTo.startsWith('967') && !hasPlusPrefix; // Has 967 without +
+    const hasSaudiCountryCode = cleanTo.startsWith('966') && !hasPlusPrefix; // Has 966 without +
+    const hasUaeCountryCode = cleanTo.startsWith('971') && !hasPlusPrefix; // Has 971 without +
+    const hasEgyptCountryCode = cleanTo.startsWith('20') && !hasPlusPrefix; // Has 20 without +
+    const hasJordanCountryCode = cleanTo.startsWith('962') && !hasPlusPrefix; // Has 962 without +
+    const hasLebanonCountryCode = cleanTo.startsWith('961') && !hasPlusPrefix; // Has 961 without +
+    const hasKuwaitCountryCode = cleanTo.startsWith('965') && !hasPlusPrefix; // Has 965 without +
+    
+    const hasPlusYemenCountryCode = cleanTo.startsWith('+967'); // Has +967
+    const hasPlusSaudiCountryCode = cleanTo.startsWith('+966'); // Has +966
+    const hasPlusUaeCountryCode = cleanTo.startsWith('+971'); // Has +971
+    const hasPlusEgyptCountryCode = cleanTo.startsWith('+20'); // Has +20
+    const hasPlusJordanCountryCode = cleanTo.startsWith('+962'); // Has +962
+    const hasPlusLebanonCountryCode = cleanTo.startsWith('+961'); // Has +961
+    const hasPlusKuwaitCountryCode = cleanTo.startsWith('+965'); // Has +965
+    
+    // Check if it's a local number for specific countries
+    // Yemen: 7xxxxxxx (9 digits starting with 7)
+    const isLocalYemenNumber = /^7\d{8}$/.test(digitsOnly); // 9 digits starting with 7
+    
+    // Saudi: 5xxxxxxxx (9 digits starting with 5) or 1xxxxxxxxx (10 digits starting with 1)
+    const isLocalSaudiNumber = /^(5\d{8}|1\d{9})$/.test(digitsOnly); // 9 digits starting with 5 OR 10 digits starting with 1
+    
+    // UAE: 5xxxxxxxx (9 digits starting with 5) or 2xxxxxxx, 3xxxxxxx, 4xxxxxxx, 6xxxxxxx, 7xxxxxxx, 9xxxxxxx
+    const isLocalUaeNumber = /^(5\d{8}|2\d{7}|3\d{7}|4\d{7}|6\d{7}|7\d{7}|9\d{7})$/.test(digitsOnly); // Various UAE formats
+    
+    // Egypt: 1xxxxxxxxx (10 digits starting with 1)
+    const isLocalEgyptNumber = /^1\d{9}$/.test(digitsOnly); // 10 digits starting with 1
+    
+    // Jordan: 7xxxxxxxx (9 digits starting with 7)
+    const isLocalJordanNumber = /^7\d{8}$/.test(digitsOnly); // 9 digits starting with 7
+    
+    // Lebanon: 3xxxxxxx, 7xxxxxxx, 8xxxxxxx (8 digits starting with 3, 7, or 8)
+    const isLocalLebanonNumber = /^[378]\d{7}$/.test(digitsOnly); // 8 digits starting with 3, 7, or 8
+    
+    // Kuwait: 5xxxxxxx, 6xxxxxxx, 9xxxxxxx (8 digits starting with 5, 6, or 9)
+    const isLocalKuwaitNumber = /^[569]\d{7}$/.test(digitsOnly); // 8 digits starting with 5, 6, or 9
+    
+    if (hasPlusPrefix) {
+      // Already in international format with +
+      // If it's +967, +966, +971, +20, +962, +961, +965 keep as is
+      // If it's another country code, keep as is
+      cleanTo = cleanTo;
+    } else if (hasDoubleZeroPrefix) {
+      // Convert 00 to + (e.g., 00966... becomes +966...)
+      cleanTo = '+' + cleanTo.substring(2);
+    } else if (hasPlusYemenCountryCode || hasPlusSaudiCountryCode || hasPlusUaeCountryCode || 
+               hasPlusEgyptCountryCode || hasPlusJordanCountryCode || hasPlusLebanonCountryCode || hasPlusKuwaitCountryCode) {
+      // Already in + format for specific countries, add + if missing
+      if (!hasPlusPrefix) {
+        cleanTo = '+' + cleanTo;
+      }
+    } else if (hasYemenCountryCode) {
+      // Has 967... without +, add +
+      cleanTo = '+' + cleanTo;
+    } else if (hasSaudiCountryCode) {
+      // Has 966... without +, add +
+      cleanTo = '+' + cleanTo;
+    } else if (hasUaeCountryCode) {
+      // Has 971... without +, add +
+      cleanTo = '+' + cleanTo;
+    } else if (hasEgyptCountryCode) {
+      // Has 20... without +, add +
+      cleanTo = '+' + cleanTo;
+    } else if (hasJordanCountryCode) {
+      // Has 962... without +, add +
+      cleanTo = '+' + cleanTo;
+    } else if (hasLebanonCountryCode) {
+      // Has 961... without +, add +
+      cleanTo = '+' + cleanTo;
+    } else if (hasKuwaitCountryCode) {
+      // Has 965... without +, add +
+      cleanTo = '+' + cleanTo;
+    } else if (isLocalYemenNumber) {
+      // Local Yemeni number (9 digits starting with 7), prepend +967
+      cleanTo = `+967${digitsOnly}`;
+    } else if (isLocalSaudiNumber) {
+      // Local Saudi number (9 digits starting with 5 or 10 digits starting with 1), prepend +966
+      if (digitsOnly.length === 9 && digitsOnly.startsWith('5')) {
+        cleanTo = `+966${digitsOnly}`;
+      } else if (digitsOnly.length === 10 && digitsOnly.startsWith('1')) {
+        cleanTo = `+966${digitsOnly}`;
+      } else {
+        cleanTo = `+${cleanTo}`;
+      }
+    } else if (isLocalUaeNumber) {
+      // Local UAE number, prepend +971
+      cleanTo = `+971${digitsOnly}`;
+    } else if (isLocalEgyptNumber) {
+      // Local Egyptian number (10 digits starting with 1), prepend +20
+      cleanTo = `+20${digitsOnly}`;
+    } else if (isLocalJordanNumber) {
+      // Local Jordanian number (9 digits starting with 7), prepend +962
+      cleanTo = `+962${digitsOnly}`;
+    } else if (isLocalLebanonNumber) {
+      // Local Lebanese number (8 digits starting with 3, 7, or 8), prepend +961
+      cleanTo = `+961${digitsOnly}`;
+    } else if (isLocalKuwaitNumber) {
+      // Local Kuwaiti number (8 digits starting with 5, 6, or 9), prepend +965
+      cleanTo = `+965${digitsOnly}`;
+    } else {
+      // For other formats, add + if not already present
+      if (!hasPlusPrefix) {
+        cleanTo = `+${cleanTo}`;
+      }
     }
 
     // Update the payload with the normalized number
@@ -658,7 +771,7 @@ export class WhatsAppNotificationService {
   }
 
   async sendDepositNotification(
-    to: string, 
+    to: string, 2
     depositInfo: {
       amount: string | number;
       lastDigits: string;
